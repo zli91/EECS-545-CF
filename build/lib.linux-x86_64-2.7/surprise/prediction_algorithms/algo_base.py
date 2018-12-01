@@ -96,7 +96,7 @@ class AlgoBase(object):
 
         return self
 
-    def weightUpdate(self,Weight=1):
+    def weightUpdate(self,Weight=[]):
         self.W = Weight
 
     def predict(self, uid, iid, r_ui=None, clip=True, verbose=False):
@@ -136,7 +136,9 @@ class AlgoBase(object):
 
         # Convert raw ids to inner ids
         try:
+
             iuid = self.trainset.to_inner_uid(uid)
+            # print('uid = ',uid,'iuid = ', iuid)
         except ValueError:
             iuid = 'UKN__' + str(uid)
         try:

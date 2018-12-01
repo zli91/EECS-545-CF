@@ -279,7 +279,7 @@ class KNNBaseline(SymmetricAlgo):
         self.bu, self.bi = self.compute_baselines(verbose=self.verbose)
         self.bx, self.by = self.switch(self.bu, self.bi)
         self.sim = self.compute_similarities(verbose=self.verbose)
-
+        print('sim',self.sim)
         return self
 
     def estimate(self, u, i):
@@ -297,16 +297,26 @@ class KNNBaseline(SymmetricAlgo):
 
         neighbors = [(x2, self.sim[x, x2], r) for (x2, r) in self.yr[y]]
         k_neighbors = heapq.nlargest(self.k, neighbors, key=lambda t: t[1])
-        print("self.w = ",self.W)
+        # print("Weight size = ",np.shape(self.W))
         # compute weighted average
         sum_sim = sum_ratings = actual_k = 0
         for (nb, sim, r) in k_neighbors:
             if sim > 0:
+                if self.sim_options['user_based']:
+                    rnb = self.trainset.to_raw_uid(nb)
+                    rawy = self.trainset.to_raw_iid(y)
+                    # print('rnb = ',int(rnb),' rawy = ',int(rawy))
+                    Wei =  self.W[int(rnb)][int(rawy)]
+                else:   
+                    rnb = self.trainset.to_raw_iid(nb)
+                    rawy = self.trainset.to_raw_uid(y)
+                    # print('rnb = ',int(rnb),' rawy = ',int(rawy))
+                    Wei =  self.W[int(rawy)][(rnb)]
                 # sum_sim += sim * weight[x][nb]
-                sum_sim += sim * self.W
+                sum_sim += sim * Wei
                 nb_bsl = self.trainset.global_mean + self.bx[nb] + self.by[y]
                 # sum_ratings += sim * weight[x][nb] * (r - nb_bsl)
-                sum_ratings += sim * self.W * (r - nb_bsl)
+                sum_ratings += sim * Wei * (r - nb_bsl)
                 actual_k += 1
 
         if actual_k < self.min_k:
