@@ -148,6 +148,7 @@ class AlgoBase(object):
 
         details = {}
         try:
+            print("here i am!!!!!!!!!!! algo_base")
             est = self.estimate(iuid, iiid)
 
             # If the details dict was also returned

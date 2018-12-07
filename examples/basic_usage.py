@@ -9,13 +9,15 @@ from __future__ import (absolute_import, division, print_function,
 from surprise import SVD
 from surprise import Dataset
 from surprise.model_selection import cross_validate
-
+import numpy as np
 
 # Load the movielens-100k dataset (download it if needed),
 data = Dataset.load_builtin('ml-100k')
-
+sizefinder = data.build_full_trainset()
 # We'll use the famous SVD algorithm.
 algo = SVD()
-
+s = (sizefinder.n_users+1,sizefinder.n_items+1)
+weight = np.ones(s)
+algo.weightUpdate(weight)
 # Run 5-fold cross-validation and print results
 cross_validate(algo, data, measures=['RMSE', 'MAE'], cv=5, verbose=True)

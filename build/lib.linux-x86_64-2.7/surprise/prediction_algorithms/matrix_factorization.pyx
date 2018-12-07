@@ -238,8 +238,10 @@ class SVD(AlgoBase):
 
                 # update biases
                 if self.biased:
-                    bu[u] += lr_bu * (err - reg_bu * bu[u])
-                    bi[i] += lr_bi * (err - reg_bi * bi[i])
+                    # print('reg_bu = ', reg_bu)
+                    Weight = self.W[u][i]
+                    bu[u] += lr_bu * (err - Weight*reg_bu * bu[u])
+                    bi[i] += lr_bi * (err - Weight*reg_bi * bi[i])
 
                 # update factors
                 for f in range(self.n_factors):
@@ -686,6 +688,7 @@ class NMF(AlgoBase):
 
                 # update biases
                 if self.biased:
+
                     bu[u] += lr_bu * (err - reg_bu * bu[u])
                     bi[i] += lr_bi * (err - reg_bi * bi[i])
 

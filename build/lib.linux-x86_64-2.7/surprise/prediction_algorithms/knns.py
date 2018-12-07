@@ -300,18 +300,20 @@ class KNNBaseline(SymmetricAlgo):
         # print("Weight size = ",np.shape(self.W))
         # compute weighted average
         sum_sim = sum_ratings = actual_k = 0
+        print("here i am!!!!!!!!!!!")
         for (nb, sim, r) in k_neighbors:
             if sim > 0:
                 if self.sim_options['user_based']:
-                    rnb = self.trainset.to_raw_uid(nb)
-                    rawy = self.trainset.to_raw_iid(y)
+                    # rnb = self.trainset.to_raw_uid(nb)
+                    # rawy = self.trainset.to_raw_iid(y)
                     # print('rnb = ',int(rnb),' rawy = ',int(rawy))
-                    Wei =  self.W[int(rnb)][int(rawy)]
+                    Wei =  self.W[int(nb)][int(y)]
                 else:   
-                    rnb = self.trainset.to_raw_iid(nb)
-                    rawy = self.trainset.to_raw_uid(y)
+                    # rnb = self.trainset.to_raw_iid(nb)
+                    # rawy = self.trainset.to_raw_uid(y)
                     # print('rnb = ',int(rnb),' rawy = ',int(rawy))
-                    Wei =  self.W[int(rawy)][(rnb)]
+                    # Wei =  self.W[int(rawy)][(rnb)]
+                    Wei =  self.W[int(y)][int(nb)]
                 # sum_sim += sim * weight[x][nb]
                 sum_sim += sim * Wei
                 nb_bsl = self.trainset.global_mean + self.bx[nb] + self.by[y]
