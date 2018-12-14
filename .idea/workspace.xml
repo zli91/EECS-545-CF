@@ -3,10 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="69552c60-7c90-45b5-aad6-01b9a3cab7b6" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/tests/545Project_BoostBaseline.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/545Project_BoostBaseline.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/545Project_svd.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/545Project_svd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/TestSet.csv" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestSet.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/UEMatrix.csv" beforeDir="false" afterPath="$PROJECT_DIR$/tests/UEMatrix.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/WeightMatrix.csv" beforeDir="false" afterPath="$PROJECT_DIR$/tests/WeightMatrix.csv" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -28,8 +24,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/545Project_BoostBaseline.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="650">
-              <caret line="211" column="72" selection-start-line="211" selection-start-column="72" selection-end-line="211" selection-end-column="72" />
+            <state relative-caret-position="560">
+              <caret line="229" column="47" selection-start-line="229" selection-start-column="47" selection-end-line="229" selection-end-column="47" />
               <folding>
                 <element signature="e#128#146#0" expanded="true" />
               </folding>
@@ -40,8 +36,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/tests/545Project_svd.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="485">
-              <caret line="260" selection-start-line="260" selection-end-line="262" selection-end-column="72" />
+            <state relative-caret-position="345">
+              <caret line="113" column="72" lean-forward="true" selection-start-line="113" selection-start-column="72" selection-end-line="113" selection-end-column="72" />
               <folding>
                 <element signature="e#128#146#0" expanded="true" />
               </folding>
@@ -485,8 +481,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/545Project_svd.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="485">
-          <caret line="260" selection-start-line="260" selection-end-line="262" selection-end-column="72" />
+        <state relative-caret-position="345">
+          <caret line="113" column="72" lean-forward="true" selection-start-line="113" selection-start-column="72" selection-end-line="113" selection-end-column="72" />
           <folding>
             <element signature="e#128#146#0" expanded="true" />
           </folding>
@@ -495,8 +491,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/tests/545Project_BoostBaseline.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="650">
-          <caret line="211" column="72" selection-start-line="211" selection-start-column="72" selection-end-line="211" selection-end-column="72" />
+        <state relative-caret-position="560">
+          <caret line="229" column="47" selection-start-line="229" selection-start-column="47" selection-end-line="229" selection-end-column="47" />
           <folding>
             <element signature="e#128#146#0" expanded="true" />
           </folding>

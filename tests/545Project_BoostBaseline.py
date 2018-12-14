@@ -227,8 +227,9 @@ for (trainset, ABtestset) in cv.split(data):
     predictions = [predict(uid, iid, r_ui_trans, verbose=False) for (uid, iid, r_ui_trans) in ABtestset]
 
     ############################################    Printing RMSE of Adaboost Prediction Model and individual RMSE from each Adaboost iteration  #########################################
+    print("One CF loop Finished, Current RMSE =")
     CrossVRMSE[Crossiter] = accuracy.rmse(predictions)
-    # print("individual rmse:", ABRMSE)
+
     Crossiter += 1
 
 print("CrossValidated Mean RMSE", np.mean(CrossVRMSE))
