@@ -1,0 +1,11 @@
+,uid,iid,r_ui,est,details,error
+0,405,571,5.0,1.0,"{u'actual_k': 12, u'was_impossible': False}",4.0
+1,777,127,1.0,5.0,"{u'actual_k': 40, u'was_impossible': False}",4.0
+2,405,452,5.0,1.0926923069083814,"{u'actual_k': 33, u'was_impossible': False}",3.9073076930916186
+3,517,1177,5.0,1.103857339504014,"{u'actual_k': 3, u'was_impossible': False}",3.896142660495986
+4,239,318,1.0,4.86397749341799,"{u'actual_k': 40, u'was_impossible': False}",3.8639774934179902
+5,617,74,5.0,1.1944464979865828,"{u'actual_k': 3, u'was_impossible': False}",3.8055535020134172
+6,239,64,1.0,4.7951575662702846,"{u'actual_k': 40, u'was_impossible': False}",3.7951575662702846
+7,295,96,1.0,4.785082174172364,"{u'actual_k': 40, u'was_impossible': False}",3.7850821741723637
+8,366,234,1.0,4.775574805247092,"{u'actual_k': 40, u'was_impossible': False}",3.775574805247092
+9,295,183,1.0,4.7437234218776165,"{u'actual_k': 40, u'was_impossible': False}",3.7437234218776165

@@ -140,20 +140,22 @@ class AlgoBase(object):
             iuid = self.trainset.to_inner_uid(uid)
             # print('uid = ',uid,'iuid = ', iuid)
         except ValueError:
+            # print("uid error!")
             iuid = 'UKN__' + str(uid)
         try:
             iiid = self.trainset.to_inner_iid(iid)
         except ValueError:
+            # print("iid error!")
             iiid = 'UKN__' + str(iid)
 
         details = {}
         try:
-            print("here i am!!!!!!!!!!! algo_base")
+            # print("here i am!!!!!!!!!!! algo_base")
             est = self.estimate(iuid, iiid)
 
             # If the details dict was also returned
             if isinstance(est, tuple):
-                est, details = est
+                est, details, _ = est
 
             details['was_impossible'] = False
 
@@ -168,7 +170,7 @@ class AlgoBase(object):
             est = min(higher_bound, est)
             est = max(lower_bound, est)
 
-        pred = Prediction(uid, iid, r_ui, est, details)
+        pred = Prediction(uid, iid, r_ui, est, details,abs(r_ui-est))
 
         if verbose:
             print(pred)
@@ -207,6 +209,7 @@ class AlgoBase(object):
         """
 
         # The ratings are translated back to their original scale.
+
         predictions = [self.predict(uid,
                                     iid,
                                     r_ui_trans,
@@ -337,6 +340,6 @@ class AlgoBase(object):
 
         others = [(x, self.sim[iid, x]) for x in all_instances() if x != iid]
         others.sort(key=lambda tple: tple[1], reverse=True)
-        k_nearest_neighbors = [j for (j, _) in others[:k]]
-
+        k_nearest_neighbors = [int(j) for (j, _) in others[:k]]
+        # print ("neighbors is int or not?",isinstance(k_nearest_neighbors[0], (int)))
         return k_nearest_neighbors

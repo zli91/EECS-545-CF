@@ -101,7 +101,7 @@ class KNNBasic(SymmetricAlgo):
         return self
 
     def estimate(self, u, i):
-
+        # print("here i am!!!!!!!!!!!KNNBasic")
         if not (self.trainset.knows_user(u) and self.trainset.knows_item(i)):
             raise PredictionImpossible('User and/or item is unkown.')
 
@@ -184,7 +184,7 @@ class KNNWithMeans(SymmetricAlgo):
         return self
 
     def estimate(self, u, i):
-
+        print("here i am!!!!!!!!!!! KNNMEANS")
         if not (self.trainset.knows_user(u) and self.trainset.knows_item(i)):
             raise PredictionImpossible('User and/or item is unkown.')
 
@@ -283,7 +283,8 @@ class KNNBaseline(SymmetricAlgo):
         return self
 
     def estimate(self, u, i):
-
+        # print("entered estimate, iuid and iiid is: ",u,i)
+        oneCounter = 0
         est = self.trainset.global_mean
         if self.trainset.knows_user(u):
             est += self.bu[u]
@@ -300,7 +301,7 @@ class KNNBaseline(SymmetricAlgo):
         # print("Weight size = ",np.shape(self.W))
         # compute weighted average
         sum_sim = sum_ratings = actual_k = 0
-        print("here i am!!!!!!!!!!!")
+        # print("here i am!!!!!!!!!!!KNNBaseline")
         for (nb, sim, r) in k_neighbors:
             if sim > 0:
                 if self.sim_options['user_based']:
@@ -313,14 +314,17 @@ class KNNBaseline(SymmetricAlgo):
                     # rawy = self.trainset.to_raw_uid(y)
                     # print('rnb = ',int(rnb),' rawy = ',int(rawy))
                     # Wei =  self.W[int(rawy)][(rnb)]
+                    # print("enterred itembased, user should be equal, y,nb =",y,nb)
                     Wei =  self.W[int(y)][int(nb)]
+                oneCounter += (Wei == 1.0)
                 # sum_sim += sim * weight[x][nb]
+                # print("weight is actually:",Wei)
                 sum_sim += sim * Wei
                 nb_bsl = self.trainset.global_mean + self.bx[nb] + self.by[y]
                 # sum_ratings += sim * weight[x][nb] * (r - nb_bsl)
                 sum_ratings += sim * Wei * (r - nb_bsl)
                 actual_k += 1
-
+        # print("meet 1s for:", oneCounter)
         if actual_k < self.min_k:
             sum_ratings = 0
 
@@ -330,7 +334,7 @@ class KNNBaseline(SymmetricAlgo):
             pass  # just baseline again
 
         details = {'actual_k': actual_k}
-        return est, details
+        return est, details, k_neighbors
 
 
 class KNNWithZScore(SymmetricAlgo):
@@ -399,7 +403,7 @@ class KNNWithZScore(SymmetricAlgo):
         return self
 
     def estimate(self, u, i):
-
+        # print("here i am!!!!!!!!!!!KNNWithScore")
         if not (self.trainset.knows_user(u) and self.trainset.knows_item(i)):
             raise PredictionImpossible('User and/or item is unkown.')
 

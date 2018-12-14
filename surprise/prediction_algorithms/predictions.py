@@ -20,8 +20,7 @@ class PredictionImpossible(Exception):
     pass
 
 
-class Prediction(namedtuple('Prediction',
-                            ['uid', 'iid', 'r_ui', 'est', 'details'])):
+class Prediction(namedtuple('Prediction',['uid', 'iid', 'r_ui', 'est', 'details','error'])):
     """A named tuple for storing the results of a prediction.
 
     It's wrapped in a class, but only for documentation and printing purposes.
@@ -45,6 +44,7 @@ class Prediction(namedtuple('Prediction',
         else:
             s += 'r_ui = None   '
         s += 'est = {est:1.2f}   '.format(est=self.est)
-        s += str(self.details)
+        s += str(self.details)+' '
+        s += 'error = {err:1.2f}'.format(err=self.error)
 
         return s
