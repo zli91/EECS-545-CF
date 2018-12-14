@@ -78,6 +78,7 @@ surprise/model_selection/__init__.py
 surprise/model_selection/search.py
 surprise/model_selection/split.py
 surprise/model_selection/validation.py
+surprise/model_selection/validation_baseline.py
 surprise/prediction_algorithms/__init__.py
 surprise/prediction_algorithms/algo_base.py
 surprise/prediction_algorithms/baseline_only.py

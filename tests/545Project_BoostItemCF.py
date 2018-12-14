@@ -17,243 +17,10 @@ from surprise import PredictionImpossible
 from surprise import Prediction
 from operator import itemgetter
 from surprise import AlgoBase
-
-#Parameter Declaration
-
-K = 40 # Number of neighbors for KNN
-m = 4 # Number of Adaboost iterations
-D = 5-1 # Rating range
-T = 100000 # Number of weights that needs to be updated
-yita = 0.5 # yita denotes how much the average sample error influences the update process, set 0.5 by experience
-rho = 0.4 # Adaboost update rate, rho falls within [0.2,0.3,0.4,0.5,0.6]
-recm_w = np.ones(m) # Adaboost weight
-errThresh = 0.1 # Rating error threshold
-
-# Data declaration and spliting into train & test
-data = Dataset.load_builtin('ml-100k')
-# data = Dataset.load_builtin('ml-1m')
-WholeSet = data.build_full_trainset()  # Total data set for universal indexing
-trainset, ABtestset = train_test_split(data, test_size=0.20) #Split data using test_size
-
-# choosing algorithm: ItemBased / UserBased
-
-# sim_options = {'name': 'pearson_baseline', 'user_based': False}
-sim_options = {'user_based': False}
-bsl_options = {'method': 'sgd',
-               'learning_rate': .00005}
-# Initialize testset T_train for Adaboost iterations, it is identical with trainset
-testset = [None]*trainset.n_ratings
-iter = 0
-for uid,iid,ratings in trainset.all_ratings():
-    # print("is uid,iid int or not?", isinstance(uid, int))
-    ruid = trainset.to_raw_uid(uid)
-    riid = trainset.to_raw_iid(iid)
-    # print("and raw ids are:",ruid,riid)
-    testset[iter] = [ruid,riid,ratings]
-    # print("testset element are:", testset[iter])
-    iter+=1
-# Output testset to a csv file
-PM = pd.DataFrame(testset)
-PM.to_csv("TestSet.csv")
-
-
-# Initializing algorithm with predefined options
-algo = KNNBaseline(k=K,sim_options=sim_options,bsl_options = bsl_options)
-# algo = KNNBaseline()
-
-# Initializing sizes for Adaboost parameter matrices
-size_ui = (trainset.n_users + 1, trainset.n_items + 1)
-size_mui = (m,trainset.n_users + 1, trainset.n_items + 1)
-size_wmui = (m,WholeSet.n_users + 1, WholeSet.n_items + 1)
-
-# Initializing weight matrix
-W = np.ones(size_ui)
-# Initializing Adaboost Prediction matrix from ABtestset
-ABPredictM = np.zeros(size_wmui)
-# Initializing weight-update Prediction matrix from T_train
-PredictM = np.zeros(size_mui)
-# Initializing RMSE vector to store RMSE of ABtestset from each model in Adaboost iteration
-ABRMSE = np.zeros(m,dtype=float)
-
-# Initializing Rating Matrix to store true ratings from T_train
-RatingM = np.zeros(size_ui)
-for uid, iid, rating in trainset.all_ratings():
-    RatingM[uid,iid] = rating
-
-
-# Initializing Neighbor Matrix to store the index of K nearest
-# users (UserBased) or items (ItemBased) for each rating in T_train
-algo.weightUpdate(W)
-algo.fit(trainset)
-NeighborM = (trainset.n_users+1)*[(trainset.n_items+1)*[None]]
-for uid,iid,_ in trainset.all_ratings():
-    _,_,K_neighbor = algo.estimate(uid,iid)
-    NeighborM[uid][iid] = np.array(K_neighbor)[:, 0].astype(int)
-# Output testset to a csv file
-# PM = pd.DataFrame(NeighborM)
-# PM.to_csv("NeighborMatrix.csv")
-# print("is neighbor int or not?",isinstance(NeighborM[2][3],int))
-
-
-
-
-# Starting the main Adaboost loop
-for mm in range(m):
-
-                                                            #Obtain prediction using current W
-    ############################################    Adaboost Step 1   #########################################
-    algo = KNNBaseline(k=10, sim_options=sim_options,bsl_options = bsl_options)
-    algo.weightUpdate(W)
-    predictions = algo.fit(trainset).test(ABtestset)
-    # predictions = algo.test(ABtestset)
-    ABRMSE[mm] = accuracy.rmse(predictions)
-    for (ruid, riid, _, est, _,_) in predictions:
-        # print("predictM loop: ", ruid,riid,est)
-        uid = WholeSet.to_inner_uid(ruid)
-        iid = WholeSet.to_inner_iid(riid)
-        ABPredictM[mm, uid, iid] = est
-
-    ############################################    Adaboost Step 2   #########################################
-    # predictions = algo.fit(trainset).test(testset)
-    algo = KNNBaseline(k=K, sim_options=sim_options,bsl_options = bsl_options)
-    algo.weightUpdate(W)
-    predictions = algo.fit(trainset).test(testset)
-    # predictions = algo.test(testset)
-    # PM = pd.DataFrame(predictions)
-    # PM.to_csv("CurrentPredictions.csv")
-    # accuracy.rmse(predictions)                                                      #print current RMSE accuracy
-
-    sortedlist = sorted(predictions, key=lambda tup: tup[5], reverse=True)[:T]      #Sort prediction in descending order of rating errors for the fist T element
-
-    # print("trainset size:", trainset.n_users, trainset.n_items)
-    # print("trainset iid:", trainset.to_inner_iid('1080'))
-    # print("wholeset iid:", WholeSet.to_inner_iid('1080'))
-    for (ruid, riid, _, est, _,_) in predictions:                                   #Update current weight-update Prediction matrix
-        # print("predictM loop: ", ruid,riid,est)
-        uid = trainset.to_inner_uid(ruid)
-        iid = trainset.to_inner_iid(riid)
-        PredictM[mm][uid][iid] = est
-
-    UE = np.ones(size_ui)                                                           #Initializing Adaboost parameters
-    SGNM = (trainset.n_users+1)*[(trainset.n_items+1)*[None]]
-    errRate = 0
-    w_err_sum = 0
-
-############################################    Adaboost Iteration loop#########################################
-    for ruid, riid, rating in testset:
-        # from raw ids to inner ids
-        uid = trainset.to_inner_uid(ruid)
-        iid = trainset.to_inner_iid(riid)
-        w_sum = 0
-        #########################################################
-        #                      Formula (7)                      #
-        #########################################################
-        abs_err = abs(rating - PredictM[mm][uid][iid])
-        ########################################################
-        #                      Formula(9)                      #
-        ########################################################
-        UE[uid][iid] = 1 + yita * rating
-        ########################################################
-        #                      Formula(8)                      #
-        ########################################################
-        SGNM[uid][iid] = np.zeros(len(NeighborM[uid][iid]))
-        for mmm in range(mm):
-            ########################################################
-            #                      Formula(9)                      #
-            ########################################################
-            UE[uid][iid] -= yita * PredictM[mmm][uid][iid] / mm / D
-        for kidx,kid in enumerate(NeighborM[uid][iid]):                 #for each nearest neighbor of (uid,iid)
-            ########################################################
-            #                      Formula(7)                      #
-            ########################################################
-            w_sum += W[uid][kid]
-            w_err_sum += W[uid][kid]*abs_err
-            ########################################################
-            #                      Formula(8)                      #
-            ########################################################
-            SGNM[uid][iid][kidx] = np.sign(rating - PredictM[mm][uid][iid]) * np.sign(RatingM[uid][kid] - PredictM[mm][uid][iid])
-        ########################################################
-        #                      Formula(7)                      #
-        ########################################################
-        errRate += w_sum*(abs_err**2)/D
-    ########################################################
-    #                      Formula(7)                      #
-    ########################################################
-    errRate = errRate / w_err_sum
-
-    recm_w[mm] = np.log(1 / errRate - 1)                                # Calculating Adaboost Prediction Model weights
-    PM = pd.DataFrame(UE)
-    PM.to_csv("UEMatrix.csv")
-    # for uid, iid, rating in trainset.all_ratings():
-    ############################################    Adaboost Step 3   #########################################
-    if(mm<m-1):
-        for (ruid, riid, rating, _, _, _) in sortedlist:
-            # print("predictM loop: ", ruid,riid,est)
-            uid = trainset.to_inner_uid(ruid)
-            iid = trainset.to_inner_iid(riid)
-            rmax = max(list(PredictM[mm][uid][i] for i in NeighborM[uid][iid]))
-            rmin = min(list(PredictM[mm][uid][i] for i in NeighborM[uid][iid]))
-            if not ((PredictM[mm][uid][iid] > rating and PredictM[mm][uid][iid] - rmin < errThresh)
-                or  (PredictM[mm][uid][iid] < rating and rmax - PredictM[mm][uid][iid] < errThresh)):
-                # print("enterred update stage")
-                for kidx,kid in enumerate(NeighborM[uid][iid]):
-                    # W[uid][kid] = W[uid][kid] * (1 + SGNM[uid][iid][kidx] * errRate / (1-errRate) * UE[uid][kid] * rho)
-                    W[uid][kid] = (1 + SGNM[uid][iid][kidx] * errRate / (1-errRate) * UE[uid][kid] * rho)    # Update Weights matrix
-                    # print("updated W paras: SGN,errRate,UE,rho:",SGNM[uid][iid][kidx],errRate,UE[uid][kid],rho  )
-                    # print("updated W element:", W[uid][kid])
-    ############################################    Adaboost Step 4   #########################################
-    W = W / np.sum(W) * trainset.n_users * trainset.n_items
-    PM = pd.DataFrame(W)
-    PM.to_csv("WeightMatrix.csv")
-    # print("w_err_sum is:",w_err_sum)
-    # print("errRate is:",errRate)
-
-# print("boostweight: ",recm_w)
-############################################    Normalize Prediction Model Weights   #########################################
-recm_w = recm_w / sum(recm_w)
-
-
-
-
-
+from surprise.model_selection.split import get_cv
 
 ############################################     Prediction Model    #########################################
 def predict(uid, iid, r_ui=None, clip=True, verbose=False):
-    """Compute the rating prediction for given user and item.
-
-    The ``predict`` method converts raw ids to inner ids and then calls the
-    ``estimate`` method which is defined in every derived class. If the
-    prediction is impossible (e.g. because the user and/or the item is
-    unkown), the prediction is set according to :meth:`default_prediction()
-    <surprise.prediction_algorithms.algo_base.AlgoBase.default_prediction>`.
-
-    Args:
-        uid: (Raw) id of the user. See :ref:`this note<raw_inner_note>`.
-        iid: (Raw) id of the item. See :ref:`this note<raw_inner_note>`.
-        r_ui(float): The true rating :math:`r_{ui}`. Optional, default is
-            ``None``.
-        clip(bool): Whether to clip the estimation into the rating scale,
-            that was set during dataset creation. For example, if
-            :math:`\\hat{r}_{ui}` is :math:`5.5` while the rating scale is
-            :math:`[1, 5]`, then :math:`\\hat{r}_{ui}` is set to :math:`5`.
-            Same goes if :math:`\\hat{r}_{ui} < 1`.  Default is ``True``.
-        verbose(bool): Whether to print details of the prediction.  Default
-            is False.
-
-    Returns:
-        A :obj:`Prediction\
-        <surprise.prediction_algorithms.predictions.Prediction>` object
-        containing:
-
-        - The (raw) user id ``uid``.
-        - The (raw) item id ``iid``.
-        - The true rating ``r_ui`` (:math:`\\hat{r}_{ui}`).
-        - The estimated ratino
-ig (:math:`\\hat{r}_{ui}`).
-        - Some additional details about the prediction that might be useful
-          for later analysis.
-    """
-
     # Convert raw ids to inner ids
     # print("inner ids: ", uid, ", ", iid)
     try:
@@ -298,119 +65,212 @@ ig (:math:`\\hat{r}_{ui}`).
 
     return pred
 
-############################################    Calling Prediction Model Weights   #########################################
-predictions = [predict(uid,iid, r_ui_trans,verbose=False) for (uid, iid, r_ui_trans) in ABtestset]
+#Parameter Declaration
 
-############################################    Printing RMSE of Adaboost Prediction Model and individual RMSE from each Adaboost iteration  #########################################
-accuracy.rmse(predictions)
-print("individual rmse:",ABRMSE)
+K = 30 # Number of neighbors for KNN
+m = 4 # Number of Adaboost iterations
+D = 5-1 # Rating range
+T = 20000 # Number of weights that needs to be updated
+yita = 0.5 # yita denotes how much the average sample error influences the update process, set 0.5 by experience
+rho = 0.2 # Adaboost update rate, rho falls within [0.2,0.3,0.4,0.5,0.6]
+recm_w = np.ones(m) # Adaboost weight
+errThresh = 0.03 # Rating error threshold
 
+# Data declaration and spliting into train & test
+data = Dataset.load_builtin('ml-100k')
+# data = Dataset.load_builtin('ml-1m')
+WholeSet = data.build_full_trainset()  # Total data set for universal indexing
+# trainset, ABtestset = train_test_split(data, test_size=0.20) #Split data using test_size
 
+# choosing algorithm: ItemBased / UserBased
 
+# sim_options = {'name': 'pearson_baseline', 'user_based': False}
+sim_options = {'user_based': False}
+bsl_options = {'method': 'sgd','learning_rate': .005}
+# bsl_options = {}
 
-#########################################################
-#                      Formula (7)                      #
-#########################################################
-
-# 1. calculate denominator (公式7括号里乘号左边的分母，为一个定值，括号外的sum对其不产生影响)
-
-
-# for u in range(un_):
-
-
-    # print("test all_ratings()")
-    # print(uid,iid,rating)
-    # if w_err_sum > 5:
-    #     break
-    # else:
-    #     w_err_sum += 1
-
-# for user,u_id in enumerate(trainset.all_users()):
-#     for item,i_id in enumerate(trainset.all_items()):
-#         abs_err = abs(r[u_id][i_id]-r_h[m][u_id][i_id])   #|r_ui-r_ui^m|,r_h表示r_hat预测值,m表示第m个recommender
-#         for k_id in Neighbor[item]:                       #j neighbor
-#             w_err_sum += W[u_id][k_id]*abs_err            #单独计算的左边分式的分母
-
-
-
-
-
-# 2. calculate errRate -- err(R_m)
-
-# errRate = 0
-# for u in range(un_):
-#     for i in range(in_):
-#         abs_err = abs(r[u_id][i_id]-r_h[m][u_id][i_id])   #|r_ui-r_ui^m|
-#
-#         w_sum = 0
-#         for k_id in k_neighbor_li:
-#             w_sum += W[u_id][k_id]
-#         errRate += w_sum*abs_err**2/D                     #括号外的sum计算(除去上面的分母部分)
-#
-# errRate = errRate/w_err_sum                               #括号外的sum计算/单独计算的分母
+cv = get_cv(None)
+CrossVRMSE = np.zeros(5,dtype=float)
+Crossiter = 0
+for (trainset, ABtestset) in cv.split(data):
+    # Initialize testset T_train for Adaboost iterations, it is identical with trainset
+    testset = [None]*trainset.n_ratings
+    iter = 0
+    for uid,iid,ratings in trainset.all_ratings():
+        # print("is uid,iid int or not?", isinstance(uid, int))
+        ruid = trainset.to_raw_uid(uid)
+        riid = trainset.to_raw_iid(iid)
+        # print("and raw ids are:",ruid,riid)
+        testset[iter] = [ruid,riid,ratings]
+        # print("testset element are:", testset[iter])
+        iter+=1
+    # Output testset to a csv file
+    PM = pd.DataFrame(testset)
+    PM.to_csv("TestSet.csv")
 
 
-########################################################
-#                      Formula(8)                      #
-########################################################
-# calculate sign of neighbor (u,j)
-# SGN matrix: SGN[u_id][i_id][k_id]
-# SGNM = np.zeros((trainset.n_users,trainset.n_items,K))
-# for u in range(un_):                                      # un_: user number
-#     for i in range(in_):                                  # in_: item number
-#         for k_id in k_neighbor_li:                        # k_id: j neighbor
-#             SGN[u_id][i_id][k_id] = np.sign(r[u_id][i_id]-r_h[m][u_id][i_id])*np.sign(r[u_id][k_id]-r_h[m][u_id][i_id])
-#                                             #sgn(r_ui-r_ui^m)                *        sgn(r_uj-r_ui^m)
-# for uid, iid, rating in trainset.all_ratings():
-#     for kid in NeighborM[iid]:
-#         SGNM[uid][iid][kid] = np.sign(rating - PredictM[uid][iid]) * np.sign(RatingM[uid,kid]- PredictM[uid][iid])
+    # Initializing algorithm with predefined options
+    algo = KNNBaseline(k=K,sim_options=sim_options,bsl_options = bsl_options)
+    # algo = KNNBaseline(k=K, sim_options=sim_options)
+    # algo = KNNBaseline()
+
+    # Initializing sizes for Adaboost parameter matrices
+    size_ui = (trainset.n_users + 1, trainset.n_items + 1)
+    size_mui = (m,trainset.n_users + 1, trainset.n_items + 1)
+    size_wmui = (m,WholeSet.n_users + 1, WholeSet.n_items + 1)
+
+    # Initializing weight matrix
+    W = np.ones(size_ui)
+    # Initializing Adaboost Prediction matrix from ABtestset
+    ABPredictM = np.zeros(size_wmui)
+    # Initializing weight-update Prediction matrix from T_train
+    PredictM = np.zeros(size_mui)
+    # Initializing RMSE vector to store RMSE of ABtestset from each model in Adaboost iteration
+    ABRMSE = np.zeros(m,dtype=float)
+
+    # Initializing Rating Matrix to store true ratings from T_train
+    RatingM = np.zeros(size_ui)
+    for uid, iid, rating in trainset.all_ratings():
+        RatingM[uid,iid] = rating
 
 
-########################################################
-#                      Formula(9)                      #
-########################################################
-# UE[u_id][i_id]
-# m = current recommender
-
-# yita = 0.5
-# for u in range(un_):                                      # un_: user number
-#     for i in range(in_):                                  # in_: item number
-#         UE[u_id][i_id] = 1 + yita*r[u_id][i_id]/D         # r_ui不受m影响，m次iteration相加后/m仍为r_ui
-#         for mm in range(m):
-#             UE[u_id][i_id] -= yita*r_h[mm][u_id][i_id]/m/D
-
-                                                         # 每循环一次mm，减去第mm个recommender中的预测值*yita/m/D
+    # Initializing Neighbor Matrix to store the index of K nearest
+    # users (UserBased) or items (ItemBased) for each rating in T_train
+    algo.weightUpdate(W)
+    algo.fit(trainset)
+    NeighborM = (trainset.n_users+1)*[(trainset.n_items+1)*[None]]
+    for uid,iid,_ in trainset.all_ratings():
+        _,_,K_neighbor = algo.estimate(uid,iid)
+        NeighborM[uid][iid] = np.array(K_neighbor)[:, 0].astype(int)
+    # Output testset to a csv file
+    # PM = pd.DataFrame(NeighborM)
+    # PM.to_csv("NeighborMatrix.csv")
 
 
 
 
-########################################################
-#                     Formula(10)                      #
-########################################################
-# Update weights
-# rho belongs to [0.2,0.3,0.4,0.5,0.6]
+    # Starting the main Adaboost loop
+    for mm in range(m):
 
-# for u in range(un_):                                      # un_: user number
-#     for i in range(in_):                                  # in_: item number
-#         for k_id in k_neighbor_li:                        # k_id: j neighbor
-#             W[u_id][k_id] = 1 + SGN[u_id][i_id][k_id]*errRate/(1-errRate)*UE[u_id][k_id]*rho
-#                                                           # same as Formula(10), w_uj^1恒等于1
-#
-#
-# ########################################################
-# #                Algorithm for-loop(4)                 #
-# ########################################################
-# #Normalize
-# W = W/np.sum(W)*un_*in_                                  # un_: user number  in_: item number
-#
-# ########################################################
-# #                 Algorithm Prediction                 #
-# ########################################################
-# #Prediction
-# # At the very beginning, set:
-# Pred = 0
-#
-# # recommender weight : recm_w
-# recm_w = np.log(1/errRate-1)
-#
-# Pred += r_h[m]*recm_w
+                                                                #Obtain prediction using current W
+        ############################################    Adaboost Step 1   #########################################
+        algo = KNNBaseline(k=20, sim_options=sim_options,bsl_options = bsl_options)
+        # algo = KNNBaseline(k=20, sim_options=sim_options)
+        algo.weightUpdate(W)
+        predictions = algo.fit(trainset).test(ABtestset)
+        # predictions = algo.test(ABtestset)
+        ABRMSE[mm] = accuracy.rmse(predictions,verbose=True)
+        for (ruid, riid, _, est, _,_) in predictions:
+            # print("predictM loop: ", ruid,riid,est)
+            uid = WholeSet.to_inner_uid(ruid)
+            iid = WholeSet.to_inner_iid(riid)
+            ABPredictM[mm, uid, iid] = est
+
+        ############################################    Adaboost Step 2   #########################################
+        # predictions = algo.fit(trainset).test(testset)
+        algo = KNNBaseline(k=K, sim_options=sim_options,bsl_options = bsl_options)
+        # algo = KNNBaseline(k=K, sim_options=sim_options)
+        algo.weightUpdate(W)
+
+        predictions = algo.fit(trainset).test(testset)
+        # accuracy.rmse(predictions)                                                      #print current RMSE accuracy
+
+        sortedlist = sorted(predictions, key=lambda tup: tup[5], reverse=True)[:T]      #Sort prediction in descending order of rating errors for the fist T element
+
+        # print("trainset size:", trainset.n_users, trainset.n_items)
+        # print("trainset iid:", trainset.to_inner_iid('1080'))
+        # print("wholeset iid:", WholeSet.to_in   ner_iid('1080'))
+        for (ruid, riid, _, est, _,_) in predictions:                                   #Update current weight-update Prediction matrix
+            # print("predictM loop: ", ruid,riid,est)
+            uid = trainset.to_inner_uid(ruid)
+            iid = trainset.to_inner_iid(riid)
+            PredictM[mm][uid][iid] = est
+
+        UE = np.ones(size_ui)                                                           #Initializing Adaboost parameters
+        SGNM = (trainset.n_users+1)*[(trainset.n_items+1)*[None]]
+        errRate = 0
+        w_err_sum = 0
+
+    ############################################    Adaboost Iteration loop#########################################
+        for ruid, riid, rating in testset:
+            # from raw ids to inner ids
+            uid = trainset.to_inner_uid(ruid)
+            iid = trainset.to_inner_iid(riid)
+            w_sum = 0
+            #########################################################
+            #                      Formula (11)                      #
+            #########################################################
+            abs_err = abs(rating - PredictM[mm][uid][iid])
+            ########################################################
+            #                      Formula(13)                      #
+            ########################################################
+            UE[uid][iid] = 1 + yita * rating
+            ########################################################
+            #                      Formula(12)                      #
+            ########################################################
+            SGNM[uid][iid] = np.zeros(len(NeighborM[uid][iid]))
+            for mmm in range(mm+1):
+                ########################################################
+                #                      Formula(13)                      #
+                ########################################################
+                UE[uid][iid] -= yita * PredictM[mmm][uid][iid] / (mm+1) / D
+            for kidx,kid in enumerate(NeighborM[uid][iid]):                 #for each nearest neighbor of (uid,iid)
+                ########################################################
+                #                      Formula(11)                      #
+                ########################################################
+                w_sum += W[uid][kid]
+                w_err_sum += W[uid][kid]*abs_err
+                ########################################################
+
+                #                      Formula(12)                      #
+                ########################################################
+                SGNM[uid][iid][kidx] = np.sign(rating - PredictM[mm][uid][iid]) * np.sign(RatingM[uid][kid] - PredictM[mm][uid][iid])
+            ########################################################
+            #                      Formula(11)                      #
+            ########################################################
+            errRate += w_sum*(abs_err**2)/D
+        ########################################################
+        #                      Formula(11)                      #
+        ########################################################
+        errRate = errRate / w_err_sum
+
+        recm_w[mm] = np.log(1 / errRate - 1)                                # Calculating Adaboost Prediction Model weights
+
+        # for uid, iid, rating in trainset.all_ratings():
+        ############################################    Adaboost Step 3   #########################################
+        if(mm<m-1):
+            for (ruid, riid, rating, _, _, _) in sortedlist:
+                # print("predictM loop: ", ruid,riid,est)
+                uid = trainset.to_inner_uid(ruid)
+                iid = trainset.to_inner_iid(riid)
+                rmax = max(list(PredictM[mm][uid][i] for i in NeighborM[uid][iid]))
+                rmin = min(list(PredictM[mm][uid][i] for i in NeighborM[uid][iid]))
+                if not ((PredictM[mm][uid][iid] > rating and PredictM[mm][uid][iid] - rmin < errThresh)
+                    or  (PredictM[mm][uid][iid] < rating and rmax - PredictM[mm][uid][iid] < errThresh)):
+                    # print("enterred update stage")
+                    for kidx,kid in enumerate(NeighborM[uid][iid]):
+                        # W[uid][kid] = W[uid][kid] * (1 + SGNM[uid][iid][kidx] * errRate / (1-errRate) * UE[uid][kid] * rho)
+                        ########################################################
+                        #                      Formula(14)                      #
+                        ########################################################
+                        W[uid][kid] = (1 + SGNM[uid][iid][kidx] * errRate / (1-errRate) * UE[uid][kid] * rho)    # Update Weights matrix
+                        # print("updated W paras: SGN,errRate,UE,rho:",SGNM[uid][iid][kidx],errRate,UE[uid][kid],rho  )
+                        # print("updated W element:", W[uid][kid])
+        ############################################    Adaboost Step 4   #########################################
+        W = W / np.sum(W) * trainset.n_users * trainset.n_items
+        PM = pd.DataFrame(W)
+        PM.to_csv("WeightMatrix.csv")
+        # print("w_err_sum is:",w_err_sum)
+        # print("errRate is:",errRate)
+
+    # print("boostweight: ",recm_w)
+    ############################################    Normalize Prediction Model Weights   #########################################
+    recm_w = recm_w / sum(recm_w)
+    ############################################    Calling Prediction Model Weights   #########################################
+    predictions = [predict(uid,iid, r_ui_trans,verbose=False) for (uid, iid, r_ui_trans) in ABtestset]
+
+    ############################################    Printing RMSE of Adaboost Prediction Model and individual RMSE from each Adaboost iteration  #########################################
+    print("One CF loop Finished, Current RMSE =",accuracy.rmse(predictions,verbose = False))
+    CrossVRMSE[Crossiter] = accuracy.rmse(predictions,verbose = False)
+    Crossiter += 1
+print("CrossValidated Mean RMSE", np.mean(CrossVRMSE))

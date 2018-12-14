@@ -81,7 +81,9 @@ def baseline_sgd(self):
             Weight = self.W[u][i]
             #print("Weight is actually:", Weight)
             err = (r - (global_mean + bu[u] + bi[i]))
-            bu[u] += lr * (err - Weight * reg * bu[u])
-            bi[i] += lr * (err - Weight * reg * bi[i])
+            #bu[u] += lr * (err - Weight * reg * bu[u])
+            #bi[i] += lr * (err - Weight * reg * bi[i])
+            bu[u] += lr * (err - reg * bu[u])
+            bi[i] += lr * (err - reg * bi[i])
 
     return bu, bi

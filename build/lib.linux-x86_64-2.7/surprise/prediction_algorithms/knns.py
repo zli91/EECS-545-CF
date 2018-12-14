@@ -188,7 +188,7 @@ class KNNWithMeans(SymmetricAlgo):
         return self
 
     def estimate(self, u, i):
-        print("here i am!!!!!!!!!!! KNNMEANS")
+        # print("here i am!!!!!!!!!!! KNNMEANS")
         if not (self.trainset.knows_user(u) and self.trainset.knows_item(i)):
             raise PredictionImpossible('User and/or item is unkown.')
 
@@ -283,7 +283,7 @@ class KNNBaseline(SymmetricAlgo):
         self.bu, self.bi = self.compute_baselines(verbose=self.verbose)
         self.bx, self.by = self.switch(self.bu, self.bi)
         self.sim = self.compute_similarities(verbose=self.verbose)
-        print('sim',self.sim)
+        # print('sim',self.sim)
         return self
 
     def estimate(self, u, i):

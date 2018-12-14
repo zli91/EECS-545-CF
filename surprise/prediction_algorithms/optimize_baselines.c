@@ -2762,7 +2762,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18optimize_baselines
   int __pyx_v_n_epochs;
   double __pyx_v_reg;
   double __pyx_v_lr;
-  double __pyx_v_Weight;
+  CYTHON_UNUSED double __pyx_v_Weight;
   CYTHON_UNUSED PyObject *__pyx_v_dummy = NULL;
   __Pyx_LocalBuf_ND __pyx_pybuffernd_bi;
   __Pyx_Buffer __pyx_pybuffer_bi;
@@ -3202,8 +3202,8 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18optimize_baselines
  *             Weight = self.W[u][i]
  *             #print("Weight is actually:", Weight)
  *             err = (r - (global_mean + bu[u] + bi[i]))             # <<<<<<<<<<<<<<
- *             bu[u] += lr * (err - Weight * reg * bu[u])
- *             bi[i] += lr * (err - Weight * reg * bi[i])
+ *             #bu[u] += lr * (err - Weight * reg * bu[u])
+ *             #bi[i] += lr * (err - Weight * reg * bi[i])
  */
       __pyx_t_18 = __pyx_v_u;
       __pyx_t_17 = -1;
@@ -3227,11 +3227,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18optimize_baselines
       }
       __pyx_v_err = (__pyx_v_r - ((__pyx_v_global_mean + (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bu.rcbuffer->pybuffer.buf, __pyx_t_18, __pyx_pybuffernd_bu.diminfo[0].strides))) + (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bi.rcbuffer->pybuffer.buf, __pyx_t_19, __pyx_pybuffernd_bi.diminfo[0].strides))));
 
-      /* "surprise/prediction_algorithms/optimize_baselines.pyx":84
- *             #print("Weight is actually:", Weight)
- *             err = (r - (global_mean + bu[u] + bi[i]))
- *             bu[u] += lr * (err - Weight * reg * bu[u])             # <<<<<<<<<<<<<<
- *             bi[i] += lr * (err - Weight * reg * bi[i])
+      /* "surprise/prediction_algorithms/optimize_baselines.pyx":86
+ *             #bu[u] += lr * (err - Weight * reg * bu[u])
+ *             #bi[i] += lr * (err - Weight * reg * bi[i])
+ *             bu[u] += lr * (err - reg * bu[u])             # <<<<<<<<<<<<<<
+ *             bi[i] += lr * (err - reg * bi[i])
  * 
  */
       __pyx_t_20 = __pyx_v_u;
@@ -3242,7 +3242,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18optimize_baselines
       } else if (unlikely(__pyx_t_20 >= __pyx_pybuffernd_bu.diminfo[0].shape)) __pyx_t_17 = 0;
       if (unlikely(__pyx_t_17 != -1)) {
         __Pyx_RaiseBufferIndexError(__pyx_t_17);
-        __PYX_ERR(0, 84, __pyx_L1_error)
+        __PYX_ERR(0, 86, __pyx_L1_error)
       }
       __pyx_t_21 = __pyx_v_u;
       __pyx_t_17 = -1;
@@ -3252,14 +3252,14 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18optimize_baselines
       } else if (unlikely(__pyx_t_21 >= __pyx_pybuffernd_bu.diminfo[0].shape)) __pyx_t_17 = 0;
       if (unlikely(__pyx_t_17 != -1)) {
         __Pyx_RaiseBufferIndexError(__pyx_t_17);
-        __PYX_ERR(0, 84, __pyx_L1_error)
+        __PYX_ERR(0, 86, __pyx_L1_error)
       }
-      *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bu.rcbuffer->pybuffer.buf, __pyx_t_21, __pyx_pybuffernd_bu.diminfo[0].strides) += (__pyx_v_lr * (__pyx_v_err - ((__pyx_v_Weight * __pyx_v_reg) * (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bu.rcbuffer->pybuffer.buf, __pyx_t_20, __pyx_pybuffernd_bu.diminfo[0].strides)))));
+      *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bu.rcbuffer->pybuffer.buf, __pyx_t_21, __pyx_pybuffernd_bu.diminfo[0].strides) += (__pyx_v_lr * (__pyx_v_err - (__pyx_v_reg * (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bu.rcbuffer->pybuffer.buf, __pyx_t_20, __pyx_pybuffernd_bu.diminfo[0].strides)))));
 
-      /* "surprise/prediction_algorithms/optimize_baselines.pyx":85
- *             err = (r - (global_mean + bu[u] + bi[i]))
- *             bu[u] += lr * (err - Weight * reg * bu[u])
- *             bi[i] += lr * (err - Weight * reg * bi[i])             # <<<<<<<<<<<<<<
+      /* "surprise/prediction_algorithms/optimize_baselines.pyx":87
+ *             #bi[i] += lr * (err - Weight * reg * bi[i])
+ *             bu[u] += lr * (err - reg * bu[u])
+ *             bi[i] += lr * (err - reg * bi[i])             # <<<<<<<<<<<<<<
  * 
  *     return bu, bi
  */
@@ -3271,7 +3271,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18optimize_baselines
       } else if (unlikely(__pyx_t_22 >= __pyx_pybuffernd_bi.diminfo[0].shape)) __pyx_t_17 = 0;
       if (unlikely(__pyx_t_17 != -1)) {
         __Pyx_RaiseBufferIndexError(__pyx_t_17);
-        __PYX_ERR(0, 85, __pyx_L1_error)
+        __PYX_ERR(0, 87, __pyx_L1_error)
       }
       __pyx_t_23 = __pyx_v_i;
       __pyx_t_17 = -1;
@@ -3281,9 +3281,9 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18optimize_baselines
       } else if (unlikely(__pyx_t_23 >= __pyx_pybuffernd_bi.diminfo[0].shape)) __pyx_t_17 = 0;
       if (unlikely(__pyx_t_17 != -1)) {
         __Pyx_RaiseBufferIndexError(__pyx_t_17);
-        __PYX_ERR(0, 85, __pyx_L1_error)
+        __PYX_ERR(0, 87, __pyx_L1_error)
       }
-      *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bi.rcbuffer->pybuffer.buf, __pyx_t_23, __pyx_pybuffernd_bi.diminfo[0].strides) += (__pyx_v_lr * (__pyx_v_err - ((__pyx_v_Weight * __pyx_v_reg) * (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bi.rcbuffer->pybuffer.buf, __pyx_t_22, __pyx_pybuffernd_bi.diminfo[0].strides)))));
+      *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bi.rcbuffer->pybuffer.buf, __pyx_t_23, __pyx_pybuffernd_bi.diminfo[0].strides) += (__pyx_v_lr * (__pyx_v_err - (__pyx_v_reg * (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bi.rcbuffer->pybuffer.buf, __pyx_t_22, __pyx_pybuffernd_bi.diminfo[0].strides)))));
 
       /* "surprise/prediction_algorithms/optimize_baselines.pyx":80
  *     for dummy in range(n_epochs):
@@ -3305,13 +3305,13 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_18optimize_baselines
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/optimize_baselines.pyx":87
- *             bi[i] += lr * (err - Weight * reg * bi[i])
+  /* "surprise/prediction_algorithms/optimize_baselines.pyx":89
+ *             bi[i] += lr * (err - reg * bi[i])
  * 
  *     return bu, bi             # <<<<<<<<<<<<<<
  */
   __Pyx_XDECREF(__pyx_r);
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 87, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 89, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_INCREF(((PyObject *)__pyx_v_bu));
   __Pyx_GIVEREF(((PyObject *)__pyx_v_bu));
