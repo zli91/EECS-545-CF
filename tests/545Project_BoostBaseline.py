@@ -66,7 +66,7 @@ def predict(uid, iid, r_ui=None, clip=True, verbose=False):
 
 
 
-m = 1 # Number of Adaboost iterations
+m = 4 # Number of Adaboost iterations
 D = 5-1 # Rating range
 yita = 0.5 # yita denotes how much the average sample error influences the update process, set 0.5 by experience
 rho = 0.7 # Adaboost update rate, rho falls within [0.2,0.3,0.4,0.5,0.6]

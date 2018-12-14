@@ -118,17 +118,12 @@ recm_w = np.ones(m) # Adaboost weight
 data = Dataset.load_builtin('ml-100k')
 # data = Dataset.load_builtin('ml-1m')
 WholeSet = data.build_full_trainset()  # Total data set for universal indexing
-trainset, ABtestset = train_test_split(data, test_size=0.20) #Split data using test_size
-
 # choosing algorithm: ItemBased / UserBased
-
 # sim_options = {'name': 'pearson_baseline', 'user_based': False}
 sim_options = {'user_based': False}
 bsl_options = {'method': 'sgd',
-               'learning_rate': .00005}
-
-
-
+               'learning_rate': .00005,
+               'reg_all': 0.02}
 
 cv = get_cv(None)
 CrossVRMSE = np.zeros(5,dtype=float)
@@ -286,6 +281,7 @@ for (trainset, ABtestset) in cv.split(data):
     predictions = [predict(uid,iid, r_ui_trans,verbose=False) for (uid, iid, r_ui_trans) in ABtestset]
 
     ############################################    Printing RMSE of Adaboost Prediction Model and individual RMSE from each Adaboost iteration  #########################################
+    print("One CF loop Finished, Current RMSE =")
     CrossVRMSE[Crossiter] = accuracy.rmse(predictions)
     # print("individual rmse:", ABRMSE)
     Crossiter += 1

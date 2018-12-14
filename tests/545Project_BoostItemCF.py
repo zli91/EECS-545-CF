@@ -20,7 +20,7 @@ from surprise import AlgoBase
 
 #Parameter Declaration
 
-K = 50 # Number of neighbors for KNN
+K = 40 # Number of neighbors for KNN
 m = 4 # Number of Adaboost iterations
 D = 5-1 # Rating range
 T = 100000 # Number of weights that needs to be updated
