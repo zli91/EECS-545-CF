@@ -1,5 +1,5 @@
 EECS 545 TEAM CF 
-Author: Zhaoer Li, Jingwen Cao, Zhao Weiqi, Shidong Zhang
+Author: Zhaoer Li, Jingwen Cao, Zhou Weiqi, Shidong Zhang
 
 We utilized a CF online resource called Surpreselib along the learning process.
 Our main work contains 
