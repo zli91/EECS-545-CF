@@ -76,12 +76,12 @@ recm_w = np.ones(m) # Adaboost weight
 data = Dataset.load_builtin('ml-100k')
 # data = Dataset.load_builtin('ml-1m')
 WholeSet = data.build_full_trainset()  # Total data set for universal indexing
-trainset, ABtestset = train_test_split(data, test_size=0.5) #Split data using test_size
+# trainset, ABtestset = train_test_split(data, test_size=0.5) #Split data using test_size
 bsl_options = {'method': 'sgd','reg': 1.2}
+
+
 cv = get_cv(None)
 CrossVRMSE = np.zeros(5,dtype=float)
-
-
 Crossiter = 0
 for (trainset, ABtestset) in cv.split(data):
     # choosing algorithm: ItemBased / UserBased
@@ -171,29 +171,29 @@ for (trainset, ABtestset) in cv.split(data):
             uid = trainset.to_inner_uid(ruid)
             iid = trainset.to_inner_iid(riid)
             #########################################################
-            #                      Formula (7)                      #
+            #                      Formula (11)                      #
             #########################################################
             abs_err = abs(rating - PredictM[mm][uid][iid])
             ########################################################
-            #                      Formula(9)                      #
+            #                      Formula(13)                      #
             ########################################################
             UE[uid][iid] = 1 + yita * rating
             for mmm in range(mm+1):
                 ########################################################
-                #                      Formula(9)                      #
+                #                      Formula(13)                      #
                 ########################################################
                 UE[uid][iid] -= yita * PredictM[mmm][uid][iid] / (mm+1) / D
 
             ########################################################
-            #                      Formula(7)                      #
+            #                      Formula(11)                      #
             ########################################################
             w_err_sum += W[uid][iid]
             ########################################################
-            #                      Formula(7)                      #
+            #                      Formula(11)                      #
             ########################################################
             errRate += W[uid][iid]*(abs_err)/D
         ########################################################
-        #                      Formula(7)                      #
+        #                      Formula(11)                      #
         ########################################################
         errRate = errRate / w_err_sum
 
@@ -207,6 +207,9 @@ for (trainset, ABtestset) in cv.split(data):
                 # print("predictM loop: ", ruid,riid,est)
                 uid = trainset.to_inner_uid(ruid)
                 iid = trainset.to_inner_iid(riid)
+                ########################################################
+                #                      Formula(14)                      #
+                ########################################################
                 W[uid][iid] = (1 - (errRate / (1-errRate)) * UE[uid][iid] * rho)    # Update Weights matrix
                 # print("updated W paras:errRate,UE,rho:",errRate,UE[uid][iid],rho  )
                 # print("updated W element:", W[uid][iid])

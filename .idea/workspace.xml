@@ -2,33 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="69552c60-7c90-45b5-aad6-01b9a3cab7b6" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/surprise/prediction_algorithms/baseline_only.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/surprise/prediction_algorithms/baseline_only.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/surprise/prediction_algorithms/knns.py" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/surprise/prediction_algorithms/knns.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/surprise/prediction_algorithms/matrix_factorization.c" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/surprise/prediction_algorithms/matrix_factorization.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/surprise/prediction_algorithms/matrix_factorization.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/surprise/prediction_algorithms/matrix_factorization.pyx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/surprise/prediction_algorithms/matrix_factorization.so" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/surprise/prediction_algorithms/matrix_factorization.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/surprise/prediction_algorithms/optimize_baselines.c" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/surprise/prediction_algorithms/optimize_baselines.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/surprise/prediction_algorithms/optimize_baselines.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/surprise/prediction_algorithms/optimize_baselines.pyx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/surprise/prediction_algorithms/optimize_baselines.so" beforeDir="false" afterPath="$PROJECT_DIR$/build/lib.linux-x86_64-2.7/surprise/prediction_algorithms/optimize_baselines.so" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/temp.linux-x86_64-2.7/surprise/prediction_algorithms/matrix_factorization.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/temp.linux-x86_64-2.7/surprise/prediction_algorithms/matrix_factorization.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/temp.linux-x86_64-2.7/surprise/prediction_algorithms/optimize_baselines.o" beforeDir="false" afterPath="$PROJECT_DIR$/build/temp.linux-x86_64-2.7/surprise/prediction_algorithms/optimize_baselines.o" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dist/scikit_surprise-1.0.6-py2.7-linux-x86_64.egg" beforeDir="false" afterPath="$PROJECT_DIR$/dist/scikit_surprise-1.0.6-py2.7-linux-x86_64.egg" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/surprise/model_selection/validation.py" beforeDir="false" afterPath="$PROJECT_DIR$/surprise/model_selection/validation.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/surprise/prediction_algorithms/baseline_only.py" beforeDir="false" afterPath="$PROJECT_DIR$/surprise/prediction_algorithms/baseline_only.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/surprise/prediction_algorithms/knns.py" beforeDir="false" afterPath="$PROJECT_DIR$/surprise/prediction_algorithms/knns.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/surprise/prediction_algorithms/matrix_factorization.c" beforeDir="false" afterPath="$PROJECT_DIR$/surprise/prediction_algorithms/matrix_factorization.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/surprise/prediction_algorithms/matrix_factorization.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/surprise/prediction_algorithms/matrix_factorization.pyx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/surprise/prediction_algorithms/optimize_baselines.c" beforeDir="false" afterPath="$PROJECT_DIR$/surprise/prediction_algorithms/optimize_baselines.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/surprise/prediction_algorithms/optimize_baselines.pyx" beforeDir="false" afterPath="$PROJECT_DIR$/surprise/prediction_algorithms/optimize_baselines.pyx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/.~lock.WeightMatrix.csv#" beforeDir="false" afterPath="$PROJECT_DIR$/tests/.~lock.WeightMatrix.csv#" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/545Project_knn.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/545Project_BoostBaseline.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/545Project_BoostBaseline.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/545Project_svd.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/545Project_svd.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/CurrentPredictions.csv" beforeDir="false" afterPath="$PROJECT_DIR$/tests/CurrentPredictions.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/TestSet.csv" beforeDir="false" afterPath="$PROJECT_DIR$/tests/TestSet.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/UEMatrix.csv" beforeDir="false" afterPath="$PROJECT_DIR$/tests/UEMatrix.csv" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/tests/WeightMatrix.csv" beforeDir="false" afterPath="$PROJECT_DIR$/tests/WeightMatrix.csv" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/tests/test.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,11 +16,32 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/545Project_BoostItemCF.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/tests/545Project_BoostBaseline.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="560">
-              <caret line="226" column="54" lean-forward="true" selection-start-line="226" selection-start-column="54" selection-end-line="226" selection-end-column="54" />
+            <state relative-caret-position="650">
+              <caret line="211" column="72" selection-start-line="211" selection-start-column="72" selection-end-line="211" selection-end-column="72" />
+              <folding>
+                <element signature="e#128#146#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/tests/545Project_svd.py">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="485">
+              <caret line="260" selection-start-line="260" selection-end-line="262" selection-end-column="72" />
               <folding>
                 <element signature="e#128#146#0" expanded="true" />
               </folding>
@@ -69,34 +68,10 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/545Project_svd.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-585">
-              <caret line="60" column="24" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
-              <folding>
-                <element signature="e#128#146#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/surprise/prediction_algorithms/matrix_factorization.pyx">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="240">
               <caret line="16" selection-start-line="16" selection-end-line="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/tests/545Project_BoostItemCF.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="600">
-              <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
-              <folding>
-                <element signature="e#128#146#0" expanded="true" />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -174,11 +149,11 @@
       <find>n_splits</find>
       <find>fit_and_score</find>
       <find>baseline_sgd</find>
-      <find>pea</find>
       <find>reg</find>
       <find>print_summary</find>
       <find>get_cv</find>
       <find>data</find>
+      <find>pea</find>
       <find>accu</find>
     </findStrings>
   </component>
@@ -196,12 +171,12 @@
         <option value="$PROJECT_DIR$/surprise/prediction_algorithms/knns.py" />
         <option value="$PROJECT_DIR$/tests/545Project_knn.py" />
         <option value="$PROJECT_DIR$/tests/545Project_BoostItemCF.py" />
-        <option value="$PROJECT_DIR$/tests/545Project_svd.py" />
         <option value="$PROJECT_DIR$/surprise/prediction_algorithms/matrix_factorization.pyx" />
         <option value="$PROJECT_DIR$/surprise/prediction_algorithms/baseline_only.py" />
         <option value="$PROJECT_DIR$/surprise/prediction_algorithms/optimize_baselines.pyx" />
         <option value="$PROJECT_DIR$/surprise/model_selection/validation.py" />
         <option value="$PROJECT_DIR$/surprise/model_selection/validation_baseline.py" />
+        <option value="$PROJECT_DIR$/tests/545Project_svd.py" />
         <option value="$PROJECT_DIR$/tests/545Project_BoostBaseline.py" />
       </list>
     </option>
@@ -436,16 +411,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/tests/545Project_svd.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-585">
-          <caret line="60" column="24" selection-start-line="60" selection-start-column="24" selection-end-line="60" selection-end-column="24" />
-          <folding>
-            <element signature="e#128#146#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/surprise/prediction_algorithms/algo_base.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2300">
@@ -462,16 +427,6 @@
           <caret line="29" column="56" selection-start-line="29" selection-start-column="56" selection-end-line="29" selection-end-column="56" />
           <folding>
             <element signature="e#9#117#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/tests/545Project_BoostItemCF.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="600">
-          <caret line="40" column="35" selection-start-line="40" selection-start-column="35" selection-end-line="40" selection-end-column="35" />
-          <folding>
-            <element signature="e#128#146#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -521,10 +476,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/tests/545Project_BoostItemCF.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="15" selection-start-line="8" selection-start-column="15" selection-end-line="8" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/tests/545Project_svd.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="485">
+          <caret line="260" selection-start-line="260" selection-end-line="262" selection-end-column="72" />
+          <folding>
+            <element signature="e#128#146#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/tests/545Project_BoostBaseline.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="560">
-          <caret line="226" column="54" lean-forward="true" selection-start-line="226" selection-start-column="54" selection-end-line="226" selection-end-column="54" />
+        <state relative-caret-position="650">
+          <caret line="211" column="72" selection-start-line="211" selection-start-column="72" selection-end-line="211" selection-end-column="72" />
           <folding>
             <element signature="e#128#146#0" expanded="true" />
           </folding>
