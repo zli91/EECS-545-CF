@@ -1151,7 +1151,7 @@ typedef npy_clongdouble __pyx_t_5numpy_clongdouble_t;
  */
 typedef npy_cdouble __pyx_t_5numpy_complex_t;
 
-/* "surprise/prediction_algorithms/matrix_factorization.pyx":489
+/* "surprise/prediction_algorithms/matrix_factorization.pyx":493
  *         self.yj = yj
  * 
  *     def estimate(self, u, i):             # <<<<<<<<<<<<<<
@@ -1165,7 +1165,7 @@ struct __pyx_obj_8surprise_21prediction_algorithms_20matrix_factorization___pyx_
 };
 
 
-/* "surprise/prediction_algorithms/matrix_factorization.pyx":501
+/* "surprise/prediction_algorithms/matrix_factorization.pyx":505
  *         if self.trainset.knows_user(u) and self.trainset.knows_item(i):
  *             Iu = len(self.trainset.ur[u])  # nb of items rated by u
  *             u_impl_feedback = (sum(self.yj[j] for (j, _)             # <<<<<<<<<<<<<<
@@ -1393,11 +1393,6 @@ static CYTHON_INLINE int __Pyx_IterFinish(void);
 /* UnpackItemEndCheck.proto */
 static int __Pyx_IternextUnpackEndCheck(PyObject *retval, Py_ssize_t expected);
 
-/* BufferIndexError.proto */
-static void __Pyx_RaiseBufferIndexError(int axis);
-
-#define __Pyx_BufPtrStrided2d(type, buf, i0, s0, i1, s1) (type)((char*)buf + i0 * s0 + i1 * s1)
-#define __Pyx_BufPtrStrided1d(type, buf, i0, s0) (type)((char*)buf + i0 * s0)
 /* GetItemInt.proto */
 #define __Pyx_GetItemInt(o, i, type, is_signed, to_py_func, is_list, wraparound, boundscheck)\
     (__Pyx_fits_Py_ssize_t(i, type, is_signed) ?\
@@ -1420,6 +1415,11 @@ static PyObject *__Pyx_GetItemInt_Generic(PyObject *o, PyObject* j);
 static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Fast(PyObject *o, Py_ssize_t i,
                                                      int is_list, int wraparound, int boundscheck);
 
+/* BufferIndexError.proto */
+static void __Pyx_RaiseBufferIndexError(int axis);
+
+#define __Pyx_BufPtrStrided2d(type, buf, i0, s0, i1, s1) (type)((char*)buf + i0 * s0 + i1 * s1)
+#define __Pyx_BufPtrStrided1d(type, buf, i0, s0) (type)((char*)buf + i0 * s0)
 /* PyThreadStateGet.proto */
 #if CYTHON_FAST_THREAD_STATE
 #define __Pyx_PyThreadState_declare  PyThreadState *__pyx_tstate;
@@ -2300,7 +2300,7 @@ static PyObject *__pyx_codeobj__36;
  * 
  *     def __init__(self, n_factors=100, n_epochs=20, biased=True, init_mean=0,             # <<<<<<<<<<<<<<
  *                  init_std_dev=.1, lr_all=.005,
- *                  reg_all=.02, lr_bu=None, lr_bi=None, lr_pu=None, lr_qi=None,
+ *                  reg_all=.06, lr_bu=None, lr_bi=None, lr_pu=None, lr_qi=None,
  */
 
 /* Python wrapper */
@@ -2337,12 +2337,12 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
     values[4] = ((PyObject *)((PyObject *)__pyx_int_0));
     values[5] = ((PyObject *)((PyObject*)__pyx_float__1));
     values[6] = ((PyObject *)((PyObject*)__pyx_float__005));
-    values[7] = ((PyObject *)((PyObject*)__pyx_float__02));
+    values[7] = ((PyObject *)((PyObject*)__pyx_float__06));
 
     /* "surprise/prediction_algorithms/matrix_factorization.pyx":130
  *     def __init__(self, n_factors=100, n_epochs=20, biased=True, init_mean=0,
  *                  init_std_dev=.1, lr_all=.005,
- *                  reg_all=.02, lr_bu=None, lr_bi=None, lr_pu=None, lr_qi=None,             # <<<<<<<<<<<<<<
+ *                  reg_all=.06, lr_bu=None, lr_bi=None, lr_pu=None, lr_qi=None,             # <<<<<<<<<<<<<<
  *                  reg_bu=None, reg_bi=None, reg_pu=None, reg_qi=None,
  *                  random_state=None, verbose=False):
  */
@@ -2353,7 +2353,7 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
 
     /* "surprise/prediction_algorithms/matrix_factorization.pyx":131
  *                  init_std_dev=.1, lr_all=.005,
- *                  reg_all=.02, lr_bu=None, lr_bi=None, lr_pu=None, lr_qi=None,
+ *                  reg_all=.06, lr_bu=None, lr_bi=None, lr_pu=None, lr_qi=None,
  *                  reg_bu=None, reg_bi=None, reg_pu=None, reg_qi=None,             # <<<<<<<<<<<<<<
  *                  random_state=None, verbose=False):
  * 
@@ -2364,7 +2364,7 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
     values[15] = ((PyObject *)((PyObject *)Py_None));
 
     /* "surprise/prediction_algorithms/matrix_factorization.pyx":132
- *                  reg_all=.02, lr_bu=None, lr_bi=None, lr_pu=None, lr_qi=None,
+ *                  reg_all=.06, lr_bu=None, lr_bi=None, lr_pu=None, lr_qi=None,
  *                  reg_bu=None, reg_bi=None, reg_pu=None, reg_qi=None,
  *                  random_state=None, verbose=False):             # <<<<<<<<<<<<<<
  * 
@@ -2601,7 +2601,7 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
  * 
  *     def __init__(self, n_factors=100, n_epochs=20, biased=True, init_mean=0,             # <<<<<<<<<<<<<<
  *                  init_std_dev=.1, lr_all=.005,
- *                  reg_all=.02, lr_bu=None, lr_bi=None, lr_pu=None, lr_qi=None,
+ *                  reg_all=.06, lr_bu=None, lr_bi=None, lr_pu=None, lr_qi=None,
  */
 
   /* function exit code */
@@ -2859,7 +2859,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  * 
  *     def __init__(self, n_factors=100, n_epochs=20, biased=True, init_mean=0,             # <<<<<<<<<<<<<<
  *                  init_std_dev=.1, lr_all=.005,
- *                  reg_all=.02, lr_bu=None, lr_bi=None, lr_pu=None, lr_qi=None,
+ *                  reg_all=.06, lr_bu=None, lr_bi=None, lr_pu=None, lr_qi=None,
  */
 
   /* function exit code */
@@ -3168,9 +3168,9 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   double __pyx_v_reg_bi;
   double __pyx_v_reg_pu;
   double __pyx_v_reg_qi;
+  double __pyx_v_Weight;
   PyObject *__pyx_v_rng = NULL;
   PyObject *__pyx_v_current_epoch = NULL;
-  PyObject *__pyx_v_Weight = NULL;
   __Pyx_LocalBuf_ND __pyx_pybuffernd_bi;
   __Pyx_Buffer __pyx_pybuffer_bi;
   __Pyx_LocalBuf_ND __pyx_pybuffernd_bu;
@@ -3214,7 +3214,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   Py_ssize_t __pyx_t_31;
   Py_ssize_t __pyx_t_32;
   Py_ssize_t __pyx_t_33;
-  __pyx_t_5numpy_double_t __pyx_t_34;
+  Py_ssize_t __pyx_t_34;
   Py_ssize_t __pyx_t_35;
   Py_ssize_t __pyx_t_36;
   Py_ssize_t __pyx_t_37;
@@ -3225,7 +3225,6 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   Py_ssize_t __pyx_t_42;
   Py_ssize_t __pyx_t_43;
   Py_ssize_t __pyx_t_44;
-  Py_ssize_t __pyx_t_45;
   __Pyx_RefNannySetupContext("sgd", 0);
   __pyx_pybuffer_bu.pybuffer.buf = NULL;
   __pyx_pybuffer_bu.refcount = 0;
@@ -3343,7 +3342,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  *         cdef double reg_bi = self.reg_bi
  *         cdef double reg_pu = self.reg_pu             # <<<<<<<<<<<<<<
  *         cdef double reg_qi = self.reg_qi
- * 
+ *         cdef double Weight = 0.0
  */
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_reg_pu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 213, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -3355,8 +3354,8 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  *         cdef double reg_bi = self.reg_bi
  *         cdef double reg_pu = self.reg_pu
  *         cdef double reg_qi = self.reg_qi             # <<<<<<<<<<<<<<
+ *         cdef double Weight = 0.0
  * 
- *         rng = get_rng(self.random_state)
  */
   __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_reg_qi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 214, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
@@ -3364,16 +3363,25 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_reg_qi = __pyx_t_3;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":216
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":215
+ *         cdef double reg_pu = self.reg_pu
  *         cdef double reg_qi = self.reg_qi
+ *         cdef double Weight = 0.0             # <<<<<<<<<<<<<<
+ * 
+ *         rng = get_rng(self.random_state)
+ */
+  __pyx_v_Weight = 0.0;
+
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":217
+ *         cdef double Weight = 0.0
  * 
  *         rng = get_rng(self.random_state)             # <<<<<<<<<<<<<<
  * 
  *         bu = np.zeros(trainset.n_users, np.double)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_get_rng); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 216, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_get_rng); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 217, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_random_state); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 216, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_random_state); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 217, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_1))) {
@@ -3388,29 +3396,29 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   __pyx_t_2 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_5, __pyx_t_4) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 216, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 217, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_rng = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":218
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":219
  *         rng = get_rng(self.random_state)
  * 
  *         bu = np.zeros(trainset.n_users, np.double)             # <<<<<<<<<<<<<<
  *         bi = np.zeros(trainset.n_items, np.double)
  *         pu = rng.normal(self.init_mean, self.init_std_dev,
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 218, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 219, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 218, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 219, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_users); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 218, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_users); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 219, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 218, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 219, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_double); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 218, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_double); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 219, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -3428,7 +3436,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_4)) {
     PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_t_1, __pyx_t_6};
-    __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 218, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 219, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -3438,7 +3446,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_4)) {
     PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_t_1, __pyx_t_6};
-    __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 218, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 219, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -3446,7 +3454,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   } else
   #endif
   {
-    __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 218, __pyx_L1_error)
+    __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 219, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     if (__pyx_t_5) {
       __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -3457,12 +3465,12 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_t_6);
     __pyx_t_1 = 0;
     __pyx_t_6 = 0;
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 218, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 219, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 218, __pyx_L1_error)
+  if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 219, __pyx_L1_error)
   __pyx_t_9 = ((PyArrayObject *)__pyx_t_2);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -3479,29 +3487,29 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       __pyx_t_10 = __pyx_t_11 = __pyx_t_12 = 0;
     }
     __pyx_pybuffernd_bu.diminfo[0].strides = __pyx_pybuffernd_bu.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_bu.diminfo[0].shape = __pyx_pybuffernd_bu.rcbuffer->pybuffer.shape[0];
-    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 218, __pyx_L1_error)
+    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 219, __pyx_L1_error)
   }
   __pyx_t_9 = 0;
   __pyx_v_bu = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":219
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":220
  * 
  *         bu = np.zeros(trainset.n_users, np.double)
  *         bi = np.zeros(trainset.n_items, np.double)             # <<<<<<<<<<<<<<
  *         pu = rng.normal(self.init_mean, self.init_std_dev,
  *                         (trainset.n_users, self.n_factors))
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 219, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 220, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_zeros); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 219, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_zeros); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 220, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_items); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 219, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_items); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 220, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 219, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 220, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_double); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 219, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_double); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 220, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_t_6 = NULL;
@@ -3519,7 +3527,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_8)) {
     PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_t_4, __pyx_t_1};
-    __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 219, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 220, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -3529,7 +3537,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_8)) {
     PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_t_4, __pyx_t_1};
-    __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 219, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 220, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -3537,7 +3545,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   } else
   #endif
   {
-    __pyx_t_5 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 219, __pyx_L1_error)
+    __pyx_t_5 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 220, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     if (__pyx_t_6) {
       __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -3548,12 +3556,12 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     PyTuple_SET_ITEM(__pyx_t_5, 1+__pyx_t_7, __pyx_t_1);
     __pyx_t_4 = 0;
     __pyx_t_1 = 0;
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_5, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 219, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_5, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 220, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-  if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 219, __pyx_L1_error)
+  if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 220, __pyx_L1_error)
   __pyx_t_13 = ((PyArrayObject *)__pyx_t_2);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -3570,38 +3578,38 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       __pyx_t_12 = __pyx_t_11 = __pyx_t_10 = 0;
     }
     __pyx_pybuffernd_bi.diminfo[0].strides = __pyx_pybuffernd_bi.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_bi.diminfo[0].shape = __pyx_pybuffernd_bi.rcbuffer->pybuffer.shape[0];
-    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 219, __pyx_L1_error)
+    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 220, __pyx_L1_error)
   }
   __pyx_t_13 = 0;
   __pyx_v_bi = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":220
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":221
  *         bu = np.zeros(trainset.n_users, np.double)
  *         bi = np.zeros(trainset.n_items, np.double)
  *         pu = rng.normal(self.init_mean, self.init_std_dev,             # <<<<<<<<<<<<<<
  *                         (trainset.n_users, self.n_factors))
  *         qi = rng.normal(self.init_mean, self.init_std_dev,
  */
-  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_rng, __pyx_n_s_normal); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 220, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_rng, __pyx_n_s_normal); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 221, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_mean); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 220, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_mean); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 221, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_std_dev); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 220, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_std_dev); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 221, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":221
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":222
  *         bi = np.zeros(trainset.n_items, np.double)
  *         pu = rng.normal(self.init_mean, self.init_std_dev,
  *                         (trainset.n_users, self.n_factors))             # <<<<<<<<<<<<<<
  *         qi = rng.normal(self.init_mean, self.init_std_dev,
  *                         (trainset.n_items, self.n_factors))
  */
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_users); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 221, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_users); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 221, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_14 = PyTuple_New(2); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 221, __pyx_L1_error)
+  __pyx_t_14 = PyTuple_New(2); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 222, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_14);
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_t_4);
@@ -3624,7 +3632,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_8)) {
     PyObject *__pyx_temp[4] = {__pyx_t_6, __pyx_t_5, __pyx_t_1, __pyx_t_14};
-    __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 220, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 221, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -3635,7 +3643,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_8)) {
     PyObject *__pyx_temp[4] = {__pyx_t_6, __pyx_t_5, __pyx_t_1, __pyx_t_14};
-    __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 220, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 221, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -3644,7 +3652,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   } else
   #endif
   {
-    __pyx_t_4 = PyTuple_New(3+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 220, __pyx_L1_error)
+    __pyx_t_4 = PyTuple_New(3+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 221, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     if (__pyx_t_6) {
       __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -3658,20 +3666,20 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     __pyx_t_5 = 0;
     __pyx_t_1 = 0;
     __pyx_t_14 = 0;
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_4, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 220, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_4, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 221, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":220
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":221
  *         bu = np.zeros(trainset.n_users, np.double)
  *         bi = np.zeros(trainset.n_items, np.double)
  *         pu = rng.normal(self.init_mean, self.init_std_dev,             # <<<<<<<<<<<<<<
  *                         (trainset.n_users, self.n_factors))
  *         qi = rng.normal(self.init_mean, self.init_std_dev,
  */
-  if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 220, __pyx_L1_error)
+  if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 221, __pyx_L1_error)
   __pyx_t_15 = ((PyArrayObject *)__pyx_t_2);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -3688,38 +3696,38 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       __pyx_t_10 = __pyx_t_11 = __pyx_t_12 = 0;
     }
     __pyx_pybuffernd_pu.diminfo[0].strides = __pyx_pybuffernd_pu.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_pu.diminfo[0].shape = __pyx_pybuffernd_pu.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_pu.diminfo[1].strides = __pyx_pybuffernd_pu.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_pu.diminfo[1].shape = __pyx_pybuffernd_pu.rcbuffer->pybuffer.shape[1];
-    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 220, __pyx_L1_error)
+    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 221, __pyx_L1_error)
   }
   __pyx_t_15 = 0;
   __pyx_v_pu = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":222
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":223
  *         pu = rng.normal(self.init_mean, self.init_std_dev,
  *                         (trainset.n_users, self.n_factors))
  *         qi = rng.normal(self.init_mean, self.init_std_dev,             # <<<<<<<<<<<<<<
  *                         (trainset.n_items, self.n_factors))
  * 
  */
-  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_rng, __pyx_n_s_normal); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 222, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_rng, __pyx_n_s_normal); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 223, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_mean); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 222, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_mean); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 223, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_std_dev); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 222, __pyx_L1_error)
+  __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_std_dev); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 223, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_14);
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":223
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":224
  *                         (trainset.n_users, self.n_factors))
  *         qi = rng.normal(self.init_mean, self.init_std_dev,
  *                         (trainset.n_items, self.n_factors))             # <<<<<<<<<<<<<<
  * 
  *         if not self.biased:
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_items); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 223, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_items); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 224, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 223, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 224, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 223, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 224, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_1);
@@ -3742,7 +3750,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_8)) {
     PyObject *__pyx_temp[4] = {__pyx_t_5, __pyx_t_4, __pyx_t_14, __pyx_t_6};
-    __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 222, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 223, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -3753,7 +3761,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_8)) {
     PyObject *__pyx_temp[4] = {__pyx_t_5, __pyx_t_4, __pyx_t_14, __pyx_t_6};
-    __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 222, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 223, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -3762,7 +3770,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   } else
   #endif
   {
-    __pyx_t_1 = PyTuple_New(3+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 222, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(3+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 223, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     if (__pyx_t_5) {
       __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -3776,20 +3784,20 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     __pyx_t_4 = 0;
     __pyx_t_14 = 0;
     __pyx_t_6 = 0;
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_1, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 222, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_1, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 223, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":222
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":223
  *         pu = rng.normal(self.init_mean, self.init_std_dev,
  *                         (trainset.n_users, self.n_factors))
  *         qi = rng.normal(self.init_mean, self.init_std_dev,             # <<<<<<<<<<<<<<
  *                         (trainset.n_items, self.n_factors))
  * 
  */
-  if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 222, __pyx_L1_error)
+  if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 223, __pyx_L1_error)
   __pyx_t_16 = ((PyArrayObject *)__pyx_t_2);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -3806,27 +3814,27 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       __pyx_t_12 = __pyx_t_11 = __pyx_t_10 = 0;
     }
     __pyx_pybuffernd_qi.diminfo[0].strides = __pyx_pybuffernd_qi.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_qi.diminfo[0].shape = __pyx_pybuffernd_qi.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_qi.diminfo[1].strides = __pyx_pybuffernd_qi.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_qi.diminfo[1].shape = __pyx_pybuffernd_qi.rcbuffer->pybuffer.shape[1];
-    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 222, __pyx_L1_error)
+    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 223, __pyx_L1_error)
   }
   __pyx_t_16 = 0;
   __pyx_v_qi = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":225
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":226
  *                         (trainset.n_items, self.n_factors))
  * 
  *         if not self.biased:             # <<<<<<<<<<<<<<
  *             global_mean = 0
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_biased); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 225, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_biased); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 226, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_17 < 0)) __PYX_ERR(0, 225, __pyx_L1_error)
+  __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_17 < 0)) __PYX_ERR(0, 226, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_18 = ((!__pyx_t_17) != 0);
   if (__pyx_t_18) {
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":226
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":227
  * 
  *         if not self.biased:
  *             global_mean = 0             # <<<<<<<<<<<<<<
@@ -3835,7 +3843,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  */
     __pyx_v_global_mean = 0.0;
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":225
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":226
  *                         (trainset.n_items, self.n_factors))
  * 
  *         if not self.biased:             # <<<<<<<<<<<<<<
@@ -3844,16 +3852,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  */
   }
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":228
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":229
  *             global_mean = 0
  * 
  *         for current_epoch in range(self.n_epochs):             # <<<<<<<<<<<<<<
  *             if self.verbose:
  *                 print("Processing epoch {}".format(current_epoch))
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_range); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 228, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_range); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 229, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_epochs); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 228, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_epochs); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 229, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_6 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_8))) {
@@ -3868,16 +3876,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   __pyx_t_2 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_8, __pyx_t_6, __pyx_t_1) : __Pyx_PyObject_CallOneArg(__pyx_t_8, __pyx_t_1);
   __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 228, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 229, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   if (likely(PyList_CheckExact(__pyx_t_2)) || PyTuple_CheckExact(__pyx_t_2)) {
     __pyx_t_8 = __pyx_t_2; __Pyx_INCREF(__pyx_t_8); __pyx_t_19 = 0;
     __pyx_t_20 = NULL;
   } else {
-    __pyx_t_19 = -1; __pyx_t_8 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 228, __pyx_L1_error)
+    __pyx_t_19 = -1; __pyx_t_8 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 229, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
-    __pyx_t_20 = Py_TYPE(__pyx_t_8)->tp_iternext; if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 228, __pyx_L1_error)
+    __pyx_t_20 = Py_TYPE(__pyx_t_8)->tp_iternext; if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 229, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   for (;;) {
@@ -3885,17 +3893,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       if (likely(PyList_CheckExact(__pyx_t_8))) {
         if (__pyx_t_19 >= PyList_GET_SIZE(__pyx_t_8)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_2 = PyList_GET_ITEM(__pyx_t_8, __pyx_t_19); __Pyx_INCREF(__pyx_t_2); __pyx_t_19++; if (unlikely(0 < 0)) __PYX_ERR(0, 228, __pyx_L1_error)
+        __pyx_t_2 = PyList_GET_ITEM(__pyx_t_8, __pyx_t_19); __Pyx_INCREF(__pyx_t_2); __pyx_t_19++; if (unlikely(0 < 0)) __PYX_ERR(0, 229, __pyx_L1_error)
         #else
-        __pyx_t_2 = PySequence_ITEM(__pyx_t_8, __pyx_t_19); __pyx_t_19++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 228, __pyx_L1_error)
+        __pyx_t_2 = PySequence_ITEM(__pyx_t_8, __pyx_t_19); __pyx_t_19++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 229, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         #endif
       } else {
         if (__pyx_t_19 >= PyTuple_GET_SIZE(__pyx_t_8)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_8, __pyx_t_19); __Pyx_INCREF(__pyx_t_2); __pyx_t_19++; if (unlikely(0 < 0)) __PYX_ERR(0, 228, __pyx_L1_error)
+        __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_8, __pyx_t_19); __Pyx_INCREF(__pyx_t_2); __pyx_t_19++; if (unlikely(0 < 0)) __PYX_ERR(0, 229, __pyx_L1_error)
         #else
-        __pyx_t_2 = PySequence_ITEM(__pyx_t_8, __pyx_t_19); __pyx_t_19++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 228, __pyx_L1_error)
+        __pyx_t_2 = PySequence_ITEM(__pyx_t_8, __pyx_t_19); __pyx_t_19++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 229, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         #endif
       }
@@ -3905,7 +3913,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 228, __pyx_L1_error)
+          else __PYX_ERR(0, 229, __pyx_L1_error)
         }
         break;
       }
@@ -3914,27 +3922,27 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     __Pyx_XDECREF_SET(__pyx_v_current_epoch, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":229
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":230
  * 
  *         for current_epoch in range(self.n_epochs):
  *             if self.verbose:             # <<<<<<<<<<<<<<
  *                 print("Processing epoch {}".format(current_epoch))
  *             for u, i, r in trainset.all_ratings():
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_verbose); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 229, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_verbose); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 230, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_18 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_18 < 0)) __PYX_ERR(0, 229, __pyx_L1_error)
+    __pyx_t_18 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_18 < 0)) __PYX_ERR(0, 230, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     if (__pyx_t_18) {
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":230
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":231
  *         for current_epoch in range(self.n_epochs):
  *             if self.verbose:
  *                 print("Processing epoch {}".format(current_epoch))             # <<<<<<<<<<<<<<
  *             for u, i, r in trainset.all_ratings():
- * 
+ *                 Weight = self.W[u][i]
  */
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u_Processing_epoch, __pyx_n_s_format); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 230, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u_Processing_epoch, __pyx_n_s_format); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 231, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __pyx_t_6 = NULL;
       if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -3948,15 +3956,15 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       }
       __pyx_t_2 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_6, __pyx_v_current_epoch) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_v_current_epoch);
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 230, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 231, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_print, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 230, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_print, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 231, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":229
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":230
  * 
  *         for current_epoch in range(self.n_epochs):
  *             if self.verbose:             # <<<<<<<<<<<<<<
@@ -3965,14 +3973,14 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  */
     }
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":231
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":232
  *             if self.verbose:
  *                 print("Processing epoch {}".format(current_epoch))
  *             for u, i, r in trainset.all_ratings():             # <<<<<<<<<<<<<<
- * 
- *                 # compute current error
+ *                 Weight = self.W[u][i]
+ *                 #print("Weight is actually: ",Weight)
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_all_ratings); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 231, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_all_ratings); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 232, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_6 = NULL;
     if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -3986,16 +3994,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     }
     __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_6) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 231, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 232, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
       __pyx_t_2 = __pyx_t_1; __Pyx_INCREF(__pyx_t_2); __pyx_t_21 = 0;
       __pyx_t_22 = NULL;
     } else {
-      __pyx_t_21 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 231, __pyx_L1_error)
+      __pyx_t_21 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 232, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_22 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_22)) __PYX_ERR(0, 231, __pyx_L1_error)
+      __pyx_t_22 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_22)) __PYX_ERR(0, 232, __pyx_L1_error)
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     for (;;) {
@@ -4003,17 +4011,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         if (likely(PyList_CheckExact(__pyx_t_2))) {
           if (__pyx_t_21 >= PyList_GET_SIZE(__pyx_t_2)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_1 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_21); __Pyx_INCREF(__pyx_t_1); __pyx_t_21++; if (unlikely(0 < 0)) __PYX_ERR(0, 231, __pyx_L1_error)
+          __pyx_t_1 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_21); __Pyx_INCREF(__pyx_t_1); __pyx_t_21++; if (unlikely(0 < 0)) __PYX_ERR(0, 232, __pyx_L1_error)
           #else
-          __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_21); __pyx_t_21++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 231, __pyx_L1_error)
+          __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_21); __pyx_t_21++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 232, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           #endif
         } else {
           if (__pyx_t_21 >= PyTuple_GET_SIZE(__pyx_t_2)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_21); __Pyx_INCREF(__pyx_t_1); __pyx_t_21++; if (unlikely(0 < 0)) __PYX_ERR(0, 231, __pyx_L1_error)
+          __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_21); __Pyx_INCREF(__pyx_t_1); __pyx_t_21++; if (unlikely(0 < 0)) __PYX_ERR(0, 232, __pyx_L1_error)
           #else
-          __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_21); __pyx_t_21++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 231, __pyx_L1_error)
+          __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_21); __pyx_t_21++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 232, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           #endif
         }
@@ -4023,7 +4031,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 231, __pyx_L1_error)
+            else __PYX_ERR(0, 232, __pyx_L1_error)
           }
           break;
         }
@@ -4035,7 +4043,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         if (unlikely(size != 3)) {
           if (size > 3) __Pyx_RaiseTooManyValuesError(3);
           else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-          __PYX_ERR(0, 231, __pyx_L1_error)
+          __PYX_ERR(0, 232, __pyx_L1_error)
         }
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
         if (likely(PyTuple_CheckExact(sequence))) {
@@ -4051,17 +4059,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         __Pyx_INCREF(__pyx_t_14);
         __Pyx_INCREF(__pyx_t_4);
         #else
-        __pyx_t_6 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 231, __pyx_L1_error)
+        __pyx_t_6 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 232, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_14 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 231, __pyx_L1_error)
+        __pyx_t_14 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 232, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_14);
-        __pyx_t_4 = PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 231, __pyx_L1_error)
+        __pyx_t_4 = PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 232, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         #endif
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       } else {
         Py_ssize_t index = -1;
-        __pyx_t_5 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 231, __pyx_L1_error)
+        __pyx_t_5 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 232, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __pyx_t_23 = Py_TYPE(__pyx_t_5)->tp_iternext;
@@ -4071,7 +4079,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         __Pyx_GOTREF(__pyx_t_14);
         index = 2; __pyx_t_4 = __pyx_t_23(__pyx_t_5); if (unlikely(!__pyx_t_4)) goto __pyx_L9_unpacking_failed;
         __Pyx_GOTREF(__pyx_t_4);
-        if (__Pyx_IternextUnpackEndCheck(__pyx_t_23(__pyx_t_5), 3) < 0) __PYX_ERR(0, 231, __pyx_L1_error)
+        if (__Pyx_IternextUnpackEndCheck(__pyx_t_23(__pyx_t_5), 3) < 0) __PYX_ERR(0, 232, __pyx_L1_error)
         __pyx_t_23 = NULL;
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         goto __pyx_L10_unpacking_done;
@@ -4079,21 +4087,40 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __pyx_t_23 = NULL;
         if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-        __PYX_ERR(0, 231, __pyx_L1_error)
+        __PYX_ERR(0, 232, __pyx_L1_error)
         __pyx_L10_unpacking_done:;
       }
-      __pyx_t_7 = __Pyx_PyInt_As_int(__pyx_t_6); if (unlikely((__pyx_t_7 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 231, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyInt_As_int(__pyx_t_6); if (unlikely((__pyx_t_7 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 232, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_24 = __Pyx_PyInt_As_int(__pyx_t_14); if (unlikely((__pyx_t_24 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 231, __pyx_L1_error)
+      __pyx_t_24 = __Pyx_PyInt_As_int(__pyx_t_14); if (unlikely((__pyx_t_24 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 232, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-      __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_4); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 231, __pyx_L1_error)
+      __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_4); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 232, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __pyx_v_u = __pyx_t_7;
       __pyx_v_i = __pyx_t_24;
       __pyx_v_r = __pyx_t_3;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":234
- * 
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":233
+ *                 print("Processing epoch {}".format(current_epoch))
+ *             for u, i, r in trainset.all_ratings():
+ *                 Weight = self.W[u][i]             # <<<<<<<<<<<<<<
+ *                 #print("Weight is actually: ",Weight)
+ *                 # compute current error
+ */
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_W); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 233, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_1, __pyx_v_u, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 233, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_4, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 233, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 233, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __pyx_v_Weight = __pyx_t_3;
+
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":236
+ *                 #print("Weight is actually: ",Weight)
  *                 # compute current error
  *                 dot = 0  # <q_i, p_u>             # <<<<<<<<<<<<<<
  *                 for f in range(self.n_factors):
@@ -4101,16 +4128,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  */
       __pyx_v_dot = 0.0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":235
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":237
  *                 # compute current error
  *                 dot = 0  # <q_i, p_u>
  *                 for f in range(self.n_factors):             # <<<<<<<<<<<<<<
  *                     dot += qi[i, f] * pu[u, f]
  *                 err = r - (global_mean + bu[u] + bi[i] + dot)
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_range); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 235, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_range); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 237, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 235, __pyx_L1_error)
+      __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 237, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_14);
       __pyx_t_6 = NULL;
       if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_4))) {
@@ -4125,16 +4152,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_6, __pyx_t_14) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_14);
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 235, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 237, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
         __pyx_t_4 = __pyx_t_1; __Pyx_INCREF(__pyx_t_4); __pyx_t_25 = 0;
         __pyx_t_26 = NULL;
       } else {
-        __pyx_t_25 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 235, __pyx_L1_error)
+        __pyx_t_25 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 237, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
-        __pyx_t_26 = Py_TYPE(__pyx_t_4)->tp_iternext; if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 235, __pyx_L1_error)
+        __pyx_t_26 = Py_TYPE(__pyx_t_4)->tp_iternext; if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 237, __pyx_L1_error)
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       for (;;) {
@@ -4142,17 +4169,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
           if (likely(PyList_CheckExact(__pyx_t_4))) {
             if (__pyx_t_25 >= PyList_GET_SIZE(__pyx_t_4)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_1 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_25); __Pyx_INCREF(__pyx_t_1); __pyx_t_25++; if (unlikely(0 < 0)) __PYX_ERR(0, 235, __pyx_L1_error)
+            __pyx_t_1 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_25); __Pyx_INCREF(__pyx_t_1); __pyx_t_25++; if (unlikely(0 < 0)) __PYX_ERR(0, 237, __pyx_L1_error)
             #else
-            __pyx_t_1 = PySequence_ITEM(__pyx_t_4, __pyx_t_25); __pyx_t_25++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 235, __pyx_L1_error)
+            __pyx_t_1 = PySequence_ITEM(__pyx_t_4, __pyx_t_25); __pyx_t_25++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 237, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_1);
             #endif
           } else {
             if (__pyx_t_25 >= PyTuple_GET_SIZE(__pyx_t_4)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_25); __Pyx_INCREF(__pyx_t_1); __pyx_t_25++; if (unlikely(0 < 0)) __PYX_ERR(0, 235, __pyx_L1_error)
+            __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_25); __Pyx_INCREF(__pyx_t_1); __pyx_t_25++; if (unlikely(0 < 0)) __PYX_ERR(0, 237, __pyx_L1_error)
             #else
-            __pyx_t_1 = PySequence_ITEM(__pyx_t_4, __pyx_t_25); __pyx_t_25++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 235, __pyx_L1_error)
+            __pyx_t_1 = PySequence_ITEM(__pyx_t_4, __pyx_t_25); __pyx_t_25++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 237, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_1);
             #endif
           }
@@ -4162,17 +4189,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
               if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-              else __PYX_ERR(0, 235, __pyx_L1_error)
+              else __PYX_ERR(0, 237, __pyx_L1_error)
             }
             break;
           }
           __Pyx_GOTREF(__pyx_t_1);
         }
-        __pyx_t_24 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_24 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 235, __pyx_L1_error)
+        __pyx_t_24 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_24 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 237, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __pyx_v_f = __pyx_t_24;
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":236
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":238
  *                 dot = 0  # <q_i, p_u>
  *                 for f in range(self.n_factors):
  *                     dot += qi[i, f] * pu[u, f]             # <<<<<<<<<<<<<<
@@ -4192,7 +4219,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_28 >= __pyx_pybuffernd_qi.diminfo[1].shape)) __pyx_t_24 = 1;
         if (unlikely(__pyx_t_24 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_24);
-          __PYX_ERR(0, 236, __pyx_L1_error)
+          __PYX_ERR(0, 238, __pyx_L1_error)
         }
         __pyx_t_29 = __pyx_v_u;
         __pyx_t_30 = __pyx_v_f;
@@ -4207,11 +4234,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_30 >= __pyx_pybuffernd_pu.diminfo[1].shape)) __pyx_t_24 = 1;
         if (unlikely(__pyx_t_24 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_24);
-          __PYX_ERR(0, 236, __pyx_L1_error)
+          __PYX_ERR(0, 238, __pyx_L1_error)
         }
         __pyx_v_dot = (__pyx_v_dot + ((*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_qi.rcbuffer->pybuffer.buf, __pyx_t_27, __pyx_pybuffernd_qi.diminfo[0].strides, __pyx_t_28, __pyx_pybuffernd_qi.diminfo[1].strides)) * (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_pu.rcbuffer->pybuffer.buf, __pyx_t_29, __pyx_pybuffernd_pu.diminfo[0].strides, __pyx_t_30, __pyx_pybuffernd_pu.diminfo[1].strides))));
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":235
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":237
  *                 # compute current error
  *                 dot = 0  # <q_i, p_u>
  *                 for f in range(self.n_factors):             # <<<<<<<<<<<<<<
@@ -4221,7 +4248,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       }
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":237
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":239
  *                 for f in range(self.n_factors):
  *                     dot += qi[i, f] * pu[u, f]
  *                 err = r - (global_mean + bu[u] + bi[i] + dot)             # <<<<<<<<<<<<<<
@@ -4236,7 +4263,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       } else if (unlikely(__pyx_t_31 >= __pyx_pybuffernd_bu.diminfo[0].shape)) __pyx_t_24 = 0;
       if (unlikely(__pyx_t_24 != -1)) {
         __Pyx_RaiseBufferIndexError(__pyx_t_24);
-        __PYX_ERR(0, 237, __pyx_L1_error)
+        __PYX_ERR(0, 239, __pyx_L1_error)
       }
       __pyx_t_32 = __pyx_v_i;
       __pyx_t_24 = -1;
@@ -4246,57 +4273,30 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       } else if (unlikely(__pyx_t_32 >= __pyx_pybuffernd_bi.diminfo[0].shape)) __pyx_t_24 = 0;
       if (unlikely(__pyx_t_24 != -1)) {
         __Pyx_RaiseBufferIndexError(__pyx_t_24);
-        __PYX_ERR(0, 237, __pyx_L1_error)
+        __PYX_ERR(0, 239, __pyx_L1_error)
       }
       __pyx_v_err = (__pyx_v_r - (((__pyx_v_global_mean + (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bu.rcbuffer->pybuffer.buf, __pyx_t_31, __pyx_pybuffernd_bu.diminfo[0].strides))) + (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bi.rcbuffer->pybuffer.buf, __pyx_t_32, __pyx_pybuffernd_bi.diminfo[0].strides))) + __pyx_v_dot));
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":240
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":242
  * 
  *                 # update biases
  *                 if self.biased:             # <<<<<<<<<<<<<<
  *                     # print('reg_bu = ', reg_bu)
- *                     Weight = self.W[u][i]
+ * 
  */
-      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_biased); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 240, __pyx_L1_error)
+      __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_biased); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 242, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_18 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_18 < 0)) __PYX_ERR(0, 240, __pyx_L1_error)
+      __pyx_t_18 = __Pyx_PyObject_IsTrue(__pyx_t_4); if (unlikely(__pyx_t_18 < 0)) __PYX_ERR(0, 242, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       if (__pyx_t_18) {
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":242
- *                 if self.biased:
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":245
  *                     # print('reg_bu = ', reg_bu)
- *                     Weight = self.W[u][i]             # <<<<<<<<<<<<<<
- *                     bu[u] += lr_bu * (err - Weight*reg_bu * bu[u])
- *                     bi[i] += lr_bi * (err - Weight*reg_bi * bi[i])
- */
-        __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_W); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 242, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_4);
-        __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_4, __pyx_v_u, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 242, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        __pyx_t_4 = __Pyx_GetItemInt(__pyx_t_1, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 242, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_4);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __Pyx_XDECREF_SET(__pyx_v_Weight, __pyx_t_4);
-        __pyx_t_4 = 0;
-
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":243
- *                     # print('reg_bu = ', reg_bu)
- *                     Weight = self.W[u][i]
- *                     bu[u] += lr_bu * (err - Weight*reg_bu * bu[u])             # <<<<<<<<<<<<<<
- *                     bi[i] += lr_bi * (err - Weight*reg_bi * bi[i])
+ * 
+ *                     bu[u] += lr_bu * (err - reg_bu * bu[u])             # <<<<<<<<<<<<<<
+ *                     bi[i] += lr_bi * (err - reg_bi * bi[i])
  * 
  */
-        __pyx_t_4 = PyFloat_FromDouble(__pyx_v_lr_bu); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 243, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_4);
-        __pyx_t_1 = PyFloat_FromDouble(__pyx_v_err); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 243, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_14 = PyFloat_FromDouble(__pyx_v_reg_bu); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 243, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_14);
-        __pyx_t_6 = PyNumber_Multiply(__pyx_v_Weight, __pyx_t_14); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 243, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
         __pyx_t_33 = __pyx_v_u;
         __pyx_t_24 = -1;
         if (__pyx_t_33 < 0) {
@@ -4305,52 +4305,37 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_33 >= __pyx_pybuffernd_bu.diminfo[0].shape)) __pyx_t_24 = 0;
         if (unlikely(__pyx_t_24 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_24);
-          __PYX_ERR(0, 243, __pyx_L1_error)
+          __PYX_ERR(0, 245, __pyx_L1_error)
         }
-        __pyx_t_14 = PyFloat_FromDouble((*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bu.rcbuffer->pybuffer.buf, __pyx_t_33, __pyx_pybuffernd_bu.diminfo[0].strides))); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 243, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_14);
-        __pyx_t_5 = PyNumber_Multiply(__pyx_t_6, __pyx_t_14); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 243, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_5);
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-        __pyx_t_14 = PyNumber_Subtract(__pyx_t_1, __pyx_t_5); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 243, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_14);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __pyx_t_5 = PyNumber_Multiply(__pyx_t_4, __pyx_t_14); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 243, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_5);
-        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-        __pyx_t_34 = __pyx_PyFloat_AsDouble(__pyx_t_5); if (unlikely((__pyx_t_34 == ((npy_double)-1)) && PyErr_Occurred())) __PYX_ERR(0, 243, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __pyx_t_35 = __pyx_v_u;
+        __pyx_t_34 = __pyx_v_u;
         __pyx_t_24 = -1;
-        if (__pyx_t_35 < 0) {
-          __pyx_t_35 += __pyx_pybuffernd_bu.diminfo[0].shape;
-          if (unlikely(__pyx_t_35 < 0)) __pyx_t_24 = 0;
-        } else if (unlikely(__pyx_t_35 >= __pyx_pybuffernd_bu.diminfo[0].shape)) __pyx_t_24 = 0;
+        if (__pyx_t_34 < 0) {
+          __pyx_t_34 += __pyx_pybuffernd_bu.diminfo[0].shape;
+          if (unlikely(__pyx_t_34 < 0)) __pyx_t_24 = 0;
+        } else if (unlikely(__pyx_t_34 >= __pyx_pybuffernd_bu.diminfo[0].shape)) __pyx_t_24 = 0;
         if (unlikely(__pyx_t_24 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_24);
-          __PYX_ERR(0, 243, __pyx_L1_error)
+          __PYX_ERR(0, 245, __pyx_L1_error)
         }
-        *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bu.rcbuffer->pybuffer.buf, __pyx_t_35, __pyx_pybuffernd_bu.diminfo[0].strides) += __pyx_t_34;
+        *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bu.rcbuffer->pybuffer.buf, __pyx_t_34, __pyx_pybuffernd_bu.diminfo[0].strides) += (__pyx_v_lr_bu * (__pyx_v_err - (__pyx_v_reg_bu * (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bu.rcbuffer->pybuffer.buf, __pyx_t_33, __pyx_pybuffernd_bu.diminfo[0].strides)))));
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":244
- *                     Weight = self.W[u][i]
- *                     bu[u] += lr_bu * (err - Weight*reg_bu * bu[u])
- *                     bi[i] += lr_bi * (err - Weight*reg_bi * bi[i])             # <<<<<<<<<<<<<<
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":246
+ * 
+ *                     bu[u] += lr_bu * (err - reg_bu * bu[u])
+ *                     bi[i] += lr_bi * (err - reg_bi * bi[i])             # <<<<<<<<<<<<<<
  * 
  *                 # update factors
  */
-        __pyx_t_5 = PyFloat_FromDouble(__pyx_v_lr_bi); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 244, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_14 = PyFloat_FromDouble(__pyx_v_err); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 244, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_14);
-        __pyx_t_4 = PyFloat_FromDouble(__pyx_v_reg_bi); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 244, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_4);
-        __pyx_t_1 = PyNumber_Multiply(__pyx_v_Weight, __pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 244, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+        __pyx_t_35 = __pyx_v_i;
+        __pyx_t_24 = -1;
+        if (__pyx_t_35 < 0) {
+          __pyx_t_35 += __pyx_pybuffernd_bi.diminfo[0].shape;
+          if (unlikely(__pyx_t_35 < 0)) __pyx_t_24 = 0;
+        } else if (unlikely(__pyx_t_35 >= __pyx_pybuffernd_bi.diminfo[0].shape)) __pyx_t_24 = 0;
+        if (unlikely(__pyx_t_24 != -1)) {
+          __Pyx_RaiseBufferIndexError(__pyx_t_24);
+          __PYX_ERR(0, 246, __pyx_L1_error)
+        }
         __pyx_t_36 = __pyx_v_i;
         __pyx_t_24 = -1;
         if (__pyx_t_36 < 0) {
@@ -4359,233 +4344,207 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_36 >= __pyx_pybuffernd_bi.diminfo[0].shape)) __pyx_t_24 = 0;
         if (unlikely(__pyx_t_24 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_24);
-          __PYX_ERR(0, 244, __pyx_L1_error)
+          __PYX_ERR(0, 246, __pyx_L1_error)
         }
-        __pyx_t_4 = PyFloat_FromDouble((*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bi.rcbuffer->pybuffer.buf, __pyx_t_36, __pyx_pybuffernd_bi.diminfo[0].strides))); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 244, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_4);
-        __pyx_t_6 = PyNumber_Multiply(__pyx_t_1, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 244, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        __pyx_t_4 = PyNumber_Subtract(__pyx_t_14, __pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 244, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_4);
-        __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __pyx_t_6 = PyNumber_Multiply(__pyx_t_5, __pyx_t_4); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 244, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-        __pyx_t_34 = __pyx_PyFloat_AsDouble(__pyx_t_6); if (unlikely((__pyx_t_34 == ((npy_double)-1)) && PyErr_Occurred())) __PYX_ERR(0, 244, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __pyx_t_37 = __pyx_v_i;
-        __pyx_t_24 = -1;
-        if (__pyx_t_37 < 0) {
-          __pyx_t_37 += __pyx_pybuffernd_bi.diminfo[0].shape;
-          if (unlikely(__pyx_t_37 < 0)) __pyx_t_24 = 0;
-        } else if (unlikely(__pyx_t_37 >= __pyx_pybuffernd_bi.diminfo[0].shape)) __pyx_t_24 = 0;
-        if (unlikely(__pyx_t_24 != -1)) {
-          __Pyx_RaiseBufferIndexError(__pyx_t_24);
-          __PYX_ERR(0, 244, __pyx_L1_error)
-        }
-        *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bi.rcbuffer->pybuffer.buf, __pyx_t_37, __pyx_pybuffernd_bi.diminfo[0].strides) += __pyx_t_34;
+        *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bi.rcbuffer->pybuffer.buf, __pyx_t_36, __pyx_pybuffernd_bi.diminfo[0].strides) += (__pyx_v_lr_bi * (__pyx_v_err - (__pyx_v_reg_bi * (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bi.rcbuffer->pybuffer.buf, __pyx_t_35, __pyx_pybuffernd_bi.diminfo[0].strides)))));
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":240
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":242
  * 
  *                 # update biases
  *                 if self.biased:             # <<<<<<<<<<<<<<
  *                     # print('reg_bu = ', reg_bu)
- *                     Weight = self.W[u][i]
+ * 
  */
       }
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":247
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":251
  * 
- *                 # update factors
+ *                 #Weight = 1.0
  *                 for f in range(self.n_factors):             # <<<<<<<<<<<<<<
  *                     puf = pu[u, f]
  *                     qif = qi[i, f]
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_range); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 247, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 247, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_14 = NULL;
-      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_4))) {
-        __pyx_t_14 = PyMethod_GET_SELF(__pyx_t_4);
-        if (likely(__pyx_t_14)) {
-          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_4);
-          __Pyx_INCREF(__pyx_t_14);
+      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_range); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 251, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 251, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_14);
+      __pyx_t_6 = NULL;
+      if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_1))) {
+        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_1);
+        if (likely(__pyx_t_6)) {
+          PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_1);
+          __Pyx_INCREF(__pyx_t_6);
           __Pyx_INCREF(function);
-          __Pyx_DECREF_SET(__pyx_t_4, function);
+          __Pyx_DECREF_SET(__pyx_t_1, function);
         }
       }
-      __pyx_t_6 = (__pyx_t_14) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_14, __pyx_t_5) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_5);
-      __Pyx_XDECREF(__pyx_t_14); __pyx_t_14 = 0;
-      __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 247, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_6);
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-      if (likely(PyList_CheckExact(__pyx_t_6)) || PyTuple_CheckExact(__pyx_t_6)) {
-        __pyx_t_4 = __pyx_t_6; __Pyx_INCREF(__pyx_t_4); __pyx_t_25 = 0;
+      __pyx_t_4 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_6, __pyx_t_14) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_14);
+      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
+      if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 251, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_4);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      if (likely(PyList_CheckExact(__pyx_t_4)) || PyTuple_CheckExact(__pyx_t_4)) {
+        __pyx_t_1 = __pyx_t_4; __Pyx_INCREF(__pyx_t_1); __pyx_t_25 = 0;
         __pyx_t_26 = NULL;
       } else {
-        __pyx_t_25 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 247, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_4);
-        __pyx_t_26 = Py_TYPE(__pyx_t_4)->tp_iternext; if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 247, __pyx_L1_error)
+        __pyx_t_25 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 251, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_26 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 251, __pyx_L1_error)
       }
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       for (;;) {
         if (likely(!__pyx_t_26)) {
-          if (likely(PyList_CheckExact(__pyx_t_4))) {
-            if (__pyx_t_25 >= PyList_GET_SIZE(__pyx_t_4)) break;
+          if (likely(PyList_CheckExact(__pyx_t_1))) {
+            if (__pyx_t_25 >= PyList_GET_SIZE(__pyx_t_1)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_6 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_25); __Pyx_INCREF(__pyx_t_6); __pyx_t_25++; if (unlikely(0 < 0)) __PYX_ERR(0, 247, __pyx_L1_error)
+            __pyx_t_4 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_25); __Pyx_INCREF(__pyx_t_4); __pyx_t_25++; if (unlikely(0 < 0)) __PYX_ERR(0, 251, __pyx_L1_error)
             #else
-            __pyx_t_6 = PySequence_ITEM(__pyx_t_4, __pyx_t_25); __pyx_t_25++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 247, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_6);
+            __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_25); __pyx_t_25++; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 251, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_4);
             #endif
           } else {
-            if (__pyx_t_25 >= PyTuple_GET_SIZE(__pyx_t_4)) break;
+            if (__pyx_t_25 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_6 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_25); __Pyx_INCREF(__pyx_t_6); __pyx_t_25++; if (unlikely(0 < 0)) __PYX_ERR(0, 247, __pyx_L1_error)
+            __pyx_t_4 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_25); __Pyx_INCREF(__pyx_t_4); __pyx_t_25++; if (unlikely(0 < 0)) __PYX_ERR(0, 251, __pyx_L1_error)
             #else
-            __pyx_t_6 = PySequence_ITEM(__pyx_t_4, __pyx_t_25); __pyx_t_25++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 247, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_6);
+            __pyx_t_4 = PySequence_ITEM(__pyx_t_1, __pyx_t_25); __pyx_t_25++; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 251, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_4);
             #endif
           }
         } else {
-          __pyx_t_6 = __pyx_t_26(__pyx_t_4);
-          if (unlikely(!__pyx_t_6)) {
+          __pyx_t_4 = __pyx_t_26(__pyx_t_1);
+          if (unlikely(!__pyx_t_4)) {
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
               if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-              else __PYX_ERR(0, 247, __pyx_L1_error)
+              else __PYX_ERR(0, 251, __pyx_L1_error)
             }
             break;
           }
-          __Pyx_GOTREF(__pyx_t_6);
+          __Pyx_GOTREF(__pyx_t_4);
         }
-        __pyx_t_24 = __Pyx_PyInt_As_int(__pyx_t_6); if (unlikely((__pyx_t_24 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 247, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+        __pyx_t_24 = __Pyx_PyInt_As_int(__pyx_t_4); if (unlikely((__pyx_t_24 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 251, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
         __pyx_v_f = __pyx_t_24;
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":248
- *                 # update factors
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":252
+ *                 #Weight = 1.0
  *                 for f in range(self.n_factors):
  *                     puf = pu[u, f]             # <<<<<<<<<<<<<<
  *                     qif = qi[i, f]
- *                     pu[u, f] += lr_pu * (err * qif - reg_pu * puf)
+ *                     pu[u, f] += lr_pu * (err * qif - Weight * reg_pu * puf)
  */
-        __pyx_t_38 = __pyx_v_u;
-        __pyx_t_39 = __pyx_v_f;
+        __pyx_t_37 = __pyx_v_u;
+        __pyx_t_38 = __pyx_v_f;
         __pyx_t_24 = -1;
+        if (__pyx_t_37 < 0) {
+          __pyx_t_37 += __pyx_pybuffernd_pu.diminfo[0].shape;
+          if (unlikely(__pyx_t_37 < 0)) __pyx_t_24 = 0;
+        } else if (unlikely(__pyx_t_37 >= __pyx_pybuffernd_pu.diminfo[0].shape)) __pyx_t_24 = 0;
         if (__pyx_t_38 < 0) {
-          __pyx_t_38 += __pyx_pybuffernd_pu.diminfo[0].shape;
-          if (unlikely(__pyx_t_38 < 0)) __pyx_t_24 = 0;
-        } else if (unlikely(__pyx_t_38 >= __pyx_pybuffernd_pu.diminfo[0].shape)) __pyx_t_24 = 0;
-        if (__pyx_t_39 < 0) {
-          __pyx_t_39 += __pyx_pybuffernd_pu.diminfo[1].shape;
-          if (unlikely(__pyx_t_39 < 0)) __pyx_t_24 = 1;
-        } else if (unlikely(__pyx_t_39 >= __pyx_pybuffernd_pu.diminfo[1].shape)) __pyx_t_24 = 1;
+          __pyx_t_38 += __pyx_pybuffernd_pu.diminfo[1].shape;
+          if (unlikely(__pyx_t_38 < 0)) __pyx_t_24 = 1;
+        } else if (unlikely(__pyx_t_38 >= __pyx_pybuffernd_pu.diminfo[1].shape)) __pyx_t_24 = 1;
         if (unlikely(__pyx_t_24 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_24);
-          __PYX_ERR(0, 248, __pyx_L1_error)
+          __PYX_ERR(0, 252, __pyx_L1_error)
         }
-        __pyx_v_puf = (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_pu.rcbuffer->pybuffer.buf, __pyx_t_38, __pyx_pybuffernd_pu.diminfo[0].strides, __pyx_t_39, __pyx_pybuffernd_pu.diminfo[1].strides));
+        __pyx_v_puf = (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_pu.rcbuffer->pybuffer.buf, __pyx_t_37, __pyx_pybuffernd_pu.diminfo[0].strides, __pyx_t_38, __pyx_pybuffernd_pu.diminfo[1].strides));
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":249
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":253
  *                 for f in range(self.n_factors):
  *                     puf = pu[u, f]
  *                     qif = qi[i, f]             # <<<<<<<<<<<<<<
- *                     pu[u, f] += lr_pu * (err * qif - reg_pu * puf)
- *                     qi[i, f] += lr_qi * (err * puf - reg_qi * qif)
+ *                     pu[u, f] += lr_pu * (err * qif - Weight * reg_pu * puf)
+ *                     qi[i, f] += lr_qi * (err * puf - Weight * reg_qi * qif)
  */
-        __pyx_t_40 = __pyx_v_i;
-        __pyx_t_41 = __pyx_v_f;
+        __pyx_t_39 = __pyx_v_i;
+        __pyx_t_40 = __pyx_v_f;
         __pyx_t_24 = -1;
+        if (__pyx_t_39 < 0) {
+          __pyx_t_39 += __pyx_pybuffernd_qi.diminfo[0].shape;
+          if (unlikely(__pyx_t_39 < 0)) __pyx_t_24 = 0;
+        } else if (unlikely(__pyx_t_39 >= __pyx_pybuffernd_qi.diminfo[0].shape)) __pyx_t_24 = 0;
         if (__pyx_t_40 < 0) {
-          __pyx_t_40 += __pyx_pybuffernd_qi.diminfo[0].shape;
-          if (unlikely(__pyx_t_40 < 0)) __pyx_t_24 = 0;
-        } else if (unlikely(__pyx_t_40 >= __pyx_pybuffernd_qi.diminfo[0].shape)) __pyx_t_24 = 0;
-        if (__pyx_t_41 < 0) {
-          __pyx_t_41 += __pyx_pybuffernd_qi.diminfo[1].shape;
-          if (unlikely(__pyx_t_41 < 0)) __pyx_t_24 = 1;
-        } else if (unlikely(__pyx_t_41 >= __pyx_pybuffernd_qi.diminfo[1].shape)) __pyx_t_24 = 1;
+          __pyx_t_40 += __pyx_pybuffernd_qi.diminfo[1].shape;
+          if (unlikely(__pyx_t_40 < 0)) __pyx_t_24 = 1;
+        } else if (unlikely(__pyx_t_40 >= __pyx_pybuffernd_qi.diminfo[1].shape)) __pyx_t_24 = 1;
         if (unlikely(__pyx_t_24 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_24);
-          __PYX_ERR(0, 249, __pyx_L1_error)
+          __PYX_ERR(0, 253, __pyx_L1_error)
         }
-        __pyx_v_qif = (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_qi.rcbuffer->pybuffer.buf, __pyx_t_40, __pyx_pybuffernd_qi.diminfo[0].strides, __pyx_t_41, __pyx_pybuffernd_qi.diminfo[1].strides));
+        __pyx_v_qif = (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_qi.rcbuffer->pybuffer.buf, __pyx_t_39, __pyx_pybuffernd_qi.diminfo[0].strides, __pyx_t_40, __pyx_pybuffernd_qi.diminfo[1].strides));
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":250
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":254
  *                     puf = pu[u, f]
  *                     qif = qi[i, f]
- *                     pu[u, f] += lr_pu * (err * qif - reg_pu * puf)             # <<<<<<<<<<<<<<
- *                     qi[i, f] += lr_qi * (err * puf - reg_qi * qif)
+ *                     pu[u, f] += lr_pu * (err * qif - Weight * reg_pu * puf)             # <<<<<<<<<<<<<<
+ *                     qi[i, f] += lr_qi * (err * puf - Weight * reg_qi * qif)
  * 
  */
-        __pyx_t_42 = __pyx_v_u;
-        __pyx_t_43 = __pyx_v_f;
+        __pyx_t_41 = __pyx_v_u;
+        __pyx_t_42 = __pyx_v_f;
         __pyx_t_24 = -1;
+        if (__pyx_t_41 < 0) {
+          __pyx_t_41 += __pyx_pybuffernd_pu.diminfo[0].shape;
+          if (unlikely(__pyx_t_41 < 0)) __pyx_t_24 = 0;
+        } else if (unlikely(__pyx_t_41 >= __pyx_pybuffernd_pu.diminfo[0].shape)) __pyx_t_24 = 0;
         if (__pyx_t_42 < 0) {
-          __pyx_t_42 += __pyx_pybuffernd_pu.diminfo[0].shape;
-          if (unlikely(__pyx_t_42 < 0)) __pyx_t_24 = 0;
-        } else if (unlikely(__pyx_t_42 >= __pyx_pybuffernd_pu.diminfo[0].shape)) __pyx_t_24 = 0;
-        if (__pyx_t_43 < 0) {
-          __pyx_t_43 += __pyx_pybuffernd_pu.diminfo[1].shape;
-          if (unlikely(__pyx_t_43 < 0)) __pyx_t_24 = 1;
-        } else if (unlikely(__pyx_t_43 >= __pyx_pybuffernd_pu.diminfo[1].shape)) __pyx_t_24 = 1;
+          __pyx_t_42 += __pyx_pybuffernd_pu.diminfo[1].shape;
+          if (unlikely(__pyx_t_42 < 0)) __pyx_t_24 = 1;
+        } else if (unlikely(__pyx_t_42 >= __pyx_pybuffernd_pu.diminfo[1].shape)) __pyx_t_24 = 1;
         if (unlikely(__pyx_t_24 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_24);
-          __PYX_ERR(0, 250, __pyx_L1_error)
+          __PYX_ERR(0, 254, __pyx_L1_error)
         }
-        *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_pu.rcbuffer->pybuffer.buf, __pyx_t_42, __pyx_pybuffernd_pu.diminfo[0].strides, __pyx_t_43, __pyx_pybuffernd_pu.diminfo[1].strides) += (__pyx_v_lr_pu * ((__pyx_v_err * __pyx_v_qif) - (__pyx_v_reg_pu * __pyx_v_puf)));
+        *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_pu.rcbuffer->pybuffer.buf, __pyx_t_41, __pyx_pybuffernd_pu.diminfo[0].strides, __pyx_t_42, __pyx_pybuffernd_pu.diminfo[1].strides) += (__pyx_v_lr_pu * ((__pyx_v_err * __pyx_v_qif) - ((__pyx_v_Weight * __pyx_v_reg_pu) * __pyx_v_puf)));
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":251
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":255
  *                     qif = qi[i, f]
- *                     pu[u, f] += lr_pu * (err * qif - reg_pu * puf)
- *                     qi[i, f] += lr_qi * (err * puf - reg_qi * qif)             # <<<<<<<<<<<<<<
+ *                     pu[u, f] += lr_pu * (err * qif - Weight * reg_pu * puf)
+ *                     qi[i, f] += lr_qi * (err * puf - Weight * reg_qi * qif)             # <<<<<<<<<<<<<<
  * 
  *         self.bu = bu
  */
-        __pyx_t_44 = __pyx_v_i;
-        __pyx_t_45 = __pyx_v_f;
+        __pyx_t_43 = __pyx_v_i;
+        __pyx_t_44 = __pyx_v_f;
         __pyx_t_24 = -1;
+        if (__pyx_t_43 < 0) {
+          __pyx_t_43 += __pyx_pybuffernd_qi.diminfo[0].shape;
+          if (unlikely(__pyx_t_43 < 0)) __pyx_t_24 = 0;
+        } else if (unlikely(__pyx_t_43 >= __pyx_pybuffernd_qi.diminfo[0].shape)) __pyx_t_24 = 0;
         if (__pyx_t_44 < 0) {
-          __pyx_t_44 += __pyx_pybuffernd_qi.diminfo[0].shape;
-          if (unlikely(__pyx_t_44 < 0)) __pyx_t_24 = 0;
-        } else if (unlikely(__pyx_t_44 >= __pyx_pybuffernd_qi.diminfo[0].shape)) __pyx_t_24 = 0;
-        if (__pyx_t_45 < 0) {
-          __pyx_t_45 += __pyx_pybuffernd_qi.diminfo[1].shape;
-          if (unlikely(__pyx_t_45 < 0)) __pyx_t_24 = 1;
-        } else if (unlikely(__pyx_t_45 >= __pyx_pybuffernd_qi.diminfo[1].shape)) __pyx_t_24 = 1;
+          __pyx_t_44 += __pyx_pybuffernd_qi.diminfo[1].shape;
+          if (unlikely(__pyx_t_44 < 0)) __pyx_t_24 = 1;
+        } else if (unlikely(__pyx_t_44 >= __pyx_pybuffernd_qi.diminfo[1].shape)) __pyx_t_24 = 1;
         if (unlikely(__pyx_t_24 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_24);
-          __PYX_ERR(0, 251, __pyx_L1_error)
+          __PYX_ERR(0, 255, __pyx_L1_error)
         }
-        *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_qi.rcbuffer->pybuffer.buf, __pyx_t_44, __pyx_pybuffernd_qi.diminfo[0].strides, __pyx_t_45, __pyx_pybuffernd_qi.diminfo[1].strides) += (__pyx_v_lr_qi * ((__pyx_v_err * __pyx_v_puf) - (__pyx_v_reg_qi * __pyx_v_qif)));
+        *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_qi.rcbuffer->pybuffer.buf, __pyx_t_43, __pyx_pybuffernd_qi.diminfo[0].strides, __pyx_t_44, __pyx_pybuffernd_qi.diminfo[1].strides) += (__pyx_v_lr_qi * ((__pyx_v_err * __pyx_v_puf) - ((__pyx_v_Weight * __pyx_v_reg_qi) * __pyx_v_qif)));
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":247
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":251
  * 
- *                 # update factors
+ *                 #Weight = 1.0
  *                 for f in range(self.n_factors):             # <<<<<<<<<<<<<<
  *                     puf = pu[u, f]
  *                     qif = qi[i, f]
  */
       }
-      __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":231
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":232
  *             if self.verbose:
  *                 print("Processing epoch {}".format(current_epoch))
  *             for u, i, r in trainset.all_ratings():             # <<<<<<<<<<<<<<
- * 
- *                 # compute current error
+ *                 Weight = self.W[u][i]
+ *                 #print("Weight is actually: ",Weight)
  */
     }
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":228
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":229
  *             global_mean = 0
  * 
  *         for current_epoch in range(self.n_epochs):             # <<<<<<<<<<<<<<
@@ -4595,41 +4554,41 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   }
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":253
- *                     qi[i, f] += lr_qi * (err * puf - reg_qi * qif)
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":257
+ *                     qi[i, f] += lr_qi * (err * puf - Weight * reg_qi * qif)
  * 
  *         self.bu = bu             # <<<<<<<<<<<<<<
  *         self.bi = bi
  *         self.pu = pu
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_bu, ((PyObject *)__pyx_v_bu)) < 0) __PYX_ERR(0, 253, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_bu, ((PyObject *)__pyx_v_bu)) < 0) __PYX_ERR(0, 257, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":254
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":258
  * 
  *         self.bu = bu
  *         self.bi = bi             # <<<<<<<<<<<<<<
  *         self.pu = pu
  *         self.qi = qi
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_bi, ((PyObject *)__pyx_v_bi)) < 0) __PYX_ERR(0, 254, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_bi, ((PyObject *)__pyx_v_bi)) < 0) __PYX_ERR(0, 258, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":255
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":259
  *         self.bu = bu
  *         self.bi = bi
  *         self.pu = pu             # <<<<<<<<<<<<<<
  *         self.qi = qi
  * 
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_pu, ((PyObject *)__pyx_v_pu)) < 0) __PYX_ERR(0, 255, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_pu, ((PyObject *)__pyx_v_pu)) < 0) __PYX_ERR(0, 259, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":256
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":260
  *         self.bi = bi
  *         self.pu = pu
  *         self.qi = qi             # <<<<<<<<<<<<<<
  * 
  *     def estimate(self, u, i):
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_qi, ((PyObject *)__pyx_v_qi)) < 0) __PYX_ERR(0, 256, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_qi, ((PyObject *)__pyx_v_qi)) < 0) __PYX_ERR(0, 260, __pyx_L1_error)
 
   /* "surprise/prediction_algorithms/matrix_factorization.pyx":159
  *         return self
@@ -4674,13 +4633,12 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   __Pyx_XDECREF((PyObject *)__pyx_v_qi);
   __Pyx_XDECREF(__pyx_v_rng);
   __Pyx_XDECREF(__pyx_v_current_epoch);
-  __Pyx_XDECREF(__pyx_v_Weight);
   __Pyx_XGIVEREF(__pyx_r);
   __Pyx_RefNannyFinishContext();
   return __pyx_r;
 }
 
-/* "surprise/prediction_algorithms/matrix_factorization.pyx":258
+/* "surprise/prediction_algorithms/matrix_factorization.pyx":262
  *         self.qi = qi
  * 
  *     def estimate(self, u, i):             # <<<<<<<<<<<<<<
@@ -4723,17 +4681,17 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_u)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("estimate", 1, 3, 3, 1); __PYX_ERR(0, 258, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("estimate", 1, 3, 3, 1); __PYX_ERR(0, 262, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_i)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("estimate", 1, 3, 3, 2); __PYX_ERR(0, 258, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("estimate", 1, 3, 3, 2); __PYX_ERR(0, 262, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "estimate") < 0)) __PYX_ERR(0, 258, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "estimate") < 0)) __PYX_ERR(0, 262, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -4748,7 +4706,7 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("estimate", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 258, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("estimate", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 262, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("surprise.prediction_algorithms.matrix_factorization.SVD.estimate", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -4778,16 +4736,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   PyObject *__pyx_t_9 = NULL;
   __Pyx_RefNannySetupContext("estimate", 0);
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":261
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":265
  *         # Should we cythonize this as well?
  * 
  *         known_user = self.trainset.knows_user(u)             # <<<<<<<<<<<<<<
  *         known_item = self.trainset.knows_item(i)
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 261, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 265, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_knows_user); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 261, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_knows_user); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 265, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -4802,22 +4760,22 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_2, __pyx_v_u) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_u);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 261, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 265, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_known_user = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":262
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":266
  * 
  *         known_user = self.trainset.knows_user(u)
  *         known_item = self.trainset.knows_item(i)             # <<<<<<<<<<<<<<
  * 
  *         if self.biased:
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 262, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 266, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_knows_item); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 262, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_knows_item); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 266, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -4832,69 +4790,69 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_v_i) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_i);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 262, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 266, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_known_item = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":264
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":268
  *         known_item = self.trainset.knows_item(i)
  * 
  *         if self.biased:             # <<<<<<<<<<<<<<
  *             est = self.trainset.global_mean
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_biased); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 264, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_biased); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 268, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 264, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 268, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_4) {
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":265
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":269
  * 
  *         if self.biased:
  *             est = self.trainset.global_mean             # <<<<<<<<<<<<<<
  * 
  *             if known_user:
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 265, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 269, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_global_mean); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 265, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_global_mean); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 269, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_v_est = __pyx_t_2;
     __pyx_t_2 = 0;
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":267
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":271
  *             est = self.trainset.global_mean
  * 
  *             if known_user:             # <<<<<<<<<<<<<<
  *                 est += self.bu[u]
  * 
  */
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_known_user); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 267, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_known_user); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 271, __pyx_L1_error)
     if (__pyx_t_4) {
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":268
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":272
  * 
  *             if known_user:
  *                 est += self.bu[u]             # <<<<<<<<<<<<<<
  * 
  *             if known_item:
  */
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_bu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 268, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_bu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 272, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_u); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 268, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_u); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 272, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_est, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 268, __pyx_L1_error)
+      __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_est, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 272, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF_SET(__pyx_v_est, __pyx_t_2);
       __pyx_t_2 = 0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":267
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":271
  *             est = self.trainset.global_mean
  * 
  *             if known_user:             # <<<<<<<<<<<<<<
@@ -4903,35 +4861,35 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  */
     }
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":270
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":274
  *                 est += self.bu[u]
  * 
  *             if known_item:             # <<<<<<<<<<<<<<
  *                 est += self.bi[i]
  * 
  */
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_known_item); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 270, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_known_item); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 274, __pyx_L1_error)
     if (__pyx_t_4) {
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":271
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":275
  * 
  *             if known_item:
  *                 est += self.bi[i]             # <<<<<<<<<<<<<<
  * 
  *             if known_user and known_item:
  */
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_bi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 271, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_bi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 275, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_i); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 271, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_i); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 275, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_est, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 271, __pyx_L1_error)
+      __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_est, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 275, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF_SET(__pyx_v_est, __pyx_t_2);
       __pyx_t_2 = 0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":270
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":274
  *                 est += self.bu[u]
  * 
  *             if known_item:             # <<<<<<<<<<<<<<
@@ -4940,44 +4898,44 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  */
     }
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":273
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":277
  *                 est += self.bi[i]
  * 
  *             if known_user and known_item:             # <<<<<<<<<<<<<<
  *                 est += np.dot(self.qi[i], self.pu[u])
  * 
  */
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_known_user); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 273, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_known_user); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 277, __pyx_L1_error)
     if (__pyx_t_5) {
     } else {
       __pyx_t_4 = __pyx_t_5;
       goto __pyx_L7_bool_binop_done;
     }
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_known_item); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 273, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_known_item); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 277, __pyx_L1_error)
     __pyx_t_4 = __pyx_t_5;
     __pyx_L7_bool_binop_done:;
     if (__pyx_t_4) {
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":274
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":278
  * 
  *             if known_user and known_item:
  *                 est += np.dot(self.qi[i], self.pu[u])             # <<<<<<<<<<<<<<
  * 
  *         else:
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 274, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 278, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_dot); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 274, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_dot); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 278, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_qi); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 274, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_qi); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 278, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_v_i); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 274, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_v_i); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 278, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_pu); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 274, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_pu); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 278, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_v_u); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 274, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_v_u); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 278, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_t_1 = NULL;
@@ -4995,7 +4953,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_3)) {
         PyObject *__pyx_temp[3] = {__pyx_t_1, __pyx_t_6, __pyx_t_7};
-        __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_8, 2+__pyx_t_8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 274, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_8, 2+__pyx_t_8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 278, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -5005,7 +4963,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
         PyObject *__pyx_temp[3] = {__pyx_t_1, __pyx_t_6, __pyx_t_7};
-        __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_8, 2+__pyx_t_8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 274, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_8, 2+__pyx_t_8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 278, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -5013,7 +4971,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       } else
       #endif
       {
-        __pyx_t_9 = PyTuple_New(2+__pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 274, __pyx_L1_error)
+        __pyx_t_9 = PyTuple_New(2+__pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 278, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
         if (__pyx_t_1) {
           __Pyx_GIVEREF(__pyx_t_1); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_1); __pyx_t_1 = NULL;
@@ -5024,18 +4982,18 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         PyTuple_SET_ITEM(__pyx_t_9, 1+__pyx_t_8, __pyx_t_7);
         __pyx_t_6 = 0;
         __pyx_t_7 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_9, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 274, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_9, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 278, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       }
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = PyNumber_InPlaceAdd(__pyx_v_est, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 274, __pyx_L1_error)
+      __pyx_t_3 = PyNumber_InPlaceAdd(__pyx_v_est, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 278, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF_SET(__pyx_v_est, __pyx_t_3);
       __pyx_t_3 = 0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":273
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":277
  *                 est += self.bi[i]
  * 
  *             if known_user and known_item:             # <<<<<<<<<<<<<<
@@ -5044,7 +5002,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  */
     }
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":264
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":268
  *         known_item = self.trainset.knows_item(i)
  * 
  *         if self.biased:             # <<<<<<<<<<<<<<
@@ -5054,7 +5012,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     goto __pyx_L3;
   }
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":277
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":281
  * 
  *         else:
  *             if known_user and known_item:             # <<<<<<<<<<<<<<
@@ -5062,37 +5020,37 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  *             else:
  */
   /*else*/ {
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_known_user); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 277, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_known_user); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 281, __pyx_L1_error)
     if (__pyx_t_5) {
     } else {
       __pyx_t_4 = __pyx_t_5;
       goto __pyx_L10_bool_binop_done;
     }
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_known_item); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 277, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_known_item); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 281, __pyx_L1_error)
     __pyx_t_4 = __pyx_t_5;
     __pyx_L10_bool_binop_done:;
     if (likely(__pyx_t_4)) {
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":278
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":282
  *         else:
  *             if known_user and known_item:
  *                 est = np.dot(self.qi[i], self.pu[u])             # <<<<<<<<<<<<<<
  *             else:
  *                 raise PredictionImpossible('User and item are unkown.')
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 278, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 282, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_dot); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 278, __pyx_L1_error)
+      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_dot); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 282, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_qi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 278, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_qi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 282, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_i); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 278, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_i); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 282, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_pu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 278, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_pu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 282, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_u); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 278, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_u); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 282, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_t_2 = NULL;
@@ -5110,7 +5068,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_9)) {
         PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_t_7, __pyx_t_6};
-        __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_9, __pyx_temp+1-__pyx_t_8, 2+__pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 278, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_9, __pyx_temp+1-__pyx_t_8, 2+__pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 282, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
@@ -5120,7 +5078,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_9)) {
         PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_t_7, __pyx_t_6};
-        __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_9, __pyx_temp+1-__pyx_t_8, 2+__pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 278, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_9, __pyx_temp+1-__pyx_t_8, 2+__pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 282, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
@@ -5128,7 +5086,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       } else
       #endif
       {
-        __pyx_t_1 = PyTuple_New(2+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 278, __pyx_L1_error)
+        __pyx_t_1 = PyTuple_New(2+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 282, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         if (__pyx_t_2) {
           __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_2); __pyx_t_2 = NULL;
@@ -5139,7 +5097,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         PyTuple_SET_ITEM(__pyx_t_1, 1+__pyx_t_8, __pyx_t_6);
         __pyx_t_7 = 0;
         __pyx_t_6 = 0;
-        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_9, __pyx_t_1, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 278, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_9, __pyx_t_1, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 282, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       }
@@ -5147,7 +5105,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       __pyx_v_est = __pyx_t_3;
       __pyx_t_3 = 0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":277
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":281
  * 
  *         else:
  *             if known_user and known_item:             # <<<<<<<<<<<<<<
@@ -5157,7 +5115,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       goto __pyx_L9;
     }
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":280
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":284
  *                 est = np.dot(self.qi[i], self.pu[u])
  *             else:
  *                 raise PredictionImpossible('User and item are unkown.')             # <<<<<<<<<<<<<<
@@ -5165,7 +5123,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  *         return est
  */
     /*else*/ {
-      __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_PredictionImpossible); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 280, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_PredictionImpossible); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 284, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
       __pyx_t_1 = NULL;
       if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_9))) {
@@ -5179,18 +5137,18 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       }
       __pyx_t_3 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_9, __pyx_t_1, __pyx_kp_u_User_and_item_are_unkown) : __Pyx_PyObject_CallOneArg(__pyx_t_9, __pyx_kp_u_User_and_item_are_unkown);
       __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 280, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 284, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __Pyx_Raise(__pyx_t_3, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __PYX_ERR(0, 280, __pyx_L1_error)
+      __PYX_ERR(0, 284, __pyx_L1_error)
     }
     __pyx_L9:;
   }
   __pyx_L3:;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":282
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":286
  *                 raise PredictionImpossible('User and item are unkown.')
  * 
  *         return est             # <<<<<<<<<<<<<<
@@ -5202,7 +5160,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   __pyx_r = __pyx_v_est;
   goto __pyx_L0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":258
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":262
  *         self.qi = qi
  * 
  *     def estimate(self, u, i):             # <<<<<<<<<<<<<<
@@ -5229,7 +5187,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   return __pyx_r;
 }
 
-/* "surprise/prediction_algorithms/matrix_factorization.pyx":372
+/* "surprise/prediction_algorithms/matrix_factorization.pyx":376
  *     """
  * 
  *     def __init__(self, n_factors=20, n_epochs=20, init_mean=0, init_std_dev=.1,             # <<<<<<<<<<<<<<
@@ -5273,7 +5231,7 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
     values[5] = ((PyObject *)((PyObject*)__pyx_float__007));
     values[6] = ((PyObject *)((PyObject*)__pyx_float__02));
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":373
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":377
  * 
  *     def __init__(self, n_factors=20, n_epochs=20, init_mean=0, init_std_dev=.1,
  *                  lr_all=.007, reg_all=.02, lr_bu=None, lr_bi=None, lr_pu=None,             # <<<<<<<<<<<<<<
@@ -5284,7 +5242,7 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
     values[8] = ((PyObject *)((PyObject *)Py_None));
     values[9] = ((PyObject *)((PyObject *)Py_None));
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":374
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":378
  *     def __init__(self, n_factors=20, n_epochs=20, init_mean=0, init_std_dev=.1,
  *                  lr_all=.007, reg_all=.02, lr_bu=None, lr_bi=None, lr_pu=None,
  *                  lr_qi=None, lr_yj=None, reg_bu=None, reg_bi=None, reg_pu=None,             # <<<<<<<<<<<<<<
@@ -5297,7 +5255,7 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
     values[13] = ((PyObject *)((PyObject *)Py_None));
     values[14] = ((PyObject *)((PyObject *)Py_None));
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":375
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":379
  *                  lr_all=.007, reg_all=.02, lr_bu=None, lr_bi=None, lr_pu=None,
  *                  lr_qi=None, lr_yj=None, reg_bu=None, reg_bi=None, reg_pu=None,
  *                  reg_qi=None, reg_yj=None, random_state=None, verbose=False):             # <<<<<<<<<<<<<<
@@ -5468,7 +5426,7 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 372, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 376, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -5535,7 +5493,7 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 0, 1, 19, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 372, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 0, 1, 19, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 376, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("surprise.prediction_algorithms.matrix_factorization.SVDpp.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -5543,7 +5501,7 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
   __pyx_L4_argument_unpacking_done:;
   __pyx_r = __pyx_pf_8surprise_21prediction_algorithms_20matrix_factorization_5SVDpp___init__(__pyx_self, __pyx_v_self, __pyx_v_n_factors, __pyx_v_n_epochs, __pyx_v_init_mean, __pyx_v_init_std_dev, __pyx_v_lr_all, __pyx_v_reg_all, __pyx_v_lr_bu, __pyx_v_lr_bi, __pyx_v_lr_pu, __pyx_v_lr_qi, __pyx_v_lr_yj, __pyx_v_reg_bu, __pyx_v_reg_bi, __pyx_v_reg_pu, __pyx_v_reg_qi, __pyx_v_reg_yj, __pyx_v_random_state, __pyx_v_verbose);
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":372
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":376
  *     """
  * 
  *     def __init__(self, n_factors=20, n_epochs=20, init_mean=0, init_std_dev=.1,             # <<<<<<<<<<<<<<
@@ -5565,43 +5523,43 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   PyObject *__pyx_t_4 = NULL;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":377
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":381
  *                  reg_qi=None, reg_yj=None, random_state=None, verbose=False):
  * 
  *         self.n_factors = n_factors             # <<<<<<<<<<<<<<
  *         self.n_epochs = n_epochs
  *         self.init_mean = init_mean
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_n_factors, __pyx_v_n_factors) < 0) __PYX_ERR(0, 377, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_n_factors, __pyx_v_n_factors) < 0) __PYX_ERR(0, 381, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":378
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":382
  * 
  *         self.n_factors = n_factors
  *         self.n_epochs = n_epochs             # <<<<<<<<<<<<<<
  *         self.init_mean = init_mean
  *         self.init_std_dev = init_std_dev
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_n_epochs, __pyx_v_n_epochs) < 0) __PYX_ERR(0, 378, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_n_epochs, __pyx_v_n_epochs) < 0) __PYX_ERR(0, 382, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":379
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":383
  *         self.n_factors = n_factors
  *         self.n_epochs = n_epochs
  *         self.init_mean = init_mean             # <<<<<<<<<<<<<<
  *         self.init_std_dev = init_std_dev
  *         self.lr_bu = lr_bu if lr_bu is not None else lr_all
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_init_mean, __pyx_v_init_mean) < 0) __PYX_ERR(0, 379, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_init_mean, __pyx_v_init_mean) < 0) __PYX_ERR(0, 383, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":380
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":384
  *         self.n_epochs = n_epochs
  *         self.init_mean = init_mean
  *         self.init_std_dev = init_std_dev             # <<<<<<<<<<<<<<
  *         self.lr_bu = lr_bu if lr_bu is not None else lr_all
  *         self.lr_bi = lr_bi if lr_bi is not None else lr_all
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_init_std_dev, __pyx_v_init_std_dev) < 0) __PYX_ERR(0, 380, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_init_std_dev, __pyx_v_init_std_dev) < 0) __PYX_ERR(0, 384, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":381
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":385
  *         self.init_mean = init_mean
  *         self.init_std_dev = init_std_dev
  *         self.lr_bu = lr_bu if lr_bu is not None else lr_all             # <<<<<<<<<<<<<<
@@ -5616,10 +5574,10 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     __Pyx_INCREF(__pyx_v_lr_all);
     __pyx_t_1 = __pyx_v_lr_all;
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_lr_bu, __pyx_t_1) < 0) __PYX_ERR(0, 381, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_lr_bu, __pyx_t_1) < 0) __PYX_ERR(0, 385, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":382
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":386
  *         self.init_std_dev = init_std_dev
  *         self.lr_bu = lr_bu if lr_bu is not None else lr_all
  *         self.lr_bi = lr_bi if lr_bi is not None else lr_all             # <<<<<<<<<<<<<<
@@ -5634,10 +5592,10 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     __Pyx_INCREF(__pyx_v_lr_all);
     __pyx_t_1 = __pyx_v_lr_all;
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_lr_bi, __pyx_t_1) < 0) __PYX_ERR(0, 382, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_lr_bi, __pyx_t_1) < 0) __PYX_ERR(0, 386, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":383
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":387
  *         self.lr_bu = lr_bu if lr_bu is not None else lr_all
  *         self.lr_bi = lr_bi if lr_bi is not None else lr_all
  *         self.lr_pu = lr_pu if lr_pu is not None else lr_all             # <<<<<<<<<<<<<<
@@ -5652,10 +5610,10 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     __Pyx_INCREF(__pyx_v_lr_all);
     __pyx_t_1 = __pyx_v_lr_all;
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_lr_pu, __pyx_t_1) < 0) __PYX_ERR(0, 383, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_lr_pu, __pyx_t_1) < 0) __PYX_ERR(0, 387, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":384
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":388
  *         self.lr_bi = lr_bi if lr_bi is not None else lr_all
  *         self.lr_pu = lr_pu if lr_pu is not None else lr_all
  *         self.lr_qi = lr_qi if lr_qi is not None else lr_all             # <<<<<<<<<<<<<<
@@ -5670,10 +5628,10 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     __Pyx_INCREF(__pyx_v_lr_all);
     __pyx_t_1 = __pyx_v_lr_all;
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_lr_qi, __pyx_t_1) < 0) __PYX_ERR(0, 384, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_lr_qi, __pyx_t_1) < 0) __PYX_ERR(0, 388, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":385
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":389
  *         self.lr_pu = lr_pu if lr_pu is not None else lr_all
  *         self.lr_qi = lr_qi if lr_qi is not None else lr_all
  *         self.lr_yj = lr_yj if lr_yj is not None else lr_all             # <<<<<<<<<<<<<<
@@ -5688,10 +5646,10 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     __Pyx_INCREF(__pyx_v_lr_all);
     __pyx_t_1 = __pyx_v_lr_all;
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_lr_yj, __pyx_t_1) < 0) __PYX_ERR(0, 385, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_lr_yj, __pyx_t_1) < 0) __PYX_ERR(0, 389, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":386
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":390
  *         self.lr_qi = lr_qi if lr_qi is not None else lr_all
  *         self.lr_yj = lr_yj if lr_yj is not None else lr_all
  *         self.reg_bu = reg_bu if reg_bu is not None else reg_all             # <<<<<<<<<<<<<<
@@ -5706,10 +5664,10 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     __Pyx_INCREF(__pyx_v_reg_all);
     __pyx_t_1 = __pyx_v_reg_all;
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_reg_bu, __pyx_t_1) < 0) __PYX_ERR(0, 386, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_reg_bu, __pyx_t_1) < 0) __PYX_ERR(0, 390, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":387
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":391
  *         self.lr_yj = lr_yj if lr_yj is not None else lr_all
  *         self.reg_bu = reg_bu if reg_bu is not None else reg_all
  *         self.reg_bi = reg_bi if reg_bi is not None else reg_all             # <<<<<<<<<<<<<<
@@ -5724,10 +5682,10 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     __Pyx_INCREF(__pyx_v_reg_all);
     __pyx_t_1 = __pyx_v_reg_all;
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_reg_bi, __pyx_t_1) < 0) __PYX_ERR(0, 387, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_reg_bi, __pyx_t_1) < 0) __PYX_ERR(0, 391, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":388
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":392
  *         self.reg_bu = reg_bu if reg_bu is not None else reg_all
  *         self.reg_bi = reg_bi if reg_bi is not None else reg_all
  *         self.reg_pu = reg_pu if reg_pu is not None else reg_all             # <<<<<<<<<<<<<<
@@ -5742,10 +5700,10 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     __Pyx_INCREF(__pyx_v_reg_all);
     __pyx_t_1 = __pyx_v_reg_all;
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_reg_pu, __pyx_t_1) < 0) __PYX_ERR(0, 388, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_reg_pu, __pyx_t_1) < 0) __PYX_ERR(0, 392, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":389
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":393
  *         self.reg_bi = reg_bi if reg_bi is not None else reg_all
  *         self.reg_pu = reg_pu if reg_pu is not None else reg_all
  *         self.reg_qi = reg_qi if reg_qi is not None else reg_all             # <<<<<<<<<<<<<<
@@ -5760,10 +5718,10 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     __Pyx_INCREF(__pyx_v_reg_all);
     __pyx_t_1 = __pyx_v_reg_all;
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_reg_qi, __pyx_t_1) < 0) __PYX_ERR(0, 389, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_reg_qi, __pyx_t_1) < 0) __PYX_ERR(0, 393, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":390
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":394
  *         self.reg_pu = reg_pu if reg_pu is not None else reg_all
  *         self.reg_qi = reg_qi if reg_qi is not None else reg_all
  *         self.reg_yj = reg_yj if reg_yj is not None else reg_all             # <<<<<<<<<<<<<<
@@ -5778,37 +5736,37 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     __Pyx_INCREF(__pyx_v_reg_all);
     __pyx_t_1 = __pyx_v_reg_all;
   }
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_reg_yj, __pyx_t_1) < 0) __PYX_ERR(0, 390, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_reg_yj, __pyx_t_1) < 0) __PYX_ERR(0, 394, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":391
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":395
  *         self.reg_qi = reg_qi if reg_qi is not None else reg_all
  *         self.reg_yj = reg_yj if reg_yj is not None else reg_all
  *         self.random_state = random_state             # <<<<<<<<<<<<<<
  *         self.verbose = verbose
  * 
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_random_state, __pyx_v_random_state) < 0) __PYX_ERR(0, 391, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_random_state, __pyx_v_random_state) < 0) __PYX_ERR(0, 395, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":392
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":396
  *         self.reg_yj = reg_yj if reg_yj is not None else reg_all
  *         self.random_state = random_state
  *         self.verbose = verbose             # <<<<<<<<<<<<<<
  * 
  *         AlgoBase.__init__(self)
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_verbose, __pyx_v_verbose) < 0) __PYX_ERR(0, 392, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_verbose, __pyx_v_verbose) < 0) __PYX_ERR(0, 396, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":394
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":398
  *         self.verbose = verbose
  * 
  *         AlgoBase.__init__(self)             # <<<<<<<<<<<<<<
  * 
  *     def fit(self, trainset):
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_AlgoBase); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 394, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_AlgoBase); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 398, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_init); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 394, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_init); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 398, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -5823,12 +5781,12 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_3, __pyx_v_self) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_v_self);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 394, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 398, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":372
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":376
  *     """
  * 
  *     def __init__(self, n_factors=20, n_epochs=20, init_mean=0, init_std_dev=.1,             # <<<<<<<<<<<<<<
@@ -5851,7 +5809,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   return __pyx_r;
 }
 
-/* "surprise/prediction_algorithms/matrix_factorization.pyx":396
+/* "surprise/prediction_algorithms/matrix_factorization.pyx":400
  *         AlgoBase.__init__(self)
  * 
  *     def fit(self, trainset):             # <<<<<<<<<<<<<<
@@ -5891,11 +5849,11 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_trainset)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("fit", 1, 2, 2, 1); __PYX_ERR(0, 396, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("fit", 1, 2, 2, 1); __PYX_ERR(0, 400, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "fit") < 0)) __PYX_ERR(0, 396, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "fit") < 0)) __PYX_ERR(0, 400, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -5908,7 +5866,7 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("fit", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 396, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("fit", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 400, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("surprise.prediction_algorithms.matrix_factorization.SVDpp.fit", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -5931,16 +5889,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   PyObject *__pyx_t_5 = NULL;
   __Pyx_RefNannySetupContext("fit", 0);
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":398
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":402
  *     def fit(self, trainset):
  * 
  *         AlgoBase.fit(self, trainset)             # <<<<<<<<<<<<<<
  *         self.sgd(trainset)
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_AlgoBase); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 398, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_AlgoBase); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 402, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_fit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 398, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_fit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 402, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -5958,7 +5916,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_v_self, __pyx_v_trainset};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 398, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 402, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
@@ -5966,13 +5924,13 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_v_self, __pyx_v_trainset};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 398, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 402, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
   #endif
   {
-    __pyx_t_5 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 398, __pyx_L1_error)
+    __pyx_t_5 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 402, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     if (__pyx_t_2) {
       __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_2); __pyx_t_2 = NULL;
@@ -5983,21 +5941,21 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     __Pyx_INCREF(__pyx_v_trainset);
     __Pyx_GIVEREF(__pyx_v_trainset);
     PyTuple_SET_ITEM(__pyx_t_5, 1+__pyx_t_4, __pyx_v_trainset);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 398, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 402, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":399
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":403
  * 
  *         AlgoBase.fit(self, trainset)
  *         self.sgd(trainset)             # <<<<<<<<<<<<<<
  * 
  *         return self
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_sgd); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 399, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_sgd); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 403, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
@@ -6011,12 +5969,12 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   }
   __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_5, __pyx_v_trainset) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_trainset);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 399, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 403, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":401
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":405
  *         self.sgd(trainset)
  * 
  *         return self             # <<<<<<<<<<<<<<
@@ -6028,7 +5986,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":396
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":400
  *         AlgoBase.__init__(self)
  * 
  *     def fit(self, trainset):             # <<<<<<<<<<<<<<
@@ -6050,7 +6008,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   return __pyx_r;
 }
 
-/* "surprise/prediction_algorithms/matrix_factorization.pyx":403
+/* "surprise/prediction_algorithms/matrix_factorization.pyx":407
  *         return self
  * 
  *     def sgd(self, trainset):             # <<<<<<<<<<<<<<
@@ -6090,11 +6048,11 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_trainset)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("sgd", 1, 2, 2, 1); __PYX_ERR(0, 403, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("sgd", 1, 2, 2, 1); __PYX_ERR(0, 407, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "sgd") < 0)) __PYX_ERR(0, 403, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "sgd") < 0)) __PYX_ERR(0, 407, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -6107,7 +6065,7 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("sgd", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 403, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("sgd", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 407, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("surprise.prediction_algorithms.matrix_factorization.SVDpp.sgd", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -6249,169 +6207,169 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   __pyx_pybuffernd_u_impl_fdb.data = NULL;
   __pyx_pybuffernd_u_impl_fdb.rcbuffer = &__pyx_pybuffer_u_impl_fdb;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":418
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":422
  *         cdef int u, i, j, f
  *         cdef double r, err, dot, puf, qif, sqrt_Iu, _
  *         cdef double global_mean = self.trainset.global_mean             # <<<<<<<<<<<<<<
  *         cdef np.ndarray[np.double_t] u_impl_fdb
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 418, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 422, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_global_mean); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 418, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_global_mean); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 422, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 418, __pyx_L1_error)
+  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 422, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_global_mean = __pyx_t_3;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":421
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":425
  *         cdef np.ndarray[np.double_t] u_impl_fdb
  * 
  *         cdef double lr_bu = self.lr_bu             # <<<<<<<<<<<<<<
  *         cdef double lr_bi = self.lr_bi
  *         cdef double lr_pu = self.lr_pu
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_lr_bu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 421, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_lr_bu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 425, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 421, __pyx_L1_error)
+  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 425, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_lr_bu = __pyx_t_3;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":422
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":426
  * 
  *         cdef double lr_bu = self.lr_bu
  *         cdef double lr_bi = self.lr_bi             # <<<<<<<<<<<<<<
  *         cdef double lr_pu = self.lr_pu
  *         cdef double lr_qi = self.lr_qi
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_lr_bi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 422, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_lr_bi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 426, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 422, __pyx_L1_error)
+  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 426, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_lr_bi = __pyx_t_3;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":423
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":427
  *         cdef double lr_bu = self.lr_bu
  *         cdef double lr_bi = self.lr_bi
  *         cdef double lr_pu = self.lr_pu             # <<<<<<<<<<<<<<
  *         cdef double lr_qi = self.lr_qi
  *         cdef double lr_yj = self.lr_yj
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_lr_pu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 423, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_lr_pu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 427, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 423, __pyx_L1_error)
+  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 427, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_lr_pu = __pyx_t_3;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":424
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":428
  *         cdef double lr_bi = self.lr_bi
  *         cdef double lr_pu = self.lr_pu
  *         cdef double lr_qi = self.lr_qi             # <<<<<<<<<<<<<<
  *         cdef double lr_yj = self.lr_yj
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_lr_qi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 424, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_lr_qi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 428, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 424, __pyx_L1_error)
+  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 428, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_lr_qi = __pyx_t_3;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":425
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":429
  *         cdef double lr_pu = self.lr_pu
  *         cdef double lr_qi = self.lr_qi
  *         cdef double lr_yj = self.lr_yj             # <<<<<<<<<<<<<<
  * 
  *         cdef double reg_bu = self.reg_bu
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_lr_yj); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 425, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_lr_yj); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 429, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 425, __pyx_L1_error)
+  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 429, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_lr_yj = __pyx_t_3;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":427
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":431
  *         cdef double lr_yj = self.lr_yj
  * 
  *         cdef double reg_bu = self.reg_bu             # <<<<<<<<<<<<<<
  *         cdef double reg_bi = self.reg_bi
  *         cdef double reg_pu = self.reg_pu
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_reg_bu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 427, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_reg_bu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 431, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 427, __pyx_L1_error)
+  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 431, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_reg_bu = __pyx_t_3;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":428
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":432
  * 
  *         cdef double reg_bu = self.reg_bu
  *         cdef double reg_bi = self.reg_bi             # <<<<<<<<<<<<<<
  *         cdef double reg_pu = self.reg_pu
  *         cdef double reg_qi = self.reg_qi
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_reg_bi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 428, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_reg_bi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 432, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 428, __pyx_L1_error)
+  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 432, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_reg_bi = __pyx_t_3;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":429
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":433
  *         cdef double reg_bu = self.reg_bu
  *         cdef double reg_bi = self.reg_bi
  *         cdef double reg_pu = self.reg_pu             # <<<<<<<<<<<<<<
  *         cdef double reg_qi = self.reg_qi
  *         cdef double reg_yj = self.reg_yj
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_reg_pu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 429, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_reg_pu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 433, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 429, __pyx_L1_error)
+  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 433, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_reg_pu = __pyx_t_3;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":430
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":434
  *         cdef double reg_bi = self.reg_bi
  *         cdef double reg_pu = self.reg_pu
  *         cdef double reg_qi = self.reg_qi             # <<<<<<<<<<<<<<
  *         cdef double reg_yj = self.reg_yj
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_reg_qi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 430, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_reg_qi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 434, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 430, __pyx_L1_error)
+  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 434, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_reg_qi = __pyx_t_3;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":431
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":435
  *         cdef double reg_pu = self.reg_pu
  *         cdef double reg_qi = self.reg_qi
  *         cdef double reg_yj = self.reg_yj             # <<<<<<<<<<<<<<
  * 
  *         bu = np.zeros(trainset.n_users, np.double)
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_reg_yj); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 431, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_reg_yj); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 435, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 431, __pyx_L1_error)
+  __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_2); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 435, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_reg_yj = __pyx_t_3;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":433
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":437
  *         cdef double reg_yj = self.reg_yj
  * 
  *         bu = np.zeros(trainset.n_users, np.double)             # <<<<<<<<<<<<<<
  *         bi = np.zeros(trainset.n_items, np.double)
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 433, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 437, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 433, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 437, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_users); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 433, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_users); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 437, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 433, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 437, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_double); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 433, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_double); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 437, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -6429,7 +6387,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_4)) {
     PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_t_1, __pyx_t_6};
-    __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 433, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 437, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6439,7 +6397,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_4)) {
     PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_t_1, __pyx_t_6};
-    __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 433, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 437, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6447,7 +6405,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   } else
   #endif
   {
-    __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 433, __pyx_L1_error)
+    __pyx_t_8 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 437, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     if (__pyx_t_5) {
       __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_8, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -6458,12 +6416,12 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     PyTuple_SET_ITEM(__pyx_t_8, 1+__pyx_t_7, __pyx_t_6);
     __pyx_t_1 = 0;
     __pyx_t_6 = 0;
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 433, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_8, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 437, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 433, __pyx_L1_error)
+  if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 437, __pyx_L1_error)
   __pyx_t_9 = ((PyArrayObject *)__pyx_t_2);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -6480,29 +6438,29 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       __pyx_t_10 = __pyx_t_11 = __pyx_t_12 = 0;
     }
     __pyx_pybuffernd_bu.diminfo[0].strides = __pyx_pybuffernd_bu.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_bu.diminfo[0].shape = __pyx_pybuffernd_bu.rcbuffer->pybuffer.shape[0];
-    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 433, __pyx_L1_error)
+    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 437, __pyx_L1_error)
   }
   __pyx_t_9 = 0;
   __pyx_v_bu = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":434
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":438
  * 
  *         bu = np.zeros(trainset.n_users, np.double)
  *         bi = np.zeros(trainset.n_items, np.double)             # <<<<<<<<<<<<<<
  * 
  *         rng = get_rng(self.random_state)
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 434, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 438, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_zeros); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 434, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_zeros); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 438, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_items); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 434, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_items); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 438, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 434, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 438, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_double); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 434, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_double); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 438, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_t_6 = NULL;
@@ -6520,7 +6478,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_8)) {
     PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_t_4, __pyx_t_1};
-    __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 434, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 438, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -6530,7 +6488,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_8)) {
     PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_t_4, __pyx_t_1};
-    __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 434, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 438, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -6538,7 +6496,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   } else
   #endif
   {
-    __pyx_t_5 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 434, __pyx_L1_error)
+    __pyx_t_5 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 438, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     if (__pyx_t_6) {
       __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -6549,12 +6507,12 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     PyTuple_SET_ITEM(__pyx_t_5, 1+__pyx_t_7, __pyx_t_1);
     __pyx_t_4 = 0;
     __pyx_t_1 = 0;
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_5, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 434, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_5, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 438, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-  if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 434, __pyx_L1_error)
+  if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 438, __pyx_L1_error)
   __pyx_t_13 = ((PyArrayObject *)__pyx_t_2);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -6571,22 +6529,22 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       __pyx_t_12 = __pyx_t_11 = __pyx_t_10 = 0;
     }
     __pyx_pybuffernd_bi.diminfo[0].strides = __pyx_pybuffernd_bi.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_bi.diminfo[0].shape = __pyx_pybuffernd_bi.rcbuffer->pybuffer.shape[0];
-    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 434, __pyx_L1_error)
+    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 438, __pyx_L1_error)
   }
   __pyx_t_13 = 0;
   __pyx_v_bi = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":436
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":440
  *         bi = np.zeros(trainset.n_items, np.double)
  * 
  *         rng = get_rng(self.random_state)             # <<<<<<<<<<<<<<
  * 
  *         pu = rng.normal(self.init_mean, self.init_std_dev,
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_get_rng); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 436, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_get_rng); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 440, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_random_state); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 436, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_random_state); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 440, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __pyx_t_1 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_8))) {
@@ -6601,38 +6559,38 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   __pyx_t_2 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_8, __pyx_t_1, __pyx_t_5) : __Pyx_PyObject_CallOneArg(__pyx_t_8, __pyx_t_5);
   __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 436, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 440, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
   __pyx_v_rng = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":438
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":442
  *         rng = get_rng(self.random_state)
  * 
  *         pu = rng.normal(self.init_mean, self.init_std_dev,             # <<<<<<<<<<<<<<
  *                         (trainset.n_users, self.n_factors))
  *         qi = rng.normal(self.init_mean, self.init_std_dev,
  */
-  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_rng, __pyx_n_s_normal); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 438, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_rng, __pyx_n_s_normal); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 442, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_mean); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 438, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_mean); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 442, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_std_dev); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 438, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_std_dev); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 442, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":439
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":443
  * 
  *         pu = rng.normal(self.init_mean, self.init_std_dev,
  *                         (trainset.n_users, self.n_factors))             # <<<<<<<<<<<<<<
  *         qi = rng.normal(self.init_mean, self.init_std_dev,
  *                         (trainset.n_items, self.n_factors))
  */
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_users); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 439, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_users); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 443, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 439, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 443, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_14 = PyTuple_New(2); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 439, __pyx_L1_error)
+  __pyx_t_14 = PyTuple_New(2); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 443, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_14);
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_t_4);
@@ -6655,7 +6613,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_8)) {
     PyObject *__pyx_temp[4] = {__pyx_t_6, __pyx_t_5, __pyx_t_1, __pyx_t_14};
-    __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 438, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 442, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -6666,7 +6624,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_8)) {
     PyObject *__pyx_temp[4] = {__pyx_t_6, __pyx_t_5, __pyx_t_1, __pyx_t_14};
-    __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 438, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 442, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -6675,7 +6633,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   } else
   #endif
   {
-    __pyx_t_4 = PyTuple_New(3+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 438, __pyx_L1_error)
+    __pyx_t_4 = PyTuple_New(3+__pyx_t_7); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 442, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     if (__pyx_t_6) {
       __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -6689,20 +6647,20 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     __pyx_t_5 = 0;
     __pyx_t_1 = 0;
     __pyx_t_14 = 0;
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_4, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 438, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_4, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 442, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":438
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":442
  *         rng = get_rng(self.random_state)
  * 
  *         pu = rng.normal(self.init_mean, self.init_std_dev,             # <<<<<<<<<<<<<<
  *                         (trainset.n_users, self.n_factors))
  *         qi = rng.normal(self.init_mean, self.init_std_dev,
  */
-  if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 438, __pyx_L1_error)
+  if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 442, __pyx_L1_error)
   __pyx_t_15 = ((PyArrayObject *)__pyx_t_2);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -6719,38 +6677,38 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       __pyx_t_10 = __pyx_t_11 = __pyx_t_12 = 0;
     }
     __pyx_pybuffernd_pu.diminfo[0].strides = __pyx_pybuffernd_pu.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_pu.diminfo[0].shape = __pyx_pybuffernd_pu.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_pu.diminfo[1].strides = __pyx_pybuffernd_pu.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_pu.diminfo[1].shape = __pyx_pybuffernd_pu.rcbuffer->pybuffer.shape[1];
-    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 438, __pyx_L1_error)
+    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 442, __pyx_L1_error)
   }
   __pyx_t_15 = 0;
   __pyx_v_pu = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":440
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":444
  *         pu = rng.normal(self.init_mean, self.init_std_dev,
  *                         (trainset.n_users, self.n_factors))
  *         qi = rng.normal(self.init_mean, self.init_std_dev,             # <<<<<<<<<<<<<<
  *                         (trainset.n_items, self.n_factors))
  *         yj = rng.normal(self.init_mean, self.init_std_dev,
  */
-  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_rng, __pyx_n_s_normal); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 440, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_rng, __pyx_n_s_normal); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 444, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_mean); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 440, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_mean); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 444, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_std_dev); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 440, __pyx_L1_error)
+  __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_std_dev); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 444, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_14);
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":441
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":445
  *                         (trainset.n_users, self.n_factors))
  *         qi = rng.normal(self.init_mean, self.init_std_dev,
  *                         (trainset.n_items, self.n_factors))             # <<<<<<<<<<<<<<
  *         yj = rng.normal(self.init_mean, self.init_std_dev,
  *                         (trainset.n_items, self.n_factors))
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_items); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 441, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_items); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 445, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 441, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 445, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 441, __pyx_L1_error)
+  __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 445, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_1);
@@ -6773,7 +6731,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_8)) {
     PyObject *__pyx_temp[4] = {__pyx_t_5, __pyx_t_4, __pyx_t_14, __pyx_t_6};
-    __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 440, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 444, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -6784,7 +6742,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_8)) {
     PyObject *__pyx_temp[4] = {__pyx_t_5, __pyx_t_4, __pyx_t_14, __pyx_t_6};
-    __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 440, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 444, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
@@ -6793,7 +6751,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   } else
   #endif
   {
-    __pyx_t_1 = PyTuple_New(3+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 440, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(3+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 444, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     if (__pyx_t_5) {
       __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -6807,20 +6765,20 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     __pyx_t_4 = 0;
     __pyx_t_14 = 0;
     __pyx_t_6 = 0;
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_1, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 440, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_1, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 444, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":440
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":444
  *         pu = rng.normal(self.init_mean, self.init_std_dev,
  *                         (trainset.n_users, self.n_factors))
  *         qi = rng.normal(self.init_mean, self.init_std_dev,             # <<<<<<<<<<<<<<
  *                         (trainset.n_items, self.n_factors))
  *         yj = rng.normal(self.init_mean, self.init_std_dev,
  */
-  if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 440, __pyx_L1_error)
+  if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 444, __pyx_L1_error)
   __pyx_t_16 = ((PyArrayObject *)__pyx_t_2);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -6837,38 +6795,38 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       __pyx_t_12 = __pyx_t_11 = __pyx_t_10 = 0;
     }
     __pyx_pybuffernd_qi.diminfo[0].strides = __pyx_pybuffernd_qi.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_qi.diminfo[0].shape = __pyx_pybuffernd_qi.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_qi.diminfo[1].strides = __pyx_pybuffernd_qi.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_qi.diminfo[1].shape = __pyx_pybuffernd_qi.rcbuffer->pybuffer.shape[1];
-    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 440, __pyx_L1_error)
+    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 444, __pyx_L1_error)
   }
   __pyx_t_16 = 0;
   __pyx_v_qi = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":442
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":446
  *         qi = rng.normal(self.init_mean, self.init_std_dev,
  *                         (trainset.n_items, self.n_factors))
  *         yj = rng.normal(self.init_mean, self.init_std_dev,             # <<<<<<<<<<<<<<
  *                         (trainset.n_items, self.n_factors))
  *         u_impl_fdb = np.zeros(self.n_factors, np.double)
  */
-  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_rng, __pyx_n_s_normal); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 442, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_rng, __pyx_n_s_normal); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 446, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_mean); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 442, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_mean); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 446, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_std_dev); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 442, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_std_dev); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 446, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":443
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":447
  *                         (trainset.n_items, self.n_factors))
  *         yj = rng.normal(self.init_mean, self.init_std_dev,
  *                         (trainset.n_items, self.n_factors))             # <<<<<<<<<<<<<<
  *         u_impl_fdb = np.zeros(self.n_factors, np.double)
  * 
  */
-  __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_items); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 443, __pyx_L1_error)
+  __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_items); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 447, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_14);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 443, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 447, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 443, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 447, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_14);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_14);
@@ -6891,7 +6849,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_8)) {
     PyObject *__pyx_temp[4] = {__pyx_t_4, __pyx_t_1, __pyx_t_6, __pyx_t_5};
-    __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 442, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 446, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6902,7 +6860,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_8)) {
     PyObject *__pyx_temp[4] = {__pyx_t_4, __pyx_t_1, __pyx_t_6, __pyx_t_5};
-    __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 442, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_8, __pyx_temp+1-__pyx_t_7, 3+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 446, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -6911,7 +6869,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   } else
   #endif
   {
-    __pyx_t_14 = PyTuple_New(3+__pyx_t_7); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 442, __pyx_L1_error)
+    __pyx_t_14 = PyTuple_New(3+__pyx_t_7); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 446, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_14);
     if (__pyx_t_4) {
       __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_14, 0, __pyx_t_4); __pyx_t_4 = NULL;
@@ -6925,20 +6883,20 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     __pyx_t_1 = 0;
     __pyx_t_6 = 0;
     __pyx_t_5 = 0;
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_14, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 442, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_8, __pyx_t_14, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 446, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
   }
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":442
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":446
  *         qi = rng.normal(self.init_mean, self.init_std_dev,
  *                         (trainset.n_items, self.n_factors))
  *         yj = rng.normal(self.init_mean, self.init_std_dev,             # <<<<<<<<<<<<<<
  *                         (trainset.n_items, self.n_factors))
  *         u_impl_fdb = np.zeros(self.n_factors, np.double)
  */
-  if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 442, __pyx_L1_error)
+  if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 446, __pyx_L1_error)
   __pyx_t_17 = ((PyArrayObject *)__pyx_t_2);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -6955,29 +6913,29 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       __pyx_t_10 = __pyx_t_11 = __pyx_t_12 = 0;
     }
     __pyx_pybuffernd_yj.diminfo[0].strides = __pyx_pybuffernd_yj.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_yj.diminfo[0].shape = __pyx_pybuffernd_yj.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_yj.diminfo[1].strides = __pyx_pybuffernd_yj.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_yj.diminfo[1].shape = __pyx_pybuffernd_yj.rcbuffer->pybuffer.shape[1];
-    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 442, __pyx_L1_error)
+    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 446, __pyx_L1_error)
   }
   __pyx_t_17 = 0;
   __pyx_v_yj = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":444
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":448
  *         yj = rng.normal(self.init_mean, self.init_std_dev,
  *                         (trainset.n_items, self.n_factors))
  *         u_impl_fdb = np.zeros(self.n_factors, np.double)             # <<<<<<<<<<<<<<
  * 
  *         for current_epoch in range(self.n_epochs):
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_np); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 444, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_np); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 448, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_zeros); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 444, __pyx_L1_error)
+  __pyx_t_14 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_zeros); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 448, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_14);
   __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 444, __pyx_L1_error)
+  __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 448, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_8);
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 444, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 448, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_double); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 444, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_double); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 448, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __pyx_t_5 = NULL;
@@ -6995,7 +6953,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_14)) {
     PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_t_8, __pyx_t_6};
-    __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_14, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 444, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_14, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 448, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -7005,7 +6963,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_14)) {
     PyObject *__pyx_temp[3] = {__pyx_t_5, __pyx_t_8, __pyx_t_6};
-    __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_14, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 444, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_14, __pyx_temp+1-__pyx_t_7, 2+__pyx_t_7); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 448, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -7013,7 +6971,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   } else
   #endif
   {
-    __pyx_t_1 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 444, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(2+__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 448, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     if (__pyx_t_5) {
       __Pyx_GIVEREF(__pyx_t_5); PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_5); __pyx_t_5 = NULL;
@@ -7024,12 +6982,12 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     PyTuple_SET_ITEM(__pyx_t_1, 1+__pyx_t_7, __pyx_t_6);
     __pyx_t_8 = 0;
     __pyx_t_6 = 0;
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_14, __pyx_t_1, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 444, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_14, __pyx_t_1, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 448, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   }
   __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
-  if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 444, __pyx_L1_error)
+  if (!(likely(((__pyx_t_2) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_2, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 448, __pyx_L1_error)
   __pyx_t_18 = ((PyArrayObject *)__pyx_t_2);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -7046,22 +7004,22 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       __pyx_t_12 = __pyx_t_11 = __pyx_t_10 = 0;
     }
     __pyx_pybuffernd_u_impl_fdb.diminfo[0].strides = __pyx_pybuffernd_u_impl_fdb.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_u_impl_fdb.diminfo[0].shape = __pyx_pybuffernd_u_impl_fdb.rcbuffer->pybuffer.shape[0];
-    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 444, __pyx_L1_error)
+    if (unlikely(__pyx_t_7 < 0)) __PYX_ERR(0, 448, __pyx_L1_error)
   }
   __pyx_t_18 = 0;
   __pyx_v_u_impl_fdb = ((PyArrayObject *)__pyx_t_2);
   __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":446
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":450
  *         u_impl_fdb = np.zeros(self.n_factors, np.double)
  * 
  *         for current_epoch in range(self.n_epochs):             # <<<<<<<<<<<<<<
  *             if self.verbose:
  *                 print(" processing epoch {}".format(current_epoch))
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_14, __pyx_n_s_range); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 446, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_14, __pyx_n_s_range); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 450, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_14);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_epochs); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 446, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_epochs); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 450, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __pyx_t_6 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_14))) {
@@ -7076,16 +7034,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   __pyx_t_2 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_14, __pyx_t_6, __pyx_t_1) : __Pyx_PyObject_CallOneArg(__pyx_t_14, __pyx_t_1);
   __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 446, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 450, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
   if (likely(PyList_CheckExact(__pyx_t_2)) || PyTuple_CheckExact(__pyx_t_2)) {
     __pyx_t_14 = __pyx_t_2; __Pyx_INCREF(__pyx_t_14); __pyx_t_19 = 0;
     __pyx_t_20 = NULL;
   } else {
-    __pyx_t_19 = -1; __pyx_t_14 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 446, __pyx_L1_error)
+    __pyx_t_19 = -1; __pyx_t_14 = PyObject_GetIter(__pyx_t_2); if (unlikely(!__pyx_t_14)) __PYX_ERR(0, 450, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_14);
-    __pyx_t_20 = Py_TYPE(__pyx_t_14)->tp_iternext; if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 446, __pyx_L1_error)
+    __pyx_t_20 = Py_TYPE(__pyx_t_14)->tp_iternext; if (unlikely(!__pyx_t_20)) __PYX_ERR(0, 450, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   for (;;) {
@@ -7093,17 +7051,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       if (likely(PyList_CheckExact(__pyx_t_14))) {
         if (__pyx_t_19 >= PyList_GET_SIZE(__pyx_t_14)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_2 = PyList_GET_ITEM(__pyx_t_14, __pyx_t_19); __Pyx_INCREF(__pyx_t_2); __pyx_t_19++; if (unlikely(0 < 0)) __PYX_ERR(0, 446, __pyx_L1_error)
+        __pyx_t_2 = PyList_GET_ITEM(__pyx_t_14, __pyx_t_19); __Pyx_INCREF(__pyx_t_2); __pyx_t_19++; if (unlikely(0 < 0)) __PYX_ERR(0, 450, __pyx_L1_error)
         #else
-        __pyx_t_2 = PySequence_ITEM(__pyx_t_14, __pyx_t_19); __pyx_t_19++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 446, __pyx_L1_error)
+        __pyx_t_2 = PySequence_ITEM(__pyx_t_14, __pyx_t_19); __pyx_t_19++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 450, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         #endif
       } else {
         if (__pyx_t_19 >= PyTuple_GET_SIZE(__pyx_t_14)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_14, __pyx_t_19); __Pyx_INCREF(__pyx_t_2); __pyx_t_19++; if (unlikely(0 < 0)) __PYX_ERR(0, 446, __pyx_L1_error)
+        __pyx_t_2 = PyTuple_GET_ITEM(__pyx_t_14, __pyx_t_19); __Pyx_INCREF(__pyx_t_2); __pyx_t_19++; if (unlikely(0 < 0)) __PYX_ERR(0, 450, __pyx_L1_error)
         #else
-        __pyx_t_2 = PySequence_ITEM(__pyx_t_14, __pyx_t_19); __pyx_t_19++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 446, __pyx_L1_error)
+        __pyx_t_2 = PySequence_ITEM(__pyx_t_14, __pyx_t_19); __pyx_t_19++; if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 450, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         #endif
       }
@@ -7113,7 +7071,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 446, __pyx_L1_error)
+          else __PYX_ERR(0, 450, __pyx_L1_error)
         }
         break;
       }
@@ -7122,27 +7080,27 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     __Pyx_XDECREF_SET(__pyx_v_current_epoch, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":447
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":451
  * 
  *         for current_epoch in range(self.n_epochs):
  *             if self.verbose:             # <<<<<<<<<<<<<<
  *                 print(" processing epoch {}".format(current_epoch))
  *             for u, i, r in trainset.all_ratings():
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_verbose); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 447, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_verbose); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 451, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_21 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_21 < 0)) __PYX_ERR(0, 447, __pyx_L1_error)
+    __pyx_t_21 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_21 < 0)) __PYX_ERR(0, 451, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     if (__pyx_t_21) {
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":448
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":452
  *         for current_epoch in range(self.n_epochs):
  *             if self.verbose:
  *                 print(" processing epoch {}".format(current_epoch))             # <<<<<<<<<<<<<<
  *             for u, i, r in trainset.all_ratings():
  * 
  */
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u_processing_epoch, __pyx_n_s_format); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 448, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u_processing_epoch, __pyx_n_s_format); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 452, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __pyx_t_6 = NULL;
       if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_1))) {
@@ -7156,15 +7114,15 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       }
       __pyx_t_2 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_6, __pyx_v_current_epoch) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_v_current_epoch);
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 448, __pyx_L1_error)
+      if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 452, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_print, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 448, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_print, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 452, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":447
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":451
  * 
  *         for current_epoch in range(self.n_epochs):
  *             if self.verbose:             # <<<<<<<<<<<<<<
@@ -7173,14 +7131,14 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  */
     }
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":449
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":453
  *             if self.verbose:
  *                 print(" processing epoch {}".format(current_epoch))
  *             for u, i, r in trainset.all_ratings():             # <<<<<<<<<<<<<<
  * 
  *                 # items rated by u. This is COSTLY
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_all_ratings); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 449, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_all_ratings); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 453, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_t_6 = NULL;
     if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_2))) {
@@ -7194,16 +7152,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     }
     __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_t_6) : __Pyx_PyObject_CallNoArg(__pyx_t_2);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 449, __pyx_L1_error)
+    if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 453, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
       __pyx_t_2 = __pyx_t_1; __Pyx_INCREF(__pyx_t_2); __pyx_t_22 = 0;
       __pyx_t_23 = NULL;
     } else {
-      __pyx_t_22 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 449, __pyx_L1_error)
+      __pyx_t_22 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 453, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_23 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_23)) __PYX_ERR(0, 449, __pyx_L1_error)
+      __pyx_t_23 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_23)) __PYX_ERR(0, 453, __pyx_L1_error)
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     for (;;) {
@@ -7211,17 +7169,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         if (likely(PyList_CheckExact(__pyx_t_2))) {
           if (__pyx_t_22 >= PyList_GET_SIZE(__pyx_t_2)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_1 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_22); __Pyx_INCREF(__pyx_t_1); __pyx_t_22++; if (unlikely(0 < 0)) __PYX_ERR(0, 449, __pyx_L1_error)
+          __pyx_t_1 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_22); __Pyx_INCREF(__pyx_t_1); __pyx_t_22++; if (unlikely(0 < 0)) __PYX_ERR(0, 453, __pyx_L1_error)
           #else
-          __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_22); __pyx_t_22++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 449, __pyx_L1_error)
+          __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_22); __pyx_t_22++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 453, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           #endif
         } else {
           if (__pyx_t_22 >= PyTuple_GET_SIZE(__pyx_t_2)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_22); __Pyx_INCREF(__pyx_t_1); __pyx_t_22++; if (unlikely(0 < 0)) __PYX_ERR(0, 449, __pyx_L1_error)
+          __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_22); __Pyx_INCREF(__pyx_t_1); __pyx_t_22++; if (unlikely(0 < 0)) __PYX_ERR(0, 453, __pyx_L1_error)
           #else
-          __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_22); __pyx_t_22++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 449, __pyx_L1_error)
+          __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_22); __pyx_t_22++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 453, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_1);
           #endif
         }
@@ -7231,7 +7189,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 449, __pyx_L1_error)
+            else __PYX_ERR(0, 453, __pyx_L1_error)
           }
           break;
         }
@@ -7243,7 +7201,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         if (unlikely(size != 3)) {
           if (size > 3) __Pyx_RaiseTooManyValuesError(3);
           else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-          __PYX_ERR(0, 449, __pyx_L1_error)
+          __PYX_ERR(0, 453, __pyx_L1_error)
         }
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
         if (likely(PyTuple_CheckExact(sequence))) {
@@ -7259,17 +7217,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         __Pyx_INCREF(__pyx_t_8);
         __Pyx_INCREF(__pyx_t_5);
         #else
-        __pyx_t_6 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 449, __pyx_L1_error)
+        __pyx_t_6 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 453, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_8 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 449, __pyx_L1_error)
+        __pyx_t_8 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 453, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
-        __pyx_t_5 = PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 449, __pyx_L1_error)
+        __pyx_t_5 = PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 453, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         #endif
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       } else {
         Py_ssize_t index = -1;
-        __pyx_t_4 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 449, __pyx_L1_error)
+        __pyx_t_4 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 453, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_4);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __pyx_t_24 = Py_TYPE(__pyx_t_4)->tp_iternext;
@@ -7279,7 +7237,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         __Pyx_GOTREF(__pyx_t_8);
         index = 2; __pyx_t_5 = __pyx_t_24(__pyx_t_4); if (unlikely(!__pyx_t_5)) goto __pyx_L8_unpacking_failed;
         __Pyx_GOTREF(__pyx_t_5);
-        if (__Pyx_IternextUnpackEndCheck(__pyx_t_24(__pyx_t_4), 3) < 0) __PYX_ERR(0, 449, __pyx_L1_error)
+        if (__Pyx_IternextUnpackEndCheck(__pyx_t_24(__pyx_t_4), 3) < 0) __PYX_ERR(0, 453, __pyx_L1_error)
         __pyx_t_24 = NULL;
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
         goto __pyx_L9_unpacking_done;
@@ -7287,40 +7245,40 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
         __pyx_t_24 = NULL;
         if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-        __PYX_ERR(0, 449, __pyx_L1_error)
+        __PYX_ERR(0, 453, __pyx_L1_error)
         __pyx_L9_unpacking_done:;
       }
-      __pyx_t_7 = __Pyx_PyInt_As_int(__pyx_t_6); if (unlikely((__pyx_t_7 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 449, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyInt_As_int(__pyx_t_6); if (unlikely((__pyx_t_7 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 453, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_25 = __Pyx_PyInt_As_int(__pyx_t_8); if (unlikely((__pyx_t_25 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 449, __pyx_L1_error)
+      __pyx_t_25 = __Pyx_PyInt_As_int(__pyx_t_8); if (unlikely((__pyx_t_25 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 453, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_5); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 449, __pyx_L1_error)
+      __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_5); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 453, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_v_u = __pyx_t_7;
       __pyx_v_i = __pyx_t_25;
       __pyx_v_r = __pyx_t_3;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":452
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":456
  * 
  *                 # items rated by u. This is COSTLY
  *                 Iu = [j for (j, _) in trainset.ur[u]]             # <<<<<<<<<<<<<<
  *                 sqrt_Iu = np.sqrt(len(Iu))
  * 
  */
-      __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 452, __pyx_L1_error)
+      __pyx_t_1 = PyList_New(0); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 456, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_ur); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 452, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_ur); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 456, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_8 = __Pyx_GetItemInt(__pyx_t_5, __pyx_v_u, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 452, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_GetItemInt(__pyx_t_5, __pyx_v_u, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 456, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       if (likely(PyList_CheckExact(__pyx_t_8)) || PyTuple_CheckExact(__pyx_t_8)) {
         __pyx_t_5 = __pyx_t_8; __Pyx_INCREF(__pyx_t_5); __pyx_t_26 = 0;
         __pyx_t_27 = NULL;
       } else {
-        __pyx_t_26 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_t_8); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 452, __pyx_L1_error)
+        __pyx_t_26 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_t_8); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 456, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_27 = Py_TYPE(__pyx_t_5)->tp_iternext; if (unlikely(!__pyx_t_27)) __PYX_ERR(0, 452, __pyx_L1_error)
+        __pyx_t_27 = Py_TYPE(__pyx_t_5)->tp_iternext; if (unlikely(!__pyx_t_27)) __PYX_ERR(0, 456, __pyx_L1_error)
       }
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       for (;;) {
@@ -7328,17 +7286,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
           if (likely(PyList_CheckExact(__pyx_t_5))) {
             if (__pyx_t_26 >= PyList_GET_SIZE(__pyx_t_5)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_8 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_26); __Pyx_INCREF(__pyx_t_8); __pyx_t_26++; if (unlikely(0 < 0)) __PYX_ERR(0, 452, __pyx_L1_error)
+            __pyx_t_8 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_26); __Pyx_INCREF(__pyx_t_8); __pyx_t_26++; if (unlikely(0 < 0)) __PYX_ERR(0, 456, __pyx_L1_error)
             #else
-            __pyx_t_8 = PySequence_ITEM(__pyx_t_5, __pyx_t_26); __pyx_t_26++; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 452, __pyx_L1_error)
+            __pyx_t_8 = PySequence_ITEM(__pyx_t_5, __pyx_t_26); __pyx_t_26++; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 456, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_8);
             #endif
           } else {
             if (__pyx_t_26 >= PyTuple_GET_SIZE(__pyx_t_5)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_8 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_26); __Pyx_INCREF(__pyx_t_8); __pyx_t_26++; if (unlikely(0 < 0)) __PYX_ERR(0, 452, __pyx_L1_error)
+            __pyx_t_8 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_26); __Pyx_INCREF(__pyx_t_8); __pyx_t_26++; if (unlikely(0 < 0)) __PYX_ERR(0, 456, __pyx_L1_error)
             #else
-            __pyx_t_8 = PySequence_ITEM(__pyx_t_5, __pyx_t_26); __pyx_t_26++; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 452, __pyx_L1_error)
+            __pyx_t_8 = PySequence_ITEM(__pyx_t_5, __pyx_t_26); __pyx_t_26++; if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 456, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_8);
             #endif
           }
@@ -7348,7 +7306,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
               if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-              else __PYX_ERR(0, 452, __pyx_L1_error)
+              else __PYX_ERR(0, 456, __pyx_L1_error)
             }
             break;
           }
@@ -7360,7 +7318,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
           if (unlikely(size != 2)) {
             if (size > 2) __Pyx_RaiseTooManyValuesError(2);
             else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-            __PYX_ERR(0, 452, __pyx_L1_error)
+            __PYX_ERR(0, 456, __pyx_L1_error)
           }
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
           if (likely(PyTuple_CheckExact(sequence))) {
@@ -7373,15 +7331,15 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
           __Pyx_INCREF(__pyx_t_6);
           __Pyx_INCREF(__pyx_t_4);
           #else
-          __pyx_t_6 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 452, __pyx_L1_error)
+          __pyx_t_6 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 456, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_6);
-          __pyx_t_4 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 452, __pyx_L1_error)
+          __pyx_t_4 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 456, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_4);
           #endif
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
         } else {
           Py_ssize_t index = -1;
-          __pyx_t_28 = PyObject_GetIter(__pyx_t_8); if (unlikely(!__pyx_t_28)) __PYX_ERR(0, 452, __pyx_L1_error)
+          __pyx_t_28 = PyObject_GetIter(__pyx_t_8); if (unlikely(!__pyx_t_28)) __PYX_ERR(0, 456, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_28);
           __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
           __pyx_t_24 = Py_TYPE(__pyx_t_28)->tp_iternext;
@@ -7389,7 +7347,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
           __Pyx_GOTREF(__pyx_t_6);
           index = 1; __pyx_t_4 = __pyx_t_24(__pyx_t_28); if (unlikely(!__pyx_t_4)) goto __pyx_L12_unpacking_failed;
           __Pyx_GOTREF(__pyx_t_4);
-          if (__Pyx_IternextUnpackEndCheck(__pyx_t_24(__pyx_t_28), 2) < 0) __PYX_ERR(0, 452, __pyx_L1_error)
+          if (__Pyx_IternextUnpackEndCheck(__pyx_t_24(__pyx_t_28), 2) < 0) __PYX_ERR(0, 456, __pyx_L1_error)
           __pyx_t_24 = NULL;
           __Pyx_DECREF(__pyx_t_28); __pyx_t_28 = 0;
           goto __pyx_L13_unpacking_done;
@@ -7397,38 +7355,38 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
           __Pyx_DECREF(__pyx_t_28); __pyx_t_28 = 0;
           __pyx_t_24 = NULL;
           if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-          __PYX_ERR(0, 452, __pyx_L1_error)
+          __PYX_ERR(0, 456, __pyx_L1_error)
           __pyx_L13_unpacking_done:;
         }
-        __pyx_t_25 = __Pyx_PyInt_As_int(__pyx_t_6); if (unlikely((__pyx_t_25 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 452, __pyx_L1_error)
+        __pyx_t_25 = __Pyx_PyInt_As_int(__pyx_t_6); if (unlikely((__pyx_t_25 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 456, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_4); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 452, __pyx_L1_error)
+        __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_4); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 456, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
         __pyx_v_j = __pyx_t_25;
         __pyx_v__ = __pyx_t_3;
-        __pyx_t_8 = __Pyx_PyInt_From_int(__pyx_v_j); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 452, __pyx_L1_error)
+        __pyx_t_8 = __Pyx_PyInt_From_int(__pyx_v_j); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 456, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_8);
-        if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_8))) __PYX_ERR(0, 452, __pyx_L1_error)
+        if (unlikely(__Pyx_ListComp_Append(__pyx_t_1, (PyObject*)__pyx_t_8))) __PYX_ERR(0, 456, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
       }
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __Pyx_XDECREF_SET(__pyx_v_Iu, ((PyObject*)__pyx_t_1));
       __pyx_t_1 = 0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":453
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":457
  *                 # items rated by u. This is COSTLY
  *                 Iu = [j for (j, _) in trainset.ur[u]]
  *                 sqrt_Iu = np.sqrt(len(Iu))             # <<<<<<<<<<<<<<
  * 
  *                 # compute user implicit feedback
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 453, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 457, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_sqrt); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 453, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_sqrt); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 457, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_26 = PyList_GET_SIZE(__pyx_v_Iu); if (unlikely(__pyx_t_26 == ((Py_ssize_t)-1))) __PYX_ERR(0, 453, __pyx_L1_error)
-      __pyx_t_5 = PyInt_FromSsize_t(__pyx_t_26); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 453, __pyx_L1_error)
+      __pyx_t_26 = PyList_GET_SIZE(__pyx_v_Iu); if (unlikely(__pyx_t_26 == ((Py_ssize_t)-1))) __PYX_ERR(0, 457, __pyx_L1_error)
+      __pyx_t_5 = PyInt_FromSsize_t(__pyx_t_26); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 457, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __pyx_t_4 = NULL;
       if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_8))) {
@@ -7443,30 +7401,30 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       __pyx_t_1 = (__pyx_t_4) ? __Pyx_PyObject_Call2Args(__pyx_t_8, __pyx_t_4, __pyx_t_5) : __Pyx_PyObject_CallOneArg(__pyx_t_8, __pyx_t_5);
       __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 453, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 457, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 453, __pyx_L1_error)
+      __pyx_t_3 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_3 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 457, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_v_sqrt_Iu = __pyx_t_3;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":456
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":460
  * 
  *                 # compute user implicit feedback
  *                 u_impl_fdb = np.zeros(self.n_factors, np.double)             # <<<<<<<<<<<<<<
  *                 for j in Iu:
  *                     for f in range(self.n_factors):
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_np); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 456, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_8, __pyx_n_s_np); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 460, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_zeros); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 456, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_8, __pyx_n_s_zeros); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 460, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
-      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 456, __pyx_L1_error)
+      __pyx_t_8 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 460, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_8);
-      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 456, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_np); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 460, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_4);
-      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_double); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 456, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_4, __pyx_n_s_double); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 460, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
       __pyx_t_4 = NULL;
@@ -7484,7 +7442,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_5)) {
         PyObject *__pyx_temp[3] = {__pyx_t_4, __pyx_t_8, __pyx_t_6};
-        __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_25, 2+__pyx_t_25); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 456, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_25, 2+__pyx_t_25); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 460, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -7494,7 +7452,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_5)) {
         PyObject *__pyx_temp[3] = {__pyx_t_4, __pyx_t_8, __pyx_t_6};
-        __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_25, 2+__pyx_t_25); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 456, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_5, __pyx_temp+1-__pyx_t_25, 2+__pyx_t_25); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 460, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_4); __pyx_t_4 = 0;
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
@@ -7502,7 +7460,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       } else
       #endif
       {
-        __pyx_t_28 = PyTuple_New(2+__pyx_t_25); if (unlikely(!__pyx_t_28)) __PYX_ERR(0, 456, __pyx_L1_error)
+        __pyx_t_28 = PyTuple_New(2+__pyx_t_25); if (unlikely(!__pyx_t_28)) __PYX_ERR(0, 460, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_28);
         if (__pyx_t_4) {
           __Pyx_GIVEREF(__pyx_t_4); PyTuple_SET_ITEM(__pyx_t_28, 0, __pyx_t_4); __pyx_t_4 = NULL;
@@ -7513,12 +7471,12 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         PyTuple_SET_ITEM(__pyx_t_28, 1+__pyx_t_25, __pyx_t_6);
         __pyx_t_8 = 0;
         __pyx_t_6 = 0;
-        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_28, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 456, __pyx_L1_error)
+        __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_5, __pyx_t_28, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 460, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_28); __pyx_t_28 = 0;
       }
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 456, __pyx_L1_error)
+      if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 460, __pyx_L1_error)
       __pyx_t_18 = ((PyArrayObject *)__pyx_t_1);
       {
         __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -7535,13 +7493,13 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
           __pyx_t_10 = __pyx_t_11 = __pyx_t_12 = 0;
         }
         __pyx_pybuffernd_u_impl_fdb.diminfo[0].strides = __pyx_pybuffernd_u_impl_fdb.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_u_impl_fdb.diminfo[0].shape = __pyx_pybuffernd_u_impl_fdb.rcbuffer->pybuffer.shape[0];
-        if (unlikely(__pyx_t_25 < 0)) __PYX_ERR(0, 456, __pyx_L1_error)
+        if (unlikely(__pyx_t_25 < 0)) __PYX_ERR(0, 460, __pyx_L1_error)
       }
       __pyx_t_18 = 0;
       __Pyx_DECREF_SET(__pyx_v_u_impl_fdb, ((PyArrayObject *)__pyx_t_1));
       __pyx_t_1 = 0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":457
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":461
  *                 # compute user implicit feedback
  *                 u_impl_fdb = np.zeros(self.n_factors, np.double)
  *                 for j in Iu:             # <<<<<<<<<<<<<<
@@ -7552,25 +7510,25 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       for (;;) {
         if (__pyx_t_26 >= PyList_GET_SIZE(__pyx_t_1)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_5 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_26); __Pyx_INCREF(__pyx_t_5); __pyx_t_26++; if (unlikely(0 < 0)) __PYX_ERR(0, 457, __pyx_L1_error)
+        __pyx_t_5 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_26); __Pyx_INCREF(__pyx_t_5); __pyx_t_26++; if (unlikely(0 < 0)) __PYX_ERR(0, 461, __pyx_L1_error)
         #else
-        __pyx_t_5 = PySequence_ITEM(__pyx_t_1, __pyx_t_26); __pyx_t_26++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 457, __pyx_L1_error)
+        __pyx_t_5 = PySequence_ITEM(__pyx_t_1, __pyx_t_26); __pyx_t_26++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 461, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         #endif
-        __pyx_t_25 = __Pyx_PyInt_As_int(__pyx_t_5); if (unlikely((__pyx_t_25 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 457, __pyx_L1_error)
+        __pyx_t_25 = __Pyx_PyInt_As_int(__pyx_t_5); if (unlikely((__pyx_t_25 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 461, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         __pyx_v_j = __pyx_t_25;
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":458
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":462
  *                 u_impl_fdb = np.zeros(self.n_factors, np.double)
  *                 for j in Iu:
  *                     for f in range(self.n_factors):             # <<<<<<<<<<<<<<
  *                         u_impl_fdb[f] += yj[j, f] / sqrt_Iu
  * 
  */
-        __Pyx_GetModuleGlobalName(__pyx_t_28, __pyx_n_s_range); if (unlikely(!__pyx_t_28)) __PYX_ERR(0, 458, __pyx_L1_error)
+        __Pyx_GetModuleGlobalName(__pyx_t_28, __pyx_n_s_range); if (unlikely(!__pyx_t_28)) __PYX_ERR(0, 462, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_28);
-        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 458, __pyx_L1_error)
+        __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 462, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
         __pyx_t_8 = NULL;
         if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_28))) {
@@ -7585,16 +7543,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         __pyx_t_5 = (__pyx_t_8) ? __Pyx_PyObject_Call2Args(__pyx_t_28, __pyx_t_8, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_28, __pyx_t_6);
         __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 458, __pyx_L1_error)
+        if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 462, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
         __Pyx_DECREF(__pyx_t_28); __pyx_t_28 = 0;
         if (likely(PyList_CheckExact(__pyx_t_5)) || PyTuple_CheckExact(__pyx_t_5)) {
           __pyx_t_28 = __pyx_t_5; __Pyx_INCREF(__pyx_t_28); __pyx_t_29 = 0;
           __pyx_t_27 = NULL;
         } else {
-          __pyx_t_29 = -1; __pyx_t_28 = PyObject_GetIter(__pyx_t_5); if (unlikely(!__pyx_t_28)) __PYX_ERR(0, 458, __pyx_L1_error)
+          __pyx_t_29 = -1; __pyx_t_28 = PyObject_GetIter(__pyx_t_5); if (unlikely(!__pyx_t_28)) __PYX_ERR(0, 462, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_28);
-          __pyx_t_27 = Py_TYPE(__pyx_t_28)->tp_iternext; if (unlikely(!__pyx_t_27)) __PYX_ERR(0, 458, __pyx_L1_error)
+          __pyx_t_27 = Py_TYPE(__pyx_t_28)->tp_iternext; if (unlikely(!__pyx_t_27)) __PYX_ERR(0, 462, __pyx_L1_error)
         }
         __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
         for (;;) {
@@ -7602,17 +7560,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
             if (likely(PyList_CheckExact(__pyx_t_28))) {
               if (__pyx_t_29 >= PyList_GET_SIZE(__pyx_t_28)) break;
               #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-              __pyx_t_5 = PyList_GET_ITEM(__pyx_t_28, __pyx_t_29); __Pyx_INCREF(__pyx_t_5); __pyx_t_29++; if (unlikely(0 < 0)) __PYX_ERR(0, 458, __pyx_L1_error)
+              __pyx_t_5 = PyList_GET_ITEM(__pyx_t_28, __pyx_t_29); __Pyx_INCREF(__pyx_t_5); __pyx_t_29++; if (unlikely(0 < 0)) __PYX_ERR(0, 462, __pyx_L1_error)
               #else
-              __pyx_t_5 = PySequence_ITEM(__pyx_t_28, __pyx_t_29); __pyx_t_29++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 458, __pyx_L1_error)
+              __pyx_t_5 = PySequence_ITEM(__pyx_t_28, __pyx_t_29); __pyx_t_29++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 462, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_5);
               #endif
             } else {
               if (__pyx_t_29 >= PyTuple_GET_SIZE(__pyx_t_28)) break;
               #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-              __pyx_t_5 = PyTuple_GET_ITEM(__pyx_t_28, __pyx_t_29); __Pyx_INCREF(__pyx_t_5); __pyx_t_29++; if (unlikely(0 < 0)) __PYX_ERR(0, 458, __pyx_L1_error)
+              __pyx_t_5 = PyTuple_GET_ITEM(__pyx_t_28, __pyx_t_29); __Pyx_INCREF(__pyx_t_5); __pyx_t_29++; if (unlikely(0 < 0)) __PYX_ERR(0, 462, __pyx_L1_error)
               #else
-              __pyx_t_5 = PySequence_ITEM(__pyx_t_28, __pyx_t_29); __pyx_t_29++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 458, __pyx_L1_error)
+              __pyx_t_5 = PySequence_ITEM(__pyx_t_28, __pyx_t_29); __pyx_t_29++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 462, __pyx_L1_error)
               __Pyx_GOTREF(__pyx_t_5);
               #endif
             }
@@ -7622,17 +7580,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
               PyObject* exc_type = PyErr_Occurred();
               if (exc_type) {
                 if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-                else __PYX_ERR(0, 458, __pyx_L1_error)
+                else __PYX_ERR(0, 462, __pyx_L1_error)
               }
               break;
             }
             __Pyx_GOTREF(__pyx_t_5);
           }
-          __pyx_t_25 = __Pyx_PyInt_As_int(__pyx_t_5); if (unlikely((__pyx_t_25 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 458, __pyx_L1_error)
+          __pyx_t_25 = __Pyx_PyInt_As_int(__pyx_t_5); if (unlikely((__pyx_t_25 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 462, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
           __pyx_v_f = __pyx_t_25;
 
-          /* "surprise/prediction_algorithms/matrix_factorization.pyx":459
+          /* "surprise/prediction_algorithms/matrix_factorization.pyx":463
  *                 for j in Iu:
  *                     for f in range(self.n_factors):
  *                         u_impl_fdb[f] += yj[j, f] / sqrt_Iu             # <<<<<<<<<<<<<<
@@ -7652,12 +7610,12 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
           } else if (unlikely(__pyx_t_31 >= __pyx_pybuffernd_yj.diminfo[1].shape)) __pyx_t_25 = 1;
           if (unlikely(__pyx_t_25 != -1)) {
             __Pyx_RaiseBufferIndexError(__pyx_t_25);
-            __PYX_ERR(0, 459, __pyx_L1_error)
+            __PYX_ERR(0, 463, __pyx_L1_error)
           }
           __pyx_t_32 = (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_yj.rcbuffer->pybuffer.buf, __pyx_t_30, __pyx_pybuffernd_yj.diminfo[0].strides, __pyx_t_31, __pyx_pybuffernd_yj.diminfo[1].strides));
           if (unlikely(__pyx_v_sqrt_Iu == 0)) {
             PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-            __PYX_ERR(0, 459, __pyx_L1_error)
+            __PYX_ERR(0, 463, __pyx_L1_error)
           }
           __pyx_t_33 = __pyx_v_f;
           __pyx_t_25 = -1;
@@ -7667,11 +7625,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
           } else if (unlikely(__pyx_t_33 >= __pyx_pybuffernd_u_impl_fdb.diminfo[0].shape)) __pyx_t_25 = 0;
           if (unlikely(__pyx_t_25 != -1)) {
             __Pyx_RaiseBufferIndexError(__pyx_t_25);
-            __PYX_ERR(0, 459, __pyx_L1_error)
+            __PYX_ERR(0, 463, __pyx_L1_error)
           }
           *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_u_impl_fdb.rcbuffer->pybuffer.buf, __pyx_t_33, __pyx_pybuffernd_u_impl_fdb.diminfo[0].strides) += (__pyx_t_32 / ((__pyx_t_5numpy_double_t)__pyx_v_sqrt_Iu));
 
-          /* "surprise/prediction_algorithms/matrix_factorization.pyx":458
+          /* "surprise/prediction_algorithms/matrix_factorization.pyx":462
  *                 u_impl_fdb = np.zeros(self.n_factors, np.double)
  *                 for j in Iu:
  *                     for f in range(self.n_factors):             # <<<<<<<<<<<<<<
@@ -7681,7 +7639,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         }
         __Pyx_DECREF(__pyx_t_28); __pyx_t_28 = 0;
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":457
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":461
  *                 # compute user implicit feedback
  *                 u_impl_fdb = np.zeros(self.n_factors, np.double)
  *                 for j in Iu:             # <<<<<<<<<<<<<<
@@ -7691,7 +7649,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":462
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":466
  * 
  *                 # compute current error
  *                 dot = 0  # <q_i, (p_u + sum_{jin Iu} y_j / sqrt{Iu}>             # <<<<<<<<<<<<<<
@@ -7700,16 +7658,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  */
       __pyx_v_dot = 0.0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":463
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":467
  *                 # compute current error
  *                 dot = 0  # <q_i, (p_u + sum_{jin Iu} y_j / sqrt{Iu}>
  *                 for f in range(self.n_factors):             # <<<<<<<<<<<<<<
  *                     dot += qi[i, f] * (pu[u, f] + u_impl_fdb[f])
  * 
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_28, __pyx_n_s_range); if (unlikely(!__pyx_t_28)) __PYX_ERR(0, 463, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_28, __pyx_n_s_range); if (unlikely(!__pyx_t_28)) __PYX_ERR(0, 467, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_28);
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 463, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 467, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __pyx_t_6 = NULL;
       if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_28))) {
@@ -7724,16 +7682,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_28, __pyx_t_6, __pyx_t_5) : __Pyx_PyObject_CallOneArg(__pyx_t_28, __pyx_t_5);
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 463, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 467, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_28); __pyx_t_28 = 0;
       if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
         __pyx_t_28 = __pyx_t_1; __Pyx_INCREF(__pyx_t_28); __pyx_t_26 = 0;
         __pyx_t_27 = NULL;
       } else {
-        __pyx_t_26 = -1; __pyx_t_28 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_28)) __PYX_ERR(0, 463, __pyx_L1_error)
+        __pyx_t_26 = -1; __pyx_t_28 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_28)) __PYX_ERR(0, 467, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_28);
-        __pyx_t_27 = Py_TYPE(__pyx_t_28)->tp_iternext; if (unlikely(!__pyx_t_27)) __PYX_ERR(0, 463, __pyx_L1_error)
+        __pyx_t_27 = Py_TYPE(__pyx_t_28)->tp_iternext; if (unlikely(!__pyx_t_27)) __PYX_ERR(0, 467, __pyx_L1_error)
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       for (;;) {
@@ -7741,17 +7699,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
           if (likely(PyList_CheckExact(__pyx_t_28))) {
             if (__pyx_t_26 >= PyList_GET_SIZE(__pyx_t_28)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_1 = PyList_GET_ITEM(__pyx_t_28, __pyx_t_26); __Pyx_INCREF(__pyx_t_1); __pyx_t_26++; if (unlikely(0 < 0)) __PYX_ERR(0, 463, __pyx_L1_error)
+            __pyx_t_1 = PyList_GET_ITEM(__pyx_t_28, __pyx_t_26); __Pyx_INCREF(__pyx_t_1); __pyx_t_26++; if (unlikely(0 < 0)) __PYX_ERR(0, 467, __pyx_L1_error)
             #else
-            __pyx_t_1 = PySequence_ITEM(__pyx_t_28, __pyx_t_26); __pyx_t_26++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 463, __pyx_L1_error)
+            __pyx_t_1 = PySequence_ITEM(__pyx_t_28, __pyx_t_26); __pyx_t_26++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 467, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_1);
             #endif
           } else {
             if (__pyx_t_26 >= PyTuple_GET_SIZE(__pyx_t_28)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_28, __pyx_t_26); __Pyx_INCREF(__pyx_t_1); __pyx_t_26++; if (unlikely(0 < 0)) __PYX_ERR(0, 463, __pyx_L1_error)
+            __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_28, __pyx_t_26); __Pyx_INCREF(__pyx_t_1); __pyx_t_26++; if (unlikely(0 < 0)) __PYX_ERR(0, 467, __pyx_L1_error)
             #else
-            __pyx_t_1 = PySequence_ITEM(__pyx_t_28, __pyx_t_26); __pyx_t_26++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 463, __pyx_L1_error)
+            __pyx_t_1 = PySequence_ITEM(__pyx_t_28, __pyx_t_26); __pyx_t_26++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 467, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_1);
             #endif
           }
@@ -7761,17 +7719,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
               if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-              else __PYX_ERR(0, 463, __pyx_L1_error)
+              else __PYX_ERR(0, 467, __pyx_L1_error)
             }
             break;
           }
           __Pyx_GOTREF(__pyx_t_1);
         }
-        __pyx_t_25 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_25 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 463, __pyx_L1_error)
+        __pyx_t_25 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_25 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 467, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __pyx_v_f = __pyx_t_25;
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":464
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":468
  *                 dot = 0  # <q_i, (p_u + sum_{jin Iu} y_j / sqrt{Iu}>
  *                 for f in range(self.n_factors):
  *                     dot += qi[i, f] * (pu[u, f] + u_impl_fdb[f])             # <<<<<<<<<<<<<<
@@ -7791,7 +7749,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_35 >= __pyx_pybuffernd_qi.diminfo[1].shape)) __pyx_t_25 = 1;
         if (unlikely(__pyx_t_25 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_25);
-          __PYX_ERR(0, 464, __pyx_L1_error)
+          __PYX_ERR(0, 468, __pyx_L1_error)
         }
         __pyx_t_36 = __pyx_v_u;
         __pyx_t_37 = __pyx_v_f;
@@ -7806,7 +7764,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_37 >= __pyx_pybuffernd_pu.diminfo[1].shape)) __pyx_t_25 = 1;
         if (unlikely(__pyx_t_25 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_25);
-          __PYX_ERR(0, 464, __pyx_L1_error)
+          __PYX_ERR(0, 468, __pyx_L1_error)
         }
         __pyx_t_38 = __pyx_v_f;
         __pyx_t_25 = -1;
@@ -7816,11 +7774,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_38 >= __pyx_pybuffernd_u_impl_fdb.diminfo[0].shape)) __pyx_t_25 = 0;
         if (unlikely(__pyx_t_25 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_25);
-          __PYX_ERR(0, 464, __pyx_L1_error)
+          __PYX_ERR(0, 468, __pyx_L1_error)
         }
         __pyx_v_dot = (__pyx_v_dot + ((*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_qi.rcbuffer->pybuffer.buf, __pyx_t_34, __pyx_pybuffernd_qi.diminfo[0].strides, __pyx_t_35, __pyx_pybuffernd_qi.diminfo[1].strides)) * ((*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_pu.rcbuffer->pybuffer.buf, __pyx_t_36, __pyx_pybuffernd_pu.diminfo[0].strides, __pyx_t_37, __pyx_pybuffernd_pu.diminfo[1].strides)) + (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_u_impl_fdb.rcbuffer->pybuffer.buf, __pyx_t_38, __pyx_pybuffernd_u_impl_fdb.diminfo[0].strides)))));
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":463
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":467
  *                 # compute current error
  *                 dot = 0  # <q_i, (p_u + sum_{jin Iu} y_j / sqrt{Iu}>
  *                 for f in range(self.n_factors):             # <<<<<<<<<<<<<<
@@ -7830,7 +7788,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       }
       __Pyx_DECREF(__pyx_t_28); __pyx_t_28 = 0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":466
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":470
  *                     dot += qi[i, f] * (pu[u, f] + u_impl_fdb[f])
  * 
  *                 err = r - (global_mean + bu[u] + bi[i] + dot)             # <<<<<<<<<<<<<<
@@ -7845,7 +7803,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       } else if (unlikely(__pyx_t_39 >= __pyx_pybuffernd_bu.diminfo[0].shape)) __pyx_t_25 = 0;
       if (unlikely(__pyx_t_25 != -1)) {
         __Pyx_RaiseBufferIndexError(__pyx_t_25);
-        __PYX_ERR(0, 466, __pyx_L1_error)
+        __PYX_ERR(0, 470, __pyx_L1_error)
       }
       __pyx_t_40 = __pyx_v_i;
       __pyx_t_25 = -1;
@@ -7855,11 +7813,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       } else if (unlikely(__pyx_t_40 >= __pyx_pybuffernd_bi.diminfo[0].shape)) __pyx_t_25 = 0;
       if (unlikely(__pyx_t_25 != -1)) {
         __Pyx_RaiseBufferIndexError(__pyx_t_25);
-        __PYX_ERR(0, 466, __pyx_L1_error)
+        __PYX_ERR(0, 470, __pyx_L1_error)
       }
       __pyx_v_err = (__pyx_v_r - (((__pyx_v_global_mean + (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bu.rcbuffer->pybuffer.buf, __pyx_t_39, __pyx_pybuffernd_bu.diminfo[0].strides))) + (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bi.rcbuffer->pybuffer.buf, __pyx_t_40, __pyx_pybuffernd_bi.diminfo[0].strides))) + __pyx_v_dot));
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":469
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":473
  * 
  *                 # update biases
  *                 bu[u] += lr_bu * (err - reg_bu * bu[u])             # <<<<<<<<<<<<<<
@@ -7874,7 +7832,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       } else if (unlikely(__pyx_t_41 >= __pyx_pybuffernd_bu.diminfo[0].shape)) __pyx_t_25 = 0;
       if (unlikely(__pyx_t_25 != -1)) {
         __Pyx_RaiseBufferIndexError(__pyx_t_25);
-        __PYX_ERR(0, 469, __pyx_L1_error)
+        __PYX_ERR(0, 473, __pyx_L1_error)
       }
       __pyx_t_42 = __pyx_v_u;
       __pyx_t_25 = -1;
@@ -7884,11 +7842,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       } else if (unlikely(__pyx_t_42 >= __pyx_pybuffernd_bu.diminfo[0].shape)) __pyx_t_25 = 0;
       if (unlikely(__pyx_t_25 != -1)) {
         __Pyx_RaiseBufferIndexError(__pyx_t_25);
-        __PYX_ERR(0, 469, __pyx_L1_error)
+        __PYX_ERR(0, 473, __pyx_L1_error)
       }
       *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bu.rcbuffer->pybuffer.buf, __pyx_t_42, __pyx_pybuffernd_bu.diminfo[0].strides) += (__pyx_v_lr_bu * (__pyx_v_err - (__pyx_v_reg_bu * (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bu.rcbuffer->pybuffer.buf, __pyx_t_41, __pyx_pybuffernd_bu.diminfo[0].strides)))));
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":470
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":474
  *                 # update biases
  *                 bu[u] += lr_bu * (err - reg_bu * bu[u])
  *                 bi[i] += lr_bi * (err - reg_bi * bi[i])             # <<<<<<<<<<<<<<
@@ -7903,7 +7861,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       } else if (unlikely(__pyx_t_43 >= __pyx_pybuffernd_bi.diminfo[0].shape)) __pyx_t_25 = 0;
       if (unlikely(__pyx_t_25 != -1)) {
         __Pyx_RaiseBufferIndexError(__pyx_t_25);
-        __PYX_ERR(0, 470, __pyx_L1_error)
+        __PYX_ERR(0, 474, __pyx_L1_error)
       }
       __pyx_t_44 = __pyx_v_i;
       __pyx_t_25 = -1;
@@ -7913,20 +7871,20 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       } else if (unlikely(__pyx_t_44 >= __pyx_pybuffernd_bi.diminfo[0].shape)) __pyx_t_25 = 0;
       if (unlikely(__pyx_t_25 != -1)) {
         __Pyx_RaiseBufferIndexError(__pyx_t_25);
-        __PYX_ERR(0, 470, __pyx_L1_error)
+        __PYX_ERR(0, 474, __pyx_L1_error)
       }
       *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bi.rcbuffer->pybuffer.buf, __pyx_t_44, __pyx_pybuffernd_bi.diminfo[0].strides) += (__pyx_v_lr_bi * (__pyx_v_err - (__pyx_v_reg_bi * (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bi.rcbuffer->pybuffer.buf, __pyx_t_43, __pyx_pybuffernd_bi.diminfo[0].strides)))));
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":473
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":477
  * 
  *                 # update factors
  *                 for f in range(self.n_factors):             # <<<<<<<<<<<<<<
  *                     puf = pu[u, f]
  *                     qif = qi[i, f]
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_range); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 473, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_range); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 477, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 473, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 477, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
       __pyx_t_6 = NULL;
       if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_1))) {
@@ -7941,16 +7899,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       __pyx_t_28 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_6, __pyx_t_5) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_5);
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_28)) __PYX_ERR(0, 473, __pyx_L1_error)
+      if (unlikely(!__pyx_t_28)) __PYX_ERR(0, 477, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_28);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       if (likely(PyList_CheckExact(__pyx_t_28)) || PyTuple_CheckExact(__pyx_t_28)) {
         __pyx_t_1 = __pyx_t_28; __Pyx_INCREF(__pyx_t_1); __pyx_t_26 = 0;
         __pyx_t_27 = NULL;
       } else {
-        __pyx_t_26 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_28); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 473, __pyx_L1_error)
+        __pyx_t_26 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_28); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 477, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_27 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_27)) __PYX_ERR(0, 473, __pyx_L1_error)
+        __pyx_t_27 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_27)) __PYX_ERR(0, 477, __pyx_L1_error)
       }
       __Pyx_DECREF(__pyx_t_28); __pyx_t_28 = 0;
       for (;;) {
@@ -7958,17 +7916,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
           if (likely(PyList_CheckExact(__pyx_t_1))) {
             if (__pyx_t_26 >= PyList_GET_SIZE(__pyx_t_1)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_28 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_26); __Pyx_INCREF(__pyx_t_28); __pyx_t_26++; if (unlikely(0 < 0)) __PYX_ERR(0, 473, __pyx_L1_error)
+            __pyx_t_28 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_26); __Pyx_INCREF(__pyx_t_28); __pyx_t_26++; if (unlikely(0 < 0)) __PYX_ERR(0, 477, __pyx_L1_error)
             #else
-            __pyx_t_28 = PySequence_ITEM(__pyx_t_1, __pyx_t_26); __pyx_t_26++; if (unlikely(!__pyx_t_28)) __PYX_ERR(0, 473, __pyx_L1_error)
+            __pyx_t_28 = PySequence_ITEM(__pyx_t_1, __pyx_t_26); __pyx_t_26++; if (unlikely(!__pyx_t_28)) __PYX_ERR(0, 477, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_28);
             #endif
           } else {
             if (__pyx_t_26 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_28 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_26); __Pyx_INCREF(__pyx_t_28); __pyx_t_26++; if (unlikely(0 < 0)) __PYX_ERR(0, 473, __pyx_L1_error)
+            __pyx_t_28 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_26); __Pyx_INCREF(__pyx_t_28); __pyx_t_26++; if (unlikely(0 < 0)) __PYX_ERR(0, 477, __pyx_L1_error)
             #else
-            __pyx_t_28 = PySequence_ITEM(__pyx_t_1, __pyx_t_26); __pyx_t_26++; if (unlikely(!__pyx_t_28)) __PYX_ERR(0, 473, __pyx_L1_error)
+            __pyx_t_28 = PySequence_ITEM(__pyx_t_1, __pyx_t_26); __pyx_t_26++; if (unlikely(!__pyx_t_28)) __PYX_ERR(0, 477, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_28);
             #endif
           }
@@ -7978,17 +7936,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
               if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-              else __PYX_ERR(0, 473, __pyx_L1_error)
+              else __PYX_ERR(0, 477, __pyx_L1_error)
             }
             break;
           }
           __Pyx_GOTREF(__pyx_t_28);
         }
-        __pyx_t_25 = __Pyx_PyInt_As_int(__pyx_t_28); if (unlikely((__pyx_t_25 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 473, __pyx_L1_error)
+        __pyx_t_25 = __Pyx_PyInt_As_int(__pyx_t_28); if (unlikely((__pyx_t_25 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 477, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_28); __pyx_t_28 = 0;
         __pyx_v_f = __pyx_t_25;
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":474
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":478
  *                 # update factors
  *                 for f in range(self.n_factors):
  *                     puf = pu[u, f]             # <<<<<<<<<<<<<<
@@ -8008,11 +7966,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_46 >= __pyx_pybuffernd_pu.diminfo[1].shape)) __pyx_t_25 = 1;
         if (unlikely(__pyx_t_25 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_25);
-          __PYX_ERR(0, 474, __pyx_L1_error)
+          __PYX_ERR(0, 478, __pyx_L1_error)
         }
         __pyx_v_puf = (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_pu.rcbuffer->pybuffer.buf, __pyx_t_45, __pyx_pybuffernd_pu.diminfo[0].strides, __pyx_t_46, __pyx_pybuffernd_pu.diminfo[1].strides));
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":475
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":479
  *                 for f in range(self.n_factors):
  *                     puf = pu[u, f]
  *                     qif = qi[i, f]             # <<<<<<<<<<<<<<
@@ -8032,11 +7990,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_48 >= __pyx_pybuffernd_qi.diminfo[1].shape)) __pyx_t_25 = 1;
         if (unlikely(__pyx_t_25 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_25);
-          __PYX_ERR(0, 475, __pyx_L1_error)
+          __PYX_ERR(0, 479, __pyx_L1_error)
         }
         __pyx_v_qif = (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_qi.rcbuffer->pybuffer.buf, __pyx_t_47, __pyx_pybuffernd_qi.diminfo[0].strides, __pyx_t_48, __pyx_pybuffernd_qi.diminfo[1].strides));
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":476
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":480
  *                     puf = pu[u, f]
  *                     qif = qi[i, f]
  *                     pu[u, f] += lr_pu * (err * qif - reg_pu * puf)             # <<<<<<<<<<<<<<
@@ -8056,11 +8014,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_50 >= __pyx_pybuffernd_pu.diminfo[1].shape)) __pyx_t_25 = 1;
         if (unlikely(__pyx_t_25 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_25);
-          __PYX_ERR(0, 476, __pyx_L1_error)
+          __PYX_ERR(0, 480, __pyx_L1_error)
         }
         *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_pu.rcbuffer->pybuffer.buf, __pyx_t_49, __pyx_pybuffernd_pu.diminfo[0].strides, __pyx_t_50, __pyx_pybuffernd_pu.diminfo[1].strides) += (__pyx_v_lr_pu * ((__pyx_v_err * __pyx_v_qif) - (__pyx_v_reg_pu * __pyx_v_puf)));
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":477
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":481
  *                     qif = qi[i, f]
  *                     pu[u, f] += lr_pu * (err * qif - reg_pu * puf)
  *                     qi[i, f] += lr_qi * (err * (puf + u_impl_fdb[f]) -             # <<<<<<<<<<<<<<
@@ -8075,10 +8033,10 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_51 >= __pyx_pybuffernd_u_impl_fdb.diminfo[0].shape)) __pyx_t_25 = 0;
         if (unlikely(__pyx_t_25 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_25);
-          __PYX_ERR(0, 477, __pyx_L1_error)
+          __PYX_ERR(0, 481, __pyx_L1_error)
         }
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":478
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":482
  *                     pu[u, f] += lr_pu * (err * qif - reg_pu * puf)
  *                     qi[i, f] += lr_qi * (err * (puf + u_impl_fdb[f]) -
  *                                          reg_qi * qif)             # <<<<<<<<<<<<<<
@@ -8098,11 +8056,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_53 >= __pyx_pybuffernd_qi.diminfo[1].shape)) __pyx_t_25 = 1;
         if (unlikely(__pyx_t_25 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_25);
-          __PYX_ERR(0, 477, __pyx_L1_error)
+          __PYX_ERR(0, 481, __pyx_L1_error)
         }
         *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_qi.rcbuffer->pybuffer.buf, __pyx_t_52, __pyx_pybuffernd_qi.diminfo[0].strides, __pyx_t_53, __pyx_pybuffernd_qi.diminfo[1].strides) += (__pyx_v_lr_qi * ((__pyx_v_err * (__pyx_v_puf + (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_u_impl_fdb.rcbuffer->pybuffer.buf, __pyx_t_51, __pyx_pybuffernd_u_impl_fdb.diminfo[0].strides)))) - (__pyx_v_reg_qi * __pyx_v_qif)));
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":479
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":483
  *                     qi[i, f] += lr_qi * (err * (puf + u_impl_fdb[f]) -
  *                                          reg_qi * qif)
  *                     for j in Iu:             # <<<<<<<<<<<<<<
@@ -8113,16 +8071,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         for (;;) {
           if (__pyx_t_29 >= PyList_GET_SIZE(__pyx_t_28)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_5 = PyList_GET_ITEM(__pyx_t_28, __pyx_t_29); __Pyx_INCREF(__pyx_t_5); __pyx_t_29++; if (unlikely(0 < 0)) __PYX_ERR(0, 479, __pyx_L1_error)
+          __pyx_t_5 = PyList_GET_ITEM(__pyx_t_28, __pyx_t_29); __Pyx_INCREF(__pyx_t_5); __pyx_t_29++; if (unlikely(0 < 0)) __PYX_ERR(0, 483, __pyx_L1_error)
           #else
-          __pyx_t_5 = PySequence_ITEM(__pyx_t_28, __pyx_t_29); __pyx_t_29++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 479, __pyx_L1_error)
+          __pyx_t_5 = PySequence_ITEM(__pyx_t_28, __pyx_t_29); __pyx_t_29++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 483, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_5);
           #endif
-          __pyx_t_25 = __Pyx_PyInt_As_int(__pyx_t_5); if (unlikely((__pyx_t_25 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 479, __pyx_L1_error)
+          __pyx_t_25 = __Pyx_PyInt_As_int(__pyx_t_5); if (unlikely((__pyx_t_25 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 483, __pyx_L1_error)
           __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
           __pyx_v_j = __pyx_t_25;
 
-          /* "surprise/prediction_algorithms/matrix_factorization.pyx":480
+          /* "surprise/prediction_algorithms/matrix_factorization.pyx":484
  *                                          reg_qi * qif)
  *                     for j in Iu:
  *                         yj[j, f] += lr_yj * (err * qif / sqrt_Iu -             # <<<<<<<<<<<<<<
@@ -8132,10 +8090,10 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
           __pyx_t_3 = (__pyx_v_err * __pyx_v_qif);
           if (unlikely(__pyx_v_sqrt_Iu == 0)) {
             PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-            __PYX_ERR(0, 480, __pyx_L1_error)
+            __PYX_ERR(0, 484, __pyx_L1_error)
           }
 
-          /* "surprise/prediction_algorithms/matrix_factorization.pyx":481
+          /* "surprise/prediction_algorithms/matrix_factorization.pyx":485
  *                     for j in Iu:
  *                         yj[j, f] += lr_yj * (err * qif / sqrt_Iu -
  *                                              reg_yj * yj[j, f])             # <<<<<<<<<<<<<<
@@ -8155,10 +8113,10 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
           } else if (unlikely(__pyx_t_55 >= __pyx_pybuffernd_yj.diminfo[1].shape)) __pyx_t_25 = 1;
           if (unlikely(__pyx_t_25 != -1)) {
             __Pyx_RaiseBufferIndexError(__pyx_t_25);
-            __PYX_ERR(0, 481, __pyx_L1_error)
+            __PYX_ERR(0, 485, __pyx_L1_error)
           }
 
-          /* "surprise/prediction_algorithms/matrix_factorization.pyx":480
+          /* "surprise/prediction_algorithms/matrix_factorization.pyx":484
  *                                          reg_qi * qif)
  *                     for j in Iu:
  *                         yj[j, f] += lr_yj * (err * qif / sqrt_Iu -             # <<<<<<<<<<<<<<
@@ -8178,11 +8136,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
           } else if (unlikely(__pyx_t_57 >= __pyx_pybuffernd_yj.diminfo[1].shape)) __pyx_t_25 = 1;
           if (unlikely(__pyx_t_25 != -1)) {
             __Pyx_RaiseBufferIndexError(__pyx_t_25);
-            __PYX_ERR(0, 480, __pyx_L1_error)
+            __PYX_ERR(0, 484, __pyx_L1_error)
           }
           *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_yj.rcbuffer->pybuffer.buf, __pyx_t_56, __pyx_pybuffernd_yj.diminfo[0].strides, __pyx_t_57, __pyx_pybuffernd_yj.diminfo[1].strides) += (__pyx_v_lr_yj * ((__pyx_t_3 / __pyx_v_sqrt_Iu) - (__pyx_v_reg_yj * (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_yj.rcbuffer->pybuffer.buf, __pyx_t_54, __pyx_pybuffernd_yj.diminfo[0].strides, __pyx_t_55, __pyx_pybuffernd_yj.diminfo[1].strides)))));
 
-          /* "surprise/prediction_algorithms/matrix_factorization.pyx":479
+          /* "surprise/prediction_algorithms/matrix_factorization.pyx":483
  *                     qi[i, f] += lr_qi * (err * (puf + u_impl_fdb[f]) -
  *                                          reg_qi * qif)
  *                     for j in Iu:             # <<<<<<<<<<<<<<
@@ -8192,7 +8150,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         }
         __Pyx_DECREF(__pyx_t_28); __pyx_t_28 = 0;
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":473
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":477
  * 
  *                 # update factors
  *                 for f in range(self.n_factors):             # <<<<<<<<<<<<<<
@@ -8202,7 +8160,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":449
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":453
  *             if self.verbose:
  *                 print(" processing epoch {}".format(current_epoch))
  *             for u, i, r in trainset.all_ratings():             # <<<<<<<<<<<<<<
@@ -8212,7 +8170,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     }
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":446
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":450
  *         u_impl_fdb = np.zeros(self.n_factors, np.double)
  * 
  *         for current_epoch in range(self.n_epochs):             # <<<<<<<<<<<<<<
@@ -8222,52 +8180,52 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   }
   __Pyx_DECREF(__pyx_t_14); __pyx_t_14 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":483
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":487
  *                                              reg_yj * yj[j, f])
  * 
  *         self.bu = bu             # <<<<<<<<<<<<<<
  *         self.bi = bi
  *         self.pu = pu
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_bu, ((PyObject *)__pyx_v_bu)) < 0) __PYX_ERR(0, 483, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_bu, ((PyObject *)__pyx_v_bu)) < 0) __PYX_ERR(0, 487, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":484
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":488
  * 
  *         self.bu = bu
  *         self.bi = bi             # <<<<<<<<<<<<<<
  *         self.pu = pu
  *         self.qi = qi
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_bi, ((PyObject *)__pyx_v_bi)) < 0) __PYX_ERR(0, 484, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_bi, ((PyObject *)__pyx_v_bi)) < 0) __PYX_ERR(0, 488, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":485
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":489
  *         self.bu = bu
  *         self.bi = bi
  *         self.pu = pu             # <<<<<<<<<<<<<<
  *         self.qi = qi
  *         self.yj = yj
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_pu, ((PyObject *)__pyx_v_pu)) < 0) __PYX_ERR(0, 485, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_pu, ((PyObject *)__pyx_v_pu)) < 0) __PYX_ERR(0, 489, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":486
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":490
  *         self.bi = bi
  *         self.pu = pu
  *         self.qi = qi             # <<<<<<<<<<<<<<
  *         self.yj = yj
  * 
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_qi, ((PyObject *)__pyx_v_qi)) < 0) __PYX_ERR(0, 486, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_qi, ((PyObject *)__pyx_v_qi)) < 0) __PYX_ERR(0, 490, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":487
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":491
  *         self.pu = pu
  *         self.qi = qi
  *         self.yj = yj             # <<<<<<<<<<<<<<
  * 
  *     def estimate(self, u, i):
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_yj, ((PyObject *)__pyx_v_yj)) < 0) __PYX_ERR(0, 487, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_yj, ((PyObject *)__pyx_v_yj)) < 0) __PYX_ERR(0, 491, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":403
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":407
  *         return self
  * 
  *     def sgd(self, trainset):             # <<<<<<<<<<<<<<
@@ -8323,7 +8281,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   return __pyx_r;
 }
 
-/* "surprise/prediction_algorithms/matrix_factorization.pyx":489
+/* "surprise/prediction_algorithms/matrix_factorization.pyx":493
  *         self.yj = yj
  * 
  *     def estimate(self, u, i):             # <<<<<<<<<<<<<<
@@ -8366,17 +8324,17 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_u)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("estimate", 1, 3, 3, 1); __PYX_ERR(0, 489, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("estimate", 1, 3, 3, 1); __PYX_ERR(0, 493, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_i)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("estimate", 1, 3, 3, 2); __PYX_ERR(0, 489, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("estimate", 1, 3, 3, 2); __PYX_ERR(0, 493, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "estimate") < 0)) __PYX_ERR(0, 489, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "estimate") < 0)) __PYX_ERR(0, 493, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -8391,7 +8349,7 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("estimate", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 489, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("estimate", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 493, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("surprise.prediction_algorithms.matrix_factorization.SVDpp.estimate", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -8405,7 +8363,7 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
 }
 static PyObject *__pyx_gb_8surprise_21prediction_algorithms_20matrix_factorization_5SVDpp_8estimate_2generator(__pyx_CoroutineObject *__pyx_generator, CYTHON_UNUSED PyThreadState *__pyx_tstate, PyObject *__pyx_sent_value); /* proto */
 
-/* "surprise/prediction_algorithms/matrix_factorization.pyx":501
+/* "surprise/prediction_algorithms/matrix_factorization.pyx":505
  *         if self.trainset.knows_user(u) and self.trainset.knows_item(i):
  *             Iu = len(self.trainset.ur[u])  # nb of items rated by u
  *             u_impl_feedback = (sum(self.yj[j] for (j, _)             # <<<<<<<<<<<<<<
@@ -8422,7 +8380,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_8surprise_21prediction_algorithms_20matrix_factorization___pyx_scope_struct_1_genexpr *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 501, __pyx_L1_error)
+    __PYX_ERR(0, 505, __pyx_L1_error)
   } else {
     __Pyx_GOTREF(__pyx_cur_scope);
   }
@@ -8430,7 +8388,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   __Pyx_INCREF(((PyObject *)__pyx_cur_scope->__pyx_outer_scope));
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_outer_scope);
   {
-    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_8surprise_21prediction_algorithms_20matrix_factorization_5SVDpp_8estimate_2generator, NULL, (PyObject *) __pyx_cur_scope, __pyx_n_s_genexpr, __pyx_n_s_SVDpp_estimate_locals_genexpr, __pyx_n_s_surprise_prediction_algorithms_m); if (unlikely(!gen)) __PYX_ERR(0, 501, __pyx_L1_error)
+    __pyx_CoroutineObject *gen = __Pyx_Generator_New((__pyx_coroutine_body_t) __pyx_gb_8surprise_21prediction_algorithms_20matrix_factorization_5SVDpp_8estimate_2generator, NULL, (PyObject *) __pyx_cur_scope, __pyx_n_s_genexpr, __pyx_n_s_SVDpp_estimate_locals_genexpr, __pyx_n_s_surprise_prediction_algorithms_m); if (unlikely(!gen)) __PYX_ERR(0, 505, __pyx_L1_error)
     __Pyx_DECREF(__pyx_cur_scope);
     __Pyx_RefNannyFinishContext();
     return (PyObject *) gen;
@@ -8468,32 +8426,32 @@ static PyObject *__pyx_gb_8surprise_21prediction_algorithms_20matrix_factorizati
     return NULL;
   }
   __pyx_L3_first_run:;
-  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 501, __pyx_L1_error)
+  if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 505, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":502
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":506
  *             Iu = len(self.trainset.ur[u])  # nb of items rated by u
  *             u_impl_feedback = (sum(self.yj[j] for (j, _)
  *                                in self.trainset.ur[u]) / np.sqrt(Iu))             # <<<<<<<<<<<<<<
  *             est += np.dot(self.qi[i], self.pu[u] + u_impl_feedback)
  * 
  */
-  if (unlikely(!__pyx_cur_scope->__pyx_outer_scope->__pyx_v_self)) { __Pyx_RaiseClosureNameError("self"); __PYX_ERR(0, 502, __pyx_L1_error) }
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_outer_scope->__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 502, __pyx_L1_error)
+  if (unlikely(!__pyx_cur_scope->__pyx_outer_scope->__pyx_v_self)) { __Pyx_RaiseClosureNameError("self"); __PYX_ERR(0, 506, __pyx_L1_error) }
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_outer_scope->__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 506, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_ur); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 502, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_ur); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 506, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_cur_scope->__pyx_outer_scope->__pyx_v_u)) { __Pyx_RaiseClosureNameError("u"); __PYX_ERR(0, 502, __pyx_L1_error) }
-  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_cur_scope->__pyx_outer_scope->__pyx_v_u); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 502, __pyx_L1_error)
+  if (unlikely(!__pyx_cur_scope->__pyx_outer_scope->__pyx_v_u)) { __Pyx_RaiseClosureNameError("u"); __PYX_ERR(0, 506, __pyx_L1_error) }
+  __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_cur_scope->__pyx_outer_scope->__pyx_v_u); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 506, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
     __pyx_t_2 = __pyx_t_1; __Pyx_INCREF(__pyx_t_2); __pyx_t_3 = 0;
     __pyx_t_4 = NULL;
   } else {
-    __pyx_t_3 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 502, __pyx_L1_error)
+    __pyx_t_3 = -1; __pyx_t_2 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 506, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_4 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 502, __pyx_L1_error)
+    __pyx_t_4 = Py_TYPE(__pyx_t_2)->tp_iternext; if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 506, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   for (;;) {
@@ -8501,17 +8459,17 @@ static PyObject *__pyx_gb_8surprise_21prediction_algorithms_20matrix_factorizati
       if (likely(PyList_CheckExact(__pyx_t_2))) {
         if (__pyx_t_3 >= PyList_GET_SIZE(__pyx_t_2)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_3); __Pyx_INCREF(__pyx_t_1); __pyx_t_3++; if (unlikely(0 < 0)) __PYX_ERR(0, 502, __pyx_L1_error)
+        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_2, __pyx_t_3); __Pyx_INCREF(__pyx_t_1); __pyx_t_3++; if (unlikely(0 < 0)) __PYX_ERR(0, 506, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 502, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 506, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       } else {
         if (__pyx_t_3 >= PyTuple_GET_SIZE(__pyx_t_2)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_3); __Pyx_INCREF(__pyx_t_1); __pyx_t_3++; if (unlikely(0 < 0)) __PYX_ERR(0, 502, __pyx_L1_error)
+        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_2, __pyx_t_3); __Pyx_INCREF(__pyx_t_1); __pyx_t_3++; if (unlikely(0 < 0)) __PYX_ERR(0, 506, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 502, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_2, __pyx_t_3); __pyx_t_3++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 506, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       }
@@ -8521,7 +8479,7 @@ static PyObject *__pyx_gb_8surprise_21prediction_algorithms_20matrix_factorizati
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 502, __pyx_L1_error)
+          else __PYX_ERR(0, 506, __pyx_L1_error)
         }
         break;
       }
@@ -8533,7 +8491,7 @@ static PyObject *__pyx_gb_8surprise_21prediction_algorithms_20matrix_factorizati
       if (unlikely(size != 2)) {
         if (size > 2) __Pyx_RaiseTooManyValuesError(2);
         else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-        __PYX_ERR(0, 501, __pyx_L1_error)
+        __PYX_ERR(0, 505, __pyx_L1_error)
       }
       #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
       if (likely(PyTuple_CheckExact(sequence))) {
@@ -8546,15 +8504,15 @@ static PyObject *__pyx_gb_8surprise_21prediction_algorithms_20matrix_factorizati
       __Pyx_INCREF(__pyx_t_5);
       __Pyx_INCREF(__pyx_t_6);
       #else
-      __pyx_t_5 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 501, __pyx_L1_error)
+      __pyx_t_5 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 505, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_6 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 501, __pyx_L1_error)
+      __pyx_t_6 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 505, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       #endif
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     } else {
       Py_ssize_t index = -1;
-      __pyx_t_7 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 501, __pyx_L1_error)
+      __pyx_t_7 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 505, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_t_8 = Py_TYPE(__pyx_t_7)->tp_iternext;
@@ -8562,7 +8520,7 @@ static PyObject *__pyx_gb_8surprise_21prediction_algorithms_20matrix_factorizati
       __Pyx_GOTREF(__pyx_t_5);
       index = 1; __pyx_t_6 = __pyx_t_8(__pyx_t_7); if (unlikely(!__pyx_t_6)) goto __pyx_L6_unpacking_failed;
       __Pyx_GOTREF(__pyx_t_6);
-      if (__Pyx_IternextUnpackEndCheck(__pyx_t_8(__pyx_t_7), 2) < 0) __PYX_ERR(0, 501, __pyx_L1_error)
+      if (__Pyx_IternextUnpackEndCheck(__pyx_t_8(__pyx_t_7), 2) < 0) __PYX_ERR(0, 505, __pyx_L1_error)
       __pyx_t_8 = NULL;
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       goto __pyx_L7_unpacking_done;
@@ -8570,11 +8528,11 @@ static PyObject *__pyx_gb_8surprise_21prediction_algorithms_20matrix_factorizati
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __pyx_t_8 = NULL;
       if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-      __PYX_ERR(0, 501, __pyx_L1_error)
+      __PYX_ERR(0, 505, __pyx_L1_error)
       __pyx_L7_unpacking_done:;
     }
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":501
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":505
  *         if self.trainset.knows_user(u) and self.trainset.knows_item(i):
  *             Iu = len(self.trainset.ur[u])  # nb of items rated by u
  *             u_impl_feedback = (sum(self.yj[j] for (j, _)             # <<<<<<<<<<<<<<
@@ -8589,10 +8547,10 @@ static PyObject *__pyx_gb_8surprise_21prediction_algorithms_20matrix_factorizati
     __Pyx_XDECREF_SET(__pyx_cur_scope->__pyx_v__, __pyx_t_6);
     __Pyx_GIVEREF(__pyx_t_6);
     __pyx_t_6 = 0;
-    if (unlikely(!__pyx_cur_scope->__pyx_outer_scope->__pyx_v_self)) { __Pyx_RaiseClosureNameError("self"); __PYX_ERR(0, 501, __pyx_L1_error) }
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_outer_scope->__pyx_v_self, __pyx_n_s_yj); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 501, __pyx_L1_error)
+    if (unlikely(!__pyx_cur_scope->__pyx_outer_scope->__pyx_v_self)) { __Pyx_RaiseClosureNameError("self"); __PYX_ERR(0, 505, __pyx_L1_error) }
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_outer_scope->__pyx_v_self, __pyx_n_s_yj); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 505, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_cur_scope->__pyx_v_j); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 501, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_cur_scope->__pyx_v_j); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 505, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_r = __pyx_t_6;
@@ -8613,7 +8571,7 @@ static PyObject *__pyx_gb_8surprise_21prediction_algorithms_20matrix_factorizati
     __Pyx_XGOTREF(__pyx_t_2);
     __pyx_t_3 = __pyx_cur_scope->__pyx_t_1;
     __pyx_t_4 = __pyx_cur_scope->__pyx_t_2;
-    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 501, __pyx_L1_error)
+    if (unlikely(!__pyx_sent_value)) __PYX_ERR(0, 505, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   CYTHON_MAYBE_UNUSED_VAR(__pyx_cur_scope);
@@ -8639,7 +8597,7 @@ static PyObject *__pyx_gb_8surprise_21prediction_algorithms_20matrix_factorizati
   return __pyx_r;
 }
 
-/* "surprise/prediction_algorithms/matrix_factorization.pyx":489
+/* "surprise/prediction_algorithms/matrix_factorization.pyx":493
  *         self.yj = yj
  * 
  *     def estimate(self, u, i):             # <<<<<<<<<<<<<<
@@ -8669,7 +8627,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   if (unlikely(!__pyx_cur_scope)) {
     __pyx_cur_scope = ((struct __pyx_obj_8surprise_21prediction_algorithms_20matrix_factorization___pyx_scope_struct__estimate *)Py_None);
     __Pyx_INCREF(Py_None);
-    __PYX_ERR(0, 489, __pyx_L1_error)
+    __PYX_ERR(0, 493, __pyx_L1_error)
   } else {
     __Pyx_GOTREF(__pyx_cur_scope);
   }
@@ -8680,31 +8638,31 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   __Pyx_INCREF(__pyx_cur_scope->__pyx_v_u);
   __Pyx_GIVEREF(__pyx_cur_scope->__pyx_v_u);
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":491
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":495
  *     def estimate(self, u, i):
  * 
  *         est = self.trainset.global_mean             # <<<<<<<<<<<<<<
  * 
  *         if self.trainset.knows_user(u):
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 491, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 495, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_global_mean); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 491, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_global_mean); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 495, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_est = __pyx_t_2;
   __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":493
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":497
  *         est = self.trainset.global_mean
  * 
  *         if self.trainset.knows_user(u):             # <<<<<<<<<<<<<<
  *             est += self.bu[u]
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 493, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 497, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_knows_user); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 493, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_knows_user); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 497, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = NULL;
@@ -8719,32 +8677,32 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   }
   __pyx_t_2 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_1, __pyx_cur_scope->__pyx_v_u) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_cur_scope->__pyx_v_u);
   __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 493, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 497, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 493, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 497, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_4) {
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":494
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":498
  * 
  *         if self.trainset.knows_user(u):
  *             est += self.bu[u]             # <<<<<<<<<<<<<<
  * 
  *         if self.trainset.knows_item(i):
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_bu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 494, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_bu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 498, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_cur_scope->__pyx_v_u); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 494, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_cur_scope->__pyx_v_u); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 498, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_est, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 494, __pyx_L1_error)
+    __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_est, __pyx_t_3); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 498, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF_SET(__pyx_v_est, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":493
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":497
  *         est = self.trainset.global_mean
  * 
  *         if self.trainset.knows_user(u):             # <<<<<<<<<<<<<<
@@ -8753,16 +8711,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  */
   }
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":496
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":500
  *             est += self.bu[u]
  * 
  *         if self.trainset.knows_item(i):             # <<<<<<<<<<<<<<
  *             est += self.bi[i]
  * 
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 496, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 500, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_knows_item); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 496, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_knows_item); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 500, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -8777,32 +8735,32 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   }
   __pyx_t_2 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_3, __pyx_v_i) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_v_i);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 496, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 500, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 496, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 500, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_4) {
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":497
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":501
  * 
  *         if self.trainset.knows_item(i):
  *             est += self.bi[i]             # <<<<<<<<<<<<<<
  * 
  *         if self.trainset.knows_user(u) and self.trainset.knows_item(i):
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_bi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 497, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_bi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 501, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_i); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 497, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_i); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 501, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_est, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 497, __pyx_L1_error)
+    __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_est, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 501, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF_SET(__pyx_v_est, __pyx_t_2);
     __pyx_t_2 = 0;
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":496
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":500
  *             est += self.bu[u]
  * 
  *         if self.trainset.knows_item(i):             # <<<<<<<<<<<<<<
@@ -8811,16 +8769,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  */
   }
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":499
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":503
  *             est += self.bi[i]
  * 
  *         if self.trainset.knows_user(u) and self.trainset.knows_item(i):             # <<<<<<<<<<<<<<
  *             Iu = len(self.trainset.ur[u])  # nb of items rated by u
  *             u_impl_feedback = (sum(self.yj[j] for (j, _)
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 499, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 503, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_knows_user); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 499, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_knows_user); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 503, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = NULL;
@@ -8835,19 +8793,19 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   }
   __pyx_t_2 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_1, __pyx_cur_scope->__pyx_v_u) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_cur_scope->__pyx_v_u);
   __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 499, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 503, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 499, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 503, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (__pyx_t_5) {
   } else {
     __pyx_t_4 = __pyx_t_5;
     goto __pyx_L6_bool_binop_done;
   }
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 499, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 503, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_knows_item); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 499, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_knows_item); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 503, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -8862,60 +8820,60 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   }
   __pyx_t_2 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_3, __pyx_v_i) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_v_i);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 499, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 503, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 499, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 503, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_4 = __pyx_t_5;
   __pyx_L6_bool_binop_done:;
   if (__pyx_t_4) {
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":500
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":504
  * 
  *         if self.trainset.knows_user(u) and self.trainset.knows_item(i):
  *             Iu = len(self.trainset.ur[u])  # nb of items rated by u             # <<<<<<<<<<<<<<
  *             u_impl_feedback = (sum(self.yj[j] for (j, _)
  *                                in self.trainset.ur[u]) / np.sqrt(Iu))
  */
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 500, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 504, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_ur); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 500, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_ur); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 504, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_cur_scope->__pyx_v_u); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 500, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_cur_scope->__pyx_v_u); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 504, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_6 = PyObject_Length(__pyx_t_2); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 500, __pyx_L1_error)
+    __pyx_t_6 = PyObject_Length(__pyx_t_2); if (unlikely(__pyx_t_6 == ((Py_ssize_t)-1))) __PYX_ERR(0, 504, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = PyInt_FromSsize_t(__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 500, __pyx_L1_error)
+    __pyx_t_2 = PyInt_FromSsize_t(__pyx_t_6); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 504, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __pyx_v_Iu = __pyx_t_2;
     __pyx_t_2 = 0;
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":501
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":505
  *         if self.trainset.knows_user(u) and self.trainset.knows_item(i):
  *             Iu = len(self.trainset.ur[u])  # nb of items rated by u
  *             u_impl_feedback = (sum(self.yj[j] for (j, _)             # <<<<<<<<<<<<<<
  *                                in self.trainset.ur[u]) / np.sqrt(Iu))
  *             est += np.dot(self.qi[i], self.pu[u] + u_impl_feedback)
  */
-    __pyx_t_2 = __pyx_pf_8surprise_21prediction_algorithms_20matrix_factorization_5SVDpp_8estimate_genexpr(((PyObject*)__pyx_cur_scope)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 501, __pyx_L1_error)
+    __pyx_t_2 = __pyx_pf_8surprise_21prediction_algorithms_20matrix_factorization_5SVDpp_8estimate_genexpr(((PyObject*)__pyx_cur_scope)); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 505, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_sum, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 501, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_CallOneArg(__pyx_builtin_sum, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 505, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":502
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":506
  *             Iu = len(self.trainset.ur[u])  # nb of items rated by u
  *             u_impl_feedback = (sum(self.yj[j] for (j, _)
  *                                in self.trainset.ur[u]) / np.sqrt(Iu))             # <<<<<<<<<<<<<<
  *             est += np.dot(self.qi[i], self.pu[u] + u_impl_feedback)
  * 
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 502, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 506, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_sqrt); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 502, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_sqrt); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 506, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
     __pyx_t_3 = NULL;
@@ -8930,39 +8888,39 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     }
     __pyx_t_2 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_3, __pyx_v_Iu) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_v_Iu);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 502, __pyx_L1_error)
+    if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 506, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-    __pyx_t_7 = __Pyx_PyNumber_Divide(__pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 502, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyNumber_Divide(__pyx_t_1, __pyx_t_2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 506, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
     __pyx_v_u_impl_feedback = __pyx_t_7;
     __pyx_t_7 = 0;
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":503
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":507
  *             u_impl_feedback = (sum(self.yj[j] for (j, _)
  *                                in self.trainset.ur[u]) / np.sqrt(Iu))
  *             est += np.dot(self.qi[i], self.pu[u] + u_impl_feedback)             # <<<<<<<<<<<<<<
  * 
  *         return est
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 503, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 507, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_dot); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 503, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_dot); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 507, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_qi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 503, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_qi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 507, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_i); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 503, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_i); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 507, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_pu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 503, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_cur_scope->__pyx_v_self, __pyx_n_s_pu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 507, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
-    __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_cur_scope->__pyx_v_u); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 503, __pyx_L1_error)
+    __pyx_t_8 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_cur_scope->__pyx_v_u); if (unlikely(!__pyx_t_8)) __PYX_ERR(0, 507, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_8);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __pyx_t_2 = PyNumber_Add(__pyx_t_8, __pyx_v_u_impl_feedback); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 503, __pyx_L1_error)
+    __pyx_t_2 = PyNumber_Add(__pyx_t_8, __pyx_v_u_impl_feedback); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 507, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_8); __pyx_t_8 = 0;
     __pyx_t_8 = NULL;
@@ -8980,7 +8938,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     #if CYTHON_FAST_PYCALL
     if (PyFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_3, __pyx_t_2};
-      __pyx_t_7 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 503, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 507, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -8990,7 +8948,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     #if CYTHON_FAST_PYCCALL
     if (__Pyx_PyFastCFunction_Check(__pyx_t_1)) {
       PyObject *__pyx_temp[3] = {__pyx_t_8, __pyx_t_3, __pyx_t_2};
-      __pyx_t_7 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 503, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyCFunction_FastCall(__pyx_t_1, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 507, __pyx_L1_error)
       __Pyx_XDECREF(__pyx_t_8); __pyx_t_8 = 0;
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -8998,7 +8956,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     } else
     #endif
     {
-      __pyx_t_10 = PyTuple_New(2+__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 503, __pyx_L1_error)
+      __pyx_t_10 = PyTuple_New(2+__pyx_t_9); if (unlikely(!__pyx_t_10)) __PYX_ERR(0, 507, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_10);
       if (__pyx_t_8) {
         __Pyx_GIVEREF(__pyx_t_8); PyTuple_SET_ITEM(__pyx_t_10, 0, __pyx_t_8); __pyx_t_8 = NULL;
@@ -9009,18 +8967,18 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       PyTuple_SET_ITEM(__pyx_t_10, 1+__pyx_t_9, __pyx_t_2);
       __pyx_t_3 = 0;
       __pyx_t_2 = 0;
-      __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_10, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 503, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_1, __pyx_t_10, NULL); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 507, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_10); __pyx_t_10 = 0;
     }
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = PyNumber_InPlaceAdd(__pyx_v_est, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 503, __pyx_L1_error)
+    __pyx_t_1 = PyNumber_InPlaceAdd(__pyx_v_est, __pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 507, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_DECREF_SET(__pyx_v_est, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":499
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":503
  *             est += self.bi[i]
  * 
  *         if self.trainset.knows_user(u) and self.trainset.knows_item(i):             # <<<<<<<<<<<<<<
@@ -9029,7 +8987,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  */
   }
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":505
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":509
  *             est += np.dot(self.qi[i], self.pu[u] + u_impl_feedback)
  * 
  *         return est             # <<<<<<<<<<<<<<
@@ -9041,7 +8999,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   __pyx_r = __pyx_v_est;
   goto __pyx_L0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":489
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":493
  *         self.yj = yj
  * 
  *     def estimate(self, u, i):             # <<<<<<<<<<<<<<
@@ -9069,7 +9027,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   return __pyx_r;
 }
 
-/* "surprise/prediction_algorithms/matrix_factorization.pyx":599
+/* "surprise/prediction_algorithms/matrix_factorization.pyx":603
  *     """
  * 
  *     def __init__(self, n_factors=15, n_epochs=50, biased=False, reg_pu=.06,             # <<<<<<<<<<<<<<
@@ -9113,7 +9071,7 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
     values[10] = ((PyObject *)((PyObject *)__pyx_int_0));
     values[11] = ((PyObject *)((PyObject *)__pyx_int_1));
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":601
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":605
  *     def __init__(self, n_factors=15, n_epochs=50, biased=False, reg_pu=.06,
  *                  reg_qi=.06, reg_bu=.02, reg_bi=.02, lr_bu=.005, lr_bi=.005,
  *                  init_low=0, init_high=1, random_state=None, verbose=False):             # <<<<<<<<<<<<<<
@@ -9242,7 +9200,7 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 599, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "__init__") < 0)) __PYX_ERR(0, 603, __pyx_L3_error)
       }
     } else {
       switch (PyTuple_GET_SIZE(__pyx_args)) {
@@ -9294,7 +9252,7 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("__init__", 0, 1, 14, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 599, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("__init__", 0, 1, 14, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 603, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("surprise.prediction_algorithms.matrix_factorization.NMF.__init__", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -9302,7 +9260,7 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
   __pyx_L4_argument_unpacking_done:;
   __pyx_r = __pyx_pf_8surprise_21prediction_algorithms_20matrix_factorization_3NMF___init__(__pyx_self, __pyx_v_self, __pyx_v_n_factors, __pyx_v_n_epochs, __pyx_v_biased, __pyx_v_reg_pu, __pyx_v_reg_qi, __pyx_v_reg_bu, __pyx_v_reg_bi, __pyx_v_lr_bu, __pyx_v_lr_bi, __pyx_v_init_low, __pyx_v_init_high, __pyx_v_random_state, __pyx_v_verbose);
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":599
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":603
  *     """
  * 
  *     def __init__(self, n_factors=15, n_epochs=50, biased=False, reg_pu=.06,             # <<<<<<<<<<<<<<
@@ -9324,152 +9282,152 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   PyObject *__pyx_t_4 = NULL;
   __Pyx_RefNannySetupContext("__init__", 0);
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":603
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":607
  *                  init_low=0, init_high=1, random_state=None, verbose=False):
  * 
  *         self.n_factors = n_factors             # <<<<<<<<<<<<<<
  *         self.n_epochs = n_epochs
  *         self.biased = biased
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_n_factors, __pyx_v_n_factors) < 0) __PYX_ERR(0, 603, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_n_factors, __pyx_v_n_factors) < 0) __PYX_ERR(0, 607, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":604
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":608
  * 
  *         self.n_factors = n_factors
  *         self.n_epochs = n_epochs             # <<<<<<<<<<<<<<
  *         self.biased = biased
  *         self.reg_pu = reg_pu
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_n_epochs, __pyx_v_n_epochs) < 0) __PYX_ERR(0, 604, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_n_epochs, __pyx_v_n_epochs) < 0) __PYX_ERR(0, 608, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":605
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":609
  *         self.n_factors = n_factors
  *         self.n_epochs = n_epochs
  *         self.biased = biased             # <<<<<<<<<<<<<<
  *         self.reg_pu = reg_pu
  *         self.reg_qi = reg_qi
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_biased, __pyx_v_biased) < 0) __PYX_ERR(0, 605, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_biased, __pyx_v_biased) < 0) __PYX_ERR(0, 609, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":606
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":610
  *         self.n_epochs = n_epochs
  *         self.biased = biased
  *         self.reg_pu = reg_pu             # <<<<<<<<<<<<<<
  *         self.reg_qi = reg_qi
  *         self.lr_bu = lr_bu
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_reg_pu, __pyx_v_reg_pu) < 0) __PYX_ERR(0, 606, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_reg_pu, __pyx_v_reg_pu) < 0) __PYX_ERR(0, 610, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":607
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":611
  *         self.biased = biased
  *         self.reg_pu = reg_pu
  *         self.reg_qi = reg_qi             # <<<<<<<<<<<<<<
  *         self.lr_bu = lr_bu
  *         self.lr_bi = lr_bi
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_reg_qi, __pyx_v_reg_qi) < 0) __PYX_ERR(0, 607, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_reg_qi, __pyx_v_reg_qi) < 0) __PYX_ERR(0, 611, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":608
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":612
  *         self.reg_pu = reg_pu
  *         self.reg_qi = reg_qi
  *         self.lr_bu = lr_bu             # <<<<<<<<<<<<<<
  *         self.lr_bi = lr_bi
  *         self.reg_bu = reg_bu
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_lr_bu, __pyx_v_lr_bu) < 0) __PYX_ERR(0, 608, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_lr_bu, __pyx_v_lr_bu) < 0) __PYX_ERR(0, 612, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":609
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":613
  *         self.reg_qi = reg_qi
  *         self.lr_bu = lr_bu
  *         self.lr_bi = lr_bi             # <<<<<<<<<<<<<<
  *         self.reg_bu = reg_bu
  *         self.reg_bi = reg_bi
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_lr_bi, __pyx_v_lr_bi) < 0) __PYX_ERR(0, 609, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_lr_bi, __pyx_v_lr_bi) < 0) __PYX_ERR(0, 613, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":610
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":614
  *         self.lr_bu = lr_bu
  *         self.lr_bi = lr_bi
  *         self.reg_bu = reg_bu             # <<<<<<<<<<<<<<
  *         self.reg_bi = reg_bi
  *         self.init_low = init_low
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_reg_bu, __pyx_v_reg_bu) < 0) __PYX_ERR(0, 610, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_reg_bu, __pyx_v_reg_bu) < 0) __PYX_ERR(0, 614, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":611
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":615
  *         self.lr_bi = lr_bi
  *         self.reg_bu = reg_bu
  *         self.reg_bi = reg_bi             # <<<<<<<<<<<<<<
  *         self.init_low = init_low
  *         self.init_high = init_high
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_reg_bi, __pyx_v_reg_bi) < 0) __PYX_ERR(0, 611, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_reg_bi, __pyx_v_reg_bi) < 0) __PYX_ERR(0, 615, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":612
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":616
  *         self.reg_bu = reg_bu
  *         self.reg_bi = reg_bi
  *         self.init_low = init_low             # <<<<<<<<<<<<<<
  *         self.init_high = init_high
  *         self.random_state = random_state
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_init_low, __pyx_v_init_low) < 0) __PYX_ERR(0, 612, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_init_low, __pyx_v_init_low) < 0) __PYX_ERR(0, 616, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":613
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":617
  *         self.reg_bi = reg_bi
  *         self.init_low = init_low
  *         self.init_high = init_high             # <<<<<<<<<<<<<<
  *         self.random_state = random_state
  *         self.verbose = verbose
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_init_high, __pyx_v_init_high) < 0) __PYX_ERR(0, 613, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_init_high, __pyx_v_init_high) < 0) __PYX_ERR(0, 617, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":614
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":618
  *         self.init_low = init_low
  *         self.init_high = init_high
  *         self.random_state = random_state             # <<<<<<<<<<<<<<
  *         self.verbose = verbose
  * 
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_random_state, __pyx_v_random_state) < 0) __PYX_ERR(0, 614, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_random_state, __pyx_v_random_state) < 0) __PYX_ERR(0, 618, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":615
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":619
  *         self.init_high = init_high
  *         self.random_state = random_state
  *         self.verbose = verbose             # <<<<<<<<<<<<<<
  * 
  *         if self.init_low < 0:
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_verbose, __pyx_v_verbose) < 0) __PYX_ERR(0, 615, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_verbose, __pyx_v_verbose) < 0) __PYX_ERR(0, 619, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":617
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":621
  *         self.verbose = verbose
  * 
  *         if self.init_low < 0:             # <<<<<<<<<<<<<<
  *             raise ValueError('init_low should be greater than zero')
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_low); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 617, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_low); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 621, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_int_0, Py_LT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 617, __pyx_L1_error)
+  __pyx_t_2 = PyObject_RichCompare(__pyx_t_1, __pyx_int_0, Py_LT); __Pyx_XGOTREF(__pyx_t_2); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 621, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 617, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_IsTrue(__pyx_t_2); if (unlikely(__pyx_t_3 < 0)) __PYX_ERR(0, 621, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   if (unlikely(__pyx_t_3)) {
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":618
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":622
  * 
  *         if self.init_low < 0:
  *             raise ValueError('init_low should be greater than zero')             # <<<<<<<<<<<<<<
  * 
  *         AlgoBase.__init__(self)
  */
-    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 618, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_Call(__pyx_builtin_ValueError, __pyx_tuple_, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 622, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_Raise(__pyx_t_2, 0, 0, 0);
     __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-    __PYX_ERR(0, 618, __pyx_L1_error)
+    __PYX_ERR(0, 622, __pyx_L1_error)
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":617
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":621
  *         self.verbose = verbose
  * 
  *         if self.init_low < 0:             # <<<<<<<<<<<<<<
@@ -9478,16 +9436,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  */
   }
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":620
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":624
  *             raise ValueError('init_low should be greater than zero')
  * 
  *         AlgoBase.__init__(self)             # <<<<<<<<<<<<<<
  * 
  *     def fit(self, trainset):
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_AlgoBase); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 620, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_AlgoBase); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 624, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_init); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 620, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_init); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 624, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_1 = NULL;
@@ -9502,12 +9460,12 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   }
   __pyx_t_2 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_1, __pyx_v_self) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_v_self);
   __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 620, __pyx_L1_error)
+  if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 624, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":599
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":603
  *     """
  * 
  *     def __init__(self, n_factors=15, n_epochs=50, biased=False, reg_pu=.06,             # <<<<<<<<<<<<<<
@@ -9530,7 +9488,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   return __pyx_r;
 }
 
-/* "surprise/prediction_algorithms/matrix_factorization.pyx":622
+/* "surprise/prediction_algorithms/matrix_factorization.pyx":626
  *         AlgoBase.__init__(self)
  * 
  *     def fit(self, trainset):             # <<<<<<<<<<<<<<
@@ -9570,11 +9528,11 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_trainset)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("fit", 1, 2, 2, 1); __PYX_ERR(0, 622, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("fit", 1, 2, 2, 1); __PYX_ERR(0, 626, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "fit") < 0)) __PYX_ERR(0, 622, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "fit") < 0)) __PYX_ERR(0, 626, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -9587,7 +9545,7 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("fit", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 622, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("fit", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 626, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("surprise.prediction_algorithms.matrix_factorization.NMF.fit", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -9610,16 +9568,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   PyObject *__pyx_t_5 = NULL;
   __Pyx_RefNannySetupContext("fit", 0);
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":624
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":628
  *     def fit(self, trainset):
  * 
  *         AlgoBase.fit(self, trainset)             # <<<<<<<<<<<<<<
  *         self.sgd(trainset)
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_AlgoBase); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 624, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_AlgoBase); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 628, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_fit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 624, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_fit); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 628, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -9637,7 +9595,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_v_self, __pyx_v_trainset};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 624, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 628, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
@@ -9645,13 +9603,13 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_v_self, __pyx_v_trainset};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 624, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_4, 2+__pyx_t_4); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 628, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
     __Pyx_GOTREF(__pyx_t_1);
   } else
   #endif
   {
-    __pyx_t_5 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 624, __pyx_L1_error)
+    __pyx_t_5 = PyTuple_New(2+__pyx_t_4); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 628, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     if (__pyx_t_2) {
       __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_2); __pyx_t_2 = NULL;
@@ -9662,21 +9620,21 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     __Pyx_INCREF(__pyx_v_trainset);
     __Pyx_GIVEREF(__pyx_v_trainset);
     PyTuple_SET_ITEM(__pyx_t_5, 1+__pyx_t_4, __pyx_v_trainset);
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 624, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 628, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":625
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":629
  * 
  *         AlgoBase.fit(self, trainset)
  *         self.sgd(trainset)             # <<<<<<<<<<<<<<
  * 
  *         return self
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_sgd); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 625, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_sgd); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 629, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_3))) {
@@ -9690,12 +9648,12 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   }
   __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_5, __pyx_v_trainset) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_trainset);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 625, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 629, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":627
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":631
  *         self.sgd(trainset)
  * 
  *         return self             # <<<<<<<<<<<<<<
@@ -9707,7 +9665,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   __pyx_r = __pyx_v_self;
   goto __pyx_L0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":622
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":626
  *         AlgoBase.__init__(self)
  * 
  *     def fit(self, trainset):             # <<<<<<<<<<<<<<
@@ -9729,7 +9687,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   return __pyx_r;
 }
 
-/* "surprise/prediction_algorithms/matrix_factorization.pyx":629
+/* "surprise/prediction_algorithms/matrix_factorization.pyx":633
  *         return self
  * 
  *     def sgd(self, trainset):             # <<<<<<<<<<<<<<
@@ -9769,11 +9727,11 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_trainset)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("sgd", 1, 2, 2, 1); __PYX_ERR(0, 629, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("sgd", 1, 2, 2, 1); __PYX_ERR(0, 633, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "sgd") < 0)) __PYX_ERR(0, 629, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "sgd") < 0)) __PYX_ERR(0, 633, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 2) {
       goto __pyx_L5_argtuple_error;
@@ -9786,7 +9744,7 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("sgd", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 629, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("sgd", 1, 2, 2, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 633, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("surprise.prediction_algorithms.matrix_factorization.NMF.sgd", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -9822,6 +9780,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   double __pyx_v_lr_bu;
   double __pyx_v_lr_bi;
   double __pyx_v_global_mean;
+  double __pyx_v_Weight;
   PyObject *__pyx_v_rng = NULL;
   PyObject *__pyx_v_current_epoch = NULL;
   PyObject *__pyx_v_n_ratings = NULL;
@@ -9955,110 +9914,119 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   __pyx_pybuffernd_item_denom.data = NULL;
   __pyx_pybuffernd_item_denom.rcbuffer = &__pyx_pybuffer_item_denom;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":647
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":651
  *         cdef int u, i, f
  *         cdef double r, est, l, dot, err
  *         cdef double reg_pu = self.reg_pu             # <<<<<<<<<<<<<<
  *         cdef double reg_qi = self.reg_qi
  *         cdef double reg_bu = self.reg_bu
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_reg_pu); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 647, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_reg_pu); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 651, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 647, __pyx_L1_error)
+  __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 651, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_reg_pu = __pyx_t_2;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":648
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":652
  *         cdef double r, est, l, dot, err
  *         cdef double reg_pu = self.reg_pu
  *         cdef double reg_qi = self.reg_qi             # <<<<<<<<<<<<<<
  *         cdef double reg_bu = self.reg_bu
  *         cdef double reg_bi = self.reg_bi
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_reg_qi); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 648, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_reg_qi); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 652, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 648, __pyx_L1_error)
+  __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 652, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_reg_qi = __pyx_t_2;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":649
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":653
  *         cdef double reg_pu = self.reg_pu
  *         cdef double reg_qi = self.reg_qi
  *         cdef double reg_bu = self.reg_bu             # <<<<<<<<<<<<<<
  *         cdef double reg_bi = self.reg_bi
  *         cdef double lr_bu = self.lr_bu
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_reg_bu); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 649, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_reg_bu); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 653, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 649, __pyx_L1_error)
+  __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 653, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_reg_bu = __pyx_t_2;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":650
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":654
  *         cdef double reg_qi = self.reg_qi
  *         cdef double reg_bu = self.reg_bu
  *         cdef double reg_bi = self.reg_bi             # <<<<<<<<<<<<<<
  *         cdef double lr_bu = self.lr_bu
  *         cdef double lr_bi = self.lr_bi
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_reg_bi); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 650, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_reg_bi); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 654, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 650, __pyx_L1_error)
+  __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 654, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_reg_bi = __pyx_t_2;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":651
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":655
  *         cdef double reg_bu = self.reg_bu
  *         cdef double reg_bi = self.reg_bi
  *         cdef double lr_bu = self.lr_bu             # <<<<<<<<<<<<<<
  *         cdef double lr_bi = self.lr_bi
  *         cdef double global_mean = self.trainset.global_mean
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_lr_bu); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 651, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_lr_bu); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 655, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 651, __pyx_L1_error)
+  __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 655, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_lr_bu = __pyx_t_2;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":652
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":656
  *         cdef double reg_bi = self.reg_bi
  *         cdef double lr_bu = self.lr_bu
  *         cdef double lr_bi = self.lr_bi             # <<<<<<<<<<<<<<
  *         cdef double global_mean = self.trainset.global_mean
- * 
+ *         cdef double Weight = 0.0
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_lr_bi); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 652, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_lr_bi); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 656, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 652, __pyx_L1_error)
+  __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 656, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_lr_bi = __pyx_t_2;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":653
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":657
  *         cdef double lr_bu = self.lr_bu
  *         cdef double lr_bi = self.lr_bi
  *         cdef double global_mean = self.trainset.global_mean             # <<<<<<<<<<<<<<
+ *         cdef double Weight = 0.0
  * 
- *         # Randomly initialize user and item factors
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 653, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 657, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_global_mean); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 653, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_global_mean); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 657, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-  __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 653, __pyx_L1_error)
+  __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 657, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_global_mean = __pyx_t_2;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":656
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":658
+ *         cdef double lr_bi = self.lr_bi
+ *         cdef double global_mean = self.trainset.global_mean
+ *         cdef double Weight = 0.0             # <<<<<<<<<<<<<<
+ * 
+ *         # Randomly initialize user and item factors
+ */
+  __pyx_v_Weight = 0.0;
+
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":661
  * 
  *         # Randomly initialize user and item factors
  *         rng = get_rng(self.random_state)             # <<<<<<<<<<<<<<
  *         pu = rng.uniform(self.init_low, self.init_high,
  *                          size=(trainset.n_users, self.n_factors))
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_get_rng); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 656, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_get_rng); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 661, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_random_state); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 656, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_random_state); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 661, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_1))) {
@@ -10073,26 +10041,26 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   __pyx_t_3 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_5, __pyx_t_4) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_4);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 656, __pyx_L1_error)
+  if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 661, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_v_rng = __pyx_t_3;
   __pyx_t_3 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":657
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":662
  *         # Randomly initialize user and item factors
  *         rng = get_rng(self.random_state)
  *         pu = rng.uniform(self.init_low, self.init_high,             # <<<<<<<<<<<<<<
  *                          size=(trainset.n_users, self.n_factors))
  *         qi = rng.uniform(self.init_low, self.init_high,
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_rng, __pyx_n_s_uniform); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 657, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_rng, __pyx_n_s_uniform); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 662, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_low); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 657, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_low); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 662, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_high); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 657, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_high); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 662, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 657, __pyx_L1_error)
+  __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 662, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_1);
@@ -10101,20 +10069,20 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   __pyx_t_1 = 0;
   __pyx_t_4 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":658
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":663
  *         rng = get_rng(self.random_state)
  *         pu = rng.uniform(self.init_low, self.init_high,
  *                          size=(trainset.n_users, self.n_factors))             # <<<<<<<<<<<<<<
  *         qi = rng.uniform(self.init_low, self.init_high,
  *                          size=(trainset.n_items, self.n_factors))
  */
-  __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 658, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 663, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_users); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 658, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_users); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 663, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 658, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 663, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 658, __pyx_L1_error)
+  __pyx_t_7 = PyTuple_New(2); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 663, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_1);
@@ -10122,22 +10090,22 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   PyTuple_SET_ITEM(__pyx_t_7, 1, __pyx_t_6);
   __pyx_t_1 = 0;
   __pyx_t_6 = 0;
-  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_size, __pyx_t_7) < 0) __PYX_ERR(0, 658, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_4, __pyx_n_s_size, __pyx_t_7) < 0) __PYX_ERR(0, 663, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":657
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":662
  *         # Randomly initialize user and item factors
  *         rng = get_rng(self.random_state)
  *         pu = rng.uniform(self.init_low, self.init_high,             # <<<<<<<<<<<<<<
  *                          size=(trainset.n_users, self.n_factors))
  *         qi = rng.uniform(self.init_low, self.init_high,
  */
-  __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, __pyx_t_4); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 657, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_5, __pyx_t_4); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 662, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (!(likely(((__pyx_t_7) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_7, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 657, __pyx_L1_error)
+  if (!(likely(((__pyx_t_7) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_7, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 662, __pyx_L1_error)
   __pyx_t_8 = ((PyArrayObject *)__pyx_t_7);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -10154,26 +10122,26 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       __pyx_t_10 = __pyx_t_11 = __pyx_t_12 = 0;
     }
     __pyx_pybuffernd_pu.diminfo[0].strides = __pyx_pybuffernd_pu.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_pu.diminfo[0].shape = __pyx_pybuffernd_pu.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_pu.diminfo[1].strides = __pyx_pybuffernd_pu.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_pu.diminfo[1].shape = __pyx_pybuffernd_pu.rcbuffer->pybuffer.shape[1];
-    if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 657, __pyx_L1_error)
+    if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 662, __pyx_L1_error)
   }
   __pyx_t_8 = 0;
   __pyx_v_pu = ((PyArrayObject *)__pyx_t_7);
   __pyx_t_7 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":659
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":664
  *         pu = rng.uniform(self.init_low, self.init_high,
  *                          size=(trainset.n_users, self.n_factors))
  *         qi = rng.uniform(self.init_low, self.init_high,             # <<<<<<<<<<<<<<
  *                          size=(trainset.n_items, self.n_factors))
  * 
  */
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_rng, __pyx_n_s_uniform); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 659, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_rng, __pyx_n_s_uniform); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 664, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_low); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 659, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_low); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 664, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_high); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 659, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_init_high); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 664, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 659, __pyx_L1_error)
+  __pyx_t_3 = PyTuple_New(2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 664, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_3, 0, __pyx_t_4);
@@ -10182,20 +10150,20 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   __pyx_t_4 = 0;
   __pyx_t_5 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":660
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":665
  *                          size=(trainset.n_users, self.n_factors))
  *         qi = rng.uniform(self.init_low, self.init_high,
  *                          size=(trainset.n_items, self.n_factors))             # <<<<<<<<<<<<<<
  * 
  *         bu = np.zeros(trainset.n_users, np.double)
  */
-  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 660, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyDict_NewPresized(1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 665, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_items); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 660, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_items); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 665, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 660, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 665, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 660, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 665, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_4);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_4);
@@ -10203,22 +10171,22 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   PyTuple_SET_ITEM(__pyx_t_1, 1, __pyx_t_6);
   __pyx_t_4 = 0;
   __pyx_t_6 = 0;
-  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_size, __pyx_t_1) < 0) __PYX_ERR(0, 660, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_t_5, __pyx_n_s_size, __pyx_t_1) < 0) __PYX_ERR(0, 665, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":659
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":664
  *         pu = rng.uniform(self.init_low, self.init_high,
  *                          size=(trainset.n_users, self.n_factors))
  *         qi = rng.uniform(self.init_low, self.init_high,             # <<<<<<<<<<<<<<
  *                          size=(trainset.n_items, self.n_factors))
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_3, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 659, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_7, __pyx_t_3, __pyx_t_5); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 664, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 659, __pyx_L1_error)
+  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 664, __pyx_L1_error)
   __pyx_t_13 = ((PyArrayObject *)__pyx_t_1);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -10235,29 +10203,29 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       __pyx_t_12 = __pyx_t_11 = __pyx_t_10 = 0;
     }
     __pyx_pybuffernd_qi.diminfo[0].strides = __pyx_pybuffernd_qi.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_qi.diminfo[0].shape = __pyx_pybuffernd_qi.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_qi.diminfo[1].strides = __pyx_pybuffernd_qi.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_qi.diminfo[1].shape = __pyx_pybuffernd_qi.rcbuffer->pybuffer.shape[1];
-    if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 659, __pyx_L1_error)
+    if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 664, __pyx_L1_error)
   }
   __pyx_t_13 = 0;
   __pyx_v_qi = ((PyArrayObject *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":662
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":667
  *                          size=(trainset.n_items, self.n_factors))
  * 
  *         bu = np.zeros(trainset.n_users, np.double)             # <<<<<<<<<<<<<<
  *         bi = np.zeros(trainset.n_items, np.double)
  * 
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 662, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 667, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_zeros); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 662, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_zeros); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 667, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_users); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 662, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_users); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 667, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
-  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 662, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_np); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 667, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
-  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_double); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 662, __pyx_L1_error)
+  __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_7, __pyx_n_s_double); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 667, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   __pyx_t_7 = NULL;
@@ -10275,7 +10243,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_7, __pyx_t_5, __pyx_t_6};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 662, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 667, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -10285,7 +10253,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
     PyObject *__pyx_temp[3] = {__pyx_t_7, __pyx_t_5, __pyx_t_6};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 662, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 667, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_7); __pyx_t_7 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
@@ -10293,7 +10261,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   } else
   #endif
   {
-    __pyx_t_4 = PyTuple_New(2+__pyx_t_9); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 662, __pyx_L1_error)
+    __pyx_t_4 = PyTuple_New(2+__pyx_t_9); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 667, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
     if (__pyx_t_7) {
       __Pyx_GIVEREF(__pyx_t_7); PyTuple_SET_ITEM(__pyx_t_4, 0, __pyx_t_7); __pyx_t_7 = NULL;
@@ -10304,12 +10272,12 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     PyTuple_SET_ITEM(__pyx_t_4, 1+__pyx_t_9, __pyx_t_6);
     __pyx_t_5 = 0;
     __pyx_t_6 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 662, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_4, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 667, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   }
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 662, __pyx_L1_error)
+  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 667, __pyx_L1_error)
   __pyx_t_14 = ((PyArrayObject *)__pyx_t_1);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -10326,29 +10294,29 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       __pyx_t_10 = __pyx_t_11 = __pyx_t_12 = 0;
     }
     __pyx_pybuffernd_bu.diminfo[0].strides = __pyx_pybuffernd_bu.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_bu.diminfo[0].shape = __pyx_pybuffernd_bu.rcbuffer->pybuffer.shape[0];
-    if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 662, __pyx_L1_error)
+    if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 667, __pyx_L1_error)
   }
   __pyx_t_14 = 0;
   __pyx_v_bu = ((PyArrayObject *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":663
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":668
  * 
  *         bu = np.zeros(trainset.n_users, np.double)
  *         bi = np.zeros(trainset.n_items, np.double)             # <<<<<<<<<<<<<<
  * 
  *         if not self.biased:
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 663, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_3, __pyx_n_s_np); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 668, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_zeros); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 663, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_zeros); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 668, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_items); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 663, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_items); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 668, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 663, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 668, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_6);
-  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_double); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 663, __pyx_L1_error)
+  __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_double); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 668, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_5);
   __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
   __pyx_t_6 = NULL;
@@ -10366,7 +10334,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCALL
   if (PyFunction_Check(__pyx_t_4)) {
     PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_t_3, __pyx_t_5};
-    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 663, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 668, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -10376,7 +10344,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   #if CYTHON_FAST_PYCCALL
   if (__Pyx_PyFastCFunction_Check(__pyx_t_4)) {
     PyObject *__pyx_temp[3] = {__pyx_t_6, __pyx_t_3, __pyx_t_5};
-    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 663, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyCFunction_FastCall(__pyx_t_4, __pyx_temp+1-__pyx_t_9, 2+__pyx_t_9); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 668, __pyx_L1_error)
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
@@ -10384,7 +10352,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   } else
   #endif
   {
-    __pyx_t_7 = PyTuple_New(2+__pyx_t_9); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 663, __pyx_L1_error)
+    __pyx_t_7 = PyTuple_New(2+__pyx_t_9); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 668, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     if (__pyx_t_6) {
       __Pyx_GIVEREF(__pyx_t_6); PyTuple_SET_ITEM(__pyx_t_7, 0, __pyx_t_6); __pyx_t_6 = NULL;
@@ -10395,12 +10363,12 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     PyTuple_SET_ITEM(__pyx_t_7, 1+__pyx_t_9, __pyx_t_5);
     __pyx_t_3 = 0;
     __pyx_t_5 = 0;
-    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 663, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_Call(__pyx_t_4, __pyx_t_7, NULL); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 668, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
-  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 663, __pyx_L1_error)
+  if (!(likely(((__pyx_t_1) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_1, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 668, __pyx_L1_error)
   __pyx_t_15 = ((PyArrayObject *)__pyx_t_1);
   {
     __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -10417,27 +10385,27 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       __pyx_t_12 = __pyx_t_11 = __pyx_t_10 = 0;
     }
     __pyx_pybuffernd_bi.diminfo[0].strides = __pyx_pybuffernd_bi.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_bi.diminfo[0].shape = __pyx_pybuffernd_bi.rcbuffer->pybuffer.shape[0];
-    if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 663, __pyx_L1_error)
+    if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 668, __pyx_L1_error)
   }
   __pyx_t_15 = 0;
   __pyx_v_bi = ((PyArrayObject *)__pyx_t_1);
   __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":665
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":670
  *         bi = np.zeros(trainset.n_items, np.double)
  * 
  *         if not self.biased:             # <<<<<<<<<<<<<<
  *             global_mean = 0
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_biased); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 665, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_biased); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 670, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_16 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_16 < 0)) __PYX_ERR(0, 665, __pyx_L1_error)
+  __pyx_t_16 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_16 < 0)) __PYX_ERR(0, 670, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __pyx_t_17 = ((!__pyx_t_16) != 0);
   if (__pyx_t_17) {
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":666
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":671
  * 
  *         if not self.biased:
  *             global_mean = 0             # <<<<<<<<<<<<<<
@@ -10446,7 +10414,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  */
     __pyx_v_global_mean = 0.0;
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":665
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":670
  *         bi = np.zeros(trainset.n_items, np.double)
  * 
  *         if not self.biased:             # <<<<<<<<<<<<<<
@@ -10455,16 +10423,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  */
   }
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":668
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":673
  *             global_mean = 0
  * 
  *         for current_epoch in range(self.n_epochs):             # <<<<<<<<<<<<<<
  * 
  *             if self.verbose:
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_range); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 668, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_4, __pyx_n_s_range); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 673, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_epochs); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 668, __pyx_L1_error)
+  __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_epochs); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 673, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_7);
   __pyx_t_5 = NULL;
   if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_4))) {
@@ -10479,16 +10447,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_4, __pyx_t_5, __pyx_t_7) : __Pyx_PyObject_CallOneArg(__pyx_t_4, __pyx_t_7);
   __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
   __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 668, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 673, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
     __pyx_t_4 = __pyx_t_1; __Pyx_INCREF(__pyx_t_4); __pyx_t_18 = 0;
     __pyx_t_19 = NULL;
   } else {
-    __pyx_t_18 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 668, __pyx_L1_error)
+    __pyx_t_18 = -1; __pyx_t_4 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 673, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_4);
-    __pyx_t_19 = Py_TYPE(__pyx_t_4)->tp_iternext; if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 668, __pyx_L1_error)
+    __pyx_t_19 = Py_TYPE(__pyx_t_4)->tp_iternext; if (unlikely(!__pyx_t_19)) __PYX_ERR(0, 673, __pyx_L1_error)
   }
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   for (;;) {
@@ -10496,17 +10464,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       if (likely(PyList_CheckExact(__pyx_t_4))) {
         if (__pyx_t_18 >= PyList_GET_SIZE(__pyx_t_4)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_18); __Pyx_INCREF(__pyx_t_1); __pyx_t_18++; if (unlikely(0 < 0)) __PYX_ERR(0, 668, __pyx_L1_error)
+        __pyx_t_1 = PyList_GET_ITEM(__pyx_t_4, __pyx_t_18); __Pyx_INCREF(__pyx_t_1); __pyx_t_18++; if (unlikely(0 < 0)) __PYX_ERR(0, 673, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_4, __pyx_t_18); __pyx_t_18++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 668, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_4, __pyx_t_18); __pyx_t_18++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 673, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       } else {
         if (__pyx_t_18 >= PyTuple_GET_SIZE(__pyx_t_4)) break;
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_18); __Pyx_INCREF(__pyx_t_1); __pyx_t_18++; if (unlikely(0 < 0)) __PYX_ERR(0, 668, __pyx_L1_error)
+        __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_4, __pyx_t_18); __Pyx_INCREF(__pyx_t_1); __pyx_t_18++; if (unlikely(0 < 0)) __PYX_ERR(0, 673, __pyx_L1_error)
         #else
-        __pyx_t_1 = PySequence_ITEM(__pyx_t_4, __pyx_t_18); __pyx_t_18++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 668, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(__pyx_t_4, __pyx_t_18); __pyx_t_18++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 673, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
       }
@@ -10516,7 +10484,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         PyObject* exc_type = PyErr_Occurred();
         if (exc_type) {
           if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-          else __PYX_ERR(0, 668, __pyx_L1_error)
+          else __PYX_ERR(0, 673, __pyx_L1_error)
         }
         break;
       }
@@ -10525,27 +10493,27 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     __Pyx_XDECREF_SET(__pyx_v_current_epoch, __pyx_t_1);
     __pyx_t_1 = 0;
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":670
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":675
  *         for current_epoch in range(self.n_epochs):
  * 
  *             if self.verbose:             # <<<<<<<<<<<<<<
  *                 print("Processing epoch {}".format(current_epoch))
  * 
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_verbose); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 670, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_verbose); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 675, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_17 < 0)) __PYX_ERR(0, 670, __pyx_L1_error)
+    __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_17 < 0)) __PYX_ERR(0, 675, __pyx_L1_error)
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     if (__pyx_t_17) {
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":671
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":676
  * 
  *             if self.verbose:
  *                 print("Processing epoch {}".format(current_epoch))             # <<<<<<<<<<<<<<
  * 
  *             # (re)initialize nums and denoms to zero
  */
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u_Processing_epoch, __pyx_n_s_format); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 671, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_kp_u_Processing_epoch, __pyx_n_s_format); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 676, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __pyx_t_5 = NULL;
       if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
@@ -10559,15 +10527,15 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       }
       __pyx_t_1 = (__pyx_t_5) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_5, __pyx_v_current_epoch) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_v_current_epoch);
       __Pyx_XDECREF(__pyx_t_5); __pyx_t_5 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 671, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 676, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_7 = __Pyx_PyObject_CallOneArg(__pyx_builtin_print, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 671, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_CallOneArg(__pyx_builtin_print, __pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 676, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":670
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":675
  *         for current_epoch in range(self.n_epochs):
  * 
  *             if self.verbose:             # <<<<<<<<<<<<<<
@@ -10576,23 +10544,23 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  */
     }
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":674
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":679
  * 
  *             # (re)initialize nums and denoms to zero
  *             user_num = np.zeros((trainset.n_users, self.n_factors))             # <<<<<<<<<<<<<<
  *             user_denom = np.zeros((trainset.n_users, self.n_factors))
  *             item_num = np.zeros((trainset.n_items, self.n_factors))
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 674, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 679, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 674, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 679, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_users); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 674, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_users); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 679, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 674, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 679, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 674, __pyx_L1_error)
+    __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 679, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_GIVEREF(__pyx_t_1);
     PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_1);
@@ -10613,10 +10581,10 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     __pyx_t_7 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_3, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_6);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 674, __pyx_L1_error)
+    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 679, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (!(likely(((__pyx_t_7) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_7, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 674, __pyx_L1_error)
+    if (!(likely(((__pyx_t_7) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_7, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 679, __pyx_L1_error)
     __pyx_t_20 = ((PyArrayObject *)__pyx_t_7);
     {
       __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -10633,29 +10601,29 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         __pyx_t_10 = __pyx_t_11 = __pyx_t_12 = 0;
       }
       __pyx_pybuffernd_user_num.diminfo[0].strides = __pyx_pybuffernd_user_num.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_user_num.diminfo[0].shape = __pyx_pybuffernd_user_num.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_user_num.diminfo[1].strides = __pyx_pybuffernd_user_num.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_user_num.diminfo[1].shape = __pyx_pybuffernd_user_num.rcbuffer->pybuffer.shape[1];
-      if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 674, __pyx_L1_error)
+      if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 679, __pyx_L1_error)
     }
     __pyx_t_20 = 0;
     __Pyx_XDECREF_SET(__pyx_v_user_num, ((PyArrayObject *)__pyx_t_7));
     __pyx_t_7 = 0;
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":675
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":680
  *             # (re)initialize nums and denoms to zero
  *             user_num = np.zeros((trainset.n_users, self.n_factors))
  *             user_denom = np.zeros((trainset.n_users, self.n_factors))             # <<<<<<<<<<<<<<
  *             item_num = np.zeros((trainset.n_items, self.n_factors))
  *             item_denom = np.zeros((trainset.n_items, self.n_factors))
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 675, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_np); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 680, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_zeros); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 675, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_t_5, __pyx_n_s_zeros); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 680, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_users); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 675, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_users); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 680, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 675, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 680, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 675, __pyx_L1_error)
+    __pyx_t_1 = PyTuple_New(2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 680, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_GIVEREF(__pyx_t_5);
     PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_5);
@@ -10676,10 +10644,10 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     __pyx_t_7 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_6, __pyx_t_3, __pyx_t_1) : __Pyx_PyObject_CallOneArg(__pyx_t_6, __pyx_t_1);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 675, __pyx_L1_error)
+    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 680, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (!(likely(((__pyx_t_7) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_7, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 675, __pyx_L1_error)
+    if (!(likely(((__pyx_t_7) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_7, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 680, __pyx_L1_error)
     __pyx_t_21 = ((PyArrayObject *)__pyx_t_7);
     {
       __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -10696,29 +10664,29 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         __pyx_t_12 = __pyx_t_11 = __pyx_t_10 = 0;
       }
       __pyx_pybuffernd_user_denom.diminfo[0].strides = __pyx_pybuffernd_user_denom.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_user_denom.diminfo[0].shape = __pyx_pybuffernd_user_denom.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_user_denom.diminfo[1].strides = __pyx_pybuffernd_user_denom.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_user_denom.diminfo[1].shape = __pyx_pybuffernd_user_denom.rcbuffer->pybuffer.shape[1];
-      if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 675, __pyx_L1_error)
+      if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 680, __pyx_L1_error)
     }
     __pyx_t_21 = 0;
     __Pyx_XDECREF_SET(__pyx_v_user_denom, ((PyArrayObject *)__pyx_t_7));
     __pyx_t_7 = 0;
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":676
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":681
  *             user_num = np.zeros((trainset.n_users, self.n_factors))
  *             user_denom = np.zeros((trainset.n_users, self.n_factors))
  *             item_num = np.zeros((trainset.n_items, self.n_factors))             # <<<<<<<<<<<<<<
  *             item_denom = np.zeros((trainset.n_items, self.n_factors))
  * 
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 676, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_6, __pyx_n_s_np); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 681, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_zeros); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 676, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_t_6, __pyx_n_s_zeros); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 681, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_items); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 676, __pyx_L1_error)
+    __pyx_t_6 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_items); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 681, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 676, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 681, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 676, __pyx_L1_error)
+    __pyx_t_5 = PyTuple_New(2); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 681, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_GIVEREF(__pyx_t_6);
     PyTuple_SET_ITEM(__pyx_t_5, 0, __pyx_t_6);
@@ -10739,10 +10707,10 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     __pyx_t_7 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_3, __pyx_t_5) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_5);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 676, __pyx_L1_error)
+    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 681, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (!(likely(((__pyx_t_7) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_7, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 676, __pyx_L1_error)
+    if (!(likely(((__pyx_t_7) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_7, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 681, __pyx_L1_error)
     __pyx_t_22 = ((PyArrayObject *)__pyx_t_7);
     {
       __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -10759,29 +10727,29 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         __pyx_t_10 = __pyx_t_11 = __pyx_t_12 = 0;
       }
       __pyx_pybuffernd_item_num.diminfo[0].strides = __pyx_pybuffernd_item_num.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_item_num.diminfo[0].shape = __pyx_pybuffernd_item_num.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_item_num.diminfo[1].strides = __pyx_pybuffernd_item_num.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_item_num.diminfo[1].shape = __pyx_pybuffernd_item_num.rcbuffer->pybuffer.shape[1];
-      if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 676, __pyx_L1_error)
+      if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 681, __pyx_L1_error)
     }
     __pyx_t_22 = 0;
     __Pyx_XDECREF_SET(__pyx_v_item_num, ((PyArrayObject *)__pyx_t_7));
     __pyx_t_7 = 0;
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":677
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":682
  *             user_denom = np.zeros((trainset.n_users, self.n_factors))
  *             item_num = np.zeros((trainset.n_items, self.n_factors))
  *             item_denom = np.zeros((trainset.n_items, self.n_factors))             # <<<<<<<<<<<<<<
  * 
  *             # Compute numerators and denominators for users and items factors
  */
-    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 677, __pyx_L1_error)
+    __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 682, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 677, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_zeros); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 682, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_items); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 677, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_n_items); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 682, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 677, __pyx_L1_error)
+    __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 682, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_3);
-    __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 677, __pyx_L1_error)
+    __pyx_t_6 = PyTuple_New(2); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 682, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_6);
     __Pyx_GIVEREF(__pyx_t_1);
     PyTuple_SET_ITEM(__pyx_t_6, 0, __pyx_t_1);
@@ -10802,10 +10770,10 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     __pyx_t_7 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_3, __pyx_t_6) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_6);
     __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
     __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 677, __pyx_L1_error)
+    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 682, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-    if (!(likely(((__pyx_t_7) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_7, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 677, __pyx_L1_error)
+    if (!(likely(((__pyx_t_7) == Py_None) || likely(__Pyx_TypeTest(__pyx_t_7, __pyx_ptype_5numpy_ndarray))))) __PYX_ERR(0, 682, __pyx_L1_error)
     __pyx_t_23 = ((PyArrayObject *)__pyx_t_7);
     {
       __Pyx_BufFmt_StackElem __pyx_stack[1];
@@ -10822,20 +10790,20 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         __pyx_t_12 = __pyx_t_11 = __pyx_t_10 = 0;
       }
       __pyx_pybuffernd_item_denom.diminfo[0].strides = __pyx_pybuffernd_item_denom.rcbuffer->pybuffer.strides[0]; __pyx_pybuffernd_item_denom.diminfo[0].shape = __pyx_pybuffernd_item_denom.rcbuffer->pybuffer.shape[0]; __pyx_pybuffernd_item_denom.diminfo[1].strides = __pyx_pybuffernd_item_denom.rcbuffer->pybuffer.strides[1]; __pyx_pybuffernd_item_denom.diminfo[1].shape = __pyx_pybuffernd_item_denom.rcbuffer->pybuffer.shape[1];
-      if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 677, __pyx_L1_error)
+      if (unlikely(__pyx_t_9 < 0)) __PYX_ERR(0, 682, __pyx_L1_error)
     }
     __pyx_t_23 = 0;
     __Pyx_XDECREF_SET(__pyx_v_item_denom, ((PyArrayObject *)__pyx_t_7));
     __pyx_t_7 = 0;
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":680
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":685
  * 
  *             # Compute numerators and denominators for users and items factors
  *             for u, i, r in trainset.all_ratings():             # <<<<<<<<<<<<<<
- * 
+ *                 Weight = self.W[u][i]
  *                 # compute current estimation and error
  */
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_all_ratings); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 680, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_all_ratings); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 685, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __pyx_t_6 = NULL;
     if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
@@ -10849,16 +10817,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     }
     __pyx_t_7 = (__pyx_t_6) ? __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_6) : __Pyx_PyObject_CallNoArg(__pyx_t_5);
     __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 680, __pyx_L1_error)
+    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 685, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     if (likely(PyList_CheckExact(__pyx_t_7)) || PyTuple_CheckExact(__pyx_t_7)) {
       __pyx_t_5 = __pyx_t_7; __Pyx_INCREF(__pyx_t_5); __pyx_t_24 = 0;
       __pyx_t_25 = NULL;
     } else {
-      __pyx_t_24 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 680, __pyx_L1_error)
+      __pyx_t_24 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 685, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_25 = Py_TYPE(__pyx_t_5)->tp_iternext; if (unlikely(!__pyx_t_25)) __PYX_ERR(0, 680, __pyx_L1_error)
+      __pyx_t_25 = Py_TYPE(__pyx_t_5)->tp_iternext; if (unlikely(!__pyx_t_25)) __PYX_ERR(0, 685, __pyx_L1_error)
     }
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     for (;;) {
@@ -10866,17 +10834,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         if (likely(PyList_CheckExact(__pyx_t_5))) {
           if (__pyx_t_24 >= PyList_GET_SIZE(__pyx_t_5)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_7 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_24); __Pyx_INCREF(__pyx_t_7); __pyx_t_24++; if (unlikely(0 < 0)) __PYX_ERR(0, 680, __pyx_L1_error)
+          __pyx_t_7 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_24); __Pyx_INCREF(__pyx_t_7); __pyx_t_24++; if (unlikely(0 < 0)) __PYX_ERR(0, 685, __pyx_L1_error)
           #else
-          __pyx_t_7 = PySequence_ITEM(__pyx_t_5, __pyx_t_24); __pyx_t_24++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 680, __pyx_L1_error)
+          __pyx_t_7 = PySequence_ITEM(__pyx_t_5, __pyx_t_24); __pyx_t_24++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 685, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_7);
           #endif
         } else {
           if (__pyx_t_24 >= PyTuple_GET_SIZE(__pyx_t_5)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_24); __Pyx_INCREF(__pyx_t_7); __pyx_t_24++; if (unlikely(0 < 0)) __PYX_ERR(0, 680, __pyx_L1_error)
+          __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_24); __Pyx_INCREF(__pyx_t_7); __pyx_t_24++; if (unlikely(0 < 0)) __PYX_ERR(0, 685, __pyx_L1_error)
           #else
-          __pyx_t_7 = PySequence_ITEM(__pyx_t_5, __pyx_t_24); __pyx_t_24++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 680, __pyx_L1_error)
+          __pyx_t_7 = PySequence_ITEM(__pyx_t_5, __pyx_t_24); __pyx_t_24++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 685, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_7);
           #endif
         }
@@ -10886,7 +10854,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 680, __pyx_L1_error)
+            else __PYX_ERR(0, 685, __pyx_L1_error)
           }
           break;
         }
@@ -10898,7 +10866,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         if (unlikely(size != 3)) {
           if (size > 3) __Pyx_RaiseTooManyValuesError(3);
           else if (size >= 0) __Pyx_RaiseNeedMoreValuesError(size);
-          __PYX_ERR(0, 680, __pyx_L1_error)
+          __PYX_ERR(0, 685, __pyx_L1_error)
         }
         #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
         if (likely(PyTuple_CheckExact(sequence))) {
@@ -10914,17 +10882,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         __Pyx_INCREF(__pyx_t_3);
         __Pyx_INCREF(__pyx_t_1);
         #else
-        __pyx_t_6 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 680, __pyx_L1_error)
+        __pyx_t_6 = PySequence_ITEM(sequence, 0); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 685, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_3 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 680, __pyx_L1_error)
+        __pyx_t_3 = PySequence_ITEM(sequence, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 685, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __pyx_t_1 = PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 680, __pyx_L1_error)
+        __pyx_t_1 = PySequence_ITEM(sequence, 2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 685, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         #endif
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       } else {
         Py_ssize_t index = -1;
-        __pyx_t_26 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 680, __pyx_L1_error)
+        __pyx_t_26 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_26)) __PYX_ERR(0, 685, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_26);
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         __pyx_t_27 = Py_TYPE(__pyx_t_26)->tp_iternext;
@@ -10934,7 +10902,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         __Pyx_GOTREF(__pyx_t_3);
         index = 2; __pyx_t_1 = __pyx_t_27(__pyx_t_26); if (unlikely(!__pyx_t_1)) goto __pyx_L9_unpacking_failed;
         __Pyx_GOTREF(__pyx_t_1);
-        if (__Pyx_IternextUnpackEndCheck(__pyx_t_27(__pyx_t_26), 3) < 0) __PYX_ERR(0, 680, __pyx_L1_error)
+        if (__Pyx_IternextUnpackEndCheck(__pyx_t_27(__pyx_t_26), 3) < 0) __PYX_ERR(0, 685, __pyx_L1_error)
         __pyx_t_27 = NULL;
         __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
         goto __pyx_L10_unpacking_done;
@@ -10942,21 +10910,40 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         __Pyx_DECREF(__pyx_t_26); __pyx_t_26 = 0;
         __pyx_t_27 = NULL;
         if (__Pyx_IterFinish() == 0) __Pyx_RaiseNeedMoreValuesError(index);
-        __PYX_ERR(0, 680, __pyx_L1_error)
+        __PYX_ERR(0, 685, __pyx_L1_error)
         __pyx_L10_unpacking_done:;
       }
-      __pyx_t_9 = __Pyx_PyInt_As_int(__pyx_t_6); if (unlikely((__pyx_t_9 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 680, __pyx_L1_error)
+      __pyx_t_9 = __Pyx_PyInt_As_int(__pyx_t_6); if (unlikely((__pyx_t_9 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 685, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_28 = __Pyx_PyInt_As_int(__pyx_t_3); if (unlikely((__pyx_t_28 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 680, __pyx_L1_error)
+      __pyx_t_28 = __Pyx_PyInt_As_int(__pyx_t_3); if (unlikely((__pyx_t_28 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 685, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 680, __pyx_L1_error)
+      __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 685, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_v_u = __pyx_t_9;
       __pyx_v_i = __pyx_t_28;
       __pyx_v_r = __pyx_t_2;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":683
- * 
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":686
+ *             # Compute numerators and denominators for users and items factors
+ *             for u, i, r in trainset.all_ratings():
+ *                 Weight = self.W[u][i]             # <<<<<<<<<<<<<<
+ *                 # compute current estimation and error
+ *                 dot = 0  # <q_i, p_u>
+ */
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_W); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 686, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_7);
+      __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_7, __pyx_v_u, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 686, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_1);
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __pyx_t_7 = __Pyx_GetItemInt(__pyx_t_1, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 686, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_7);
+      __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+      __pyx_t_2 = __pyx_PyFloat_AsDouble(__pyx_t_7); if (unlikely((__pyx_t_2 == (double)-1) && PyErr_Occurred())) __PYX_ERR(0, 686, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
+      __pyx_v_Weight = __pyx_t_2;
+
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":688
+ *                 Weight = self.W[u][i]
  *                 # compute current estimation and error
  *                 dot = 0  # <q_i, p_u>             # <<<<<<<<<<<<<<
  *                 for f in range(self.n_factors):
@@ -10964,16 +10951,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  */
       __pyx_v_dot = 0.0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":684
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":689
  *                 # compute current estimation and error
  *                 dot = 0  # <q_i, p_u>
  *                 for f in range(self.n_factors):             # <<<<<<<<<<<<<<
  *                     dot += qi[i, f] * pu[u, f]
  *                 est = global_mean + bu[u] + bi[i] + dot
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_range); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 684, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_range); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 689, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 684, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 689, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_6 = NULL;
       if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_1))) {
@@ -10988,16 +10975,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       __pyx_t_7 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_1, __pyx_t_6, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_1, __pyx_t_3);
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 684, __pyx_L1_error)
+      if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 689, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       if (likely(PyList_CheckExact(__pyx_t_7)) || PyTuple_CheckExact(__pyx_t_7)) {
         __pyx_t_1 = __pyx_t_7; __Pyx_INCREF(__pyx_t_1); __pyx_t_29 = 0;
         __pyx_t_30 = NULL;
       } else {
-        __pyx_t_29 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 684, __pyx_L1_error)
+        __pyx_t_29 = -1; __pyx_t_1 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 689, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_30 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_30)) __PYX_ERR(0, 684, __pyx_L1_error)
+        __pyx_t_30 = Py_TYPE(__pyx_t_1)->tp_iternext; if (unlikely(!__pyx_t_30)) __PYX_ERR(0, 689, __pyx_L1_error)
       }
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       for (;;) {
@@ -11005,17 +10992,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
           if (likely(PyList_CheckExact(__pyx_t_1))) {
             if (__pyx_t_29 >= PyList_GET_SIZE(__pyx_t_1)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_7 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_29); __Pyx_INCREF(__pyx_t_7); __pyx_t_29++; if (unlikely(0 < 0)) __PYX_ERR(0, 684, __pyx_L1_error)
+            __pyx_t_7 = PyList_GET_ITEM(__pyx_t_1, __pyx_t_29); __Pyx_INCREF(__pyx_t_7); __pyx_t_29++; if (unlikely(0 < 0)) __PYX_ERR(0, 689, __pyx_L1_error)
             #else
-            __pyx_t_7 = PySequence_ITEM(__pyx_t_1, __pyx_t_29); __pyx_t_29++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 684, __pyx_L1_error)
+            __pyx_t_7 = PySequence_ITEM(__pyx_t_1, __pyx_t_29); __pyx_t_29++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 689, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_7);
             #endif
           } else {
             if (__pyx_t_29 >= PyTuple_GET_SIZE(__pyx_t_1)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_29); __Pyx_INCREF(__pyx_t_7); __pyx_t_29++; if (unlikely(0 < 0)) __PYX_ERR(0, 684, __pyx_L1_error)
+            __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_1, __pyx_t_29); __Pyx_INCREF(__pyx_t_7); __pyx_t_29++; if (unlikely(0 < 0)) __PYX_ERR(0, 689, __pyx_L1_error)
             #else
-            __pyx_t_7 = PySequence_ITEM(__pyx_t_1, __pyx_t_29); __pyx_t_29++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 684, __pyx_L1_error)
+            __pyx_t_7 = PySequence_ITEM(__pyx_t_1, __pyx_t_29); __pyx_t_29++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 689, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_7);
             #endif
           }
@@ -11025,17 +11012,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
               if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-              else __PYX_ERR(0, 684, __pyx_L1_error)
+              else __PYX_ERR(0, 689, __pyx_L1_error)
             }
             break;
           }
           __Pyx_GOTREF(__pyx_t_7);
         }
-        __pyx_t_28 = __Pyx_PyInt_As_int(__pyx_t_7); if (unlikely((__pyx_t_28 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 684, __pyx_L1_error)
+        __pyx_t_28 = __Pyx_PyInt_As_int(__pyx_t_7); if (unlikely((__pyx_t_28 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 689, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
         __pyx_v_f = __pyx_t_28;
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":685
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":690
  *                 dot = 0  # <q_i, p_u>
  *                 for f in range(self.n_factors):
  *                     dot += qi[i, f] * pu[u, f]             # <<<<<<<<<<<<<<
@@ -11055,7 +11042,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_32 >= __pyx_pybuffernd_qi.diminfo[1].shape)) __pyx_t_28 = 1;
         if (unlikely(__pyx_t_28 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_28);
-          __PYX_ERR(0, 685, __pyx_L1_error)
+          __PYX_ERR(0, 690, __pyx_L1_error)
         }
         __pyx_t_33 = __pyx_v_u;
         __pyx_t_34 = __pyx_v_f;
@@ -11070,11 +11057,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_34 >= __pyx_pybuffernd_pu.diminfo[1].shape)) __pyx_t_28 = 1;
         if (unlikely(__pyx_t_28 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_28);
-          __PYX_ERR(0, 685, __pyx_L1_error)
+          __PYX_ERR(0, 690, __pyx_L1_error)
         }
         __pyx_v_dot = (__pyx_v_dot + ((*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_qi.rcbuffer->pybuffer.buf, __pyx_t_31, __pyx_pybuffernd_qi.diminfo[0].strides, __pyx_t_32, __pyx_pybuffernd_qi.diminfo[1].strides)) * (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_pu.rcbuffer->pybuffer.buf, __pyx_t_33, __pyx_pybuffernd_pu.diminfo[0].strides, __pyx_t_34, __pyx_pybuffernd_pu.diminfo[1].strides))));
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":684
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":689
  *                 # compute current estimation and error
  *                 dot = 0  # <q_i, p_u>
  *                 for f in range(self.n_factors):             # <<<<<<<<<<<<<<
@@ -11084,7 +11071,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":686
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":691
  *                 for f in range(self.n_factors):
  *                     dot += qi[i, f] * pu[u, f]
  *                 est = global_mean + bu[u] + bi[i] + dot             # <<<<<<<<<<<<<<
@@ -11099,7 +11086,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       } else if (unlikely(__pyx_t_35 >= __pyx_pybuffernd_bu.diminfo[0].shape)) __pyx_t_28 = 0;
       if (unlikely(__pyx_t_28 != -1)) {
         __Pyx_RaiseBufferIndexError(__pyx_t_28);
-        __PYX_ERR(0, 686, __pyx_L1_error)
+        __PYX_ERR(0, 691, __pyx_L1_error)
       }
       __pyx_t_36 = __pyx_v_i;
       __pyx_t_28 = -1;
@@ -11109,11 +11096,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       } else if (unlikely(__pyx_t_36 >= __pyx_pybuffernd_bi.diminfo[0].shape)) __pyx_t_28 = 0;
       if (unlikely(__pyx_t_28 != -1)) {
         __Pyx_RaiseBufferIndexError(__pyx_t_28);
-        __PYX_ERR(0, 686, __pyx_L1_error)
+        __PYX_ERR(0, 691, __pyx_L1_error)
       }
       __pyx_v_est = (((__pyx_v_global_mean + (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bu.rcbuffer->pybuffer.buf, __pyx_t_35, __pyx_pybuffernd_bu.diminfo[0].strides))) + (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bi.rcbuffer->pybuffer.buf, __pyx_t_36, __pyx_pybuffernd_bi.diminfo[0].strides))) + __pyx_v_dot);
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":687
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":692
  *                     dot += qi[i, f] * pu[u, f]
  *                 est = global_mean + bu[u] + bi[i] + dot
  *                 err = r - est             # <<<<<<<<<<<<<<
@@ -11122,20 +11109,20 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  */
       __pyx_v_err = (__pyx_v_r - __pyx_v_est);
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":690
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":695
  * 
  *                 # update biases
  *                 if self.biased:             # <<<<<<<<<<<<<<
  * 
  *                     bu[u] += lr_bu * (err - reg_bu * bu[u])
  */
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_biased); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 690, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_biased); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 695, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_17 < 0)) __PYX_ERR(0, 690, __pyx_L1_error)
+      __pyx_t_17 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_17 < 0)) __PYX_ERR(0, 695, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       if (__pyx_t_17) {
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":692
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":697
  *                 if self.biased:
  * 
  *                     bu[u] += lr_bu * (err - reg_bu * bu[u])             # <<<<<<<<<<<<<<
@@ -11150,7 +11137,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_37 >= __pyx_pybuffernd_bu.diminfo[0].shape)) __pyx_t_28 = 0;
         if (unlikely(__pyx_t_28 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_28);
-          __PYX_ERR(0, 692, __pyx_L1_error)
+          __PYX_ERR(0, 697, __pyx_L1_error)
         }
         __pyx_t_38 = __pyx_v_u;
         __pyx_t_28 = -1;
@@ -11160,11 +11147,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_38 >= __pyx_pybuffernd_bu.diminfo[0].shape)) __pyx_t_28 = 0;
         if (unlikely(__pyx_t_28 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_28);
-          __PYX_ERR(0, 692, __pyx_L1_error)
+          __PYX_ERR(0, 697, __pyx_L1_error)
         }
         *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bu.rcbuffer->pybuffer.buf, __pyx_t_38, __pyx_pybuffernd_bu.diminfo[0].strides) += (__pyx_v_lr_bu * (__pyx_v_err - (__pyx_v_reg_bu * (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bu.rcbuffer->pybuffer.buf, __pyx_t_37, __pyx_pybuffernd_bu.diminfo[0].strides)))));
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":693
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":698
  * 
  *                     bu[u] += lr_bu * (err - reg_bu * bu[u])
  *                     bi[i] += lr_bi * (err - reg_bi * bi[i])             # <<<<<<<<<<<<<<
@@ -11179,7 +11166,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_39 >= __pyx_pybuffernd_bi.diminfo[0].shape)) __pyx_t_28 = 0;
         if (unlikely(__pyx_t_28 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_28);
-          __PYX_ERR(0, 693, __pyx_L1_error)
+          __PYX_ERR(0, 698, __pyx_L1_error)
         }
         __pyx_t_40 = __pyx_v_i;
         __pyx_t_28 = -1;
@@ -11189,11 +11176,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_40 >= __pyx_pybuffernd_bi.diminfo[0].shape)) __pyx_t_28 = 0;
         if (unlikely(__pyx_t_28 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_28);
-          __PYX_ERR(0, 693, __pyx_L1_error)
+          __PYX_ERR(0, 698, __pyx_L1_error)
         }
         *__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bi.rcbuffer->pybuffer.buf, __pyx_t_40, __pyx_pybuffernd_bi.diminfo[0].strides) += (__pyx_v_lr_bi * (__pyx_v_err - (__pyx_v_reg_bi * (*__Pyx_BufPtrStrided1d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_bi.rcbuffer->pybuffer.buf, __pyx_t_39, __pyx_pybuffernd_bi.diminfo[0].strides)))));
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":690
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":695
  * 
  *                 # update biases
  *                 if self.biased:             # <<<<<<<<<<<<<<
@@ -11202,16 +11189,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  */
       }
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":696
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":701
  * 
  *                 # compute numerators and denominators
  *                 for f in range(self.n_factors):             # <<<<<<<<<<<<<<
  *                     user_num[u, f] += qi[i, f] * r
  *                     user_denom[u, f] += qi[i, f] * est
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_range); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 696, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_range); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 701, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 696, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 701, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_6 = NULL;
       if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_7))) {
@@ -11226,16 +11213,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_6, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_3);
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 696, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 701, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
         __pyx_t_7 = __pyx_t_1; __Pyx_INCREF(__pyx_t_7); __pyx_t_29 = 0;
         __pyx_t_30 = NULL;
       } else {
-        __pyx_t_29 = -1; __pyx_t_7 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 696, __pyx_L1_error)
+        __pyx_t_29 = -1; __pyx_t_7 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 701, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
-        __pyx_t_30 = Py_TYPE(__pyx_t_7)->tp_iternext; if (unlikely(!__pyx_t_30)) __PYX_ERR(0, 696, __pyx_L1_error)
+        __pyx_t_30 = Py_TYPE(__pyx_t_7)->tp_iternext; if (unlikely(!__pyx_t_30)) __PYX_ERR(0, 701, __pyx_L1_error)
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       for (;;) {
@@ -11243,17 +11230,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
           if (likely(PyList_CheckExact(__pyx_t_7))) {
             if (__pyx_t_29 >= PyList_GET_SIZE(__pyx_t_7)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_1 = PyList_GET_ITEM(__pyx_t_7, __pyx_t_29); __Pyx_INCREF(__pyx_t_1); __pyx_t_29++; if (unlikely(0 < 0)) __PYX_ERR(0, 696, __pyx_L1_error)
+            __pyx_t_1 = PyList_GET_ITEM(__pyx_t_7, __pyx_t_29); __Pyx_INCREF(__pyx_t_1); __pyx_t_29++; if (unlikely(0 < 0)) __PYX_ERR(0, 701, __pyx_L1_error)
             #else
-            __pyx_t_1 = PySequence_ITEM(__pyx_t_7, __pyx_t_29); __pyx_t_29++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 696, __pyx_L1_error)
+            __pyx_t_1 = PySequence_ITEM(__pyx_t_7, __pyx_t_29); __pyx_t_29++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 701, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_1);
             #endif
           } else {
             if (__pyx_t_29 >= PyTuple_GET_SIZE(__pyx_t_7)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_7, __pyx_t_29); __Pyx_INCREF(__pyx_t_1); __pyx_t_29++; if (unlikely(0 < 0)) __PYX_ERR(0, 696, __pyx_L1_error)
+            __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_7, __pyx_t_29); __Pyx_INCREF(__pyx_t_1); __pyx_t_29++; if (unlikely(0 < 0)) __PYX_ERR(0, 701, __pyx_L1_error)
             #else
-            __pyx_t_1 = PySequence_ITEM(__pyx_t_7, __pyx_t_29); __pyx_t_29++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 696, __pyx_L1_error)
+            __pyx_t_1 = PySequence_ITEM(__pyx_t_7, __pyx_t_29); __pyx_t_29++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 701, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_1);
             #endif
           }
@@ -11263,17 +11250,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
               if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-              else __PYX_ERR(0, 696, __pyx_L1_error)
+              else __PYX_ERR(0, 701, __pyx_L1_error)
             }
             break;
           }
           __Pyx_GOTREF(__pyx_t_1);
         }
-        __pyx_t_28 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_28 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 696, __pyx_L1_error)
+        __pyx_t_28 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_28 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 701, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __pyx_v_f = __pyx_t_28;
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":697
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":702
  *                 # compute numerators and denominators
  *                 for f in range(self.n_factors):
  *                     user_num[u, f] += qi[i, f] * r             # <<<<<<<<<<<<<<
@@ -11293,7 +11280,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_42 >= __pyx_pybuffernd_qi.diminfo[1].shape)) __pyx_t_28 = 1;
         if (unlikely(__pyx_t_28 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_28);
-          __PYX_ERR(0, 697, __pyx_L1_error)
+          __PYX_ERR(0, 702, __pyx_L1_error)
         }
         __pyx_t_43 = __pyx_v_u;
         __pyx_t_44 = __pyx_v_f;
@@ -11308,11 +11295,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_44 >= __pyx_pybuffernd_user_num.diminfo[1].shape)) __pyx_t_28 = 1;
         if (unlikely(__pyx_t_28 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_28);
-          __PYX_ERR(0, 697, __pyx_L1_error)
+          __PYX_ERR(0, 702, __pyx_L1_error)
         }
         *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_user_num.rcbuffer->pybuffer.buf, __pyx_t_43, __pyx_pybuffernd_user_num.diminfo[0].strides, __pyx_t_44, __pyx_pybuffernd_user_num.diminfo[1].strides) += ((*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_qi.rcbuffer->pybuffer.buf, __pyx_t_41, __pyx_pybuffernd_qi.diminfo[0].strides, __pyx_t_42, __pyx_pybuffernd_qi.diminfo[1].strides)) * __pyx_v_r);
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":698
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":703
  *                 for f in range(self.n_factors):
  *                     user_num[u, f] += qi[i, f] * r
  *                     user_denom[u, f] += qi[i, f] * est             # <<<<<<<<<<<<<<
@@ -11332,7 +11319,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_46 >= __pyx_pybuffernd_qi.diminfo[1].shape)) __pyx_t_28 = 1;
         if (unlikely(__pyx_t_28 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_28);
-          __PYX_ERR(0, 698, __pyx_L1_error)
+          __PYX_ERR(0, 703, __pyx_L1_error)
         }
         __pyx_t_47 = __pyx_v_u;
         __pyx_t_48 = __pyx_v_f;
@@ -11347,11 +11334,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_48 >= __pyx_pybuffernd_user_denom.diminfo[1].shape)) __pyx_t_28 = 1;
         if (unlikely(__pyx_t_28 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_28);
-          __PYX_ERR(0, 698, __pyx_L1_error)
+          __PYX_ERR(0, 703, __pyx_L1_error)
         }
         *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_user_denom.rcbuffer->pybuffer.buf, __pyx_t_47, __pyx_pybuffernd_user_denom.diminfo[0].strides, __pyx_t_48, __pyx_pybuffernd_user_denom.diminfo[1].strides) += ((*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_qi.rcbuffer->pybuffer.buf, __pyx_t_45, __pyx_pybuffernd_qi.diminfo[0].strides, __pyx_t_46, __pyx_pybuffernd_qi.diminfo[1].strides)) * __pyx_v_est);
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":699
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":704
  *                     user_num[u, f] += qi[i, f] * r
  *                     user_denom[u, f] += qi[i, f] * est
  *                     item_num[i, f] += pu[u, f] * r             # <<<<<<<<<<<<<<
@@ -11371,7 +11358,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_50 >= __pyx_pybuffernd_pu.diminfo[1].shape)) __pyx_t_28 = 1;
         if (unlikely(__pyx_t_28 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_28);
-          __PYX_ERR(0, 699, __pyx_L1_error)
+          __PYX_ERR(0, 704, __pyx_L1_error)
         }
         __pyx_t_51 = __pyx_v_i;
         __pyx_t_52 = __pyx_v_f;
@@ -11386,11 +11373,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_52 >= __pyx_pybuffernd_item_num.diminfo[1].shape)) __pyx_t_28 = 1;
         if (unlikely(__pyx_t_28 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_28);
-          __PYX_ERR(0, 699, __pyx_L1_error)
+          __PYX_ERR(0, 704, __pyx_L1_error)
         }
         *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_item_num.rcbuffer->pybuffer.buf, __pyx_t_51, __pyx_pybuffernd_item_num.diminfo[0].strides, __pyx_t_52, __pyx_pybuffernd_item_num.diminfo[1].strides) += ((*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_pu.rcbuffer->pybuffer.buf, __pyx_t_49, __pyx_pybuffernd_pu.diminfo[0].strides, __pyx_t_50, __pyx_pybuffernd_pu.diminfo[1].strides)) * __pyx_v_r);
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":700
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":705
  *                     user_denom[u, f] += qi[i, f] * est
  *                     item_num[i, f] += pu[u, f] * r
  *                     item_denom[i, f] += pu[u, f] * est             # <<<<<<<<<<<<<<
@@ -11410,7 +11397,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_54 >= __pyx_pybuffernd_pu.diminfo[1].shape)) __pyx_t_28 = 1;
         if (unlikely(__pyx_t_28 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_28);
-          __PYX_ERR(0, 700, __pyx_L1_error)
+          __PYX_ERR(0, 705, __pyx_L1_error)
         }
         __pyx_t_55 = __pyx_v_i;
         __pyx_t_56 = __pyx_v_f;
@@ -11425,11 +11412,11 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_56 >= __pyx_pybuffernd_item_denom.diminfo[1].shape)) __pyx_t_28 = 1;
         if (unlikely(__pyx_t_28 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_28);
-          __PYX_ERR(0, 700, __pyx_L1_error)
+          __PYX_ERR(0, 705, __pyx_L1_error)
         }
         *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_item_denom.rcbuffer->pybuffer.buf, __pyx_t_55, __pyx_pybuffernd_item_denom.diminfo[0].strides, __pyx_t_56, __pyx_pybuffernd_item_denom.diminfo[1].strides) += ((*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_pu.rcbuffer->pybuffer.buf, __pyx_t_53, __pyx_pybuffernd_pu.diminfo[0].strides, __pyx_t_54, __pyx_pybuffernd_pu.diminfo[1].strides)) * __pyx_v_est);
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":696
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":701
  * 
  *                 # compute numerators and denominators
  *                 for f in range(self.n_factors):             # <<<<<<<<<<<<<<
@@ -11439,24 +11426,24 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       }
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":680
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":685
  * 
  *             # Compute numerators and denominators for users and items factors
  *             for u, i, r in trainset.all_ratings():             # <<<<<<<<<<<<<<
- * 
+ *                 Weight = self.W[u][i]
  *                 # compute current estimation and error
  */
     }
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":703
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":708
  * 
  *             # Update user factors
  *             for u in trainset.all_users():             # <<<<<<<<<<<<<<
  *                 n_ratings = len(trainset.ur[u])
  *                 for f in range(self.n_factors):
  */
-    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_all_users); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 703, __pyx_L1_error)
+    __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_all_users); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 708, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __pyx_t_1 = NULL;
     if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_7))) {
@@ -11470,16 +11457,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     }
     __pyx_t_5 = (__pyx_t_1) ? __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_1) : __Pyx_PyObject_CallNoArg(__pyx_t_7);
     __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 703, __pyx_L1_error)
+    if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 708, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     if (likely(PyList_CheckExact(__pyx_t_5)) || PyTuple_CheckExact(__pyx_t_5)) {
       __pyx_t_7 = __pyx_t_5; __Pyx_INCREF(__pyx_t_7); __pyx_t_24 = 0;
       __pyx_t_25 = NULL;
     } else {
-      __pyx_t_24 = -1; __pyx_t_7 = PyObject_GetIter(__pyx_t_5); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 703, __pyx_L1_error)
+      __pyx_t_24 = -1; __pyx_t_7 = PyObject_GetIter(__pyx_t_5); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 708, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_25 = Py_TYPE(__pyx_t_7)->tp_iternext; if (unlikely(!__pyx_t_25)) __PYX_ERR(0, 703, __pyx_L1_error)
+      __pyx_t_25 = Py_TYPE(__pyx_t_7)->tp_iternext; if (unlikely(!__pyx_t_25)) __PYX_ERR(0, 708, __pyx_L1_error)
     }
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     for (;;) {
@@ -11487,17 +11474,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         if (likely(PyList_CheckExact(__pyx_t_7))) {
           if (__pyx_t_24 >= PyList_GET_SIZE(__pyx_t_7)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_5 = PyList_GET_ITEM(__pyx_t_7, __pyx_t_24); __Pyx_INCREF(__pyx_t_5); __pyx_t_24++; if (unlikely(0 < 0)) __PYX_ERR(0, 703, __pyx_L1_error)
+          __pyx_t_5 = PyList_GET_ITEM(__pyx_t_7, __pyx_t_24); __Pyx_INCREF(__pyx_t_5); __pyx_t_24++; if (unlikely(0 < 0)) __PYX_ERR(0, 708, __pyx_L1_error)
           #else
-          __pyx_t_5 = PySequence_ITEM(__pyx_t_7, __pyx_t_24); __pyx_t_24++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 703, __pyx_L1_error)
+          __pyx_t_5 = PySequence_ITEM(__pyx_t_7, __pyx_t_24); __pyx_t_24++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 708, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_5);
           #endif
         } else {
           if (__pyx_t_24 >= PyTuple_GET_SIZE(__pyx_t_7)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_5 = PyTuple_GET_ITEM(__pyx_t_7, __pyx_t_24); __Pyx_INCREF(__pyx_t_5); __pyx_t_24++; if (unlikely(0 < 0)) __PYX_ERR(0, 703, __pyx_L1_error)
+          __pyx_t_5 = PyTuple_GET_ITEM(__pyx_t_7, __pyx_t_24); __Pyx_INCREF(__pyx_t_5); __pyx_t_24++; if (unlikely(0 < 0)) __PYX_ERR(0, 708, __pyx_L1_error)
           #else
-          __pyx_t_5 = PySequence_ITEM(__pyx_t_7, __pyx_t_24); __pyx_t_24++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 703, __pyx_L1_error)
+          __pyx_t_5 = PySequence_ITEM(__pyx_t_7, __pyx_t_24); __pyx_t_24++; if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 708, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_5);
           #endif
         }
@@ -11507,45 +11494,45 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 703, __pyx_L1_error)
+            else __PYX_ERR(0, 708, __pyx_L1_error)
           }
           break;
         }
         __Pyx_GOTREF(__pyx_t_5);
       }
-      __pyx_t_28 = __Pyx_PyInt_As_int(__pyx_t_5); if (unlikely((__pyx_t_28 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 703, __pyx_L1_error)
+      __pyx_t_28 = __Pyx_PyInt_As_int(__pyx_t_5); if (unlikely((__pyx_t_28 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 708, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       __pyx_v_u = __pyx_t_28;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":704
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":709
  *             # Update user factors
  *             for u in trainset.all_users():
  *                 n_ratings = len(trainset.ur[u])             # <<<<<<<<<<<<<<
  *                 for f in range(self.n_factors):
- *                     user_denom[u, f] += n_ratings * reg_pu * pu[u, f]
+ *                     user_denom[u, f] += n_ratings * Weight * reg_pu * pu[u, f]
  */
-      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_ur); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 704, __pyx_L1_error)
+      __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_ur); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 709, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_5, __pyx_v_u, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 704, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_GetItemInt(__pyx_t_5, __pyx_v_u, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 709, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
-      __pyx_t_29 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_29 == ((Py_ssize_t)-1))) __PYX_ERR(0, 704, __pyx_L1_error)
+      __pyx_t_29 = PyObject_Length(__pyx_t_1); if (unlikely(__pyx_t_29 == ((Py_ssize_t)-1))) __PYX_ERR(0, 709, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = PyInt_FromSsize_t(__pyx_t_29); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 704, __pyx_L1_error)
+      __pyx_t_1 = PyInt_FromSsize_t(__pyx_t_29); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 709, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_XDECREF_SET(__pyx_v_n_ratings, __pyx_t_1);
       __pyx_t_1 = 0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":705
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":710
  *             for u in trainset.all_users():
  *                 n_ratings = len(trainset.ur[u])
  *                 for f in range(self.n_factors):             # <<<<<<<<<<<<<<
- *                     user_denom[u, f] += n_ratings * reg_pu * pu[u, f]
+ *                     user_denom[u, f] += n_ratings * Weight * reg_pu * pu[u, f]
  *                     pu[u, f] *= user_num[u, f] / user_denom[u, f]
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_range); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 705, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_5, __pyx_n_s_range); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 710, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 705, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 710, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __pyx_t_6 = NULL;
       if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_5))) {
@@ -11560,16 +11547,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       __pyx_t_1 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_5, __pyx_t_6, __pyx_t_3) : __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_3);
       __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 705, __pyx_L1_error)
+      if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 710, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
       if (likely(PyList_CheckExact(__pyx_t_1)) || PyTuple_CheckExact(__pyx_t_1)) {
         __pyx_t_5 = __pyx_t_1; __Pyx_INCREF(__pyx_t_5); __pyx_t_29 = 0;
         __pyx_t_30 = NULL;
       } else {
-        __pyx_t_29 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 705, __pyx_L1_error)
+        __pyx_t_29 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_t_1); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 710, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_5);
-        __pyx_t_30 = Py_TYPE(__pyx_t_5)->tp_iternext; if (unlikely(!__pyx_t_30)) __PYX_ERR(0, 705, __pyx_L1_error)
+        __pyx_t_30 = Py_TYPE(__pyx_t_5)->tp_iternext; if (unlikely(!__pyx_t_30)) __PYX_ERR(0, 710, __pyx_L1_error)
       }
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       for (;;) {
@@ -11577,17 +11564,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
           if (likely(PyList_CheckExact(__pyx_t_5))) {
             if (__pyx_t_29 >= PyList_GET_SIZE(__pyx_t_5)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_1 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_29); __Pyx_INCREF(__pyx_t_1); __pyx_t_29++; if (unlikely(0 < 0)) __PYX_ERR(0, 705, __pyx_L1_error)
+            __pyx_t_1 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_29); __Pyx_INCREF(__pyx_t_1); __pyx_t_29++; if (unlikely(0 < 0)) __PYX_ERR(0, 710, __pyx_L1_error)
             #else
-            __pyx_t_1 = PySequence_ITEM(__pyx_t_5, __pyx_t_29); __pyx_t_29++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 705, __pyx_L1_error)
+            __pyx_t_1 = PySequence_ITEM(__pyx_t_5, __pyx_t_29); __pyx_t_29++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 710, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_1);
             #endif
           } else {
             if (__pyx_t_29 >= PyTuple_GET_SIZE(__pyx_t_5)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_29); __Pyx_INCREF(__pyx_t_1); __pyx_t_29++; if (unlikely(0 < 0)) __PYX_ERR(0, 705, __pyx_L1_error)
+            __pyx_t_1 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_29); __Pyx_INCREF(__pyx_t_1); __pyx_t_29++; if (unlikely(0 < 0)) __PYX_ERR(0, 710, __pyx_L1_error)
             #else
-            __pyx_t_1 = PySequence_ITEM(__pyx_t_5, __pyx_t_29); __pyx_t_29++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 705, __pyx_L1_error)
+            __pyx_t_1 = PySequence_ITEM(__pyx_t_5, __pyx_t_29); __pyx_t_29++; if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 710, __pyx_L1_error)
             __Pyx_GOTREF(__pyx_t_1);
             #endif
           }
@@ -11597,27 +11584,33 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
               if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-              else __PYX_ERR(0, 705, __pyx_L1_error)
+              else __PYX_ERR(0, 710, __pyx_L1_error)
             }
             break;
           }
           __Pyx_GOTREF(__pyx_t_1);
         }
-        __pyx_t_28 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_28 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 705, __pyx_L1_error)
+        __pyx_t_28 = __Pyx_PyInt_As_int(__pyx_t_1); if (unlikely((__pyx_t_28 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 710, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __pyx_v_f = __pyx_t_28;
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":706
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":711
  *                 n_ratings = len(trainset.ur[u])
  *                 for f in range(self.n_factors):
- *                     user_denom[u, f] += n_ratings * reg_pu * pu[u, f]             # <<<<<<<<<<<<<<
+ *                     user_denom[u, f] += n_ratings * Weight * reg_pu * pu[u, f]             # <<<<<<<<<<<<<<
  *                     pu[u, f] *= user_num[u, f] / user_denom[u, f]
  * 
  */
-        __pyx_t_1 = PyFloat_FromDouble(__pyx_v_reg_pu); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 706, __pyx_L1_error)
+        __pyx_t_1 = PyFloat_FromDouble(__pyx_v_Weight); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 711, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_3 = PyNumber_Multiply(__pyx_v_n_ratings, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 706, __pyx_L1_error)
+        __pyx_t_3 = PyNumber_Multiply(__pyx_v_n_ratings, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 711, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __pyx_t_1 = PyFloat_FromDouble(__pyx_v_reg_pu); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 711, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
+        __pyx_t_6 = PyNumber_Multiply(__pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 711, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __pyx_t_57 = __pyx_v_u;
         __pyx_t_58 = __pyx_v_f;
@@ -11632,16 +11625,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_58 >= __pyx_pybuffernd_pu.diminfo[1].shape)) __pyx_t_28 = 1;
         if (unlikely(__pyx_t_28 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_28);
-          __PYX_ERR(0, 706, __pyx_L1_error)
+          __PYX_ERR(0, 711, __pyx_L1_error)
         }
-        __pyx_t_1 = PyFloat_FromDouble((*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_pu.rcbuffer->pybuffer.buf, __pyx_t_57, __pyx_pybuffernd_pu.diminfo[0].strides, __pyx_t_58, __pyx_pybuffernd_pu.diminfo[1].strides))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 706, __pyx_L1_error)
+        __pyx_t_1 = PyFloat_FromDouble((*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_pu.rcbuffer->pybuffer.buf, __pyx_t_57, __pyx_pybuffernd_pu.diminfo[0].strides, __pyx_t_58, __pyx_pybuffernd_pu.diminfo[1].strides))); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 711, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __pyx_t_6 = PyNumber_Multiply(__pyx_t_3, __pyx_t_1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 706, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-        __pyx_t_59 = __pyx_PyFloat_AsDouble(__pyx_t_6); if (unlikely((__pyx_t_59 == ((npy_double)-1)) && PyErr_Occurred())) __PYX_ERR(0, 706, __pyx_L1_error)
+        __pyx_t_3 = PyNumber_Multiply(__pyx_t_6, __pyx_t_1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 711, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __pyx_t_59 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_59 == ((npy_double)-1)) && PyErr_Occurred())) __PYX_ERR(0, 711, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __pyx_t_60 = __pyx_v_u;
         __pyx_t_61 = __pyx_v_f;
         __pyx_t_28 = -1;
@@ -11655,13 +11648,13 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_61 >= __pyx_pybuffernd_user_denom.diminfo[1].shape)) __pyx_t_28 = 1;
         if (unlikely(__pyx_t_28 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_28);
-          __PYX_ERR(0, 706, __pyx_L1_error)
+          __PYX_ERR(0, 711, __pyx_L1_error)
         }
         *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_user_denom.rcbuffer->pybuffer.buf, __pyx_t_60, __pyx_pybuffernd_user_denom.diminfo[0].strides, __pyx_t_61, __pyx_pybuffernd_user_denom.diminfo[1].strides) += __pyx_t_59;
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":707
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":712
  *                 for f in range(self.n_factors):
- *                     user_denom[u, f] += n_ratings * reg_pu * pu[u, f]
+ *                     user_denom[u, f] += n_ratings * Weight * reg_pu * pu[u, f]
  *                     pu[u, f] *= user_num[u, f] / user_denom[u, f]             # <<<<<<<<<<<<<<
  * 
  *             # Update item factors
@@ -11679,7 +11672,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_63 >= __pyx_pybuffernd_user_num.diminfo[1].shape)) __pyx_t_28 = 1;
         if (unlikely(__pyx_t_28 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_28);
-          __PYX_ERR(0, 707, __pyx_L1_error)
+          __PYX_ERR(0, 712, __pyx_L1_error)
         }
         __pyx_t_59 = (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_user_num.rcbuffer->pybuffer.buf, __pyx_t_62, __pyx_pybuffernd_user_num.diminfo[0].strides, __pyx_t_63, __pyx_pybuffernd_user_num.diminfo[1].strides));
         __pyx_t_64 = __pyx_v_u;
@@ -11695,12 +11688,12 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_65 >= __pyx_pybuffernd_user_denom.diminfo[1].shape)) __pyx_t_28 = 1;
         if (unlikely(__pyx_t_28 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_28);
-          __PYX_ERR(0, 707, __pyx_L1_error)
+          __PYX_ERR(0, 712, __pyx_L1_error)
         }
         __pyx_t_66 = (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_user_denom.rcbuffer->pybuffer.buf, __pyx_t_64, __pyx_pybuffernd_user_denom.diminfo[0].strides, __pyx_t_65, __pyx_pybuffernd_user_denom.diminfo[1].strides));
         if (unlikely(__pyx_t_66 == 0)) {
           PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-          __PYX_ERR(0, 707, __pyx_L1_error)
+          __PYX_ERR(0, 712, __pyx_L1_error)
         }
         __pyx_t_67 = __pyx_v_u;
         __pyx_t_68 = __pyx_v_f;
@@ -11715,21 +11708,21 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_68 >= __pyx_pybuffernd_pu.diminfo[1].shape)) __pyx_t_28 = 1;
         if (unlikely(__pyx_t_28 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_28);
-          __PYX_ERR(0, 707, __pyx_L1_error)
+          __PYX_ERR(0, 712, __pyx_L1_error)
         }
         *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_pu.rcbuffer->pybuffer.buf, __pyx_t_67, __pyx_pybuffernd_pu.diminfo[0].strides, __pyx_t_68, __pyx_pybuffernd_pu.diminfo[1].strides) *= (__pyx_t_59 / __pyx_t_66);
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":705
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":710
  *             for u in trainset.all_users():
  *                 n_ratings = len(trainset.ur[u])
  *                 for f in range(self.n_factors):             # <<<<<<<<<<<<<<
- *                     user_denom[u, f] += n_ratings * reg_pu * pu[u, f]
+ *                     user_denom[u, f] += n_ratings * Weight * reg_pu * pu[u, f]
  *                     pu[u, f] *= user_num[u, f] / user_denom[u, f]
  */
       }
       __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":703
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":708
  * 
  *             # Update user factors
  *             for u in trainset.all_users():             # <<<<<<<<<<<<<<
@@ -11739,37 +11732,37 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     }
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":710
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":715
  * 
  *             # Update item factors
  *             for i in trainset.all_items():             # <<<<<<<<<<<<<<
  *                 n_ratings = len(trainset.ir[i])
  *                 for f in range(self.n_factors):
  */
-    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_all_items); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 710, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_all_items); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 715, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_5);
-    __pyx_t_6 = NULL;
+    __pyx_t_3 = NULL;
     if (CYTHON_UNPACK_METHODS && likely(PyMethod_Check(__pyx_t_5))) {
-      __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_5);
-      if (likely(__pyx_t_6)) {
+      __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_5);
+      if (likely(__pyx_t_3)) {
         PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_5);
-        __Pyx_INCREF(__pyx_t_6);
+        __Pyx_INCREF(__pyx_t_3);
         __Pyx_INCREF(function);
         __Pyx_DECREF_SET(__pyx_t_5, function);
       }
     }
-    __pyx_t_7 = (__pyx_t_6) ? __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_6) : __Pyx_PyObject_CallNoArg(__pyx_t_5);
-    __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
-    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 710, __pyx_L1_error)
+    __pyx_t_7 = (__pyx_t_3) ? __Pyx_PyObject_CallOneArg(__pyx_t_5, __pyx_t_3) : __Pyx_PyObject_CallNoArg(__pyx_t_5);
+    __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+    if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 715, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_7);
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
     if (likely(PyList_CheckExact(__pyx_t_7)) || PyTuple_CheckExact(__pyx_t_7)) {
       __pyx_t_5 = __pyx_t_7; __Pyx_INCREF(__pyx_t_5); __pyx_t_24 = 0;
       __pyx_t_25 = NULL;
     } else {
-      __pyx_t_24 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 710, __pyx_L1_error)
+      __pyx_t_24 = -1; __pyx_t_5 = PyObject_GetIter(__pyx_t_7); if (unlikely(!__pyx_t_5)) __PYX_ERR(0, 715, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_5);
-      __pyx_t_25 = Py_TYPE(__pyx_t_5)->tp_iternext; if (unlikely(!__pyx_t_25)) __PYX_ERR(0, 710, __pyx_L1_error)
+      __pyx_t_25 = Py_TYPE(__pyx_t_5)->tp_iternext; if (unlikely(!__pyx_t_25)) __PYX_ERR(0, 715, __pyx_L1_error)
     }
     __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
     for (;;) {
@@ -11777,17 +11770,17 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         if (likely(PyList_CheckExact(__pyx_t_5))) {
           if (__pyx_t_24 >= PyList_GET_SIZE(__pyx_t_5)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_7 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_24); __Pyx_INCREF(__pyx_t_7); __pyx_t_24++; if (unlikely(0 < 0)) __PYX_ERR(0, 710, __pyx_L1_error)
+          __pyx_t_7 = PyList_GET_ITEM(__pyx_t_5, __pyx_t_24); __Pyx_INCREF(__pyx_t_7); __pyx_t_24++; if (unlikely(0 < 0)) __PYX_ERR(0, 715, __pyx_L1_error)
           #else
-          __pyx_t_7 = PySequence_ITEM(__pyx_t_5, __pyx_t_24); __pyx_t_24++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 710, __pyx_L1_error)
+          __pyx_t_7 = PySequence_ITEM(__pyx_t_5, __pyx_t_24); __pyx_t_24++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 715, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_7);
           #endif
         } else {
           if (__pyx_t_24 >= PyTuple_GET_SIZE(__pyx_t_5)) break;
           #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-          __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_24); __Pyx_INCREF(__pyx_t_7); __pyx_t_24++; if (unlikely(0 < 0)) __PYX_ERR(0, 710, __pyx_L1_error)
+          __pyx_t_7 = PyTuple_GET_ITEM(__pyx_t_5, __pyx_t_24); __Pyx_INCREF(__pyx_t_7); __pyx_t_24++; if (unlikely(0 < 0)) __PYX_ERR(0, 715, __pyx_L1_error)
           #else
-          __pyx_t_7 = PySequence_ITEM(__pyx_t_5, __pyx_t_24); __pyx_t_24++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 710, __pyx_L1_error)
+          __pyx_t_7 = PySequence_ITEM(__pyx_t_5, __pyx_t_24); __pyx_t_24++; if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 715, __pyx_L1_error)
           __Pyx_GOTREF(__pyx_t_7);
           #endif
         }
@@ -11797,118 +11790,124 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
           PyObject* exc_type = PyErr_Occurred();
           if (exc_type) {
             if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-            else __PYX_ERR(0, 710, __pyx_L1_error)
+            else __PYX_ERR(0, 715, __pyx_L1_error)
           }
           break;
         }
         __Pyx_GOTREF(__pyx_t_7);
       }
-      __pyx_t_28 = __Pyx_PyInt_As_int(__pyx_t_7); if (unlikely((__pyx_t_28 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 710, __pyx_L1_error)
+      __pyx_t_28 = __Pyx_PyInt_As_int(__pyx_t_7); if (unlikely((__pyx_t_28 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 715, __pyx_L1_error)
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
       __pyx_v_i = __pyx_t_28;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":711
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":716
  *             # Update item factors
  *             for i in trainset.all_items():
  *                 n_ratings = len(trainset.ir[i])             # <<<<<<<<<<<<<<
  *                 for f in range(self.n_factors):
- *                     item_denom[i, f] += n_ratings * reg_qi * qi[i, f]
+ *                     item_denom[i, f] += n_ratings * Weight * reg_qi * qi[i, f]
  */
-      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_ir); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 711, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_GetAttrStr(__pyx_v_trainset, __pyx_n_s_ir); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 716, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_6 = __Pyx_GetItemInt(__pyx_t_7, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 711, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_6);
+      __pyx_t_3 = __Pyx_GetItemInt(__pyx_t_7, __pyx_v_i, int, 1, __Pyx_PyInt_From_int, 0, 1, 1); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 716, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      __pyx_t_29 = PyObject_Length(__pyx_t_6); if (unlikely(__pyx_t_29 == ((Py_ssize_t)-1))) __PYX_ERR(0, 711, __pyx_L1_error)
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-      __pyx_t_6 = PyInt_FromSsize_t(__pyx_t_29); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 711, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_6);
-      __Pyx_XDECREF_SET(__pyx_v_n_ratings, __pyx_t_6);
-      __pyx_t_6 = 0;
+      __pyx_t_29 = PyObject_Length(__pyx_t_3); if (unlikely(__pyx_t_29 == ((Py_ssize_t)-1))) __PYX_ERR(0, 716, __pyx_L1_error)
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_3 = PyInt_FromSsize_t(__pyx_t_29); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 716, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
+      __Pyx_XDECREF_SET(__pyx_v_n_ratings, __pyx_t_3);
+      __pyx_t_3 = 0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":712
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":717
  *             for i in trainset.all_items():
  *                 n_ratings = len(trainset.ir[i])
  *                 for f in range(self.n_factors):             # <<<<<<<<<<<<<<
- *                     item_denom[i, f] += n_ratings * reg_qi * qi[i, f]
+ *                     item_denom[i, f] += n_ratings * Weight * reg_qi * qi[i, f]
  *                     qi[i, f] *= item_num[i, f] / item_denom[i, f]
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_range); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 712, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_7, __pyx_n_s_range); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 717, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 712, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_n_factors); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 717, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_3 = NULL;
+      __pyx_t_6 = NULL;
       if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_7))) {
-        __pyx_t_3 = PyMethod_GET_SELF(__pyx_t_7);
-        if (likely(__pyx_t_3)) {
+        __pyx_t_6 = PyMethod_GET_SELF(__pyx_t_7);
+        if (likely(__pyx_t_6)) {
           PyObject* function = PyMethod_GET_FUNCTION(__pyx_t_7);
-          __Pyx_INCREF(__pyx_t_3);
+          __Pyx_INCREF(__pyx_t_6);
           __Pyx_INCREF(function);
           __Pyx_DECREF_SET(__pyx_t_7, function);
         }
       }
-      __pyx_t_6 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_3, __pyx_t_1) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_1);
-      __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
+      __pyx_t_3 = (__pyx_t_6) ? __Pyx_PyObject_Call2Args(__pyx_t_7, __pyx_t_6, __pyx_t_1) : __Pyx_PyObject_CallOneArg(__pyx_t_7, __pyx_t_1);
+      __Pyx_XDECREF(__pyx_t_6); __pyx_t_6 = 0;
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 712, __pyx_L1_error)
-      __Pyx_GOTREF(__pyx_t_6);
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 717, __pyx_L1_error)
+      __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
-      if (likely(PyList_CheckExact(__pyx_t_6)) || PyTuple_CheckExact(__pyx_t_6)) {
-        __pyx_t_7 = __pyx_t_6; __Pyx_INCREF(__pyx_t_7); __pyx_t_29 = 0;
+      if (likely(PyList_CheckExact(__pyx_t_3)) || PyTuple_CheckExact(__pyx_t_3)) {
+        __pyx_t_7 = __pyx_t_3; __Pyx_INCREF(__pyx_t_7); __pyx_t_29 = 0;
         __pyx_t_30 = NULL;
       } else {
-        __pyx_t_29 = -1; __pyx_t_7 = PyObject_GetIter(__pyx_t_6); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 712, __pyx_L1_error)
+        __pyx_t_29 = -1; __pyx_t_7 = PyObject_GetIter(__pyx_t_3); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 717, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_7);
-        __pyx_t_30 = Py_TYPE(__pyx_t_7)->tp_iternext; if (unlikely(!__pyx_t_30)) __PYX_ERR(0, 712, __pyx_L1_error)
+        __pyx_t_30 = Py_TYPE(__pyx_t_7)->tp_iternext; if (unlikely(!__pyx_t_30)) __PYX_ERR(0, 717, __pyx_L1_error)
       }
-      __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+      __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
       for (;;) {
         if (likely(!__pyx_t_30)) {
           if (likely(PyList_CheckExact(__pyx_t_7))) {
             if (__pyx_t_29 >= PyList_GET_SIZE(__pyx_t_7)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_6 = PyList_GET_ITEM(__pyx_t_7, __pyx_t_29); __Pyx_INCREF(__pyx_t_6); __pyx_t_29++; if (unlikely(0 < 0)) __PYX_ERR(0, 712, __pyx_L1_error)
+            __pyx_t_3 = PyList_GET_ITEM(__pyx_t_7, __pyx_t_29); __Pyx_INCREF(__pyx_t_3); __pyx_t_29++; if (unlikely(0 < 0)) __PYX_ERR(0, 717, __pyx_L1_error)
             #else
-            __pyx_t_6 = PySequence_ITEM(__pyx_t_7, __pyx_t_29); __pyx_t_29++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 712, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_6);
+            __pyx_t_3 = PySequence_ITEM(__pyx_t_7, __pyx_t_29); __pyx_t_29++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 717, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_3);
             #endif
           } else {
             if (__pyx_t_29 >= PyTuple_GET_SIZE(__pyx_t_7)) break;
             #if CYTHON_ASSUME_SAFE_MACROS && !CYTHON_AVOID_BORROWED_REFS
-            __pyx_t_6 = PyTuple_GET_ITEM(__pyx_t_7, __pyx_t_29); __Pyx_INCREF(__pyx_t_6); __pyx_t_29++; if (unlikely(0 < 0)) __PYX_ERR(0, 712, __pyx_L1_error)
+            __pyx_t_3 = PyTuple_GET_ITEM(__pyx_t_7, __pyx_t_29); __Pyx_INCREF(__pyx_t_3); __pyx_t_29++; if (unlikely(0 < 0)) __PYX_ERR(0, 717, __pyx_L1_error)
             #else
-            __pyx_t_6 = PySequence_ITEM(__pyx_t_7, __pyx_t_29); __pyx_t_29++; if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 712, __pyx_L1_error)
-            __Pyx_GOTREF(__pyx_t_6);
+            __pyx_t_3 = PySequence_ITEM(__pyx_t_7, __pyx_t_29); __pyx_t_29++; if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 717, __pyx_L1_error)
+            __Pyx_GOTREF(__pyx_t_3);
             #endif
           }
         } else {
-          __pyx_t_6 = __pyx_t_30(__pyx_t_7);
-          if (unlikely(!__pyx_t_6)) {
+          __pyx_t_3 = __pyx_t_30(__pyx_t_7);
+          if (unlikely(!__pyx_t_3)) {
             PyObject* exc_type = PyErr_Occurred();
             if (exc_type) {
               if (likely(__Pyx_PyErr_GivenExceptionMatches(exc_type, PyExc_StopIteration))) PyErr_Clear();
-              else __PYX_ERR(0, 712, __pyx_L1_error)
+              else __PYX_ERR(0, 717, __pyx_L1_error)
             }
             break;
           }
-          __Pyx_GOTREF(__pyx_t_6);
+          __Pyx_GOTREF(__pyx_t_3);
         }
-        __pyx_t_28 = __Pyx_PyInt_As_int(__pyx_t_6); if (unlikely((__pyx_t_28 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 712, __pyx_L1_error)
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+        __pyx_t_28 = __Pyx_PyInt_As_int(__pyx_t_3); if (unlikely((__pyx_t_28 == (int)-1) && PyErr_Occurred())) __PYX_ERR(0, 717, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __pyx_v_f = __pyx_t_28;
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":713
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":718
  *                 n_ratings = len(trainset.ir[i])
  *                 for f in range(self.n_factors):
- *                     item_denom[i, f] += n_ratings * reg_qi * qi[i, f]             # <<<<<<<<<<<<<<
+ *                     item_denom[i, f] += n_ratings * Weight * reg_qi * qi[i, f]             # <<<<<<<<<<<<<<
  *                     qi[i, f] *= item_num[i, f] / item_denom[i, f]
  * 
  */
-        __pyx_t_6 = PyFloat_FromDouble(__pyx_v_reg_qi); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 713, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_1 = PyNumber_Multiply(__pyx_v_n_ratings, __pyx_t_6); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 713, __pyx_L1_error)
+        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_Weight); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 718, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __pyx_t_1 = PyNumber_Multiply(__pyx_v_n_ratings, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 718, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
-        __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __pyx_t_3 = PyFloat_FromDouble(__pyx_v_reg_qi); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 718, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_3);
+        __pyx_t_6 = PyNumber_Multiply(__pyx_t_1, __pyx_t_3); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 718, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_6);
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
         __pyx_t_69 = __pyx_v_i;
         __pyx_t_70 = __pyx_v_f;
         __pyx_t_28 = -1;
@@ -11922,16 +11921,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_70 >= __pyx_pybuffernd_qi.diminfo[1].shape)) __pyx_t_28 = 1;
         if (unlikely(__pyx_t_28 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_28);
-          __PYX_ERR(0, 713, __pyx_L1_error)
+          __PYX_ERR(0, 718, __pyx_L1_error)
         }
-        __pyx_t_6 = PyFloat_FromDouble((*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_qi.rcbuffer->pybuffer.buf, __pyx_t_69, __pyx_pybuffernd_qi.diminfo[0].strides, __pyx_t_70, __pyx_pybuffernd_qi.diminfo[1].strides))); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 713, __pyx_L1_error)
-        __Pyx_GOTREF(__pyx_t_6);
-        __pyx_t_3 = PyNumber_Multiply(__pyx_t_1, __pyx_t_6); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 713, __pyx_L1_error)
+        __pyx_t_3 = PyFloat_FromDouble((*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_qi.rcbuffer->pybuffer.buf, __pyx_t_69, __pyx_pybuffernd_qi.diminfo[0].strides, __pyx_t_70, __pyx_pybuffernd_qi.diminfo[1].strides))); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 718, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
-        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
+        __pyx_t_1 = PyNumber_Multiply(__pyx_t_6, __pyx_t_3); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 718, __pyx_L1_error)
+        __Pyx_GOTREF(__pyx_t_1);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
-        __pyx_t_66 = __pyx_PyFloat_AsDouble(__pyx_t_3); if (unlikely((__pyx_t_66 == ((npy_double)-1)) && PyErr_Occurred())) __PYX_ERR(0, 713, __pyx_L1_error)
         __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
+        __pyx_t_66 = __pyx_PyFloat_AsDouble(__pyx_t_1); if (unlikely((__pyx_t_66 == ((npy_double)-1)) && PyErr_Occurred())) __PYX_ERR(0, 718, __pyx_L1_error)
+        __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
         __pyx_t_71 = __pyx_v_i;
         __pyx_t_72 = __pyx_v_f;
         __pyx_t_28 = -1;
@@ -11945,13 +11944,13 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_72 >= __pyx_pybuffernd_item_denom.diminfo[1].shape)) __pyx_t_28 = 1;
         if (unlikely(__pyx_t_28 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_28);
-          __PYX_ERR(0, 713, __pyx_L1_error)
+          __PYX_ERR(0, 718, __pyx_L1_error)
         }
         *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_item_denom.rcbuffer->pybuffer.buf, __pyx_t_71, __pyx_pybuffernd_item_denom.diminfo[0].strides, __pyx_t_72, __pyx_pybuffernd_item_denom.diminfo[1].strides) += __pyx_t_66;
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":714
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":719
  *                 for f in range(self.n_factors):
- *                     item_denom[i, f] += n_ratings * reg_qi * qi[i, f]
+ *                     item_denom[i, f] += n_ratings * Weight * reg_qi * qi[i, f]
  *                     qi[i, f] *= item_num[i, f] / item_denom[i, f]             # <<<<<<<<<<<<<<
  * 
  *         self.bu = bu
@@ -11969,7 +11968,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_74 >= __pyx_pybuffernd_item_num.diminfo[1].shape)) __pyx_t_28 = 1;
         if (unlikely(__pyx_t_28 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_28);
-          __PYX_ERR(0, 714, __pyx_L1_error)
+          __PYX_ERR(0, 719, __pyx_L1_error)
         }
         __pyx_t_66 = (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_item_num.rcbuffer->pybuffer.buf, __pyx_t_73, __pyx_pybuffernd_item_num.diminfo[0].strides, __pyx_t_74, __pyx_pybuffernd_item_num.diminfo[1].strides));
         __pyx_t_75 = __pyx_v_i;
@@ -11985,12 +11984,12 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_76 >= __pyx_pybuffernd_item_denom.diminfo[1].shape)) __pyx_t_28 = 1;
         if (unlikely(__pyx_t_28 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_28);
-          __PYX_ERR(0, 714, __pyx_L1_error)
+          __PYX_ERR(0, 719, __pyx_L1_error)
         }
         __pyx_t_59 = (*__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_item_denom.rcbuffer->pybuffer.buf, __pyx_t_75, __pyx_pybuffernd_item_denom.diminfo[0].strides, __pyx_t_76, __pyx_pybuffernd_item_denom.diminfo[1].strides));
         if (unlikely(__pyx_t_59 == 0)) {
           PyErr_SetString(PyExc_ZeroDivisionError, "float division");
-          __PYX_ERR(0, 714, __pyx_L1_error)
+          __PYX_ERR(0, 719, __pyx_L1_error)
         }
         __pyx_t_77 = __pyx_v_i;
         __pyx_t_78 = __pyx_v_f;
@@ -12005,21 +12004,21 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         } else if (unlikely(__pyx_t_78 >= __pyx_pybuffernd_qi.diminfo[1].shape)) __pyx_t_28 = 1;
         if (unlikely(__pyx_t_28 != -1)) {
           __Pyx_RaiseBufferIndexError(__pyx_t_28);
-          __PYX_ERR(0, 714, __pyx_L1_error)
+          __PYX_ERR(0, 719, __pyx_L1_error)
         }
         *__Pyx_BufPtrStrided2d(__pyx_t_5numpy_double_t *, __pyx_pybuffernd_qi.rcbuffer->pybuffer.buf, __pyx_t_77, __pyx_pybuffernd_qi.diminfo[0].strides, __pyx_t_78, __pyx_pybuffernd_qi.diminfo[1].strides) *= (__pyx_t_66 / __pyx_t_59);
 
-        /* "surprise/prediction_algorithms/matrix_factorization.pyx":712
+        /* "surprise/prediction_algorithms/matrix_factorization.pyx":717
  *             for i in trainset.all_items():
  *                 n_ratings = len(trainset.ir[i])
  *                 for f in range(self.n_factors):             # <<<<<<<<<<<<<<
- *                     item_denom[i, f] += n_ratings * reg_qi * qi[i, f]
+ *                     item_denom[i, f] += n_ratings * Weight * reg_qi * qi[i, f]
  *                     qi[i, f] *= item_num[i, f] / item_denom[i, f]
  */
       }
       __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":710
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":715
  * 
  *             # Update item factors
  *             for i in trainset.all_items():             # <<<<<<<<<<<<<<
@@ -12029,7 +12028,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     }
     __Pyx_DECREF(__pyx_t_5); __pyx_t_5 = 0;
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":668
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":673
  *             global_mean = 0
  * 
  *         for current_epoch in range(self.n_epochs):             # <<<<<<<<<<<<<<
@@ -12039,43 +12038,43 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   }
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":716
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":721
  *                     qi[i, f] *= item_num[i, f] / item_denom[i, f]
  * 
  *         self.bu = bu             # <<<<<<<<<<<<<<
  *         self.bi = bi
  *         self.pu = pu
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_bu, ((PyObject *)__pyx_v_bu)) < 0) __PYX_ERR(0, 716, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_bu, ((PyObject *)__pyx_v_bu)) < 0) __PYX_ERR(0, 721, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":717
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":722
  * 
  *         self.bu = bu
  *         self.bi = bi             # <<<<<<<<<<<<<<
  *         self.pu = pu
  *         self.qi = qi
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_bi, ((PyObject *)__pyx_v_bi)) < 0) __PYX_ERR(0, 717, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_bi, ((PyObject *)__pyx_v_bi)) < 0) __PYX_ERR(0, 722, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":718
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":723
  *         self.bu = bu
  *         self.bi = bi
  *         self.pu = pu             # <<<<<<<<<<<<<<
  *         self.qi = qi
  * 
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_pu, ((PyObject *)__pyx_v_pu)) < 0) __PYX_ERR(0, 718, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_pu, ((PyObject *)__pyx_v_pu)) < 0) __PYX_ERR(0, 723, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":719
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":724
  *         self.bi = bi
  *         self.pu = pu
  *         self.qi = qi             # <<<<<<<<<<<<<<
  * 
  *     def estimate(self, u, i):
  */
-  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_qi, ((PyObject *)__pyx_v_qi)) < 0) __PYX_ERR(0, 719, __pyx_L1_error)
+  if (__Pyx_PyObject_SetAttrStr(__pyx_v_self, __pyx_n_s_qi, ((PyObject *)__pyx_v_qi)) < 0) __PYX_ERR(0, 724, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":629
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":633
  *         return self
  * 
  *     def sgd(self, trainset):             # <<<<<<<<<<<<<<
@@ -12136,7 +12135,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   return __pyx_r;
 }
 
-/* "surprise/prediction_algorithms/matrix_factorization.pyx":721
+/* "surprise/prediction_algorithms/matrix_factorization.pyx":726
  *         self.qi = qi
  * 
  *     def estimate(self, u, i):             # <<<<<<<<<<<<<<
@@ -12179,17 +12178,17 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
         case  1:
         if (likely((values[1] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_u)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("estimate", 1, 3, 3, 1); __PYX_ERR(0, 721, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("estimate", 1, 3, 3, 1); __PYX_ERR(0, 726, __pyx_L3_error)
         }
         CYTHON_FALLTHROUGH;
         case  2:
         if (likely((values[2] = __Pyx_PyDict_GetItemStr(__pyx_kwds, __pyx_n_s_i)) != 0)) kw_args--;
         else {
-          __Pyx_RaiseArgtupleInvalid("estimate", 1, 3, 3, 2); __PYX_ERR(0, 721, __pyx_L3_error)
+          __Pyx_RaiseArgtupleInvalid("estimate", 1, 3, 3, 2); __PYX_ERR(0, 726, __pyx_L3_error)
         }
       }
       if (unlikely(kw_args > 0)) {
-        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "estimate") < 0)) __PYX_ERR(0, 721, __pyx_L3_error)
+        if (unlikely(__Pyx_ParseOptionalKeywords(__pyx_kwds, __pyx_pyargnames, 0, values, pos_args, "estimate") < 0)) __PYX_ERR(0, 726, __pyx_L3_error)
       }
     } else if (PyTuple_GET_SIZE(__pyx_args) != 3) {
       goto __pyx_L5_argtuple_error;
@@ -12204,7 +12203,7 @@ static PyObject *__pyx_pw_8surprise_21prediction_algorithms_20matrix_factorizati
   }
   goto __pyx_L4_argument_unpacking_done;
   __pyx_L5_argtuple_error:;
-  __Pyx_RaiseArgtupleInvalid("estimate", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 721, __pyx_L3_error)
+  __Pyx_RaiseArgtupleInvalid("estimate", 1, 3, 3, PyTuple_GET_SIZE(__pyx_args)); __PYX_ERR(0, 726, __pyx_L3_error)
   __pyx_L3_error:;
   __Pyx_AddTraceback("surprise.prediction_algorithms.matrix_factorization.NMF.estimate", __pyx_clineno, __pyx_lineno, __pyx_filename);
   __Pyx_RefNannyFinishContext();
@@ -12234,16 +12233,16 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   PyObject *__pyx_t_9 = NULL;
   __Pyx_RefNannySetupContext("estimate", 0);
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":724
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":729
  *         # Should we cythonize this as well?
  * 
  *         known_user = self.trainset.knows_user(u)             # <<<<<<<<<<<<<<
  *         known_item = self.trainset.knows_item(i)
  * 
  */
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 724, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 729, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_knows_user); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 724, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_knows_user); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 729, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_t_2 = NULL;
@@ -12258,22 +12257,22 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   }
   __pyx_t_1 = (__pyx_t_2) ? __Pyx_PyObject_Call2Args(__pyx_t_3, __pyx_t_2, __pyx_v_u) : __Pyx_PyObject_CallOneArg(__pyx_t_3, __pyx_v_u);
   __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 724, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 729, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_v_known_user = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":725
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":730
  * 
  *         known_user = self.trainset.knows_user(u)
  *         known_item = self.trainset.knows_item(i)             # <<<<<<<<<<<<<<
  * 
  *         if self.biased:
  */
-  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 725, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 730, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
-  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_knows_item); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 725, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_3, __pyx_n_s_knows_item); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 730, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __pyx_t_3 = NULL;
@@ -12288,69 +12287,69 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   }
   __pyx_t_1 = (__pyx_t_3) ? __Pyx_PyObject_Call2Args(__pyx_t_2, __pyx_t_3, __pyx_v_i) : __Pyx_PyObject_CallOneArg(__pyx_t_2, __pyx_v_i);
   __Pyx_XDECREF(__pyx_t_3); __pyx_t_3 = 0;
-  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 725, __pyx_L1_error)
+  if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 730, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __pyx_v_known_item = __pyx_t_1;
   __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":727
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":732
  *         known_item = self.trainset.knows_item(i)
  * 
  *         if self.biased:             # <<<<<<<<<<<<<<
  *             est = self.trainset.global_mean
  * 
  */
-  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_biased); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 727, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_biased); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 732, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 727, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_t_1); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 732, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   if (__pyx_t_4) {
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":728
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":733
  * 
  *         if self.biased:
  *             est = self.trainset.global_mean             # <<<<<<<<<<<<<<
  * 
  *             if known_user:
  */
-    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 728, __pyx_L1_error)
+    __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_trainset); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 733, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_1);
-    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_global_mean); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 728, __pyx_L1_error)
+    __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_global_mean); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 733, __pyx_L1_error)
     __Pyx_GOTREF(__pyx_t_2);
     __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
     __pyx_v_est = __pyx_t_2;
     __pyx_t_2 = 0;
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":730
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":735
  *             est = self.trainset.global_mean
  * 
  *             if known_user:             # <<<<<<<<<<<<<<
  *                 est += self.bu[u]
  * 
  */
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_known_user); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 730, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_known_user); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 735, __pyx_L1_error)
     if (__pyx_t_4) {
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":731
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":736
  * 
  *             if known_user:
  *                 est += self.bu[u]             # <<<<<<<<<<<<<<
  * 
  *             if known_item:
  */
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_bu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 731, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_bu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 736, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_u); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 731, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_u); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 736, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_est, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 731, __pyx_L1_error)
+      __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_est, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 736, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF_SET(__pyx_v_est, __pyx_t_2);
       __pyx_t_2 = 0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":730
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":735
  *             est = self.trainset.global_mean
  * 
  *             if known_user:             # <<<<<<<<<<<<<<
@@ -12359,35 +12358,35 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  */
     }
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":733
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":738
  *                 est += self.bu[u]
  * 
  *             if known_item:             # <<<<<<<<<<<<<<
  *                 est += self.bi[i]
  * 
  */
-    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_known_item); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 733, __pyx_L1_error)
+    __pyx_t_4 = __Pyx_PyObject_IsTrue(__pyx_v_known_item); if (unlikely(__pyx_t_4 < 0)) __PYX_ERR(0, 738, __pyx_L1_error)
     if (__pyx_t_4) {
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":734
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":739
  * 
  *             if known_item:
  *                 est += self.bi[i]             # <<<<<<<<<<<<<<
  * 
  *             if known_user and known_item:
  */
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_bi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 734, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_bi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 739, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_i); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 734, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_i); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 739, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_est, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 734, __pyx_L1_error)
+      __pyx_t_2 = PyNumber_InPlaceAdd(__pyx_v_est, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 739, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __Pyx_DECREF_SET(__pyx_v_est, __pyx_t_2);
       __pyx_t_2 = 0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":733
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":738
  *                 est += self.bu[u]
  * 
  *             if known_item:             # <<<<<<<<<<<<<<
@@ -12396,44 +12395,44 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  */
     }
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":736
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":741
  *                 est += self.bi[i]
  * 
  *             if known_user and known_item:             # <<<<<<<<<<<<<<
  *                 est += np.dot(self.qi[i], self.pu[u])
  * 
  */
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_known_user); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 736, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_known_user); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 741, __pyx_L1_error)
     if (__pyx_t_5) {
     } else {
       __pyx_t_4 = __pyx_t_5;
       goto __pyx_L7_bool_binop_done;
     }
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_known_item); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 736, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_known_item); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 741, __pyx_L1_error)
     __pyx_t_4 = __pyx_t_5;
     __pyx_L7_bool_binop_done:;
     if (__pyx_t_4) {
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":737
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":742
  * 
  *             if known_user and known_item:
  *                 est += np.dot(self.qi[i], self.pu[u])             # <<<<<<<<<<<<<<
  * 
  *         else:
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 737, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_np); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 742, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_dot); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 737, __pyx_L1_error)
+      __pyx_t_3 = __Pyx_PyObject_GetAttrStr(__pyx_t_1, __pyx_n_s_dot); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 742, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_qi); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 737, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_qi); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 742, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_v_i); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 737, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_v_i); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 742, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
-      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_pu); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 737, __pyx_L1_error)
+      __pyx_t_1 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_pu); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 742, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_1);
-      __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_v_u); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 737, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_t_1, __pyx_v_u); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 742, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       __pyx_t_1 = NULL;
@@ -12451,7 +12450,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_3)) {
         PyObject *__pyx_temp[3] = {__pyx_t_1, __pyx_t_6, __pyx_t_7};
-        __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_8, 2+__pyx_t_8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 737, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_8, 2+__pyx_t_8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 742, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -12461,7 +12460,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_3)) {
         PyObject *__pyx_temp[3] = {__pyx_t_1, __pyx_t_6, __pyx_t_7};
-        __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_8, 2+__pyx_t_8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 737, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyCFunction_FastCall(__pyx_t_3, __pyx_temp+1-__pyx_t_8, 2+__pyx_t_8); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 742, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_6); __pyx_t_6 = 0;
@@ -12469,7 +12468,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       } else
       #endif
       {
-        __pyx_t_9 = PyTuple_New(2+__pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 737, __pyx_L1_error)
+        __pyx_t_9 = PyTuple_New(2+__pyx_t_8); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 742, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_9);
         if (__pyx_t_1) {
           __Pyx_GIVEREF(__pyx_t_1); PyTuple_SET_ITEM(__pyx_t_9, 0, __pyx_t_1); __pyx_t_1 = NULL;
@@ -12480,18 +12479,18 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         PyTuple_SET_ITEM(__pyx_t_9, 1+__pyx_t_8, __pyx_t_7);
         __pyx_t_6 = 0;
         __pyx_t_7 = 0;
-        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_9, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 737, __pyx_L1_error)
+        __pyx_t_2 = __Pyx_PyObject_Call(__pyx_t_3, __pyx_t_9, NULL); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 742, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_2);
         __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       }
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __pyx_t_3 = PyNumber_InPlaceAdd(__pyx_v_est, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 737, __pyx_L1_error)
+      __pyx_t_3 = PyNumber_InPlaceAdd(__pyx_v_est, __pyx_t_2); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 742, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __Pyx_DECREF_SET(__pyx_v_est, __pyx_t_3);
       __pyx_t_3 = 0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":736
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":741
  *                 est += self.bi[i]
  * 
  *             if known_user and known_item:             # <<<<<<<<<<<<<<
@@ -12500,7 +12499,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  */
     }
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":727
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":732
  *         known_item = self.trainset.knows_item(i)
  * 
  *         if self.biased:             # <<<<<<<<<<<<<<
@@ -12510,7 +12509,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
     goto __pyx_L3;
   }
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":740
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":745
  * 
  *         else:
  *             if known_user and known_item:             # <<<<<<<<<<<<<<
@@ -12518,37 +12517,37 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  *             else:
  */
   /*else*/ {
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_known_user); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 740, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_known_user); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 745, __pyx_L1_error)
     if (__pyx_t_5) {
     } else {
       __pyx_t_4 = __pyx_t_5;
       goto __pyx_L10_bool_binop_done;
     }
-    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_known_item); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 740, __pyx_L1_error)
+    __pyx_t_5 = __Pyx_PyObject_IsTrue(__pyx_v_known_item); if (unlikely(__pyx_t_5 < 0)) __PYX_ERR(0, 745, __pyx_L1_error)
     __pyx_t_4 = __pyx_t_5;
     __pyx_L10_bool_binop_done:;
     if (likely(__pyx_t_4)) {
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":741
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":746
  *         else:
  *             if known_user and known_item:
  *                 est = np.dot(self.qi[i], self.pu[u])             # <<<<<<<<<<<<<<
  *             else:
  *                 raise PredictionImpossible('User and item are unkown.')
  */
-      __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 741, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_np); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 746, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_dot); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 741, __pyx_L1_error)
+      __pyx_t_9 = __Pyx_PyObject_GetAttrStr(__pyx_t_2, __pyx_n_s_dot); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 746, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_qi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 741, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_qi); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 746, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_i); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 741, __pyx_L1_error)
+      __pyx_t_7 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_i); if (unlikely(!__pyx_t_7)) __PYX_ERR(0, 746, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_7);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
-      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_pu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 741, __pyx_L1_error)
+      __pyx_t_2 = __Pyx_PyObject_GetAttrStr(__pyx_v_self, __pyx_n_s_pu); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 746, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_2);
-      __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_u); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 741, __pyx_L1_error)
+      __pyx_t_6 = __Pyx_PyObject_GetItem(__pyx_t_2, __pyx_v_u); if (unlikely(!__pyx_t_6)) __PYX_ERR(0, 746, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_6);
       __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
       __pyx_t_2 = NULL;
@@ -12566,7 +12565,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       #if CYTHON_FAST_PYCALL
       if (PyFunction_Check(__pyx_t_9)) {
         PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_t_7, __pyx_t_6};
-        __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_9, __pyx_temp+1-__pyx_t_8, 2+__pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 741, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyFunction_FastCall(__pyx_t_9, __pyx_temp+1-__pyx_t_8, 2+__pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 746, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
@@ -12576,7 +12575,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       #if CYTHON_FAST_PYCCALL
       if (__Pyx_PyFastCFunction_Check(__pyx_t_9)) {
         PyObject *__pyx_temp[3] = {__pyx_t_2, __pyx_t_7, __pyx_t_6};
-        __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_9, __pyx_temp+1-__pyx_t_8, 2+__pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 741, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyCFunction_FastCall(__pyx_t_9, __pyx_temp+1-__pyx_t_8, 2+__pyx_t_8); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 746, __pyx_L1_error)
         __Pyx_XDECREF(__pyx_t_2); __pyx_t_2 = 0;
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_7); __pyx_t_7 = 0;
@@ -12584,7 +12583,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       } else
       #endif
       {
-        __pyx_t_1 = PyTuple_New(2+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 741, __pyx_L1_error)
+        __pyx_t_1 = PyTuple_New(2+__pyx_t_8); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 746, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_1);
         if (__pyx_t_2) {
           __Pyx_GIVEREF(__pyx_t_2); PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_2); __pyx_t_2 = NULL;
@@ -12595,7 +12594,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
         PyTuple_SET_ITEM(__pyx_t_1, 1+__pyx_t_8, __pyx_t_6);
         __pyx_t_7 = 0;
         __pyx_t_6 = 0;
-        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_9, __pyx_t_1, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 741, __pyx_L1_error)
+        __pyx_t_3 = __Pyx_PyObject_Call(__pyx_t_9, __pyx_t_1, NULL); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 746, __pyx_L1_error)
         __Pyx_GOTREF(__pyx_t_3);
         __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
       }
@@ -12603,7 +12602,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       __pyx_v_est = __pyx_t_3;
       __pyx_t_3 = 0;
 
-      /* "surprise/prediction_algorithms/matrix_factorization.pyx":740
+      /* "surprise/prediction_algorithms/matrix_factorization.pyx":745
  * 
  *         else:
  *             if known_user and known_item:             # <<<<<<<<<<<<<<
@@ -12613,7 +12612,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       goto __pyx_L9;
     }
 
-    /* "surprise/prediction_algorithms/matrix_factorization.pyx":743
+    /* "surprise/prediction_algorithms/matrix_factorization.pyx":748
  *                 est = np.dot(self.qi[i], self.pu[u])
  *             else:
  *                 raise PredictionImpossible('User and item are unkown.')             # <<<<<<<<<<<<<<
@@ -12621,7 +12620,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
  *         return est
  */
     /*else*/ {
-      __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_PredictionImpossible); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 743, __pyx_L1_error)
+      __Pyx_GetModuleGlobalName(__pyx_t_9, __pyx_n_s_PredictionImpossible); if (unlikely(!__pyx_t_9)) __PYX_ERR(0, 748, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_9);
       __pyx_t_1 = NULL;
       if (CYTHON_UNPACK_METHODS && unlikely(PyMethod_Check(__pyx_t_9))) {
@@ -12635,18 +12634,18 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
       }
       __pyx_t_3 = (__pyx_t_1) ? __Pyx_PyObject_Call2Args(__pyx_t_9, __pyx_t_1, __pyx_kp_u_User_and_item_are_unkown) : __Pyx_PyObject_CallOneArg(__pyx_t_9, __pyx_kp_u_User_and_item_are_unkown);
       __Pyx_XDECREF(__pyx_t_1); __pyx_t_1 = 0;
-      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 743, __pyx_L1_error)
+      if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 748, __pyx_L1_error)
       __Pyx_GOTREF(__pyx_t_3);
       __Pyx_DECREF(__pyx_t_9); __pyx_t_9 = 0;
       __Pyx_Raise(__pyx_t_3, 0, 0, 0);
       __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
-      __PYX_ERR(0, 743, __pyx_L1_error)
+      __PYX_ERR(0, 748, __pyx_L1_error)
     }
     __pyx_L9:;
   }
   __pyx_L3:;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":745
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":750
  *                 raise PredictionImpossible('User and item are unkown.')
  * 
  *         return est             # <<<<<<<<<<<<<<
@@ -12656,7 +12655,7 @@ static PyObject *__pyx_pf_8surprise_21prediction_algorithms_20matrix_factorizati
   __pyx_r = __pyx_v_est;
   goto __pyx_L0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":721
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":726
  *         self.qi = qi
  * 
  *     def estimate(self, u, i):             # <<<<<<<<<<<<<<
@@ -15507,9 +15506,9 @@ static __Pyx_StringTabEntry __pyx_string_tab[] = {
   {0, 0, 0, 0, 0, 0, 0}
 };
 static CYTHON_SMALL_CODE int __Pyx_InitCachedBuiltins(void) {
-  __pyx_builtin_print = __Pyx_GetBuiltinName(__pyx_n_s_print); if (!__pyx_builtin_print) __PYX_ERR(0, 230, __pyx_L1_error)
-  __pyx_builtin_sum = __Pyx_GetBuiltinName(__pyx_n_s_sum); if (!__pyx_builtin_sum) __PYX_ERR(0, 501, __pyx_L1_error)
-  __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(0, 618, __pyx_L1_error)
+  __pyx_builtin_print = __Pyx_GetBuiltinName(__pyx_n_s_print); if (!__pyx_builtin_print) __PYX_ERR(0, 231, __pyx_L1_error)
+  __pyx_builtin_sum = __Pyx_GetBuiltinName(__pyx_n_s_sum); if (!__pyx_builtin_sum) __PYX_ERR(0, 505, __pyx_L1_error)
+  __pyx_builtin_ValueError = __Pyx_GetBuiltinName(__pyx_n_s_ValueError); if (!__pyx_builtin_ValueError) __PYX_ERR(0, 622, __pyx_L1_error)
   __pyx_builtin_range = __Pyx_GetBuiltinName(__pyx_n_s_range); if (!__pyx_builtin_range) __PYX_ERR(1, 285, __pyx_L1_error)
   __pyx_builtin_RuntimeError = __Pyx_GetBuiltinName(__pyx_n_s_RuntimeError); if (!__pyx_builtin_RuntimeError) __PYX_ERR(1, 856, __pyx_L1_error)
   __pyx_builtin_ImportError = __Pyx_GetBuiltinName(__pyx_n_s_ImportError); if (!__pyx_builtin_ImportError) __PYX_ERR(1, 1038, __pyx_L1_error)
@@ -15522,14 +15521,14 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_InitCachedConstants", 0);
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":618
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":622
  * 
  *         if self.init_low < 0:
  *             raise ValueError('init_low should be greater than zero')             # <<<<<<<<<<<<<<
  * 
  *         AlgoBase.__init__(self)
  */
-  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_u_init_low_should_be_greater_than); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 618, __pyx_L1_error)
+  __pyx_tuple_ = PyTuple_Pack(1, __pyx_kp_u_init_low_should_be_greater_than); if (unlikely(!__pyx_tuple_)) __PYX_ERR(0, 622, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple_);
   __Pyx_GIVEREF(__pyx_tuple_);
 
@@ -15635,13 +15634,13 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *     def __init__(self, n_factors=100, n_epochs=20, biased=True, init_mean=0,             # <<<<<<<<<<<<<<
  *                  init_std_dev=.1, lr_all=.005,
- *                  reg_all=.02, lr_bu=None, lr_bi=None, lr_pu=None, lr_qi=None,
+ *                  reg_all=.06, lr_bu=None, lr_bi=None, lr_pu=None, lr_qi=None,
  */
   __pyx_tuple__9 = PyTuple_Pack(18, __pyx_n_s_self, __pyx_n_s_n_factors, __pyx_n_s_n_epochs, __pyx_n_s_biased, __pyx_n_s_init_mean, __pyx_n_s_init_std_dev, __pyx_n_s_lr_all, __pyx_n_s_reg_all, __pyx_n_s_lr_bu, __pyx_n_s_lr_bi, __pyx_n_s_lr_pu, __pyx_n_s_lr_qi, __pyx_n_s_reg_bu, __pyx_n_s_reg_bi, __pyx_n_s_reg_pu, __pyx_n_s_reg_qi, __pyx_n_s_random_state, __pyx_n_s_verbose); if (unlikely(!__pyx_tuple__9)) __PYX_ERR(0, 128, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__9);
   __Pyx_GIVEREF(__pyx_tuple__9);
   __pyx_codeobj__10 = (PyObject*)__Pyx_PyCode_New(18, 0, 18, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__9, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_m_2, __pyx_n_s_init, 128, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__10)) __PYX_ERR(0, 128, __pyx_L1_error)
-  __pyx_tuple__11 = PyTuple_Pack(17, ((PyObject *)__pyx_int_100), ((PyObject *)__pyx_int_20), ((PyObject *)Py_True), ((PyObject *)__pyx_int_0), ((PyObject*)__pyx_float__1), ((PyObject*)__pyx_float__005), ((PyObject*)__pyx_float__02), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_False)); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 128, __pyx_L1_error)
+  __pyx_tuple__11 = PyTuple_Pack(17, ((PyObject *)__pyx_int_100), ((PyObject *)__pyx_int_20), ((PyObject *)Py_True), ((PyObject *)__pyx_int_0), ((PyObject*)__pyx_float__1), ((PyObject*)__pyx_float__005), ((PyObject*)__pyx_float__06), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_False)); if (unlikely(!__pyx_tuple__11)) __PYX_ERR(0, 128, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__11);
   __Pyx_GIVEREF(__pyx_tuple__11);
 
@@ -15664,124 +15663,124 @@ static CYTHON_SMALL_CODE int __Pyx_InitCachedConstants(void) {
  * 
  *         # OK, let's breath. I've seen so many different implementation of this
  */
-  __pyx_tuple__14 = PyTuple_Pack(26, __pyx_n_s_self, __pyx_n_s_trainset, __pyx_n_s_bu, __pyx_n_s_bi, __pyx_n_s_pu, __pyx_n_s_qi, __pyx_n_s_u, __pyx_n_s_i, __pyx_n_s_f, __pyx_n_s_r, __pyx_n_s_err, __pyx_n_s_dot, __pyx_n_s_puf, __pyx_n_s_qif, __pyx_n_s_global_mean, __pyx_n_s_lr_bu, __pyx_n_s_lr_bi, __pyx_n_s_lr_pu, __pyx_n_s_lr_qi, __pyx_n_s_reg_bu, __pyx_n_s_reg_bi, __pyx_n_s_reg_pu, __pyx_n_s_reg_qi, __pyx_n_s_rng, __pyx_n_s_current_epoch, __pyx_n_s_Weight); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 159, __pyx_L1_error)
+  __pyx_tuple__14 = PyTuple_Pack(26, __pyx_n_s_self, __pyx_n_s_trainset, __pyx_n_s_bu, __pyx_n_s_bi, __pyx_n_s_pu, __pyx_n_s_qi, __pyx_n_s_u, __pyx_n_s_i, __pyx_n_s_f, __pyx_n_s_r, __pyx_n_s_err, __pyx_n_s_dot, __pyx_n_s_puf, __pyx_n_s_qif, __pyx_n_s_global_mean, __pyx_n_s_lr_bu, __pyx_n_s_lr_bi, __pyx_n_s_lr_pu, __pyx_n_s_lr_qi, __pyx_n_s_reg_bu, __pyx_n_s_reg_bi, __pyx_n_s_reg_pu, __pyx_n_s_reg_qi, __pyx_n_s_Weight, __pyx_n_s_rng, __pyx_n_s_current_epoch); if (unlikely(!__pyx_tuple__14)) __PYX_ERR(0, 159, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__14);
   __Pyx_GIVEREF(__pyx_tuple__14);
   __pyx_codeobj__15 = (PyObject*)__Pyx_PyCode_New(2, 0, 26, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__14, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_m_2, __pyx_n_s_sgd, 159, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__15)) __PYX_ERR(0, 159, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":258
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":262
  *         self.qi = qi
  * 
  *     def estimate(self, u, i):             # <<<<<<<<<<<<<<
  *         # Should we cythonize this as well?
  * 
  */
-  __pyx_tuple__16 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_u, __pyx_n_s_i, __pyx_n_s_known_user, __pyx_n_s_known_item, __pyx_n_s_est); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(0, 258, __pyx_L1_error)
+  __pyx_tuple__16 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_u, __pyx_n_s_i, __pyx_n_s_known_user, __pyx_n_s_known_item, __pyx_n_s_est); if (unlikely(!__pyx_tuple__16)) __PYX_ERR(0, 262, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__16);
   __Pyx_GIVEREF(__pyx_tuple__16);
-  __pyx_codeobj__17 = (PyObject*)__Pyx_PyCode_New(3, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__16, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_m_2, __pyx_n_s_estimate, 258, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__17)) __PYX_ERR(0, 258, __pyx_L1_error)
+  __pyx_codeobj__17 = (PyObject*)__Pyx_PyCode_New(3, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__16, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_m_2, __pyx_n_s_estimate, 262, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__17)) __PYX_ERR(0, 262, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":372
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":376
  *     """
  * 
  *     def __init__(self, n_factors=20, n_epochs=20, init_mean=0, init_std_dev=.1,             # <<<<<<<<<<<<<<
  *                  lr_all=.007, reg_all=.02, lr_bu=None, lr_bi=None, lr_pu=None,
  *                  lr_qi=None, lr_yj=None, reg_bu=None, reg_bi=None, reg_pu=None,
  */
-  __pyx_tuple__18 = PyTuple_Pack(19, __pyx_n_s_self, __pyx_n_s_n_factors, __pyx_n_s_n_epochs, __pyx_n_s_init_mean, __pyx_n_s_init_std_dev, __pyx_n_s_lr_all, __pyx_n_s_reg_all, __pyx_n_s_lr_bu, __pyx_n_s_lr_bi, __pyx_n_s_lr_pu, __pyx_n_s_lr_qi, __pyx_n_s_lr_yj, __pyx_n_s_reg_bu, __pyx_n_s_reg_bi, __pyx_n_s_reg_pu, __pyx_n_s_reg_qi, __pyx_n_s_reg_yj, __pyx_n_s_random_state, __pyx_n_s_verbose); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(0, 372, __pyx_L1_error)
+  __pyx_tuple__18 = PyTuple_Pack(19, __pyx_n_s_self, __pyx_n_s_n_factors, __pyx_n_s_n_epochs, __pyx_n_s_init_mean, __pyx_n_s_init_std_dev, __pyx_n_s_lr_all, __pyx_n_s_reg_all, __pyx_n_s_lr_bu, __pyx_n_s_lr_bi, __pyx_n_s_lr_pu, __pyx_n_s_lr_qi, __pyx_n_s_lr_yj, __pyx_n_s_reg_bu, __pyx_n_s_reg_bi, __pyx_n_s_reg_pu, __pyx_n_s_reg_qi, __pyx_n_s_reg_yj, __pyx_n_s_random_state, __pyx_n_s_verbose); if (unlikely(!__pyx_tuple__18)) __PYX_ERR(0, 376, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__18);
   __Pyx_GIVEREF(__pyx_tuple__18);
-  __pyx_codeobj__19 = (PyObject*)__Pyx_PyCode_New(19, 0, 19, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_m_2, __pyx_n_s_init, 372, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__19)) __PYX_ERR(0, 372, __pyx_L1_error)
-  __pyx_tuple__20 = PyTuple_Pack(18, ((PyObject *)__pyx_int_20), ((PyObject *)__pyx_int_20), ((PyObject *)__pyx_int_0), ((PyObject*)__pyx_float__1), ((PyObject*)__pyx_float__007), ((PyObject*)__pyx_float__02), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_False)); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 372, __pyx_L1_error)
+  __pyx_codeobj__19 = (PyObject*)__Pyx_PyCode_New(19, 0, 19, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__18, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_m_2, __pyx_n_s_init, 376, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__19)) __PYX_ERR(0, 376, __pyx_L1_error)
+  __pyx_tuple__20 = PyTuple_Pack(18, ((PyObject *)__pyx_int_20), ((PyObject *)__pyx_int_20), ((PyObject *)__pyx_int_0), ((PyObject*)__pyx_float__1), ((PyObject*)__pyx_float__007), ((PyObject*)__pyx_float__02), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_None), ((PyObject *)Py_False)); if (unlikely(!__pyx_tuple__20)) __PYX_ERR(0, 376, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__20);
   __Pyx_GIVEREF(__pyx_tuple__20);
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":396
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":400
  *         AlgoBase.__init__(self)
  * 
  *     def fit(self, trainset):             # <<<<<<<<<<<<<<
  * 
  *         AlgoBase.fit(self, trainset)
  */
-  __pyx_tuple__21 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_trainset); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(0, 396, __pyx_L1_error)
+  __pyx_tuple__21 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_trainset); if (unlikely(!__pyx_tuple__21)) __PYX_ERR(0, 400, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__21);
   __Pyx_GIVEREF(__pyx_tuple__21);
-  __pyx_codeobj__22 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_m_2, __pyx_n_s_fit, 396, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__22)) __PYX_ERR(0, 396, __pyx_L1_error)
+  __pyx_codeobj__22 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__21, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_m_2, __pyx_n_s_fit, 400, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__22)) __PYX_ERR(0, 400, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":403
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":407
  *         return self
  * 
  *     def sgd(self, trainset):             # <<<<<<<<<<<<<<
  * 
  *         # user biases
  */
-  __pyx_tuple__24 = PyTuple_Pack(33, __pyx_n_s_self, __pyx_n_s_trainset, __pyx_n_s_bu, __pyx_n_s_bi, __pyx_n_s_pu, __pyx_n_s_qi, __pyx_n_s_yj, __pyx_n_s_u, __pyx_n_s_i, __pyx_n_s_j, __pyx_n_s_f, __pyx_n_s_r, __pyx_n_s_err, __pyx_n_s_dot, __pyx_n_s_puf, __pyx_n_s_qif, __pyx_n_s_sqrt_Iu, __pyx_n_s__23, __pyx_n_s_global_mean, __pyx_n_s_u_impl_fdb, __pyx_n_s_lr_bu, __pyx_n_s_lr_bi, __pyx_n_s_lr_pu, __pyx_n_s_lr_qi, __pyx_n_s_lr_yj, __pyx_n_s_reg_bu, __pyx_n_s_reg_bi, __pyx_n_s_reg_pu, __pyx_n_s_reg_qi, __pyx_n_s_reg_yj, __pyx_n_s_rng, __pyx_n_s_current_epoch, __pyx_n_s_Iu); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(0, 403, __pyx_L1_error)
+  __pyx_tuple__24 = PyTuple_Pack(33, __pyx_n_s_self, __pyx_n_s_trainset, __pyx_n_s_bu, __pyx_n_s_bi, __pyx_n_s_pu, __pyx_n_s_qi, __pyx_n_s_yj, __pyx_n_s_u, __pyx_n_s_i, __pyx_n_s_j, __pyx_n_s_f, __pyx_n_s_r, __pyx_n_s_err, __pyx_n_s_dot, __pyx_n_s_puf, __pyx_n_s_qif, __pyx_n_s_sqrt_Iu, __pyx_n_s__23, __pyx_n_s_global_mean, __pyx_n_s_u_impl_fdb, __pyx_n_s_lr_bu, __pyx_n_s_lr_bi, __pyx_n_s_lr_pu, __pyx_n_s_lr_qi, __pyx_n_s_lr_yj, __pyx_n_s_reg_bu, __pyx_n_s_reg_bi, __pyx_n_s_reg_pu, __pyx_n_s_reg_qi, __pyx_n_s_reg_yj, __pyx_n_s_rng, __pyx_n_s_current_epoch, __pyx_n_s_Iu); if (unlikely(!__pyx_tuple__24)) __PYX_ERR(0, 407, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__24);
   __Pyx_GIVEREF(__pyx_tuple__24);
-  __pyx_codeobj__25 = (PyObject*)__Pyx_PyCode_New(2, 0, 33, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__24, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_m_2, __pyx_n_s_sgd, 403, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__25)) __PYX_ERR(0, 403, __pyx_L1_error)
+  __pyx_codeobj__25 = (PyObject*)__Pyx_PyCode_New(2, 0, 33, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__24, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_m_2, __pyx_n_s_sgd, 407, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__25)) __PYX_ERR(0, 407, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":489
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":493
  *         self.yj = yj
  * 
  *     def estimate(self, u, i):             # <<<<<<<<<<<<<<
  * 
  *         est = self.trainset.global_mean
  */
-  __pyx_tuple__26 = PyTuple_Pack(8, __pyx_n_s_self, __pyx_n_s_u, __pyx_n_s_i, __pyx_n_s_est, __pyx_n_s_Iu, __pyx_n_s_u_impl_feedback, __pyx_n_s_genexpr, __pyx_n_s_genexpr); if (unlikely(!__pyx_tuple__26)) __PYX_ERR(0, 489, __pyx_L1_error)
+  __pyx_tuple__26 = PyTuple_Pack(8, __pyx_n_s_self, __pyx_n_s_u, __pyx_n_s_i, __pyx_n_s_est, __pyx_n_s_Iu, __pyx_n_s_u_impl_feedback, __pyx_n_s_genexpr, __pyx_n_s_genexpr); if (unlikely(!__pyx_tuple__26)) __PYX_ERR(0, 493, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__26);
   __Pyx_GIVEREF(__pyx_tuple__26);
-  __pyx_codeobj__27 = (PyObject*)__Pyx_PyCode_New(3, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__26, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_m_2, __pyx_n_s_estimate, 489, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__27)) __PYX_ERR(0, 489, __pyx_L1_error)
+  __pyx_codeobj__27 = (PyObject*)__Pyx_PyCode_New(3, 0, 8, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__26, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_m_2, __pyx_n_s_estimate, 493, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__27)) __PYX_ERR(0, 493, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":599
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":603
  *     """
  * 
  *     def __init__(self, n_factors=15, n_epochs=50, biased=False, reg_pu=.06,             # <<<<<<<<<<<<<<
  *                  reg_qi=.06, reg_bu=.02, reg_bi=.02, lr_bu=.005, lr_bi=.005,
  *                  init_low=0, init_high=1, random_state=None, verbose=False):
  */
-  __pyx_tuple__28 = PyTuple_Pack(14, __pyx_n_s_self, __pyx_n_s_n_factors, __pyx_n_s_n_epochs, __pyx_n_s_biased, __pyx_n_s_reg_pu, __pyx_n_s_reg_qi, __pyx_n_s_reg_bu, __pyx_n_s_reg_bi, __pyx_n_s_lr_bu, __pyx_n_s_lr_bi, __pyx_n_s_init_low, __pyx_n_s_init_high, __pyx_n_s_random_state, __pyx_n_s_verbose); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(0, 599, __pyx_L1_error)
+  __pyx_tuple__28 = PyTuple_Pack(14, __pyx_n_s_self, __pyx_n_s_n_factors, __pyx_n_s_n_epochs, __pyx_n_s_biased, __pyx_n_s_reg_pu, __pyx_n_s_reg_qi, __pyx_n_s_reg_bu, __pyx_n_s_reg_bi, __pyx_n_s_lr_bu, __pyx_n_s_lr_bi, __pyx_n_s_init_low, __pyx_n_s_init_high, __pyx_n_s_random_state, __pyx_n_s_verbose); if (unlikely(!__pyx_tuple__28)) __PYX_ERR(0, 603, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__28);
   __Pyx_GIVEREF(__pyx_tuple__28);
-  __pyx_codeobj__29 = (PyObject*)__Pyx_PyCode_New(14, 0, 14, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__28, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_m_2, __pyx_n_s_init, 599, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__29)) __PYX_ERR(0, 599, __pyx_L1_error)
-  __pyx_tuple__30 = PyTuple_Pack(13, ((PyObject *)__pyx_int_15), ((PyObject *)__pyx_int_50), ((PyObject *)Py_False), ((PyObject*)__pyx_float__06), ((PyObject*)__pyx_float__06), ((PyObject*)__pyx_float__02), ((PyObject*)__pyx_float__02), ((PyObject*)__pyx_float__005), ((PyObject*)__pyx_float__005), ((PyObject *)__pyx_int_0), ((PyObject *)__pyx_int_1), ((PyObject *)Py_None), ((PyObject *)Py_False)); if (unlikely(!__pyx_tuple__30)) __PYX_ERR(0, 599, __pyx_L1_error)
+  __pyx_codeobj__29 = (PyObject*)__Pyx_PyCode_New(14, 0, 14, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__28, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_m_2, __pyx_n_s_init, 603, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__29)) __PYX_ERR(0, 603, __pyx_L1_error)
+  __pyx_tuple__30 = PyTuple_Pack(13, ((PyObject *)__pyx_int_15), ((PyObject *)__pyx_int_50), ((PyObject *)Py_False), ((PyObject*)__pyx_float__06), ((PyObject*)__pyx_float__06), ((PyObject*)__pyx_float__02), ((PyObject*)__pyx_float__02), ((PyObject*)__pyx_float__005), ((PyObject*)__pyx_float__005), ((PyObject *)__pyx_int_0), ((PyObject *)__pyx_int_1), ((PyObject *)Py_None), ((PyObject *)Py_False)); if (unlikely(!__pyx_tuple__30)) __PYX_ERR(0, 603, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__30);
   __Pyx_GIVEREF(__pyx_tuple__30);
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":622
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":626
  *         AlgoBase.__init__(self)
  * 
  *     def fit(self, trainset):             # <<<<<<<<<<<<<<
  * 
  *         AlgoBase.fit(self, trainset)
  */
-  __pyx_tuple__31 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_trainset); if (unlikely(!__pyx_tuple__31)) __PYX_ERR(0, 622, __pyx_L1_error)
+  __pyx_tuple__31 = PyTuple_Pack(2, __pyx_n_s_self, __pyx_n_s_trainset); if (unlikely(!__pyx_tuple__31)) __PYX_ERR(0, 626, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__31);
   __Pyx_GIVEREF(__pyx_tuple__31);
-  __pyx_codeobj__32 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__31, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_m_2, __pyx_n_s_fit, 622, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__32)) __PYX_ERR(0, 622, __pyx_L1_error)
+  __pyx_codeobj__32 = (PyObject*)__Pyx_PyCode_New(2, 0, 2, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__31, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_m_2, __pyx_n_s_fit, 626, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__32)) __PYX_ERR(0, 626, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":629
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":633
  *         return self
  * 
  *     def sgd(self, trainset):             # <<<<<<<<<<<<<<
  * 
  *         # user and item factors
  */
-  __pyx_tuple__33 = PyTuple_Pack(28, __pyx_n_s_self, __pyx_n_s_trainset, __pyx_n_s_pu, __pyx_n_s_qi, __pyx_n_s_bu, __pyx_n_s_bi, __pyx_n_s_user_num, __pyx_n_s_user_denom, __pyx_n_s_item_num, __pyx_n_s_item_denom, __pyx_n_s_u, __pyx_n_s_i, __pyx_n_s_f, __pyx_n_s_r, __pyx_n_s_est, __pyx_n_s_l, __pyx_n_s_dot, __pyx_n_s_err, __pyx_n_s_reg_pu, __pyx_n_s_reg_qi, __pyx_n_s_reg_bu, __pyx_n_s_reg_bi, __pyx_n_s_lr_bu, __pyx_n_s_lr_bi, __pyx_n_s_global_mean, __pyx_n_s_rng, __pyx_n_s_current_epoch, __pyx_n_s_n_ratings); if (unlikely(!__pyx_tuple__33)) __PYX_ERR(0, 629, __pyx_L1_error)
+  __pyx_tuple__33 = PyTuple_Pack(29, __pyx_n_s_self, __pyx_n_s_trainset, __pyx_n_s_pu, __pyx_n_s_qi, __pyx_n_s_bu, __pyx_n_s_bi, __pyx_n_s_user_num, __pyx_n_s_user_denom, __pyx_n_s_item_num, __pyx_n_s_item_denom, __pyx_n_s_u, __pyx_n_s_i, __pyx_n_s_f, __pyx_n_s_r, __pyx_n_s_est, __pyx_n_s_l, __pyx_n_s_dot, __pyx_n_s_err, __pyx_n_s_reg_pu, __pyx_n_s_reg_qi, __pyx_n_s_reg_bu, __pyx_n_s_reg_bi, __pyx_n_s_lr_bu, __pyx_n_s_lr_bi, __pyx_n_s_global_mean, __pyx_n_s_Weight, __pyx_n_s_rng, __pyx_n_s_current_epoch, __pyx_n_s_n_ratings); if (unlikely(!__pyx_tuple__33)) __PYX_ERR(0, 633, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__33);
   __Pyx_GIVEREF(__pyx_tuple__33);
-  __pyx_codeobj__34 = (PyObject*)__Pyx_PyCode_New(2, 0, 28, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__33, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_m_2, __pyx_n_s_sgd, 629, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__34)) __PYX_ERR(0, 629, __pyx_L1_error)
+  __pyx_codeobj__34 = (PyObject*)__Pyx_PyCode_New(2, 0, 29, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__33, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_m_2, __pyx_n_s_sgd, 633, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__34)) __PYX_ERR(0, 633, __pyx_L1_error)
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":721
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":726
  *         self.qi = qi
  * 
  *     def estimate(self, u, i):             # <<<<<<<<<<<<<<
  *         # Should we cythonize this as well?
  * 
  */
-  __pyx_tuple__35 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_u, __pyx_n_s_i, __pyx_n_s_known_user, __pyx_n_s_known_item, __pyx_n_s_est); if (unlikely(!__pyx_tuple__35)) __PYX_ERR(0, 721, __pyx_L1_error)
+  __pyx_tuple__35 = PyTuple_Pack(6, __pyx_n_s_self, __pyx_n_s_u, __pyx_n_s_i, __pyx_n_s_known_user, __pyx_n_s_known_item, __pyx_n_s_est); if (unlikely(!__pyx_tuple__35)) __PYX_ERR(0, 726, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_tuple__35);
   __Pyx_GIVEREF(__pyx_tuple__35);
-  __pyx_codeobj__36 = (PyObject*)__Pyx_PyCode_New(3, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__35, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_m_2, __pyx_n_s_estimate, 721, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__36)) __PYX_ERR(0, 721, __pyx_L1_error)
+  __pyx_codeobj__36 = (PyObject*)__Pyx_PyCode_New(3, 0, 6, 0, CO_OPTIMIZED|CO_NEWLOCALS, __pyx_empty_bytes, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_tuple__35, __pyx_empty_tuple, __pyx_empty_tuple, __pyx_kp_s_surprise_prediction_algorithms_m_2, __pyx_n_s_estimate, 726, __pyx_empty_bytes); if (unlikely(!__pyx_codeobj__36)) __PYX_ERR(0, 726, __pyx_L1_error)
   __Pyx_RefNannyFinishContext();
   return 0;
   __pyx_L1_error:;
@@ -15843,13 +15842,13 @@ static int __Pyx_modinit_type_init_code(void) {
   __Pyx_RefNannyDeclarations
   __Pyx_RefNannySetupContext("__Pyx_modinit_type_init_code", 0);
   /*--- Type init code ---*/
-  if (PyType_Ready(&__pyx_type_8surprise_21prediction_algorithms_20matrix_factorization___pyx_scope_struct__estimate) < 0) __PYX_ERR(0, 489, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_8surprise_21prediction_algorithms_20matrix_factorization___pyx_scope_struct__estimate) < 0) __PYX_ERR(0, 493, __pyx_L1_error)
   __pyx_type_8surprise_21prediction_algorithms_20matrix_factorization___pyx_scope_struct__estimate.tp_print = 0;
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_8surprise_21prediction_algorithms_20matrix_factorization___pyx_scope_struct__estimate.tp_dictoffset && __pyx_type_8surprise_21prediction_algorithms_20matrix_factorization___pyx_scope_struct__estimate.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_8surprise_21prediction_algorithms_20matrix_factorization___pyx_scope_struct__estimate.tp_getattro = __Pyx_PyObject_GenericGetAttrNoDict;
   }
   __pyx_ptype_8surprise_21prediction_algorithms_20matrix_factorization___pyx_scope_struct__estimate = &__pyx_type_8surprise_21prediction_algorithms_20matrix_factorization___pyx_scope_struct__estimate;
-  if (PyType_Ready(&__pyx_type_8surprise_21prediction_algorithms_20matrix_factorization___pyx_scope_struct_1_genexpr) < 0) __PYX_ERR(0, 501, __pyx_L1_error)
+  if (PyType_Ready(&__pyx_type_8surprise_21prediction_algorithms_20matrix_factorization___pyx_scope_struct_1_genexpr) < 0) __PYX_ERR(0, 505, __pyx_L1_error)
   __pyx_type_8surprise_21prediction_algorithms_20matrix_factorization___pyx_scope_struct_1_genexpr.tp_print = 0;
   if ((CYTHON_USE_TYPE_SLOTS && CYTHON_USE_PYTYPE_LOOKUP) && likely(!__pyx_type_8surprise_21prediction_algorithms_20matrix_factorization___pyx_scope_struct_1_genexpr.tp_dictoffset && __pyx_type_8surprise_21prediction_algorithms_20matrix_factorization___pyx_scope_struct_1_genexpr.tp_getattro == PyObject_GenericGetAttr)) {
     __pyx_type_8surprise_21prediction_algorithms_20matrix_factorization___pyx_scope_struct_1_genexpr.tp_getattro = __Pyx_PyObject_GenericGetAttrNoDict;
@@ -16234,7 +16233,7 @@ if (!__Pyx_RefNanny) {
  * 
  *     def __init__(self, n_factors=100, n_epochs=20, biased=True, init_mean=0,             # <<<<<<<<<<<<<<
  *                  init_std_dev=.1, lr_all=.005,
- *                  reg_all=.02, lr_bu=None, lr_bi=None, lr_pu=None, lr_qi=None,
+ *                  reg_all=.06, lr_bu=None, lr_bi=None, lr_pu=None, lr_qi=None,
  */
   __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_8surprise_21prediction_algorithms_20matrix_factorization_3SVD_1__init__, 0, __pyx_n_s_SVD___init, NULL, __pyx_n_s_surprise_prediction_algorithms_m, __pyx_d, ((PyObject *)__pyx_codeobj__10)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 128, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
@@ -16266,16 +16265,16 @@ if (!__Pyx_RefNanny) {
   if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_sgd, __pyx_t_4) < 0) __PYX_ERR(0, 159, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":258
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":262
  *         self.qi = qi
  * 
  *     def estimate(self, u, i):             # <<<<<<<<<<<<<<
  *         # Should we cythonize this as well?
  * 
  */
-  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_8surprise_21prediction_algorithms_20matrix_factorization_3SVD_7estimate, 0, __pyx_n_s_SVD_estimate, NULL, __pyx_n_s_surprise_prediction_algorithms_m, __pyx_d, ((PyObject *)__pyx_codeobj__17)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 258, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_8surprise_21prediction_algorithms_20matrix_factorization_3SVD_7estimate, 0, __pyx_n_s_SVD_estimate, NULL, __pyx_n_s_surprise_prediction_algorithms_m, __pyx_d, ((PyObject *)__pyx_codeobj__17)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 262, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_estimate, __pyx_t_4) < 0) __PYX_ERR(0, 258, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_estimate, __pyx_t_4) < 0) __PYX_ERR(0, 262, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
   /* "surprise/prediction_algorithms/matrix_factorization.pyx":18
@@ -16293,167 +16292,167 @@ if (!__Pyx_RefNanny) {
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":285
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":289
  * 
  * 
  * class SVDpp(AlgoBase):             # <<<<<<<<<<<<<<
  *     """The *SVD++* algorithm, an extension of :class:`SVD` taking into account
  *     implicit ratings.
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_AlgoBase); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 285, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_2, __pyx_n_s_AlgoBase); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 289, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 285, __pyx_L1_error)
+  __pyx_t_1 = PyTuple_New(1); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 289, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
   __Pyx_GIVEREF(__pyx_t_2);
   PyTuple_SET_ITEM(__pyx_t_1, 0, __pyx_t_2);
   __pyx_t_2 = 0;
-  __pyx_t_2 = __Pyx_CalculateMetaclass(NULL, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 285, __pyx_L1_error)
+  __pyx_t_2 = __Pyx_CalculateMetaclass(NULL, __pyx_t_1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 289, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
-  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_2, __pyx_t_1, __pyx_n_s_SVDpp, __pyx_n_s_SVDpp, (PyObject *) NULL, __pyx_n_s_surprise_prediction_algorithms_m, __pyx_kp_s_The_SVD_algorithm_an_extension_o); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 285, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_2, __pyx_t_1, __pyx_n_s_SVDpp, __pyx_n_s_SVDpp, (PyObject *) NULL, __pyx_n_s_surprise_prediction_algorithms_m, __pyx_kp_s_The_SVD_algorithm_an_extension_o); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 289, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":372
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":376
  *     """
  * 
  *     def __init__(self, n_factors=20, n_epochs=20, init_mean=0, init_std_dev=.1,             # <<<<<<<<<<<<<<
  *                  lr_all=.007, reg_all=.02, lr_bu=None, lr_bi=None, lr_pu=None,
  *                  lr_qi=None, lr_yj=None, reg_bu=None, reg_bi=None, reg_pu=None,
  */
-  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_8surprise_21prediction_algorithms_20matrix_factorization_5SVDpp_1__init__, 0, __pyx_n_s_SVDpp___init, NULL, __pyx_n_s_surprise_prediction_algorithms_m, __pyx_d, ((PyObject *)__pyx_codeobj__19)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 372, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_8surprise_21prediction_algorithms_20matrix_factorization_5SVDpp_1__init__, 0, __pyx_n_s_SVDpp___init, NULL, __pyx_n_s_surprise_prediction_algorithms_m, __pyx_d, ((PyObject *)__pyx_codeobj__19)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 376, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_4, __pyx_tuple__20);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_init, __pyx_t_4) < 0) __PYX_ERR(0, 372, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_init, __pyx_t_4) < 0) __PYX_ERR(0, 376, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":396
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":400
  *         AlgoBase.__init__(self)
  * 
  *     def fit(self, trainset):             # <<<<<<<<<<<<<<
  * 
  *         AlgoBase.fit(self, trainset)
  */
-  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_8surprise_21prediction_algorithms_20matrix_factorization_5SVDpp_3fit, 0, __pyx_n_s_SVDpp_fit, NULL, __pyx_n_s_surprise_prediction_algorithms_m, __pyx_d, ((PyObject *)__pyx_codeobj__22)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 396, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_8surprise_21prediction_algorithms_20matrix_factorization_5SVDpp_3fit, 0, __pyx_n_s_SVDpp_fit, NULL, __pyx_n_s_surprise_prediction_algorithms_m, __pyx_d, ((PyObject *)__pyx_codeobj__22)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 400, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_fit, __pyx_t_4) < 0) __PYX_ERR(0, 396, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_fit, __pyx_t_4) < 0) __PYX_ERR(0, 400, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":403
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":407
  *         return self
  * 
  *     def sgd(self, trainset):             # <<<<<<<<<<<<<<
  * 
  *         # user biases
  */
-  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_8surprise_21prediction_algorithms_20matrix_factorization_5SVDpp_5sgd, 0, __pyx_n_s_SVDpp_sgd, NULL, __pyx_n_s_surprise_prediction_algorithms_m, __pyx_d, ((PyObject *)__pyx_codeobj__25)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 403, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_8surprise_21prediction_algorithms_20matrix_factorization_5SVDpp_5sgd, 0, __pyx_n_s_SVDpp_sgd, NULL, __pyx_n_s_surprise_prediction_algorithms_m, __pyx_d, ((PyObject *)__pyx_codeobj__25)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 407, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_sgd, __pyx_t_4) < 0) __PYX_ERR(0, 403, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_sgd, __pyx_t_4) < 0) __PYX_ERR(0, 407, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":489
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":493
  *         self.yj = yj
  * 
  *     def estimate(self, u, i):             # <<<<<<<<<<<<<<
  * 
  *         est = self.trainset.global_mean
  */
-  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_8surprise_21prediction_algorithms_20matrix_factorization_5SVDpp_7estimate, 0, __pyx_n_s_SVDpp_estimate, NULL, __pyx_n_s_surprise_prediction_algorithms_m, __pyx_d, ((PyObject *)__pyx_codeobj__27)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 489, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_8surprise_21prediction_algorithms_20matrix_factorization_5SVDpp_7estimate, 0, __pyx_n_s_SVDpp_estimate, NULL, __pyx_n_s_surprise_prediction_algorithms_m, __pyx_d, ((PyObject *)__pyx_codeobj__27)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 493, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_estimate, __pyx_t_4) < 0) __PYX_ERR(0, 489, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_estimate, __pyx_t_4) < 0) __PYX_ERR(0, 493, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":285
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":289
  * 
  * 
  * class SVDpp(AlgoBase):             # <<<<<<<<<<<<<<
  *     """The *SVD++* algorithm, an extension of :class:`SVD` taking into account
  *     implicit ratings.
  */
-  __pyx_t_4 = __Pyx_Py3ClassCreate(__pyx_t_2, __pyx_n_s_SVDpp, __pyx_t_1, __pyx_t_3, NULL, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 285, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_Py3ClassCreate(__pyx_t_2, __pyx_n_s_SVDpp, __pyx_t_1, __pyx_t_3, NULL, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 289, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_SVDpp, __pyx_t_4) < 0) __PYX_ERR(0, 285, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_SVDpp, __pyx_t_4) < 0) __PYX_ERR(0, 289, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_2); __pyx_t_2 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":508
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":512
  * 
  * 
  * class NMF(AlgoBase):             # <<<<<<<<<<<<<<
  *     """A collaborative filtering algorithm based on Non-negative Matrix
  *     Factorization.
  */
-  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_AlgoBase); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 508, __pyx_L1_error)
+  __Pyx_GetModuleGlobalName(__pyx_t_1, __pyx_n_s_AlgoBase); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 512, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 508, __pyx_L1_error)
+  __pyx_t_2 = PyTuple_New(1); if (unlikely(!__pyx_t_2)) __PYX_ERR(0, 512, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_2);
   __Pyx_GIVEREF(__pyx_t_1);
   PyTuple_SET_ITEM(__pyx_t_2, 0, __pyx_t_1);
   __pyx_t_1 = 0;
-  __pyx_t_1 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 508, __pyx_L1_error)
+  __pyx_t_1 = __Pyx_CalculateMetaclass(NULL, __pyx_t_2); if (unlikely(!__pyx_t_1)) __PYX_ERR(0, 512, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_1);
-  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_1, __pyx_t_2, __pyx_n_s_NMF, __pyx_n_s_NMF, (PyObject *) NULL, __pyx_n_s_surprise_prediction_algorithms_m, __pyx_kp_s_A_collaborative_filtering_algori); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 508, __pyx_L1_error)
+  __pyx_t_3 = __Pyx_Py3MetaclassPrepare(__pyx_t_1, __pyx_t_2, __pyx_n_s_NMF, __pyx_n_s_NMF, (PyObject *) NULL, __pyx_n_s_surprise_prediction_algorithms_m, __pyx_kp_s_A_collaborative_filtering_algori); if (unlikely(!__pyx_t_3)) __PYX_ERR(0, 512, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_3);
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":599
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":603
  *     """
  * 
  *     def __init__(self, n_factors=15, n_epochs=50, biased=False, reg_pu=.06,             # <<<<<<<<<<<<<<
  *                  reg_qi=.06, reg_bu=.02, reg_bi=.02, lr_bu=.005, lr_bi=.005,
  *                  init_low=0, init_high=1, random_state=None, verbose=False):
  */
-  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_8surprise_21prediction_algorithms_20matrix_factorization_3NMF_1__init__, 0, __pyx_n_s_NMF___init, NULL, __pyx_n_s_surprise_prediction_algorithms_m, __pyx_d, ((PyObject *)__pyx_codeobj__29)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 599, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_8surprise_21prediction_algorithms_20matrix_factorization_3NMF_1__init__, 0, __pyx_n_s_NMF___init, NULL, __pyx_n_s_surprise_prediction_algorithms_m, __pyx_d, ((PyObject *)__pyx_codeobj__29)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 603, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
   __Pyx_CyFunction_SetDefaultsTuple(__pyx_t_4, __pyx_tuple__30);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_init, __pyx_t_4) < 0) __PYX_ERR(0, 599, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_init, __pyx_t_4) < 0) __PYX_ERR(0, 603, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":622
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":626
  *         AlgoBase.__init__(self)
  * 
  *     def fit(self, trainset):             # <<<<<<<<<<<<<<
  * 
  *         AlgoBase.fit(self, trainset)
  */
-  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_8surprise_21prediction_algorithms_20matrix_factorization_3NMF_3fit, 0, __pyx_n_s_NMF_fit, NULL, __pyx_n_s_surprise_prediction_algorithms_m, __pyx_d, ((PyObject *)__pyx_codeobj__32)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 622, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_8surprise_21prediction_algorithms_20matrix_factorization_3NMF_3fit, 0, __pyx_n_s_NMF_fit, NULL, __pyx_n_s_surprise_prediction_algorithms_m, __pyx_d, ((PyObject *)__pyx_codeobj__32)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 626, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_fit, __pyx_t_4) < 0) __PYX_ERR(0, 622, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_fit, __pyx_t_4) < 0) __PYX_ERR(0, 626, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":629
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":633
  *         return self
  * 
  *     def sgd(self, trainset):             # <<<<<<<<<<<<<<
  * 
  *         # user and item factors
  */
-  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_8surprise_21prediction_algorithms_20matrix_factorization_3NMF_5sgd, 0, __pyx_n_s_NMF_sgd, NULL, __pyx_n_s_surprise_prediction_algorithms_m, __pyx_d, ((PyObject *)__pyx_codeobj__34)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 629, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_8surprise_21prediction_algorithms_20matrix_factorization_3NMF_5sgd, 0, __pyx_n_s_NMF_sgd, NULL, __pyx_n_s_surprise_prediction_algorithms_m, __pyx_d, ((PyObject *)__pyx_codeobj__34)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 633, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_sgd, __pyx_t_4) < 0) __PYX_ERR(0, 629, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_sgd, __pyx_t_4) < 0) __PYX_ERR(0, 633, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":721
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":726
  *         self.qi = qi
  * 
  *     def estimate(self, u, i):             # <<<<<<<<<<<<<<
  *         # Should we cythonize this as well?
  * 
  */
-  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_8surprise_21prediction_algorithms_20matrix_factorization_3NMF_7estimate, 0, __pyx_n_s_NMF_estimate, NULL, __pyx_n_s_surprise_prediction_algorithms_m, __pyx_d, ((PyObject *)__pyx_codeobj__36)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 721, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_CyFunction_NewEx(&__pyx_mdef_8surprise_21prediction_algorithms_20matrix_factorization_3NMF_7estimate, 0, __pyx_n_s_NMF_estimate, NULL, __pyx_n_s_surprise_prediction_algorithms_m, __pyx_d, ((PyObject *)__pyx_codeobj__36)); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 726, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_estimate, __pyx_t_4) < 0) __PYX_ERR(0, 721, __pyx_L1_error)
+  if (__Pyx_SetNameInClass(__pyx_t_3, __pyx_n_s_estimate, __pyx_t_4) < 0) __PYX_ERR(0, 726, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
 
-  /* "surprise/prediction_algorithms/matrix_factorization.pyx":508
+  /* "surprise/prediction_algorithms/matrix_factorization.pyx":512
  * 
  * 
  * class NMF(AlgoBase):             # <<<<<<<<<<<<<<
  *     """A collaborative filtering algorithm based on Non-negative Matrix
  *     Factorization.
  */
-  __pyx_t_4 = __Pyx_Py3ClassCreate(__pyx_t_1, __pyx_n_s_NMF, __pyx_t_2, __pyx_t_3, NULL, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 508, __pyx_L1_error)
+  __pyx_t_4 = __Pyx_Py3ClassCreate(__pyx_t_1, __pyx_n_s_NMF, __pyx_t_2, __pyx_t_3, NULL, 0, 1); if (unlikely(!__pyx_t_4)) __PYX_ERR(0, 512, __pyx_L1_error)
   __Pyx_GOTREF(__pyx_t_4);
-  if (PyDict_SetItem(__pyx_d, __pyx_n_s_NMF, __pyx_t_4) < 0) __PYX_ERR(0, 508, __pyx_L1_error)
+  if (PyDict_SetItem(__pyx_d, __pyx_n_s_NMF, __pyx_t_4) < 0) __PYX_ERR(0, 512, __pyx_L1_error)
   __Pyx_DECREF(__pyx_t_4); __pyx_t_4 = 0;
   __Pyx_DECREF(__pyx_t_3); __pyx_t_3 = 0;
   __Pyx_DECREF(__pyx_t_1); __pyx_t_1 = 0;
@@ -17653,12 +17652,6 @@ static CYTHON_INLINE PyObject* __Pyx_PyObject_CallNoArg(PyObject *func) {
     return 0;
 }
 
-/* BufferIndexError */
-  static void __Pyx_RaiseBufferIndexError(int axis) {
-  PyErr_Format(PyExc_IndexError,
-     "Out of bounds on buffer access (axis %d)", axis);
-}
-
 /* GetItemInt */
   static PyObject *__Pyx_GetItemInt_Generic(PyObject *o, PyObject* j) {
     PyObject *r;
@@ -17744,6 +17737,12 @@ static CYTHON_INLINE PyObject *__Pyx_GetItemInt_Fast(PyObject *o, Py_ssize_t i, 
     }
 #endif
     return __Pyx_GetItemInt_Generic(o, PyInt_FromSsize_t(i));
+}
+
+/* BufferIndexError */
+  static void __Pyx_RaiseBufferIndexError(int axis) {
+  PyErr_Format(PyExc_IndexError,
+     "Out of bounds on buffer access (axis %d)", axis);
 }
 
 /* PyErrFetchRestore */

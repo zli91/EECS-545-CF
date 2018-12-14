@@ -127,7 +127,7 @@ class SVD(AlgoBase):
 
     def __init__(self, n_factors=100, n_epochs=20, biased=True, init_mean=0,
                  init_std_dev=.1, lr_all=.005,
-                 reg_all=.02, lr_bu=None, lr_bi=None, lr_pu=None, lr_qi=None,
+                 reg_all=.06, lr_bu=None, lr_bi=None, lr_pu=None, lr_qi=None,
                  reg_bu=None, reg_bi=None, reg_pu=None, reg_qi=None,
                  random_state=None, verbose=False):
 
@@ -212,6 +212,7 @@ class SVD(AlgoBase):
         cdef double reg_bi = self.reg_bi
         cdef double reg_pu = self.reg_pu
         cdef double reg_qi = self.reg_qi
+        cdef double Weight = 0.0
 
         rng = get_rng(self.random_state)
 
@@ -229,7 +230,8 @@ class SVD(AlgoBase):
             if self.verbose:
                 print("Processing epoch {}".format(current_epoch))
             for u, i, r in trainset.all_ratings():
-
+                Weight = self.W[u][i]
+                #print("Weight is actually: ",Weight)
                 # compute current error
                 dot = 0  # <q_i, p_u>
                 for f in range(self.n_factors):
@@ -239,16 +241,18 @@ class SVD(AlgoBase):
                 # update biases
                 if self.biased:
                     # print('reg_bu = ', reg_bu)
-                    Weight = self.W[u][i]
-                    bu[u] += lr_bu * (err - Weight*reg_bu * bu[u])
-                    bi[i] += lr_bi * (err - Weight*reg_bi * bi[i])
+
+                    bu[u] += lr_bu * (err - reg_bu * bu[u])
+                    bi[i] += lr_bi * (err - reg_bi * bi[i])
 
                 # update factors
+
+                #Weight = 1.0
                 for f in range(self.n_factors):
                     puf = pu[u, f]
                     qif = qi[i, f]
-                    pu[u, f] += lr_pu * (err * qif - reg_pu * puf)
-                    qi[i, f] += lr_qi * (err * puf - reg_qi * qif)
+                    pu[u, f] += lr_pu * (err * qif - Weight * reg_pu * puf)
+                    qi[i, f] += lr_qi * (err * puf - Weight * reg_qi * qif)
 
         self.bu = bu
         self.bi = bi
@@ -651,6 +655,7 @@ class NMF(AlgoBase):
         cdef double lr_bu = self.lr_bu
         cdef double lr_bi = self.lr_bi
         cdef double global_mean = self.trainset.global_mean
+        cdef double Weight = 0.0
 
         # Randomly initialize user and item factors
         rng = get_rng(self.random_state)
@@ -678,7 +683,7 @@ class NMF(AlgoBase):
 
             # Compute numerators and denominators for users and items factors
             for u, i, r in trainset.all_ratings():
-
+                Weight = self.W[u][i]
                 # compute current estimation and error
                 dot = 0  # <q_i, p_u>
                 for f in range(self.n_factors):
@@ -703,14 +708,14 @@ class NMF(AlgoBase):
             for u in trainset.all_users():
                 n_ratings = len(trainset.ur[u])
                 for f in range(self.n_factors):
-                    user_denom[u, f] += n_ratings * reg_pu * pu[u, f]
+                    user_denom[u, f] += n_ratings * Weight * reg_pu * pu[u, f]
                     pu[u, f] *= user_num[u, f] / user_denom[u, f]
 
             # Update item factors
             for i in trainset.all_items():
                 n_ratings = len(trainset.ir[i])
                 for f in range(self.n_factors):
-                    item_denom[i, f] += n_ratings * reg_qi * qi[i, f]
+                    item_denom[i, f] += n_ratings * Weight * reg_qi * qi[i, f]
                     qi[i, f] *= item_num[i, f] / item_denom[i, f]
 
         self.bu = bu

@@ -44,5 +44,4 @@ class BaselineOnly(AlgoBase):
             est += self.bu[u]
         if self.trainset.knows_item(i):
             est += self.bi[i]
-
         return est

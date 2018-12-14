@@ -8,7 +8,8 @@ from surprise import accuracy
 from operator import itemgetter
 
 # Load the movielens-100k dataset (download it if needed).
-data = Dataset.load_builtin('ml-100k')
+# data = Dataset.load_builtin('ml-100k')
+data = Dataset.load_builtin('ml-1m')
 sizefinder = data.build_full_trainset()
 
 # trainset, testset = train_test_split(data, test_size=1.0)
@@ -41,21 +42,21 @@ s = (sizefinder.n_users+1,sizefinder.n_items+1)
 weight = np.ones(s)
 algo.weightUpdate(weight)
 
-algo.fit(trainset)
+# algo.fit(trainset)
 # est,details,k_neighbor = [algo.estimate(uid,iid) for (uid, iid, _) in testset[1]]
 # NeighborM = (trainset.n_users+1)*[(trainset.n_items+1)*[None]]
 # for uid,iid,_ in trainset.all_ratings():
 #     _,_,K_neighbor = algo.estimate(uid,iid)
 #     NeighborM[uid][iid] = np.array(K_neighbor)[:,0][:10]
 
-uid = trainset.to_inner_uid(testset[1][0])
-iid = trainset.to_inner_iid(testset[1][1])
-print(len(trainset.ur[uid]))
+# uid = trainset.to_inner_uid(testset[1][0])
+# iid = trainset.to_inner_iid(testset[1][1])
+# print(len(trainset.ur[uid]))
 # print(NeighborM[uid][iid])
 # est = algo.estimate(uid,iid)
 # print(est,isinstance(est, tuple))
 
-# predictions = algo.fit(trainset).test(testset)
+predictions = algo.fit(trainset).test(testset)
 #
 #
 #

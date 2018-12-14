@@ -107,15 +107,19 @@ class KNNBasic(SymmetricAlgo):
 
         x, y = self.switch(u, i)
 
-        neighbors = [(self.sim[x, x2], r) for (x2, r) in self.yr[y]]
-        k_neighbors = heapq.nlargest(self.k, neighbors, key=lambda t: t[0])
 
+        neighbors = [(x2, self.sim[x, x2], r) for (x2, r) in self.yr[y]]
+        k_neighbors = heapq.nlargest(self.k, neighbors, key=lambda t: t[1])
         # compute weighted average
         sum_sim = sum_ratings = actual_k = 0
-        for (sim, r) in k_neighbors:
+        for (nb, sim, r) in k_neighbors:
             if sim > 0:
-                sum_sim += sim
-                sum_ratings += sim * r
+                if self.sim_options['user_based']:
+                    Wei =  self.W[int(nb)][int(y)]
+                else:
+                    Wei =  self.W[int(y)][int(nb)]
+                sum_sim += sim * Wei
+                sum_ratings += sim * r * Wei
                 actual_k += 1
 
         if actual_k < self.min_k:
@@ -301,27 +305,15 @@ class KNNBaseline(SymmetricAlgo):
         # print("Weight size = ",np.shape(self.W))
         # compute weighted average
         sum_sim = sum_ratings = actual_k = 0
-        # print("here i am!!!!!!!!!!!KNNBaseline")
+
         for (nb, sim, r) in k_neighbors:
             if sim > 0:
                 if self.sim_options['user_based']:
-                    # rnb = self.trainset.to_raw_uid(nb)
-                    # rawy = self.trainset.to_raw_iid(y)
-                    # print('rnb = ',int(rnb),' rawy = ',int(rawy))
                     Wei =  self.W[int(nb)][int(y)]
-                else:   
-                    # rnb = self.trainset.to_raw_iid(nb)
-                    # rawy = self.trainset.to_raw_uid(y)
-                    # print('rnb = ',int(rnb),' rawy = ',int(rawy))
-                    # Wei =  self.W[int(rawy)][(rnb)]
-                    # print("enterred itembased, user should be equal, y,nb =",y,nb)
+                else:
                     Wei =  self.W[int(y)][int(nb)]
-                oneCounter += (Wei == 1.0)
-                # sum_sim += sim * weight[x][nb]
-                # print("weight is actually:",Wei)
                 sum_sim += sim * Wei
                 nb_bsl = self.trainset.global_mean + self.bx[nb] + self.by[y]
-                # sum_ratings += sim * weight[x][nb] * (r - nb_bsl)
                 sum_ratings += sim * Wei * (r - nb_bsl)
                 actual_k += 1
         # print("meet 1s for:", oneCounter)

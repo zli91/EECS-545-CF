@@ -63,7 +63,7 @@ def baseline_sgd(self):
     Returns:
         A tuple ``(bu, bi)``, which are users and items baselines.
     """
-
+    #print("Enterred baseline_sgn")
     cdef np.ndarray[np.double_t] bu = np.zeros(self.trainset.n_users)
     cdef np.ndarray[np.double_t] bi = np.zeros(self.trainset.n_items)
 
@@ -74,11 +74,14 @@ def baseline_sgd(self):
     cdef int n_epochs = self.bsl_options.get('n_epochs', 20)
     cdef double reg = self.bsl_options.get('reg', 0.02)
     cdef double lr = self.bsl_options.get('learning_rate', 0.005)
-
+    cdef double Weight = 0.0
     for dummy in range(n_epochs):
+        #print("Enterred baseline_sgn_n_epochs")
         for u, i, r in self.trainset.all_ratings():
+            Weight = self.W[u][i]
+            #print("Weight is actually:", Weight)
             err = (r - (global_mean + bu[u] + bi[i]))
-            bu[u] += lr * (err - reg * bu[u])
-            bi[i] += lr * (err - reg * bi[i])
+            bu[u] += lr * (err - Weight * reg * bu[u])
+            bi[i] += lr * (err - Weight * reg * bi[i])
 
     return bu, bi
