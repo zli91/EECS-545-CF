@@ -1,3 +1,16 @@
+EECS 545 TEAM CF 
+Author: Zhaoer Li, Jingwen Cao, Zhao Weiqi, Shidong Zhang
+
+We utilized a CF online resource called Surpreselib along the learning process.
+Our main work contains 
+
+545Project_BoostBaseline.py
+545Project_BoostItemCF.py
+545Project_svd.py
+
+All in the /test folder, these three python program equiped Adaboost with basic CF 
+algorithms like baseline, KnnItem, and biasedSVD).
+
 [![GitHub version](https://badge.fury.io/gh/nicolashug%2FSurprise.svg)](https://badge.fury.io/gh/nicolashug%2FSurprise)
 [![Documentation Status](https://readthedocs.org/projects/surprise/badge/?version=stable)](http://surprise.readthedocs.io/en/stable/?badge=stable)
 [![Build Status](https://travis-ci.org/NicolasHug/Surprise.svg?branch=master)](https://travis-ci.org/NicolasHug/Surprise)
