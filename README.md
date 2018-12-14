@@ -11,6 +11,12 @@ Our main work contains
 All in the /test folder, these three python program equiped Adaboost with basic CF 
 algorithms like baseline, KnnItem, and biasedSVD).
 
+To run our work, reader has to clone this project and install an modified version of surpriselib by runing
+
+$ sudo python setup.py install
+
+in /eecs-545-cf.
+
 [![GitHub version](https://badge.fury.io/gh/nicolashug%2FSurprise.svg)](https://badge.fury.io/gh/nicolashug%2FSurprise)
 [![Documentation Status](https://readthedocs.org/projects/surprise/badge/?version=stable)](http://surprise.readthedocs.io/en/stable/?badge=stable)
 [![Build Status](https://travis-ci.org/NicolasHug/Surprise.svg?branch=master)](https://travis-ci.org/NicolasHug/Surprise)
